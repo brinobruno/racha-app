@@ -3,6 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "author": "Bruno Corrêa <brunosantos6ft@gmail.com>",
+  "description": "A casual football team drafter for friends by Bruno Corrêa",
+  "keywords": [
+    "react",
+    "typescript",
+    "styled-components",
+    "api"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
