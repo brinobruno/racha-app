@@ -19,8 +19,12 @@
     "lint-fix": "eslint src --ext .ts,.tsx --fix"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.11",
+    "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6",
+    "zod": "^3.20.6"
   },
   "devDependencies": {
     "@brinobruno/eslint-config": "^2.0.4",
