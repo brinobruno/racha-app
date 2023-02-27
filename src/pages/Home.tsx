@@ -1,3 +1,10 @@
 export function Home() {
-  return <h1>Home</h1>
+  return (
+    <section>
+      <h1>Home</h1>
+
+      <input type="text" placeholder="input" />
+      <button>Button</button>
+    </section>
+  )
 }
