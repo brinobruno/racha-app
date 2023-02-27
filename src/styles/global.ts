@@ -13,12 +13,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme['primary-700']};
+    background: ${(props) => props.theme['secondary-700']};
     color: ${(props) => props.theme['neutral-100']};
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
+    border: none;
+
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1rem;
