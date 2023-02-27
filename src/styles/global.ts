@@ -48,12 +48,28 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 23.4px;
   }
 
-  input {
-    border: 0;
-  }
-
   button {
     cursor: pointer;
+  }
+
+  input, textarea, button {
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  input, textarea {
+    padding: 0.9rem;
+    background: ${(props) => props.theme['neutral-100']};
+  }
+  
+  button {
+    font-size: 1.25rem;
+    font-weight: 600;
+    
+    background: ${(props) => props.theme['primary-500']};
+    color: ${(props) => props.theme['neutral-100']};
+
+    padding: 1rem;
   }
   
   a {
