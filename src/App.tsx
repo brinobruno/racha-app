@@ -1,7 +1,18 @@
+import { BrowserRouter } from 'react-router-dom'
+
+import { Router } from './Routes'
+import { GlobalStyle } from './styles/global'
+import { ThemeContextProvider } from './contexts/ThemeContext'
+
 export function App() {
   return (
-    <div>
-      <h1>dfdfd</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <ThemeContextProvider>
+          <Router />
+          <GlobalStyle />
+        </ThemeContextProvider>
+      </BrowserRouter>
+    </>
   )
 }
