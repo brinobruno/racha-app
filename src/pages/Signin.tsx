@@ -2,20 +2,34 @@ import { SyntheticEvent, useState } from 'react'
 import { signInUser } from '../services/signInUser'
 
 export default function Signin() {
-  const [emailInput, setEmailInput] = useState('')
-  const [passwordInput, setPasswordInput] = useState('')
+  const [email, setEmailInput] = useState('')
+  const [password, setPasswordInput] = useState('')
 
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
 
-    const response = await signInUser({
-      email: emailInput,
-      password: passwordInput,
-    })
+    try {
+      const response = await signInUser({
+        email,
+        password,
+      })
 
-    console.log('Success:', response.message)
-    localStorage.setItem('sessionId', response.sessionId)
-    window.location.href = '/'
+      console.log(response)
+
+      if (response.sessionId) {
+        console.log('Success:', response.message)
+
+        localStorage.setItem('sessionId', response.sessionId)
+        window.location.href = '/'
+      } else if (response.status === 401) {
+        console.log('Email or password is incorrect')
+      } else if (response.status === 422) {
+        console.log('User does not exist')
+      }
+    } catch (error: unknown) {
+      console.log(error)
+      throw new Error(error as string)
+    }
   }
 
   return (
