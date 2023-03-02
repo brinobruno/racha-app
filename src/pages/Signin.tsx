@@ -32,9 +32,8 @@ export default function Signin() {
     })
 
     console.log('Success:', response.message)
-    // localStorage.setItem('accessToken', response.accessToken)
-    // localStorage.setItem('user', JSON.stringify(response.user))
-    // window.location.href = '/profile'
+    localStorage.setItem('sessionId', response.sessionId)
+    window.location.href = '/'
   }
 
   return (
