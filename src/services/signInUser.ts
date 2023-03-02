@@ -11,9 +11,14 @@ export async function signInUser({ email, password }: ISignInRequest) {
 
   const bodyRequest = JSON.stringify({ email, password })
 
-  return await fetch('http://localhost:3333/users/login', {
-    method: 'POST',
-    headers,
-    body: bodyRequest,
-  }).then((data) => data.json())
+  try {
+    return await fetch('http://localhost:3333/users/login', {
+      method: 'POST',
+      headers,
+      body: bodyRequest,
+    }).then((response) => response.json())
+  } catch (error: unknown) {
+    console.log(error)
+    throw new Error(error as string)
+  }
 }
