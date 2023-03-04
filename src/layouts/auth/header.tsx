@@ -1,7 +1,11 @@
+import logoWhite from './../../assets/logo-white.svg'
+
 export function Header() {
   return (
     <>
-      <header>Auth header</header>
+      <header>
+        <img src={logoWhite} alt="Início" />
+      </header>
     </>
   )
 }

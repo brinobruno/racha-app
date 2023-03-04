@@ -17,4 +17,22 @@ export const LayoutContainer = styled.div`
   img {
     user-select: none;
   }
+
+  header {
+    padding: 1.5rem 0;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      max-height: 3rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      padding: 1rem 0;
+    }
+  }
 `
