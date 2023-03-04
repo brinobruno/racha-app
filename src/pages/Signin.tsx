@@ -20,7 +20,7 @@ export function Signin() {
         console.log('Success:', response.message)
 
         localStorage.setItem('sessionId', response.sessionId)
-        window.location.href = '/'
+        window.location.href = '/dashboard'
       } else if (response.status === 401) {
         console.log('Email or password is incorrect')
       } else if (response.status === 422) {
