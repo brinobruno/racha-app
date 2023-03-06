@@ -23,7 +23,7 @@ export function Home() {
 
           <div>
             <span>Novo por aqui? </span>
-            <NavLink to="/signin" title="Entrar">
+            <NavLink to="/signup" title="Entrar">
               Criar conta
             </NavLink>
           </div>
