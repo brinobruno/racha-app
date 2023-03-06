@@ -31,23 +31,9 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    font-size: 1.125rem
-  }
-
-  h1 {
-    font-size: 3rem;
-    line-height: 62.4px;
-    color: ${(props) => props.theme['neutral-100']};
-  }
-
-  h2 {
-    font-size: 2rem;
-    line-height: 41.6px;
-    color: ${(props) => props.theme['neutral-100']};
-  }
-
-  h3 {
-    line-height: 23.4px;
+    
+    font-size: 2.25rem;
+    line-height: 2.875rem;
   }
 
   strong {
