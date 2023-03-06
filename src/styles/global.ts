@@ -24,6 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1rem;
+    line-height: 1.25rem;
   }
 
   h1, h2, h3, h4, h5, h6 {
