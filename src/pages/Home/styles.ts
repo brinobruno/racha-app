@@ -14,6 +14,7 @@ export const Container = styled.div`
     text-align: center;
 
     max-width: 32rem;
+    padding-bottom: 2.5rem;
   }
 
   > div {
