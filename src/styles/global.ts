@@ -50,6 +50,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 23.4px;
   }
 
+  strong {
+    font-weight: 700;
+  }
+
   input, textarea, button {
     border-radius: 5px;
     /* width: 100%; */
