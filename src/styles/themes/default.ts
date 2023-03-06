@@ -20,6 +20,6 @@ export const defaultTheme = {
   'secondary-500': '#495BCC',
   'secondary-700': '#0A1033',
 
-  'semantic-positive': '#04D361',
+  'semantic-positive': '#059A48',
   'semantic-negative': '#FF5343',
 }
