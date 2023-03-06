@@ -1,7 +1,7 @@
 import Cover from './../../assets/desktop-cover.webp'
 
 import 'react-toastify/dist/ReactToastify.css'
-import { Container } from './styles'
+import { Container, ContentContainer } from './styles'
 import { NavLink } from 'react-router-dom'
 
 export function Home() {
@@ -14,9 +14,20 @@ export function Home() {
       <div>
         <h1>Gerencie times para jogar com os amigos</h1>
 
-        <NavLink to="/signin" title="Entrar">
-          Entrar
-        </NavLink>
+        <ContentContainer>
+          <button>
+            <NavLink to="/signin" title="Entrar">
+              Entrar
+            </NavLink>
+          </button>
+
+          <div>
+            <span>Novo por aqui? </span>
+            <NavLink to="/signin" title="Entrar">
+              Criar conta
+            </NavLink>
+          </div>
+        </ContentContainer>
       </div>
     </Container>
   )
