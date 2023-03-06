@@ -50,10 +50,6 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 23.4px;
   }
 
-  button {
-    cursor: pointer;
-  }
-
   input, textarea, button {
     border-radius: 5px;
     /* width: 100%; */
@@ -72,6 +68,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['neutral-100']};
 
     padding: 1rem;
+
+    cursor: pointer;
   }
   
   a {
