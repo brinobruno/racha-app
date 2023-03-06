@@ -20,6 +20,10 @@ export const GlobalStyle = createGlobalStyle`
     overflow-y: scroll
   }
 
+  a {
+    color: ${(props) => props.theme['neutral-100']};
+  }
+
   body, input, textarea, button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
