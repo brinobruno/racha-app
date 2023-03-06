@@ -61,8 +61,8 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   button {
-    /* font-size: 1.25rem;
-    font-weight: 600; */
+    font-size: 1.25rem;
+    font-weight: 600;
     
     background: ${(props) => props.theme['primary-500']};
     color: ${(props) => props.theme['neutral-100']};
