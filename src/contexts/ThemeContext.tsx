@@ -1,61 +1,53 @@
-import { ReactNode, createContext, useContext, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { defaultTheme } from '../styles/themes/default'
 import { lightTheme } from '../styles/themes/light'
 
 interface IThemeContext {
-  theme?: unknown | null
-  isLightTheme: string
-  setIsLightTheme: (theme: string) => void
+  theme: string
+  toggleTheme: () => void
 }
 
 interface IThemeContextProviderProps {
   children: ReactNode
 }
 
-export const ThemeContext = createContext({} as IThemeContext)
+export const ThemeContext = createContext<IThemeContext>({
+  theme: 'light',
+  toggleTheme: () => {},
+})
 
 export const ThemeContextProvider = ({
   children,
 }: IThemeContextProviderProps) => {
-  const [isLightTheme, setIsLightTheme] = useState(() => {
-    const theme = localStorage.getItem('theme')
-
-    if (theme === 'light') {
-      return 'light'
-    } else {
-      return 'dark'
-    }
+  const [theme, setTheme] = useState(() => {
+    const localTheme = localStorage.getItem('theme')
+    return localTheme || 'light'
   })
 
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+  }
+
   return (
-    <ThemeContext.Provider value={{ isLightTheme, setIsLightTheme }}>
-      <ThemeProvider
-        theme={isLightTheme === 'light' ? lightTheme : defaultTheme}
-      >
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : defaultTheme}>
         {children}
       </ThemeProvider>
     </ThemeContext.Provider>
   )
 }
 
-export const useThemeContext = () => {
-  const { isLightTheme, setIsLightTheme } = useContext(ThemeContext)
-
-  function changeTheme() {
-    if (isLightTheme === 'light') {
-      setIsLightTheme('dark')
-      localStorage.setItem('theme', 'dark')
-    }
-    if (isLightTheme === 'dark') {
-      setIsLightTheme('light')
-      localStorage.setItem('theme', 'light')
-    }
-  }
-
-  return {
-    isLightTheme,
-    changeTheme,
-  }
-}
+export const useThemeContext = (): IThemeContext => useContext(ThemeContext)
