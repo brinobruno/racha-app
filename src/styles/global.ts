@@ -21,8 +21,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
-    border: none;
-
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 1rem;
@@ -31,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
-    
+
     font-size: 2.25rem;
     line-height: 2.875rem;
   }
@@ -41,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   input, textarea, button {
+    border: none;
     border-radius: 5px;
     /* width: 100%; */
   }
