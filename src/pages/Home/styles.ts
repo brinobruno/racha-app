@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  min-height: calc(100vh - 6rem);
+  min-height: calc(100vh - 6.25rem);
 
   h1 {
     font-size: 3.5rem;
