@@ -25,10 +25,14 @@ export const LayoutContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
 
-    img {
-      max-height: 3rem;
+    a {
+      width: 9.45rem;
       height: 100%;
-      width: 100%;
+    }
+
+    a img {
+      width: 9.45rem;
+      height: 100%;
     }
 
     @media (max-width: 768px) {
