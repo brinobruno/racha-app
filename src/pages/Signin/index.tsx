@@ -1,5 +1,5 @@
 import { SyntheticEvent, useState } from 'react'
-import { signInUser } from '../services/signInUser'
+import { signInUser } from '../../services/signInUser'
 
 export function Signin() {
   const [email, setEmailInput] = useState('')
