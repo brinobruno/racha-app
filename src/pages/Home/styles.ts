@@ -38,6 +38,7 @@ export const ContentContainer = styled.div`
   }
 
   a {
+    width: 100%;
     font-weight: 600;
   }
 `

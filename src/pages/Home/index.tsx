@@ -15,11 +15,9 @@ export function Home() {
         <h1>Gerencie times para jogar com os amigos</h1>
 
         <ContentContainer>
-          <button>
-            <NavLink to="/signin" title="Entrar">
-              Entrar
-            </NavLink>
-          </button>
+          <NavLink to="/signin" title="Entrar">
+            <button>Entrar</button>
+          </NavLink>
 
           <div>
             <span>Novo por aqui? </span>
