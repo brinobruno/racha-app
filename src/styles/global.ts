@@ -63,7 +63,12 @@ export const GlobalStyle = createGlobalStyle`
 
     padding: 1rem;
 
+    transition: 0.25s ease-in-out;
     cursor: pointer;
+
+    &:hover {
+      background: ${(props) => props.theme['primary-hover']};
+    }
   }
   
   a {
