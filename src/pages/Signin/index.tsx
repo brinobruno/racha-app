@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from 'react'
 import { signInUser } from '../../services/signInUser'
 import { Container, FieldContainer, SignInForm } from './styles'
+import { NavLink } from 'react-router-dom'
 
 export function Signin() {
   const [email, setEmailInput] = useState('')
@@ -35,7 +36,7 @@ export function Signin() {
 
   return (
     <Container>
-      <h1>Olá! Registre-se para começar 👋</h1>
+      <h1>Que bom te ver por aqui 👋</h1>
 
       <SignInForm onSubmit={handleSubmit}>
         <FieldContainer>
@@ -59,8 +60,13 @@ export function Signin() {
           />
         </FieldContainer>
 
-        <button type="submit">Sign In</button>
+        <button type="submit">Entrar</button>
       </SignInForm>
+
+      <div>
+        <span>Novo por aqui? </span>
+        <NavLink to="/signup">Criar conta</NavLink>
+      </div>
     </Container>
   )
 }
