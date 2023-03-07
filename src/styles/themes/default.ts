@@ -22,4 +22,6 @@ export const defaultTheme = {
 
   'semantic-positive': '#059A48',
   'semantic-negative': '#FF5343',
+
+  'primary-hover': '#a30020',
 }

@@ -21,4 +21,6 @@ export const lightTheme = {
 
   'semantic-positive': '#04D361',
   'semantic-negative': '#FF5343',
+
+  'primary-hover': '#76081E',
 }
