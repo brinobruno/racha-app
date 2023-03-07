@@ -1,5 +1,6 @@
 import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import { Router } from './Routes'
 import { GlobalStyle } from './styles/global'
@@ -17,6 +18,8 @@ export function App() {
             <GlobalStyle />
           </ThemeContextProvider>
         </BrowserRouter>
+
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </>
   )
