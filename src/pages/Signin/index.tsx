@@ -1,5 +1,6 @@
 import { SyntheticEvent, useState } from 'react'
 import { signInUser } from '../../services/signInUser'
+import { Container, FieldContainer, SignInForm } from './styles'
 
 export function Signin() {
   const [email, setEmailInput] = useState('')
@@ -33,25 +34,33 @@ export function Signin() {
   }
 
   return (
-    <div>
-      Sign in
-      <form onSubmit={handleSubmit}>
-        <input
-          required
-          id="email"
-          name="email"
-          onChange={(e) => setEmailInput(e.target.value)}
-        />
-        <input
-          required
-          id="password"
-          name="password"
-          type="password"
-          onChange={(e) => setPasswordInput(e.target.value)}
-        />
+    <Container>
+      <h1>Olá! Registre-se para começar 👋</h1>
+
+      <SignInForm onSubmit={handleSubmit}>
+        <FieldContainer>
+          <label htmlFor="email">Email</label>
+          <input
+            required
+            id="email"
+            name="email"
+            onChange={(e) => setEmailInput(e.target.value)}
+          />
+        </FieldContainer>
+
+        <FieldContainer>
+          <label htmlFor="password">Password</label>
+          <input
+            required
+            id="password"
+            name="password"
+            type="password"
+            onChange={(e) => setPasswordInput(e.target.value)}
+          />
+        </FieldContainer>
 
         <button type="submit">Sign In</button>
-      </form>
-    </div>
+      </SignInForm>
+    </Container>
   )
 }
