@@ -15,15 +15,13 @@ export function Home() {
         <h1>Gerencie times para jogar com os amigos</h1>
 
         <ContentContainer>
-          <NavLink to="/signin" title="Entrar">
+          <NavLink to="/signin">
             <button>Entrar</button>
           </NavLink>
 
           <div>
             <span>Novo por aqui? </span>
-            <NavLink to="/signup" title="Entrar">
-              Criar conta
-            </NavLink>
+            <NavLink to="/signup">Criar conta</NavLink>
           </div>
         </ContentContainer>
       </div>

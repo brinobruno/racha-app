@@ -5,7 +5,7 @@ export function Header() {
   return (
     <>
       <header>
-        <NavLink to="/" title="Inicio">
+        <NavLink to="/">
           <img src={logoWhite} alt="Início" />
         </NavLink>
       </header>
