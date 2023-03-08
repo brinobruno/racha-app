@@ -1,4 +1,5 @@
-import { SyntheticEvent, useState } from 'react'
+import { useMutation } from 'react-query'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
@@ -11,76 +12,55 @@ interface ISignUpRequest {
   password: string
 }
 
-async function signUpUser({ username, email, password }: ISignUpRequest) {
-  try {
-    const response = await api.post(`/users/create`, {
-      headers,
-      username,
-      email,
-      password,
-    })
-    const data = response
-
-    console.log(data)
-
-    return data
-  } catch (error: any) {
-    console.log(error.response.data)
-    throw new Error(error as string)
-  }
-}
-
 export function SignUpForm() {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ISignUpRequest>()
+  const handleSignUpUserSubmit: SubmitHandler<ISignUpRequest> = (
+    signUpInputs,
+  ) => {
+    signUpUser(signUpInputs)
+  }
 
   // const navigate = useNavigate()
 
-  const handleSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault()
+  const createUser = useMutation(
+    async ({ username, email, password }: ISignUpRequest) => {
+      const response = await api.post(`/users/create`, {
+        headers,
+        username,
+        email,
+        password,
+      })
+      const data = response
 
-    try {
-      const { data, status } = await signUpUser({ username, email, password })
+      console.log(data)
 
-      console.log('response: ', data)
+      return response
+    },
+  )
 
-      if (data.sessionId) {
-        console.log('Success:', data.message)
-
-        // localStorage.setItem('sessionId', data.sessionId)
-        // return navigate('/dashboard')
-      } else if (status === 401) {
-        console.log('Email or password is incorrect')
-      } else if (status === 422) {
-        console.log('User does not exist')
-      }
-    } catch (error: unknown) {
-      console.log(error)
-      throw new Error(error as string)
-    }
+  const signUpUser = (inputs: ISignUpRequest) => {
+    createUser.mutate(inputs)
   }
 
   return (
-    <LoginForm onSubmit={handleSubmit}>
+    <LoginForm onSubmit={handleSubmit(handleSignUpUserSubmit)}>
       <FieldContainer>
         <label htmlFor="username">Apelido</label>
         <input
           required
           id="username"
+          {...register('username')}
           name="username"
-          onChange={(e) => setUsername(e.target.value)}
         />
       </FieldContainer>
 
       <FieldContainer>
         <label htmlFor="email">Email</label>
-        <input
-          required
-          id="email"
-          name="email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <input required id="email" {...register('email')} name="email" />
       </FieldContainer>
 
       <FieldContainer>
@@ -88,13 +68,19 @@ export function SignUpForm() {
         <input
           required
           id="password"
+          {...register('password')}
           name="password"
           type="password"
-          onChange={(e) => setPassword(e.target.value)}
         />
       </FieldContainer>
 
-      <button type="submit">Entrar</button>
+      {errors?.username && <span>{errors.username.message}</span>}
+      {errors?.email && <span>{errors.email.message}</span>}
+      {errors?.password && <span>{errors.password.message}</span>}
+
+      <button disabled={createUser.isLoading} type="submit">
+        Entrar
+      </button>
     </LoginForm>
   )
 }
