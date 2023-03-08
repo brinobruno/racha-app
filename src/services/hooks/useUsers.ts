@@ -34,7 +34,7 @@ async function getUsers() {
 }
 
 export function useUsers() {
-  return useQuery('users', getUsers, {
+  return useQuery<UsersDataResponse[]>('users', getUsers, {
     staleTime: 1000 * 5, // WIll be fresh for 5 seconds (!obsolete)
   })
 }
