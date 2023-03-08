@@ -4,5 +4,5 @@
 - [ ] Write Readme
 - [ ] Finish Figma design
 - [ ] Finish designing card system
-- [ ] Decide query service - probably React Query
+- [X] Decide query service - probably React Query
 - [ ] Add global loading component
