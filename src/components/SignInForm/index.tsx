@@ -3,6 +3,7 @@ import { SyntheticEvent, useState } from 'react'
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, LoginForm } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 interface ISignInRequest {
   email: string | undefined
@@ -31,6 +32,8 @@ export function SignInForm() {
   const [email, setEmailInput] = useState('')
   const [password, setPasswordInput] = useState('')
 
+  const navigate = useNavigate()
+
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
 
@@ -43,7 +46,7 @@ export function SignInForm() {
         console.log('Success:', data.message)
 
         localStorage.setItem('sessionId', data.sessionId)
-        window.location.href = '/dashboard'
+        return navigate('/dashboard')
       } else if (status === 401) {
         console.log('Email or password is incorrect')
       } else if (status === 422) {
