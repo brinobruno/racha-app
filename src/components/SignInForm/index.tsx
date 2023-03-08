@@ -1,17 +1,30 @@
-import { SyntheticEvent, useState } from 'react'
+import { useMutation } from 'react-query'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, LoginForm } from './styles'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 interface ISignInRequest {
   email: string | undefined
   password: string | undefined
 }
 
-async function signInUser({ email, password }: ISignInRequest) {
-  try {
+export function SignInForm() {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    // formState: { errors },
+  } = useForm<ISignInRequest>()
+  const handleSignInUserSubmit: SubmitHandler<ISignInRequest> = (
+    signInInputs,
+  ) => {
+    signInUser(signInInputs)
+  }
+
+  const LoginUser = useMutation(async ({ email, password }: ISignInRequest) => {
     const response = await api.post(`/users/login`, {
       headers,
       email,
@@ -21,53 +34,41 @@ async function signInUser({ email, password }: ISignInRequest) {
 
     console.log(data)
 
-    return data
-  } catch (error: any) {
-    console.log(error.response.data)
-    throw new Error(error as string)
+    return response
+  })
+
+  const signInUser = (inputs: ISignInRequest) => {
+    LoginUser.mutate(inputs, { onSuccess: () => reset() })
   }
-}
 
-export function SignInForm() {
-  const [email, setEmailInput] = useState('')
-  const [password, setPasswordInput] = useState('')
+  // const navigate = useNavigate()
 
-  const navigate = useNavigate()
+  //   try {
+  //     const { data, status } = await signInUser({ email, password })
 
-  const handleSubmit = async (e: SyntheticEvent) => {
-    e.preventDefault()
+  //     console.log('response: ', data)
 
-    try {
-      const { data, status } = await signInUser({ email, password })
+  //     if (data.sessionId) {
+  //       console.log('Success:', data.message)
 
-      console.log('response: ', data)
-
-      if (data.sessionId) {
-        console.log('Success:', data.message)
-
-        localStorage.setItem('sessionId', data.sessionId)
-        return navigate('/dashboard')
-      } else if (status === 401) {
-        console.log('Email or password is incorrect')
-      } else if (status === 422) {
-        console.log('User does not exist')
-      }
-    } catch (error: unknown) {
-      console.log(error)
-      throw new Error(error as string)
-    }
-  }
+  //       localStorage.setItem('sessionId', data.sessionId)
+  //       return navigate('/dashboard')
+  //     } else if (status === 401) {
+  //       console.log('Email or password is incorrect')
+  //     } else if (status === 422) {
+  //       console.log('User does not exist')
+  //     }
+  //   } catch (error: unknown) {
+  //     console.log(error)
+  //     throw new Error(error as string)
+  //   }
+  // }
 
   return (
-    <LoginForm onSubmit={handleSubmit}>
+    <LoginForm onSubmit={handleSubmit(handleSignInUserSubmit)}>
       <FieldContainer>
         <label htmlFor="email">Email</label>
-        <input
-          required
-          id="email"
-          name="email"
-          onChange={(e) => setEmailInput(e.target.value)}
-        />
+        <input required id="email" {...register('email')} name="email" />
       </FieldContainer>
 
       <FieldContainer>
@@ -75,9 +76,9 @@ export function SignInForm() {
         <input
           required
           id="password"
+          {...register('password')}
           name="password"
           type="password"
-          onChange={(e) => setPasswordInput(e.target.value)}
         />
       </FieldContainer>
 
