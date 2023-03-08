@@ -26,7 +26,7 @@ export function Dashboard() {
                 <div>ID: {item.id}</div>
                 <div>Username: {item.username}</div>
                 <div>Email: {item.email}</div>
-                <div>Created at: {item.createdAt}</div>
+                <div>Created at: {item.created_at}</div>
               </li>
             ))}
           </ul>

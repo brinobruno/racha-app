@@ -7,10 +7,10 @@ interface UsersDataResponse {
   id: string
   username: string
   email: string
-  created_at: Date
+  created_at: string
 }
 
-async function getUsers() {
+async function getUsers(): Promise<UsersDataResponse[]> {
   const response = await api.get(`/users/`, {
     headers,
   })
@@ -22,7 +22,7 @@ async function getUsers() {
       id: user.id,
       username: user.username,
       email: user.email,
-      createdAt: new Date(user.created_at).toLocaleDateString('pt-BR', {
+      created_at: new Date(user.created_at).toLocaleDateString('pt-BR', {
         day: '2-digit',
         month: 'long',
         year: 'numeric',
@@ -34,7 +34,7 @@ async function getUsers() {
 }
 
 export function useUsers() {
-  return useQuery<UsersDataResponse[]>('users', getUsers, {
+  return useQuery('users', getUsers, {
     staleTime: 1000 * 5, // WIll be fresh for 5 seconds (!obsolete)
   })
 }
