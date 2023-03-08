@@ -19,9 +19,9 @@ export function Dashboard() {
         {isLoading && <span>Loading...</span>}
         {typeof error === 'string' && <span>{error}</span>}
 
-        <ul>
-          {data &&
-            data.map((item: any) => (
+        {data && (
+          <ul>
+            {data.map((item: any) => (
               <li key={item.id}>
                 <div>ID: {item.id}</div>
                 <div>Username: {item.username}</div>
@@ -29,7 +29,8 @@ export function Dashboard() {
                 <div>Created at: {item.createdAt}</div>
               </li>
             ))}
-        </ul>
+          </ul>
+        )}
       </div>
 
       <ToastContainer
