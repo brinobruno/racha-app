@@ -21,12 +21,12 @@ export function Dashboard() {
 
         {data && (
           <ul>
-            {data.map((item: any) => (
-              <li key={item.id}>
-                <div>ID: {item.id}</div>
-                <div>Username: {item.username}</div>
-                <div>Email: {item.email}</div>
-                <div>Created at: {item.created_at}</div>
+            {data.map((user) => (
+              <li key={user.id}>
+                <div>ID: {user.id}</div>
+                <div>Username: {user.username}</div>
+                <div>Email: {user.email}</div>
+                <div>Created at: {user.created_at}</div>
               </li>
             ))}
           </ul>
