@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, LoginForm } from './styles'
+import { AxiosError } from 'axios'
 // import { useNavigate } from 'react-router-dom'
 
 interface ISignUpRequest {
@@ -16,6 +17,7 @@ export function SignUpForm() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<ISignUpRequest>()
   const handleSignUpUserSubmit: SubmitHandler<ISignUpRequest> = (
@@ -43,8 +45,12 @@ export function SignUpForm() {
   )
 
   const signUpUser = (inputs: ISignUpRequest) => {
-    createUser.mutate(inputs)
+    createUser.mutate(inputs, { onSuccess: () => reset() })
   }
+
+  let createUserError
+  if (createUser.error instanceof AxiosError)
+    createUserError = createUser.error.response?.data.error
 
   return (
     <LoginForm onSubmit={handleSubmit(handleSignUpUserSubmit)}>
@@ -81,6 +87,9 @@ export function SignUpForm() {
       <button disabled={createUser.isLoading} type="submit">
         Entrar
       </button>
+
+      {createUser.isLoading && <span>Loading...</span>}
+      {createUserError && <span>{createUserError}</span>}
     </LoginForm>
   )
 }
