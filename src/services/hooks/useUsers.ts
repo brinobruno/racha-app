@@ -3,7 +3,7 @@ import { useQuery } from 'react-query'
 import { headers } from '../../Constants'
 import { api } from '../api'
 
-interface useUsersDataResponse {
+interface UsersDataResponse {
   id: string
   username: string
   email: string
@@ -20,7 +20,7 @@ export function useUsers() {
 
       const data = response.data
 
-      const users = data.users.map((user: useUsersDataResponse) => {
+      const users = data.users.map((user: UsersDataResponse) => {
         return {
           id: user.id,
           username: user.username,
