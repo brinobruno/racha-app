@@ -8,4 +8,5 @@
 - [X] Add React Hook Form
 - [ ] Add zod
 - [ ] Add JWT authentication
+- [ ] Add Unit testing
 - [ ] Add global loading component
