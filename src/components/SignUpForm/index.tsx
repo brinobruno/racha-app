@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
-import { FieldContainer, LoginForm } from './styles'
+import { FieldContainer, Form } from './styles'
 import { AxiosError } from 'axios'
 // import { useNavigate } from 'react-router-dom'
 
@@ -53,7 +53,7 @@ export function SignUpForm() {
     createUserError = createUser.error.response?.data.error
 
   return (
-    <LoginForm onSubmit={handleSubmit(handleSignUpUserSubmit)}>
+    <Form onSubmit={handleSubmit(handleSignUpUserSubmit)}>
       <FieldContainer>
         <label htmlFor="username">Apelido</label>
         <input
@@ -90,6 +90,6 @@ export function SignUpForm() {
 
       {createUser.isLoading && <span>Loading...</span>}
       {createUserError && <span>{createUserError}</span>}
-    </LoginForm>
+    </Form>
   )
 }
