@@ -1,7 +1,32 @@
 import { SyntheticEvent, useState } from 'react'
-import { signInUser } from '../../services/signInUser'
-import { Container, FieldContainer, SignInForm } from './styles'
 import { NavLink } from 'react-router-dom'
+
+import { Container, FieldContainer, SignInForm } from './styles'
+import { api } from '../../services/api'
+import { headers } from '../../Constants'
+
+interface ISignInRequest {
+  email: string | undefined
+  password: string | undefined
+}
+
+async function signInUser({ email, password }: ISignInRequest) {
+  try {
+    const response = await api.post(`/users/login`, {
+      headers,
+      email,
+      password,
+    })
+    const data = response
+
+    console.log(data)
+
+    return data
+  } catch (error: any) {
+    console.log(error.response.data)
+    throw new Error(error as string)
+  }
+}
 
 export function Signin() {
   const [email, setEmailInput] = useState('')
@@ -11,21 +36,18 @@ export function Signin() {
     e.preventDefault()
 
     try {
-      const response = await signInUser({
-        email,
-        password,
-      })
+      const { data, status } = await signInUser({ email, password })
 
-      console.log(response)
+      console.log('response: ', data)
 
-      if (response.sessionId) {
-        console.log('Success:', response.message)
+      if (data.sessionId) {
+        console.log('Success:', data.message)
 
-        localStorage.setItem('sessionId', response.sessionId)
+        localStorage.setItem('sessionId', data.sessionId)
         window.location.href = '/dashboard'
-      } else if (response.status === 401) {
+      } else if (status === 401) {
         console.log('Email or password is incorrect')
-      } else if (response.status === 422) {
+      } else if (status === 422) {
         console.log('User does not exist')
       }
     } catch (error: unknown) {
