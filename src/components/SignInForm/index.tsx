@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
-import { FieldContainer, LoginForm } from './styles'
+import { FieldContainer, Form } from './styles'
 // import { useNavigate } from 'react-router-dom'
 
 interface ISignInRequest {
@@ -65,7 +65,7 @@ export function SignInForm() {
   // }
 
   return (
-    <LoginForm onSubmit={handleSubmit(handleSignInUserSubmit)}>
+    <Form onSubmit={handleSubmit(handleSignInUserSubmit)}>
       <FieldContainer>
         <label htmlFor="email">Email</label>
         <input required id="email" {...register('email')} name="email" />
@@ -83,6 +83,6 @@ export function SignInForm() {
       </FieldContainer>
 
       <button type="submit">Entrar</button>
-    </LoginForm>
+    </Form>
   )
 }
