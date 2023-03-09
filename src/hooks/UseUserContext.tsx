@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { IUser, UserContext } from '../contexts/UserContext'
 
-export const UseUsersContext = () => {
+export const UseUserContext = () => {
   const { user, setUser } = useContext(UserContext)
 
   function addUser({ id, username, email }: IUser) {

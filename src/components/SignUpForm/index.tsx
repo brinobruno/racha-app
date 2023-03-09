@@ -5,7 +5,7 @@ import { AxiosError } from 'axios'
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, Form } from './styles'
-import { UseUsersContext } from '../../hooks/UseUsersContext'
+import { UseUserContext } from '../../hooks/UseUserContext'
 
 // import { useNavigate } from 'react-router-dom'
 
@@ -17,7 +17,7 @@ interface ISignUpRequest {
 
 export function SignUpForm() {
   // const navigate = useNavigate()
-  const { addUser, getUser } = UseUsersContext()
+  const { addUser, getUser } = UseUserContext()
 
   const {
     register,
