@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, Form } from './styles'
+import { AxiosError } from 'axios'
 // import { useNavigate } from 'react-router-dom'
 
 interface ISignInRequest {
@@ -16,7 +17,7 @@ export function SignInForm() {
     register,
     handleSubmit,
     reset,
-    // formState: { errors },
+    formState: { errors },
   } = useForm<ISignInRequest>()
   const handleSignInUserSubmit: SubmitHandler<ISignInRequest> = (
     signInInputs,
@@ -30,38 +31,38 @@ export function SignInForm() {
       email,
       password,
     })
-    const data = response
+    const data = response.data
 
     console.log(data)
 
-    return response
+    localStorage.setItem('sessionId', data.sessionId)
+    // return navigate('/dashboard')
   })
 
   const signInUser = (inputs: ISignInRequest) => {
     LoginUser.mutate(inputs, { onSuccess: () => reset() })
   }
 
+  let loginUserError
+  if (LoginUser.error instanceof AxiosError)
+    loginUserError = LoginUser.error.response?.data.error
+
   // const navigate = useNavigate()
 
-  //   try {
-  //     const { data, status } = await signInUser({ email, password })
+  // try {
+  //   if (response.data.sessionId) {
+  //     console.log('Success:', data.message)
 
-  //     console.log('response: ', data)
-
-  //     if (data.sessionId) {
-  //       console.log('Success:', data.message)
-
-  //       localStorage.setItem('sessionId', data.sessionId)
-  //       return navigate('/dashboard')
-  //     } else if (status === 401) {
-  //       console.log('Email or password is incorrect')
-  //     } else if (status === 422) {
-  //       console.log('User does not exist')
-  //     }
-  //   } catch (error: unknown) {
-  //     console.log(error)
-  //     throw new Error(error as string)
+  //     localStorage.setItem('sessionId', data.sessionId)
+  //     return navigate('/dashboard')
+  //   } else if (status === 401) {
+  //     console.log('Email or password is incorrect')
+  //   } else if (status === 422) {
+  //     console.log('User does not exist')
   //   }
+  // } catch (error: unknown) {
+  //   console.log(error)
+  //   throw new Error(error as string)
   // }
 
   return (
@@ -82,7 +83,13 @@ export function SignInForm() {
         />
       </FieldContainer>
 
+      {errors?.email && <span>{errors.email.message}</span>}
+      {errors?.password && <span>{errors.password.message}</span>}
+
       <button type="submit">Entrar</button>
+
+      {LoginUser.isLoading && <span>Loading...</span>}
+      {loginUserError && <span>{loginUserError}</span>}
     </Form>
   )
 }
