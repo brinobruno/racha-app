@@ -13,6 +13,8 @@ interface ISignInRequest {
 }
 
 export function SignInForm() {
+  // const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -46,24 +48,6 @@ export function SignInForm() {
   let loginUserError
   if (LoginUser.error instanceof AxiosError)
     loginUserError = LoginUser.error.response?.data.error
-
-  // const navigate = useNavigate()
-
-  // try {
-  //   if (response.data.sessionId) {
-  //     console.log('Success:', data.message)
-
-  //     localStorage.setItem('sessionId', data.sessionId)
-  //     return navigate('/dashboard')
-  //   } else if (status === 401) {
-  //     console.log('Email or password is incorrect')
-  //   } else if (status === 422) {
-  //     console.log('User does not exist')
-  //   }
-  // } catch (error: unknown) {
-  //   console.log(error)
-  //   throw new Error(error as string)
-  // }
 
   return (
     <Form onSubmit={handleSubmit(handleSignInUserSubmit)}>
