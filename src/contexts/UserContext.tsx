@@ -26,7 +26,7 @@ export const UserContext = createContext<IUserContext>({
   setUser: () => {},
 })
 
-export const ProductsInCartProvider = ({ children }: IUserProviderProps) => {
+export const UserContextProvider = ({ children }: IUserProviderProps) => {
   const [user, setUser] = useState<IUser | null>(null)
 
   return (
