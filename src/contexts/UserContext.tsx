@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react'
 
-interface IUser {
+export interface IUser {
   id: string
   username: string
   email: string
