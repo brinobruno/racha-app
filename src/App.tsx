@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from 'react-query/devtools'
 
 import { Router } from './Routes'
 import { GlobalStyle } from './styles/global'
+import { UserContextProvider } from './contexts/UserContext'
 import { ThemeContextProvider } from './contexts/ThemeContext'
 
 const queryClient = new QueryClient()
@@ -13,10 +14,12 @@ export function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-          <ThemeContextProvider>
-            <Router />
-            <GlobalStyle />
-          </ThemeContextProvider>
+          <UserContextProvider>
+            <ThemeContextProvider>
+              <Router />
+              <GlobalStyle />
+            </ThemeContextProvider>
+          </UserContextProvider>
         </BrowserRouter>
 
         <ReactQueryDevtools />
