@@ -14,6 +14,8 @@ interface ISignUpRequest {
 }
 
 export function SignUpForm() {
+  // const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -25,8 +27,6 @@ export function SignUpForm() {
   ) => {
     signUpUser(signUpInputs)
   }
-
-  // const navigate = useNavigate()
 
   const createUser = useMutation(
     async ({ username, email, password }: ISignUpRequest) => {
