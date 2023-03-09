@@ -8,8 +8,8 @@ import { AxiosError } from 'axios'
 // import { useNavigate } from 'react-router-dom'
 
 interface ISignInRequest {
-  email: string | undefined
-  password: string | undefined
+  email: string
+  password: string
 }
 
 export function SignInForm() {
