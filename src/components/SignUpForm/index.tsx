@@ -1,10 +1,11 @@
 import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { AxiosError } from 'axios'
 
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, Form } from './styles'
-import { AxiosError } from 'axios'
+
 // import { useNavigate } from 'react-router-dom'
 
 interface ISignUpRequest {
