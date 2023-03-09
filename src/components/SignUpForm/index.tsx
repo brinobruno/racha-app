@@ -5,6 +5,7 @@ import { AxiosError } from 'axios'
 import { api } from '../../services/api'
 import { headers } from '../../Constants'
 import { FieldContainer, Form } from './styles'
+import { UseUsersContext } from '../../hooks/UseUsersContext'
 
 // import { useNavigate } from 'react-router-dom'
 
@@ -16,6 +17,7 @@ interface ISignUpRequest {
 
 export function SignUpForm() {
   // const navigate = useNavigate()
+  const { addUser, getUser } = UseUsersContext()
 
   const {
     register,
@@ -37,16 +39,27 @@ export function SignUpForm() {
         email,
         password,
       })
-      const data = response
+      const data = response.data
 
       console.log(data)
 
-      return response
+      return data
     },
   )
 
   const signUpUser = (inputs: ISignUpRequest) => {
-    createUser.mutate(inputs, { onSuccess: () => reset() })
+    createUser.mutate(inputs, {
+      onSuccess: async () => {
+        const id = await createUser.data.user.id
+        const username = inputs.username
+        const email = inputs.email
+
+        addUser({ id, username, email })
+        getUser()
+
+        reset()
+      },
+    })
   }
 
   let createUserError
