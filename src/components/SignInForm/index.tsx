@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 
 import { api } from '../../services/api'
-import { headers } from '../../Constants'
+import { USER_SESSION_STORAGE_KEY, headers } from '../../Constants'
 import { FieldContainer, Form } from './styles'
 
 // import { useNavigate } from 'react-router-dom'
@@ -38,7 +38,7 @@ export function SignInForm() {
 
     console.log(data)
 
-    localStorage.setItem('sessionId', data.sessionId)
+    localStorage.setItem(USER_SESSION_STORAGE_KEY, data.sessionId)
     // return navigate('/dashboard')
   })
 
