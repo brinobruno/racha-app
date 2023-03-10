@@ -9,6 +9,7 @@ import { ThemeProvider } from 'styled-components'
 
 import { defaultTheme } from '../styles/themes/default'
 import { lightTheme } from '../styles/themes/light'
+import { THEME_PREFERENCE_STORAGE_KEY } from '../Constants'
 
 interface IThemeContext {
   theme: string
@@ -28,12 +29,12 @@ export const ThemeContextProvider = ({
   children,
 }: IThemeContextProviderProps) => {
   const [theme, setTheme] = useState(() => {
-    const localTheme = localStorage.getItem('theme')
+    const localTheme = localStorage.getItem(THEME_PREFERENCE_STORAGE_KEY)
     return localTheme || 'light'
   })
 
   useEffect(() => {
-    localStorage.setItem('theme', theme)
+    localStorage.setItem(THEME_PREFERENCE_STORAGE_KEY, theme)
   }, [theme])
 
   const toggleTheme = () => {
