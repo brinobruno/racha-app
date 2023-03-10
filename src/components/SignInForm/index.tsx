@@ -6,7 +6,7 @@ import { api } from '../../services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 interface ISignInRequest {
   email: string
@@ -14,7 +14,7 @@ interface ISignInRequest {
 }
 
 export function SignInForm() {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const {
     register,
@@ -39,7 +39,8 @@ export function SignInForm() {
     console.log(data)
 
     localStorage.setItem(USER_SESSION_STORAGE_KEY, data.sessionId)
-    // return navigate('/dashboard')
+
+    return navigate('/dashboard')
   })
 
   const signInUser = (inputs: ISignInRequest) => {
