@@ -1,20 +1,11 @@
-import { useEffect } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import { Container } from './styles'
 import { SignUpForm } from '../../components/SignUpForm'
-import { USER_SESSION_STORAGE_KEY } from '../../Constants'
+import { useSession } from '../../hooks/useSession'
 
 export function SignUp() {
-  const navigate = useNavigate()
-
-  const sessionId = localStorage.getItem(USER_SESSION_STORAGE_KEY)
-
-  useEffect(() => {
-    if (sessionId) {
-      navigate('/dashboard')
-    }
-  })
+  useSession()
 
   return (
     <Container>
