@@ -7,7 +7,7 @@ import { headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 import { UseUserContext } from '../../hooks/UseUserContext'
 
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 interface ISignUpRequest {
   username: string
@@ -16,7 +16,7 @@ interface ISignUpRequest {
 }
 
 export function SignUpForm() {
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const { addUser, getUser } = UseUserContext()
 
   const {
@@ -58,6 +58,8 @@ export function SignUpForm() {
         getUser()
 
         reset()
+
+        navigate('/dashboard')
       },
     })
   }
