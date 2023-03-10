@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 
-import { headers } from '../../Constants'
+import { headers } from '../../constants'
 import { api } from '../api'
 
 interface UsersDataResponse {

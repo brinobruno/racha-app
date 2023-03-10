@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 
 import { api } from '../../services/api'
-import { USER_SESSION_STORAGE_KEY, headers } from '../../Constants'
+import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 
 // import { useNavigate } from 'react-router-dom'

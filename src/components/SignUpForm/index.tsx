@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 
 import { api } from '../../services/api'
-import { headers } from '../../Constants'
+import { headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 import { UseUserContext } from '../../hooks/UseUserContext'
 

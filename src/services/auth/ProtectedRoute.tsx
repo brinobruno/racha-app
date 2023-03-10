@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom'
-import { USER_SESSION_STORAGE_KEY } from '../../Constants'
+import { USER_SESSION_STORAGE_KEY } from '../../constants'
 
 export type ProtectedRouteProps = {
   isAuthenticated: boolean
