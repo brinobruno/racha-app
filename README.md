@@ -6,6 +6,7 @@
 - [ ] Finish designing card system
 - [X] Decide query service - probably React Query
 - [X] Add React Hook Form
+- [ ] Add user to global context
 - [ ] Add zod
 - [ ] Add Unit testing
 - [ ] Add global loading component
