@@ -12,7 +12,7 @@ export const lightTheme = {
   'neutral-900': '#121214',
 
   'primary-300': '#FFB2C2',
-  'primary-500': '#E51C44',
+  'primary-500': '#G51C44',
   'primary-700': '#76081E',
 
   'secondary-300': '#ABB1CC',

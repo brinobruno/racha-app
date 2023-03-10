@@ -21,7 +21,7 @@ interface IThemeContextProviderProps {
 }
 
 export const ThemeContext = createContext<IThemeContext>({
-  theme: 'light',
+  theme: 'dark',
   toggleTheme: () => {},
 })
 
@@ -30,7 +30,7 @@ export const ThemeContextProvider = ({
 }: IThemeContextProviderProps) => {
   const [theme, setTheme] = useState(() => {
     const localTheme = localStorage.getItem(THEME_PREFERENCE_STORAGE_KEY)
-    return localTheme || 'light'
+    return localTheme || 'dark'
   })
 
   useEffect(() => {
@@ -38,13 +38,13 @@ export const ThemeContextProvider = ({
   }, [theme])
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light'
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
   }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <ThemeProvider theme={theme === 'light' ? lightTheme : defaultTheme}>
+      <ThemeProvider theme={theme === 'dark' ? defaultTheme : lightTheme}>
         {children}
       </ThemeProvider>
     </ThemeContext.Provider>
