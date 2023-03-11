@@ -1,6 +1,8 @@
 import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import { api } from '../../services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
@@ -14,15 +16,32 @@ interface ISignInRequest {
   password: string
 }
 
+const signInFormValidationSchema = zod.object({
+  username: zod.string().min(2, 'Informe seu apelido'),
+  email: zod.string().email().min(2, 'Informe seu email'),
+  password: zod.string().min(7, 'Informe uma senha válida'),
+})
+
+export type SignInFormData = zod.infer<typeof signInFormValidationSchema>
+
 export function SignInForm() {
   const navigate = useNavigate()
+
+  const newSignInForm = useForm<SignInFormData>({
+    resolver: zodResolver(signInFormValidationSchema),
+    defaultValues: {
+      username: '',
+      email: '',
+      password: '',
+    },
+  })
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ISignInRequest>()
+  } = newSignInForm
   const handleSignInUserSubmit: SubmitHandler<ISignInRequest> = (
     signInInputs,
   ) => {
