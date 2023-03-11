@@ -7,6 +7,7 @@ import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 
 import { useNavigate } from 'react-router-dom'
+import { setCookie } from 'typescript-cookie'
 
 interface ISignInRequest {
   email: string
@@ -38,7 +39,13 @@ export function SignInForm() {
 
     console.log(data)
 
-    localStorage.setItem(USER_SESSION_STORAGE_KEY, data.sessionId)
+    setCookie(USER_SESSION_STORAGE_KEY, data.sessionId, {
+      expires: 60,
+      path: '/',
+      sameSite: 'Strict',
+      // secure: true,
+      // domain: 'subdomain.site.com
+    })
 
     return navigate('/dashboard')
   })

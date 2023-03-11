@@ -3,11 +3,12 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 
 import { api } from '../../services/api'
-import { headers } from '../../constants'
+import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 import { UseUserContext } from '../../hooks/UseUserContext'
 
 import { useNavigate } from 'react-router-dom'
+import { setCookie } from 'typescript-cookie'
 
 interface ISignUpRequest {
   username: string
@@ -43,6 +44,16 @@ export function SignUpForm() {
 
       console.log(data)
 
+      setCookie(USER_SESSION_STORAGE_KEY, data.sessionId, {
+        expires: 60,
+        path: '/',
+        sameSite: 'Strict',
+        // secure: true,
+        // domain: 'subdomain.site.com
+      })
+
+      navigate('/dashboard')
+
       return data
     },
   )
@@ -58,8 +69,6 @@ export function SignUpForm() {
         getUser()
 
         reset()
-
-        navigate('/dashboard')
       },
     })
   }
