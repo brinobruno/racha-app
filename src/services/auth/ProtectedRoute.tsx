@@ -1,4 +1,6 @@
 import { Navigate } from 'react-router-dom'
+import { getCookie } from 'typescript-cookie'
+
 import { USER_SESSION_STORAGE_KEY } from '../../constants'
 
 export type ProtectedRouteProps = {
@@ -20,7 +22,7 @@ export default function ProtectedRoute({
   }
 }
 
-const sessionId = localStorage.getItem(USER_SESSION_STORAGE_KEY)
+const sessionId = getCookie(USER_SESSION_STORAGE_KEY)
 
 export const defaultProtectedRouteProps: Omit<ProtectedRouteProps, 'outlet'> = {
   isAuthenticated: !!sessionId,
