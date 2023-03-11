@@ -63,13 +63,13 @@ export function SignUpForm() {
 
       console.log(data)
 
-      setCookie(USER_SESSION_STORAGE_KEY, data.sessionId, {
-        expires: 60,
-        path: '/',
-        sameSite: 'Strict',
-        // secure: true,
-        // domain: 'subdomain.site.com
-      })
+      // setCookie(USER_SESSION_STORAGE_KEY, data.sessionId, {
+      //   expires: 60,
+      //   path: '/',
+      //   sameSite: 'Strict',
+      //   // secure: true,
+      //   // domain: 'subdomain.site.com
+      // })
 
       navigate('/dashboard')
 
