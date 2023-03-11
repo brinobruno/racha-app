@@ -10,7 +10,7 @@ import { FieldContainer, Form } from './styles'
 import { UseUserContext } from '../../hooks/UseUserContext'
 
 import { useNavigate } from 'react-router-dom'
-import { setCookie } from 'typescript-cookie'
+import Cookies from 'js-cookie'
 
 interface ISignUpRequest {
   username: string
@@ -63,15 +63,13 @@ export function SignUpForm() {
 
       console.log(data)
 
-      // setCookie(USER_SESSION_STORAGE_KEY, data.sessionId, {
-      //   expires: 60,
-      //   path: '/',
-      //   sameSite: 'Strict',
-      //   // secure: true,
-      //   // domain: 'subdomain.site.com
-      // })
-
-      navigate('/dashboard')
+      await new Promise((resolve) => {
+        Cookies.set(USER_SESSION_STORAGE_KEY, data.sessionId, {
+          expires: 60,
+          path: '',
+        })
+        setTimeout(resolve, 0) // wait for cookie to be fully set
+      })
 
       return data
     },
@@ -88,6 +86,8 @@ export function SignUpForm() {
         getUser()
 
         reset()
+
+        navigate('/dashboard')
       },
     })
   }
