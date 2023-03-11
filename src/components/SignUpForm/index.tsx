@@ -1,6 +1,8 @@
 import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 import { api } from '../../services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
@@ -16,16 +18,33 @@ interface ISignUpRequest {
   password: string
 }
 
+const signUpFormValidationSchema = zod.object({
+  username: zod.string().min(2, 'Informe seu apelido'),
+  email: zod.string().email().min(2, 'Informe seu email'),
+  password: zod.string().min(7, 'Informe uma senha válida'),
+})
+
+export type SignUpFormData = zod.infer<typeof signUpFormValidationSchema>
+
 export function SignUpForm() {
   const navigate = useNavigate()
   const { addUser, getUser } = UseUserContext()
+
+  const newSignUpForm = useForm<SignUpFormData>({
+    resolver: zodResolver(signUpFormValidationSchema),
+    defaultValues: {
+      username: '',
+      email: '',
+      password: '',
+    },
+  })
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ISignUpRequest>()
+  } = newSignUpForm
   const handleSignUpUserSubmit: SubmitHandler<ISignUpRequest> = (
     signUpInputs,
   ) => {
