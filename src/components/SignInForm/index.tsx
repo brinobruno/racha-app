@@ -10,7 +10,7 @@ import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
 import { FieldContainer, Form } from './styles'
 
 import { useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie'
+import { setCookie } from 'typescript-cookie'
 // import { useSession } from '../../hooks/useSession'
 
 interface ISignInRequest {
@@ -40,7 +40,7 @@ export function SignInForm() {
   })
 
   async function addCookie(sessionId: string) {
-    return Cookies.set(USER_SESSION_STORAGE_KEY, sessionId, {
+    return setCookie(USER_SESSION_STORAGE_KEY, sessionId, {
       expires: 60,
       path: '',
     })
