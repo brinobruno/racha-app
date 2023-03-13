@@ -11,6 +11,7 @@ import { FieldContainer, Form } from './styles'
 
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
+// import { useSession } from '../../hooks/useSession'
 
 interface ISignInRequest {
   email: string
@@ -25,6 +26,8 @@ const signInFormValidationSchema = zod.object({
 export type SignInFormData = zod.infer<typeof signInFormValidationSchema>
 
 export function SignInForm() {
+  // useSession()
+
   const navigate = useNavigate()
   const { addUser, getUser } = UseUserContext()
 
@@ -35,6 +38,13 @@ export function SignInForm() {
       password: '',
     },
   })
+
+  async function addCookie(sessionId: string) {
+    return Cookies.set(USER_SESSION_STORAGE_KEY, sessionId, {
+      expires: 60,
+      path: '',
+    })
+  }
 
   const {
     register,
@@ -58,32 +68,19 @@ export function SignInForm() {
 
     console.log(data)
 
-    await new Promise((resolve) => {
-      Cookies.set(USER_SESSION_STORAGE_KEY, data.sessionId, {
-        expires: 60,
-        path: '',
-      })
-      setTimeout(resolve, 0) // wait for cookie to be fully set
-    })
+    // const id = await data.data.user.id
 
-    return data
+    await addCookie(data.sessionId)
+
+    // FIX LATER on api
+    addUser({ id: 'temp', username: 'temp', email })
+    getUser()
+
+    return navigate('/dashboard')
   })
 
   const signInUser = (inputs: ISignInRequest) => {
-    loginUser.mutate(inputs, {
-      onSuccess: async () => {
-        const id = await loginUser.data.user.id
-        const email = inputs.email
-
-        // FIX LATER on api
-        addUser({ id, username: 'temp', email })
-        getUser()
-
-        reset()
-
-        navigate('/dashboard')
-      },
-    })
+    loginUser.mutate(inputs, { onSuccess: () => reset() })
   }
 
   let loginUserError
