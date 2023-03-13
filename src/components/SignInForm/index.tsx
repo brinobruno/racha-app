@@ -11,7 +11,7 @@ import { FieldContainer, Form } from './styles'
 
 import { useNavigate } from 'react-router-dom'
 import { addCookie } from './../../services/auth/addCookie'
-// import { useSession } from '../../hooks/useSession'
+import { useSession } from '../../hooks/useSession'
 
 interface ISignInRequest {
   email: string
@@ -26,7 +26,7 @@ const signInFormValidationSchema = zod.object({
 export type SignInFormData = zod.infer<typeof signInFormValidationSchema>
 
 export function SignInForm() {
-  // useSession()
+  useSession()
 
   const navigate = useNavigate()
   const { addUser, getUser } = UseUserContext()
