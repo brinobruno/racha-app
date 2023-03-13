@@ -6,9 +6,7 @@ import { AuthLayout } from './layouts/auth/AuthLayout'
 import { Signin } from './pages/Signin'
 import { SignUp } from './pages/Signup'
 import { Dashboard } from './pages/Dashboard'
-import ProtectedRoute, {
-  defaultProtectedRouteProps,
-} from './services/auth/ProtectedRoute'
+import ProtectedRoute from './services/auth/ProtectedRoute'
 
 export function Router() {
   return (
@@ -24,7 +22,7 @@ export function Router() {
           path="dashboard"
           element={
             <ProtectedRoute
-              {...defaultProtectedRouteProps}
+              authenticationPath="/signin"
               outlet={<Dashboard />}
             />
           }
