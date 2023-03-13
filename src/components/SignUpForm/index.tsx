@@ -64,24 +64,17 @@ export function SignUpForm() {
 
       await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
 
-      return data
+      // FIX LATER on api
+      addUser({ id: 'temp', username: 'temp', email })
+      getUser()
+
+      return navigate('/dashboard')
     },
   )
 
   const signUpUser = (inputs: ISignUpRequest) => {
     createUser.mutate(inputs, {
-      onSuccess: async () => {
-        const id = await createUser.data.user.id
-        const username = inputs.username
-        const email = inputs.email
-
-        addUser({ id, username, email })
-        getUser()
-
-        reset()
-
-        navigate('/dashboard')
-      },
+      onSuccess: () => reset(),
     })
   }
 
