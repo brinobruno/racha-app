@@ -73,9 +73,7 @@ export function SignUpForm() {
   )
 
   const signUpUser = (inputs: ISignUpRequest) => {
-    createUser.mutate(inputs, {
-      onSuccess: () => reset(),
-    })
+    createUser.mutate(inputs, { onSuccess: () => reset() })
   }
 
   let createUserError
