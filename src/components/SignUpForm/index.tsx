@@ -10,7 +10,7 @@ import { FieldContainer, Form } from './styles'
 import { UseUserContext } from '../../hooks/UseUserContext'
 
 import { useNavigate } from 'react-router-dom'
-import Cookies from 'js-cookie'
+import { addCookie } from '../../services/auth/addCookie'
 
 interface ISignUpRequest {
   username: string
@@ -63,13 +63,7 @@ export function SignUpForm() {
 
       console.log(data)
 
-      await new Promise((resolve) => {
-        Cookies.set(USER_SESSION_STORAGE_KEY, data.sessionId, {
-          expires: 60,
-          path: '',
-        })
-        setTimeout(resolve, 0) // wait for cookie to be fully set
-      })
+      await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
 
       return data
     },
