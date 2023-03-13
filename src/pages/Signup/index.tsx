@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 
 import { Container } from './styles'
 import { SignUpForm } from '../../components/SignUpForm'
-import { useSession } from '../../hooks/useSession'
+// import { useSession } from '../../hooks/useSession'
 
 export function SignUp() {
-  useSession()
+  // useSession()
 
   return (
     <Container>
