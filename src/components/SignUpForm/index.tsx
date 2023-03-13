@@ -1,16 +1,15 @@
+import * as zod from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
-import * as zod from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { useNavigate } from 'react-router-dom'
 
 import { api } from '../../services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
-import { FieldContainer, Form } from './styles'
 import { UseUserContext } from '../../hooks/UseUserContext'
-
-import { useNavigate } from 'react-router-dom'
 import { addCookie } from '../../services/auth/addCookie'
+import { FieldContainer, Form } from './styles'
 
 interface ISignUpRequest {
   username: string
