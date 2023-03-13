@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 
 import { Container } from './styles'
 import { SignInForm } from '../../components/SignInForm'
-import { useSession } from '../../hooks/useSession'
+// import { useSession } from '../../hooks/useSession'
 
 export function Signin() {
-  useSession()
+  // useSession()
 
   return (
     <Container>
