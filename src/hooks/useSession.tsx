@@ -13,5 +13,5 @@ export function useSession() {
     if (sessionId) {
       navigate('/dashboard')
     }
-  }, [navigate])
+  })
 }
