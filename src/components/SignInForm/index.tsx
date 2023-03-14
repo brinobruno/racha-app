@@ -57,6 +57,8 @@ export function SignInForm() {
 
     console.log(data)
 
+    await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
+
     return data
   })
 
@@ -64,10 +66,6 @@ export function SignInForm() {
     loginUser.mutate(inputs, {
       onSuccess: async () => {
         reset()
-
-        const sessionId = loginUser.data.sessionId
-
-        await addCookie(USER_SESSION_STORAGE_KEY, sessionId)
 
         await addUser({
           id: loginUser.data.user.id,
