@@ -64,6 +64,12 @@ export function SignUpForm() {
 
       await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
 
+      await addUser({
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email,
+      })
+
       return data
     },
   )
@@ -72,12 +78,6 @@ export function SignUpForm() {
     createUser.mutate(inputs, {
       onSuccess: async () => {
         reset()
-
-        await addUser({
-          id: createUser.data.user.id,
-          username: createUser.data.user.username,
-          email: createUser.data.user.email,
-        })
 
         return navigate('/dashboard')
       },

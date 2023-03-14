@@ -59,6 +59,12 @@ export function SignInForm() {
 
     await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
 
+    await addUser({
+      id: data.user.id,
+      username: undefined,
+      email: data.user.email,
+    })
+
     return data
   })
 
@@ -66,12 +72,6 @@ export function SignInForm() {
     loginUser.mutate(inputs, {
       onSuccess: async () => {
         reset()
-
-        await addUser({
-          id: loginUser.data.user.id,
-          username: undefined,
-          email: loginUser.data.user.email,
-        })
 
         return navigate('/dashboard')
       },
