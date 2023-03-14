@@ -8,7 +8,7 @@ import {
 
 export interface IUser {
   id: string
-  username: string
+  username: string | undefined
   email: string
 }
 
