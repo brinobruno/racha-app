@@ -25,7 +25,7 @@ export type SignInFormData = zod.infer<typeof signInFormValidationSchema>
 
 export function SignInForm() {
   const navigate = useNavigate()
-  const { addUser, getUser } = UseUserContext()
+  const { addUser } = UseUserContext()
 
   const newSignInForm = useForm<SignInFormData>({
     resolver: zodResolver(signInFormValidationSchema),
@@ -57,19 +57,27 @@ export function SignInForm() {
 
     console.log(data)
 
-    // const id = await data.data.user.id
-
-    await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
-
-    // FIX LATER on api
-    addUser({ id: 'temp', username: 'temp', email })
-    getUser()
-
-    return navigate('/dashboard')
+    return data
   })
 
   const signInUser = (inputs: ISignInRequest) => {
-    loginUser.mutate(inputs, { onSuccess: () => reset() })
+    loginUser.mutate(inputs, {
+      onSuccess: async () => {
+        reset()
+
+        const sessionId = loginUser.data.sessionId
+
+        await addCookie(USER_SESSION_STORAGE_KEY, sessionId)
+
+        await addUser({
+          id: loginUser.data.user.id,
+          username: undefined,
+          email: loginUser.data.user.email,
+        })
+
+        return navigate('/dashboard')
+      },
+    })
   }
 
   let loginUserError
