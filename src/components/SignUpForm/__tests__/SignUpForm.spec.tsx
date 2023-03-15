@@ -42,5 +42,7 @@ describe('SignUpForm', () => {
     fireEvent.input(passwordLabel, { target: { value: 'a' } })
 
     fireEvent.submit(screen.getByTestId('signup-submit'))
+
+    // Add error later
   })
 })
