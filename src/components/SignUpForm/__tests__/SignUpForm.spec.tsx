@@ -43,6 +43,20 @@ describe('SignUpForm', () => {
 
     fireEvent.submit(screen.getByTestId('signup-submit'))
 
-    // Add error later
+    // Add validation errors later
+  })
+
+  it('submits the form when input fields are valid', async () => {
+    const usernameLabel = screen.getByLabelText('Apelido')
+    const emailLabel = screen.getByLabelText('Email')
+    const passwordLabel = screen.getByLabelText('Password')
+
+    fireEvent.input(usernameLabel, { target: { value: 'a' } })
+    fireEvent.input(emailLabel, { target: { value: 'invalid_email' } })
+    fireEvent.input(passwordLabel, { target: { value: 'a' } })
+
+    fireEvent.submit(screen.getByTestId('signup-submit'))
+
+    // Add mock mutation later
   })
 })
