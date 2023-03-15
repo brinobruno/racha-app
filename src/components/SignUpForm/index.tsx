@@ -120,7 +120,11 @@ export function SignUpForm() {
       {errors?.email && <span>{errors.email.message}</span>}
       {errors?.password && <span>{errors.password.message}</span>}
 
-      <button disabled={createUser.isLoading} type="submit">
+      <button
+        data-testid="signup-submit"
+        disabled={createUser.isLoading}
+        type="submit"
+      >
         Entrar
       </button>
 
