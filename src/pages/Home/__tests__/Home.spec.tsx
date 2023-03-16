@@ -29,4 +29,12 @@ describe('Home', () => {
     const signUpLink = screen.getByRole('link', { name: /Criar conta/i })
     expect(signUpLink).toBeTruthy()
   })
+
+  it('displays the correct image', () => {
+    const imageElement = screen.getByAltText('Messi')
+    expect(imageElement).toBeTruthy()
+    expect(imageElement.getAttribute('src')).toEqual(
+      '/src/assets/desktop-cover.webp',
+    )
+  })
 })
