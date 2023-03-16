@@ -52,4 +52,19 @@ describe('Home', () => {
 
     expect(container.innerHTML).toMatch('Entrar')
   })
+
+  it('navigates to the sign up page when the Create account link is clicked', () => {
+    cleanup()
+
+    const { container } = render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
+
+    const signUpLink = screen.getByRole('link', { name: 'Criar conta' })
+    signUpLink.click()
+
+    expect(container.innerHTML).toMatch('Criar conta')
+  })
 })
