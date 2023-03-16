@@ -37,4 +37,19 @@ describe('Home', () => {
       '/src/assets/desktop-cover.webp',
     )
   })
+
+  it('navigates to the sign in page when the Signin button is clicked', () => {
+    cleanup()
+
+    const { container } = render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>,
+    )
+
+    const signInButton = screen.getByRole('button', { name: 'Entrar' })
+    signInButton.click()
+
+    expect(container.innerHTML).toMatch('Entrar')
+  })
 })
