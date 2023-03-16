@@ -8,7 +8,7 @@ export function Home() {
   return (
     <Container>
       <div>
-        <img src={Cover} alt="" />
+        <img src={Cover} alt="Messi" />
       </div>
 
       <div>
