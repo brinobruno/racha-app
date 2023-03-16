@@ -19,14 +19,14 @@ describe('Home', () => {
 
   it('renders the component without errors', () => {
     const titleElement = screen.getByText(
-      /Gerencie times para jogar com os amigos/i,
+      'Gerencie times para jogar com os amigos',
     )
     expect(titleElement).toBeTruthy()
 
-    const signInButton = screen.getByRole('button', { name: /Entrar/i })
+    const signInButton = screen.getByRole('button', { name: 'Entrar' })
     expect(signInButton).toBeTruthy()
 
-    const signUpLink = screen.getByRole('link', { name: /Criar conta/i })
+    const signUpLink = screen.getByRole('link', { name: 'Criar conta' })
     expect(signUpLink).toBeTruthy()
   })
 
