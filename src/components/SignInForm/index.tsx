@@ -61,7 +61,7 @@ export function SignInForm() {
 
     await addUser({
       id: data.user.id,
-      username: undefined,
+      username: data.user.username,
       email: data.user.email,
     })
 
