@@ -8,5 +8,6 @@
 - [X] Add React Hook Form
 - [X] Add user to global context
 - [X] Add zod
+- [X] Add global cookie notice/consent
 - [ ] Add Unit testing
 - [ ] Add global loading component
