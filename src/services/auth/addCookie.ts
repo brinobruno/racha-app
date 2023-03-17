@@ -5,5 +5,6 @@ export async function addCookie(key: string, value: string) {
     expires: 90,
     path: '',
     sameSite: 'Strict',
+    // secure: true,
   })
 }
