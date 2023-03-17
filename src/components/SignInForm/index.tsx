@@ -59,7 +59,7 @@ export function SignInForm() {
 
     await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
 
-    await addUser({
+    addUser({
       id: data.user.id,
       username: data.user.username,
       email: data.user.email,
