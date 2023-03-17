@@ -5,8 +5,9 @@ import { DefaultLayout } from './layouts/default/DefaultLayout'
 import { AuthLayout } from './layouts/auth/AuthLayout'
 import { Signin } from './pages/Signin'
 import { SignUp } from './pages/Signup'
-import { Dashboard } from './pages/Dashboard'
 import ProtectedRoute from './services/auth/ProtectedRoute'
+import { Dashboard } from './pages/Dashboard'
+import { UserAccount } from './pages/UserAccount'
 
 export function Router() {
   return (
@@ -24,6 +25,16 @@ export function Router() {
             <ProtectedRoute
               authenticationPath="/signin"
               outlet={<Dashboard />}
+            />
+          }
+        />
+
+        <Route
+          path="account"
+          element={
+            <ProtectedRoute
+              authenticationPath="/signin"
+              outlet={<UserAccount />}
             />
           }
         />
