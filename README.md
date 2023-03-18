@@ -12,3 +12,5 @@
 - [ ] Add Toasts messages - success signin/signup/etc.
 - [ ] Add Unit testing
 - [ ] Add global loading component
+
+- [ ] Page - Account page
