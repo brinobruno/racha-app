@@ -11,7 +11,7 @@ export const UseUserContext = () => {
   }
 
   function getUser() {
-    console.log(user)
+    return user
   }
 
   return {
