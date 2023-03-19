@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 // import { useUsers } from '../../services/hooks/useUsers'
 import { UseUserContext } from '../../hooks/UseUserContext'
 
@@ -6,9 +5,9 @@ export function UserAccount() {
   // const { data, isLoading, error } = useUsers()
   const { getUser } = UseUserContext()
 
-  useEffect(() => {
-    getUser()
-  })
+  const user = getUser()
+
+  console.log(user?.email)
 
   return (
     <section>
