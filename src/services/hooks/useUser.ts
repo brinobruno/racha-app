@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 
-import { headers } from '../../constants'
+import { USER_ID_STORAGE_KEY, headers } from '../../constants'
 import { api } from '../api'
 import { Cookies } from 'typescript-cookie'
 
@@ -18,7 +18,7 @@ interface UserDataResponse {
 }
 
 async function getUserData(): Promise<UserDataResponse> {
-  const userId = Cookies.get('userid')
+  const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
   const response = await api.get(`/users/${userId}`, {
     headers,
