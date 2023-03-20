@@ -1,7 +1,7 @@
 import { useContext } from 'react'
-import { IUser, UserContext } from '../contexts/UserContext'
-import { addCookie } from '../services/auth/addCookie'
-import { USER_ID_STORAGE_KEY } from '../constants'
+import { IUser, UserContext } from 'src/contexts/UserContext'
+import { addCookie } from 'src/services/auth/addCookie'
+import { USER_ID_STORAGE_KEY } from 'src/constants'
 
 export const UseUserContext = () => {
   const { user, setUser } = useContext(UserContext)
