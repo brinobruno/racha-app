@@ -11,6 +11,10 @@ export function UserAccount() {
     <section>
       <h1>Minha conta</h1>
 
+      <span>{user?.email}</span>
+      <br />
+      <span>{user?.username}</span>
+
       {isLoading ? <span>Loading</span> : ''}
       {error ? <span>Error</span> : ''}
     </section>
