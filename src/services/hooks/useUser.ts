@@ -8,8 +8,7 @@ import {
 import { api } from '../api'
 import { Cookies } from 'typescript-cookie'
 
-interface UserDataResponse {
-  user: UserDataResponse | undefined
+interface IUserData {
   active: boolean
   created_at: string
   deleted_at: string
@@ -19,6 +18,10 @@ interface UserDataResponse {
   session_id: string
   updated_at: string
   username: string
+}
+
+type UserDataResponse = {
+  user: IUserData | undefined
 }
 
 async function getUserData(): Promise<UserDataResponse> {
