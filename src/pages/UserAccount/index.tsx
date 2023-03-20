@@ -5,8 +5,6 @@ export function UserAccount() {
 
   const user = data && data.user
 
-  console.log(user)
-
   return (
     <section>
       <h1>Minha conta</h1>
