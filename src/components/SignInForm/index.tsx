@@ -103,7 +103,11 @@ export function SignInForm() {
       {errors?.email && <span>{errors.email.message}</span>}
       {errors?.password && <span>{errors.password.message}</span>}
 
-      <button disabled={loginUser.isLoading} type="submit">
+      <button
+        data-testid="signin-submit"
+        disabled={loginUser.isLoading}
+        type="submit"
+      >
         Entrar
       </button>
 
