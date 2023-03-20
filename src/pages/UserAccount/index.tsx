@@ -1,21 +1,18 @@
-// import { useUsers } from '../../services/hooks/useUsers'
-import { UseUserContext } from '../../hooks/UseUserContext'
+import { useUser } from '../../services/hooks/useUser'
 
 export function UserAccount() {
-  // const { data, isLoading, error } = useUsers()
-  const { getUser } = UseUserContext()
+  const { data, isLoading, error } = useUser()
 
-  const user = getUser()
+  const user = data && data.user
+
+  console.log(user)
 
   return (
     <section>
       <h1>Minha conta</h1>
 
-      <ul>
-        <li>{user?.id}</li>
-        <li>{user?.username}</li>
-        <li>{user?.email}</li>
-      </ul>
+      {isLoading ? <span>Loading</span> : ''}
+      {error ? <span>Error</span> : ''}
     </section>
   )
 }
