@@ -7,8 +7,6 @@ export function UserAccount() {
 
   const user = getUser()
 
-  console.log(user)
-
   return (
     <section>
       <h1>Minha conta</h1>
