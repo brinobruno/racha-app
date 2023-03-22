@@ -1,4 +1,4 @@
-import { useUser } from '../../services/hooks/useUser'
+import { useUser } from 'src/services/hooks/useUser'
 
 export function UserAccount() {
   const { data, isLoading, error } = useUser()

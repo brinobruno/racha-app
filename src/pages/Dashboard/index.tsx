@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
-import { useUsers } from '../../services/hooks/useUsers'
-import { UseUserContext } from '../../hooks/UseUserContext'
+import { useUsers } from 'src/services/hooks/useUsers'
+import { UseUserContext } from 'src/hooks/UseUserContext'
 
 export function Dashboard() {
   const { data, isLoading, error } = useUsers()

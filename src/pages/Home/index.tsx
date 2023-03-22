@@ -1,4 +1,4 @@
-import Cover from './../../assets/desktop-cover.webp'
+import Cover from 'src/assets/desktop-cover.webp'
 
 import 'react-toastify/dist/ReactToastify.css'
 import { Container, ContentContainer } from './styles'
