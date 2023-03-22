@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getCookie } from 'typescript-cookie'
 
-import { USER_SESSION_STORAGE_KEY } from '../constants'
+import { USER_SESSION_STORAGE_KEY } from 'src/constants'
 
 export function useSession() {
   const navigate = useNavigate()
