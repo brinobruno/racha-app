@@ -34,4 +34,10 @@ describe('Signin component', () => {
   it('should render the title', () => {
     expect(screen.getByText('Que bom te ver por aqui 👋')).toBeTruthy()
   })
+
+  it('should render the SignInForm', () => {
+    expect(screen.getByLabelText('Email')).toBeTruthy()
+    expect(screen.getByLabelText('Password')).toBeTruthy()
+    expect(screen.getByRole('button')).toBeTruthy()
+  })
 })
