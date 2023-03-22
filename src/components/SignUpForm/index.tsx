@@ -5,10 +5,10 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-import { api } from '../../services/api'
-import { USER_SESSION_STORAGE_KEY, headers } from '../../constants'
-import { UseUserContext } from '../../hooks/UseUserContext'
-import { addCookie } from '../../services/auth/addCookie'
+import { api } from 'src/services/api'
+import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
+import { UseUserContext } from 'src/hooks/UseUserContext'
+import { addCookie } from 'src/services/auth/addCookie'
 import { FieldContainer, Form } from './styles'
 
 interface ISignUpRequest {
