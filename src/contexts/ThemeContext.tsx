@@ -7,9 +7,9 @@ import {
 } from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import { defaultTheme } from '../styles/themes/default'
-import { lightTheme } from '../styles/themes/light'
-import { THEME_PREFERENCE_STORAGE_KEY } from '../constants'
+import { defaultTheme } from 'src/styles/themes/default'
+import { lightTheme } from 'src/styles/themes/light'
+import { THEME_PREFERENCE_STORAGE_KEY } from 'src/constants'
 
 interface IThemeContext {
   theme: string
