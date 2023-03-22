@@ -40,4 +40,11 @@ describe('Signin component', () => {
     expect(screen.getByLabelText('Password')).toBeTruthy()
     expect(screen.getByRole('button')).toBeTruthy()
   })
+
+  it('should render the create account link', () => {
+    expect(screen.getByText('Novo por aqui?')).toBeTruthy()
+
+    const signUpLink = screen.getByRole('link', { name: 'Criar conta' })
+    expect(signUpLink.getAttribute('href')).toEqual('/signup')
+  })
 })
