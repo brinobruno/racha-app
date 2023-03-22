@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom'
 import { getCookie } from 'typescript-cookie'
 
-import { USER_SESSION_STORAGE_KEY } from '../../constants'
+import { USER_SESSION_STORAGE_KEY } from 'src/constants'
 
 export type ProtectedRouteProps = {
   authenticationPath: string

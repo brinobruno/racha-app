@@ -1,12 +1,12 @@
 import { useQuery } from 'react-query'
+import { Cookies } from 'typescript-cookie'
 
+import { api } from 'src/services/api'
 import {
   USER_ID_STORAGE_KEY,
   USER_SESSION_STORAGE_KEY,
   headers,
-} from '../../constants'
-import { api } from '../api'
-import { Cookies } from 'typescript-cookie'
+} from 'src/constants'
 
 interface IUserData {
   active: boolean
