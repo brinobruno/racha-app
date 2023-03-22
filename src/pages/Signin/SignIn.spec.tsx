@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { cleanup, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 
 import { Signin } from './'
-import { QueryClient, QueryClientProvider } from 'react-query'
 
 describe('Signin component', () => {
   let queryClient: QueryClient
