@@ -47,4 +47,6 @@ describe('Signin component', () => {
     const signUpLink = screen.getByRole('link', { name: 'Criar conta' })
     expect(signUpLink.getAttribute('href')).toEqual('/signup')
   })
+
+  it.todo('should call useSession hook')
 })
