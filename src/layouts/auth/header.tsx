@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import logoWhite from './../../assets/logo-white.svg'
+import logoWhite from 'src/assets/logo-white.svg'
 
 export function Header() {
   return (
