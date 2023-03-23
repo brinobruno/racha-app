@@ -20,6 +20,7 @@ export const lightTheme = {
   'secondary-300': '#ABB1CC',
   'secondary-500': '#495BCC',
   'secondary-700': '#0A1033',
+  'secondary-accent': '#0e112a',
 
   'semantic-positive': '#04D361',
   'semantic-negative': '#FF5343',

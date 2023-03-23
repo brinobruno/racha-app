@@ -22,7 +22,7 @@ export const HeaderContainer = styled.header`
 
   height: 6rem;
 
-  background-color: #0e112a;
+  background-color: ${(props) => props.theme['secondary-accent']};
 
   position: sticky;
   top: 0;
@@ -77,5 +77,5 @@ export const ProfileOptions = styled.div`
   position: absolute;
   top: calc(100% + 1.5rem);
   width: 200px;
-  background-color: #0e112a;
+  background-color: ${(props) => props.theme['secondary-accent']};
 `
