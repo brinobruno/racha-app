@@ -22,6 +22,8 @@ export const HeaderContainer = styled.header`
 
   height: 6rem;
 
+  background-color: #0e112a;
+
   > div {
     width: 100%;
     max-width: 12.5rem;
