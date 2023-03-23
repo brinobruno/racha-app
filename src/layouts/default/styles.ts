@@ -16,16 +16,29 @@ export const LayoutContainer = styled.div`
 `
 
 export const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   height: 6rem;
 
   background-color: ${(props) => props.theme['secondary-accent']};
 
   position: sticky;
   top: 0;
+`
+
+export const HeaderItems = styled.div`
+  max-width: 68rem;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 1180px) {
+    padding: 0 3.125rem;
+  }
+
+  @media (max-width: 350px) {
+    padding: 0 1.5rem;
+  }
 
   > div {
     width: 100%;
