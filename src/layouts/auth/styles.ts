@@ -26,7 +26,7 @@ export const LayoutContainer = styled.div`
     align-items: center;
 
     a img {
-      width: 9.45rem;
+      width: 9.687rem;
       height: 100%;
     }
 
