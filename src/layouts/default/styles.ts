@@ -38,6 +38,11 @@ export const NavBar = styled.nav`
     display: flex;
     justify-content: center;
     gap: 2rem;
+
+    li a {
+      color: #898995;
+      font-weight: 700;
+    }
   }
 `
 
