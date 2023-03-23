@@ -24,7 +24,7 @@ export const HeaderContainer = styled.header`
 
   > div {
     width: 100%;
-    max-width: 200px;
+    max-width: 12.5rem;
   }
 `
 
@@ -32,7 +32,7 @@ export const NavBar = styled.nav`
   ul {
     display: flex;
     justify-content: center;
-    gap: 32px;
+    gap: 2rem;
   }
 `
 
@@ -42,11 +42,11 @@ export const Logo = styled.div`
 
   width: 100%;
   height: 100%;
-  max-height: 56px;
+  max-height: 3rem;
 
   img {
     height: 100%;
-    max-height: 56px;
+    max-height: 3rem;
   }
 `
 
@@ -57,6 +57,6 @@ export const ProfileItem = styled.div`
 
   img {
     height: 100%;
-    max-height: 56px;
+    max-height: 3.5rem;
   }
 `
