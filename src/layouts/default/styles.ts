@@ -60,8 +60,17 @@ export const ProfileItem = styled.div`
   justify-content: flex-end;
   width: 100%;
 
+  position: relative;
+
   img {
     height: 100%;
     max-height: 3.5rem;
   }
+`
+
+export const ProfileOptions = styled.div`
+  position: absolute;
+  top: calc(100% + 1.5rem);
+  width: 200px;
+  background-color: #0e112a;
 `
