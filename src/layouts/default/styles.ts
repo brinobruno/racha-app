@@ -24,6 +24,9 @@ export const HeaderContainer = styled.header`
 
   background-color: #0e112a;
 
+  position: sticky;
+  top: 0;
+
   > div {
     width: 100%;
     max-width: 12.5rem;
