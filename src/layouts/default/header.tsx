@@ -11,14 +11,15 @@ import {
   ProfileMenu,
   ToggleProfileMenuButton,
 } from './styles'
-import { useState } from 'react'
+import { useReducer } from 'react'
+
+const handleOpenProfileMenu = (state: boolean) => !state
 
 export function Header() {
-  const [isProfileMenuActive, setIsProfileMenuActive] = useState(false)
-
-  const handleOpenProfileMenu = () => {
-    setIsProfileMenuActive(!isProfileMenuActive)
-  }
+  const [isProfileMenuActive, dispatch] = useReducer(
+    handleOpenProfileMenu,
+    false,
+  )
 
   return (
     <>
@@ -45,7 +46,7 @@ export function Header() {
           </NavBar>
 
           <ProfileItem>
-            <ToggleProfileMenuButton onClick={handleOpenProfileMenu}>
+            <ToggleProfileMenuButton onClick={dispatch}>
               <img src={ProfilePic} alt="Perfil" />
             </ToggleProfileMenuButton>
 
