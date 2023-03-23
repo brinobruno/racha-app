@@ -2,7 +2,13 @@ import { NavLink } from 'react-router-dom'
 
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
-import { HeaderContainer, Logo, NavBar, ProfileItem } from './styles'
+import {
+  HeaderContainer,
+  Logo,
+  NavBar,
+  ProfileItem,
+  ProfileOptions,
+} from './styles'
 
 export function Header() {
   return (
@@ -30,6 +36,10 @@ export function Header() {
 
         <ProfileItem>
           <img src={ProfilePic} alt="Perfil" />
+
+          <ProfileOptions>
+            <p>a</p>
+          </ProfileOptions>
         </ProfileItem>
       </HeaderContainer>
     </>
