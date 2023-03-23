@@ -8,10 +8,18 @@ import {
   Logo,
   NavBar,
   ProfileItem,
-  ProfileOptions,
+  ProfileMenu,
+  ToggleProfileMenuButton,
 } from './styles'
+import { useState } from 'react'
 
 export function Header() {
+  const [isProfileMenuActive, setIsProfileMenuActive] = useState(false)
+
+  const handleOpenProfileMenu = () => {
+    setIsProfileMenuActive(!isProfileMenuActive)
+  }
+
   return (
     <>
       <HeaderContainer>
@@ -37,11 +45,15 @@ export function Header() {
           </NavBar>
 
           <ProfileItem>
-            <img src={ProfilePic} alt="Perfil" />
+            <ToggleProfileMenuButton onClick={handleOpenProfileMenu}>
+              <img src={ProfilePic} alt="Perfil" />
+            </ToggleProfileMenuButton>
 
-            <ProfileOptions>
-              <p>a</p>
-            </ProfileOptions>
+            {isProfileMenuActive && (
+              <ProfileMenu>
+                <p>a</p>
+              </ProfileMenu>
+            )}
           </ProfileItem>
         </HeaderItems>
       </HeaderContainer>

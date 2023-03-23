@@ -87,7 +87,16 @@ export const ProfileItem = styled.div`
   }
 `
 
-export const ProfileOptions = styled.div`
+export const ToggleProfileMenuButton = styled.button`
+  background: none;
+  padding: 0;
+
+  &:hover {
+    background: none;
+  }
+`
+
+export const ProfileMenu = styled.div`
   position: absolute;
   top: calc(100% + 1.5rem);
   width: 200px;
