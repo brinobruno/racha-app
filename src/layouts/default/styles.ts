@@ -40,7 +40,7 @@ export const NavBar = styled.nav`
     gap: 2rem;
 
     li a {
-      color: #898995;
+      color: ${(props) => props.theme['nav-50']};
       font-weight: 700;
     }
   }

@@ -11,6 +11,8 @@ export const lightTheme = {
   'neutral-800': '#202024',
   'neutral-900': '#121214',
 
+  'nav-50': '#898995',
+
   'primary-300': '#FFB2C2',
   'primary-500': '#G51C44',
   'primary-700': '#76081E',
