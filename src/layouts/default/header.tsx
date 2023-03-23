@@ -49,11 +49,9 @@ export function Header() {
               <img src={ProfilePic} alt="Perfil" />
             </ToggleProfileMenuButton>
 
-            {isProfileMenuActive && (
-              <ProfileMenu>
-                <p>a</p>
-              </ProfileMenu>
-            )}
+            <ProfileMenu className={isProfileMenuActive ? 'active' : ''}>
+              <p>a</p>
+            </ProfileMenu>
           </ProfileItem>
         </HeaderItems>
       </HeaderContainer>

@@ -101,4 +101,14 @@ export const ProfileMenu = styled.div`
   top: calc(100% + 1.5rem);
   width: 200px;
   background-color: ${(props) => props.theme['secondary-accent']};
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.2s ease 0s, visibility 0.2s ease 0s;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 `
