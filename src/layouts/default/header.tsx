@@ -17,13 +17,13 @@ export function Header() {
         <NavBar>
           <ul>
             <li>
-              <NavLink to="/">Início</NavLink>
+              <NavLink to="/dashboard">Início</NavLink>
             </li>
             <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink to="/dashboard">Meus times</NavLink>
             </li>
             <li>
-              <NavLink to="/account">Account</NavLink>
+              <NavLink to="/account">Minha conta</NavLink>
             </li>
           </ul>
         </NavBar>
