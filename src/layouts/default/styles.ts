@@ -128,11 +128,13 @@ export const ProfileMenu = styled.div`
     content: '';
     position: absolute;
     top: -8px;
-    right: 19px;
-    width: 0px;
-    height: 0px;
+    right: 20px;
+
+    width: 0;
+    height: 0;
+
     border-style: solid;
-    border-width: 0px 8px 8px;
+    border-width: 0px 0.5rem 0.5rem;
     border-color: transparent transparent
       ${(props) => props.theme['secondary-accent']};
   }
