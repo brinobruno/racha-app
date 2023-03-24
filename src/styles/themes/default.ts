@@ -20,8 +20,10 @@ export const defaultTheme = {
 
   'secondary-300': '#ABB1CC',
   'secondary-500': '#495BCC',
-  'secondary-700': '#0A1033',
-  'secondary-accent': '#090c22',
+  'secondary-700': '#070a21',
+  // 'secondary-700': '#0A1033',
+  // 'secondary-accent': '#171b37',
+  'secondary-accent': '#101534',
 
   'semantic-positive': '#059A48',
   'semantic-negative': '#FF5343',

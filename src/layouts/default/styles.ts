@@ -106,9 +106,13 @@ export const ToggleProfileMenuButton = styled.button`
 
 export const ProfileMenu = styled.div`
   position: absolute;
-  top: calc(100% + 1.5rem);
-  width: 200px;
+  top: calc(100% + 1.75rem);
+  width: 256px;
+
   background-color: ${(props) => props.theme['secondary-accent']};
+
+  border-radius: 5px;
+  padding-bottom: 1rem;
 
   opacity: 0;
   visibility: hidden;
@@ -118,5 +122,33 @@ export const ProfileMenu = styled.div`
   &.active {
     opacity: 1;
     visibility: visible;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 19px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0px 8px 8px;
+    border-color: transparent transparent
+      ${(props) => props.theme['secondary-accent']};
+  }
+
+  ul {
+    li {
+      padding: 0.75rem 1.5rem;
+
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      a {
+        font-weight: 600;
+        color: ${(props) => props.theme['neutral-200']};
+      }
+    }
   }
 `
