@@ -107,7 +107,7 @@ export const ToggleProfileMenuButton = styled.button`
 export const ProfileMenu = styled.div`
   position: absolute;
   top: calc(100% + 1.75rem);
-  width: 256px;
+  width: 16rem;
 
   background-color: ${(props) => props.theme['secondary-accent']};
 
