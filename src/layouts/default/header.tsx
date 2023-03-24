@@ -13,13 +13,26 @@ import {
 } from './styles'
 import { useReducer } from 'react'
 
+type Action = {
+  type: 'TOGGLE_PROFILE_MENU'
+}
+
 const handleOpenProfileMenu = (state: boolean) => !state
 
+function reducer(state: boolean, action: Action): boolean {
+  if (action.type === 'TOGGLE_PROFILE_MENU') {
+    return handleOpenProfileMenu(state)
+  } else {
+    return state
+  }
+}
+
 export function Header() {
-  const [isProfileMenuActive, dispatch] = useReducer(
-    handleOpenProfileMenu,
-    false,
-  )
+  const [isProfileMenuActive, dispatch] = useReducer(reducer, false)
+
+  const handleToggleMenu = () => {
+    dispatch({ type: 'TOGGLE_PROFILE_MENU' })
+  }
 
   return (
     <>
@@ -46,7 +59,7 @@ export function Header() {
           </NavBar>
 
           <ProfileItem>
-            <ToggleProfileMenuButton onClick={dispatch}>
+            <ToggleProfileMenuButton onClick={handleToggleMenu}>
               <img src={ProfilePic} alt="Perfil" />
             </ToggleProfileMenuButton>
 
