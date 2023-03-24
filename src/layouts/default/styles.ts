@@ -57,6 +57,8 @@ export const NavBar = styled.nav`
       color: ${(props) => props.theme['nav-50']};
       font-weight: 700;
 
+      transition: color 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
+
       &.active {
         color: ${(props) => props.theme['neutral-100']};
         border-bottom: 2px solid ${(props) => props.theme['primary-500']};
