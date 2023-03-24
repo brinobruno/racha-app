@@ -29,16 +29,11 @@ export function Header() {
       const profileItemNode = profileItemRef.current
 
       if (isProfileMenuActive && profileMenuNode && profileItemNode) {
-        const isClickInsideProfileMenu = profileMenuNode.contains(
-          event.target as Node,
-        )
-        const isClickInsideProfileItem = profileItemNode.contains(
-          event.target as Node,
-        )
+        const isClickInsideProfileMenuOrItem =
+          profileMenuNode.contains(event.target as Node) ||
+          profileItemNode.contains(event.target as Node)
 
-        if (!isClickInsideProfileMenu && !isClickInsideProfileItem) {
-          dispatch()
-        }
+        if (!isClickInsideProfileMenuOrItem) dispatch()
       }
     }
 
