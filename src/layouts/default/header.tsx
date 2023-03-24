@@ -85,7 +85,6 @@ export function Header() {
             >
               <div>
                 <NavLink to="/account">
-                  {' '}
                   <User
                     weight="bold"
                     color={currentTheme['secondary-500']}
