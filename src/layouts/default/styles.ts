@@ -56,6 +56,9 @@ export const NavBar = styled.nav`
     li a {
       color: ${(props) => props.theme['nav-50']};
       font-weight: 700;
+
+      &.active {
+        color: ${(props) => props.theme['neutral-100']}
     }
   }
 `
