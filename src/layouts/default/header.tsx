@@ -42,9 +42,7 @@ export function Header() {
 
     document.addEventListener('click', handleOutsideClick)
 
-    return () => {
-      document.removeEventListener('click', handleOutsideClick)
-    }
+    return () => document.removeEventListener('click', handleOutsideClick)
   }, [isProfileMenuActive])
 
   return (
