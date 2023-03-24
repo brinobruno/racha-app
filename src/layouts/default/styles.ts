@@ -158,7 +158,12 @@ export const ProfileMenu = styled.div`
     a {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+
+      width: 100%;
+
+      span {
+        margin-left: 1.5rem;
+      }
     }
   }
 `
