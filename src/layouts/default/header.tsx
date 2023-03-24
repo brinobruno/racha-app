@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-
+import { useRef, useEffect, useReducer } from 'react'
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
 import {
@@ -11,28 +11,37 @@ import {
   ProfileMenu,
   ToggleProfileMenuButton,
 } from './styles'
-import { useReducer } from 'react'
-
-type Action = {
-  type: 'TOGGLE_PROFILE_MENU'
-}
 
 const handleOpenProfileMenu = (state: boolean) => !state
 
-function reducer(state: boolean, action: Action): boolean {
-  if (action.type === 'TOGGLE_PROFILE_MENU') {
-    return handleOpenProfileMenu(state)
-  } else {
-    return state
-  }
-}
-
 export function Header() {
-  const [isProfileMenuActive, dispatch] = useReducer(reducer, false)
+  const [isProfileMenuActive, dispatch] = useReducer(
+    handleOpenProfileMenu,
+    false,
+  )
 
-  const handleToggleMenu = () => {
-    dispatch({ type: 'TOGGLE_PROFILE_MENU' })
-  }
+  const profileMenuRef = useRef<HTMLDivElement>(null)
+  const profileItemRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        isProfileMenuActive &&
+        profileMenuRef.current &&
+        profileItemRef.current &&
+        !profileMenuRef.current.contains(event.target as Node) &&
+        !profileItemRef.current.contains(event.target as Node)
+      ) {
+        dispatch()
+      }
+    }
+
+    document.addEventListener('click', handleOutsideClick)
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [isProfileMenuActive])
 
   return (
     <>
@@ -58,12 +67,15 @@ export function Header() {
             </ul>
           </NavBar>
 
-          <ProfileItem>
-            <ToggleProfileMenuButton onClick={handleToggleMenu}>
+          <ProfileItem ref={profileItemRef}>
+            <ToggleProfileMenuButton onClick={dispatch}>
               <img src={ProfilePic} alt="Perfil" />
             </ToggleProfileMenuButton>
 
-            <ProfileMenu className={isProfileMenuActive ? 'active' : ''}>
+            <ProfileMenu
+              className={isProfileMenuActive ? 'active' : ''}
+              ref={profileMenuRef}
+            >
               <p>a</p>
             </ProfileMenu>
           </ProfileItem>
