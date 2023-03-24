@@ -23,17 +23,20 @@ export function Header() {
   const profileMenuRef = useRef<HTMLDivElement>(null)
   const profileItemRef = useRef<HTMLDivElement>(null)
 
+  function isClickOutsideProfileMenu(event: MouseEvent) {
+    const isClickInsideProfileMenu = profileMenuRef.current?.contains(
+      event.target as Node,
+    )
+    const isClickInsideProfileItem = profileItemRef.current?.contains(
+      event.target as Node,
+    )
+    return !isClickInsideProfileMenu && !isClickInsideProfileItem
+  }
+
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
-      const profileMenuNode = profileMenuRef.current
-      const profileItemNode = profileItemRef.current
-
-      if (isProfileMenuActive && profileMenuNode && profileItemNode) {
-        const isClickInsideProfileMenuOrItem =
-          profileMenuNode.contains(event.target as Node) ||
-          profileItemNode.contains(event.target as Node)
-
-        if (!isClickInsideProfileMenuOrItem) dispatch()
+      if (isProfileMenuActive && isClickOutsideProfileMenu(event)) {
+        dispatch()
       }
     }
 
