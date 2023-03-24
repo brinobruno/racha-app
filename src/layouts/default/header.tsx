@@ -12,11 +12,11 @@ import {
   ToggleProfileMenuButton,
 } from './styles'
 
-const handleOpenProfileMenu = (state: boolean) => !state
-
 export function Header() {
+  const handleToggleProfileMenu = (state: boolean) => !state
+
   const [isProfileMenuActive, dispatch] = useReducer(
-    handleOpenProfileMenu,
+    handleToggleProfileMenu,
     false,
   )
 
