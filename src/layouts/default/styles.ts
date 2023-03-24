@@ -17,7 +17,7 @@ export const LayoutContainer = styled.div`
 `
 
 export const HeaderContainer = styled.header`
-  height: 6rem;
+  height: 5.25rem;
 
   background-color: ${(props) => props.theme['secondary-accent']};
 
@@ -63,7 +63,7 @@ export const NavBar = styled.nav`
       &.active {
         color: ${(props) => props.theme['neutral-100']};
         border-bottom: 2px solid ${(props) => props.theme['primary-500']};
-        padding-bottom: 2.25rem;
+        padding-bottom: 1.9rem;
       }
     }
   }
