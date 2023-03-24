@@ -83,29 +83,27 @@ export function Header() {
               className={isProfileMenuActive ? 'active' : ''}
               ref={profileMenuRef}
             >
-              <ul>
-                <li>
-                  <NavLink to="/account">
-                    {' '}
-                    <User
-                      weight="bold"
-                      color={currentTheme['secondary-500']}
-                      size={24}
-                    />
-                    <span>Minha conta</span>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/account">
-                    <SignOut
-                      weight="bold"
-                      color={currentTheme['primary-500']}
-                      size={24}
-                    />
-                    <span>Sair</span>
-                  </NavLink>
-                </li>
-              </ul>
+              <div>
+                <NavLink to="/account">
+                  {' '}
+                  <User
+                    weight="bold"
+                    color={currentTheme['secondary-500']}
+                    size={24}
+                  />
+                  <span>Minha conta</span>
+                </NavLink>
+              </div>
+              <div>
+                <NavLink to="/account">
+                  <SignOut
+                    weight="bold"
+                    color={currentTheme['primary-500']}
+                    size={24}
+                  />
+                  <span>Sair</span>
+                </NavLink>
+              </div>
             </ProfileMenu>
           </ProfileItem>
         </HeaderItems>

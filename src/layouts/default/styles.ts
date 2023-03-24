@@ -139,7 +139,7 @@ export const ProfileMenu = styled.div`
       ${(props) => props.theme['secondary-accent']};
   }
 
-  li {
+  div {
     padding: 0.75rem 1.5rem;
 
     font-weight: 600;
