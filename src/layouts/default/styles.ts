@@ -89,19 +89,34 @@ export const ProfileItem = styled.div`
 
   display: flex;
   justify-content: flex-end;
-
-  img {
-    height: 100%;
-    max-height: 3.5rem;
-  }
 `
 
 export const ToggleProfileMenuButton = styled.button`
   background: none;
   padding: 0;
 
+  max-width: 3.5rem;
+  max-height: 3.5rem;
+
   &:hover {
     background: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+
+    clip-path: circle();
+    object-fit: cover;
+
+    padding: 2px;
+    border: 2px solid ${(props) => props.theme['neutral-100']};
+
+    border-radius: 100%;
+    background-size: cover;
+    background-clip: content-box;
   }
 `
 
