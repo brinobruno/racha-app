@@ -23,7 +23,8 @@ export const defaultTheme = {
   'secondary-700': '#070a21',
   // 'secondary-700': '#0A1033',
   // 'secondary-accent': '#171b37',
-  'secondary-accent': '#101534',
+  'secondary-accent': '#161a33',
+  'secondary-accent-hover': '#13162a',
 
   'semantic-positive': '#059A48',
   'semantic-negative': '#FF5343',

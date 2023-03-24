@@ -112,7 +112,7 @@ export const ProfileMenu = styled.div`
   background-color: ${(props) => props.theme['secondary-accent']};
 
   border-radius: 5px;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 
   opacity: 0;
   visibility: hidden;
@@ -139,18 +139,26 @@ export const ProfileMenu = styled.div`
       ${(props) => props.theme['secondary-accent']};
   }
 
-  ul {
-    li {
-      padding: 0.75rem 1.5rem;
+  li {
+    padding: 0.75rem 1.5rem;
 
+    font-weight: 600;
+    color: ${(props) => props.theme['neutral-200']};
+
+    cursor: pointer;
+
+    &:first-child {
+      padding: 1rem 1.5rem;
+    }
+
+    &:hover {
+      background-color: ${(props) => props.theme['secondary-accent-hover']};
+    }
+
+    a {
       display: flex;
       align-items: center;
       gap: 1.5rem;
-
-      a {
-        font-weight: 600;
-        color: ${(props) => props.theme['neutral-200']};
-      }
     }
   }
 `

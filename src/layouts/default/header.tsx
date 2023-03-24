@@ -85,20 +85,25 @@ export function Header() {
             >
               <ul>
                 <li>
-                  <User
-                    weight="bold"
-                    color={currentTheme['neutral-100']}
-                    size={24}
-                  />
-                  <NavLink to="/account">Minha conta</NavLink>
+                  <NavLink to="/account">
+                    {' '}
+                    <User
+                      weight="bold"
+                      color={currentTheme['secondary-500']}
+                      size={24}
+                    />
+                    <span>Minha conta</span>
+                  </NavLink>
                 </li>
                 <li>
-                  <SignOut
-                    weight="bold"
-                    color={currentTheme['primary-500']}
-                    size={24}
-                  />
-                  Sair
+                  <NavLink to="/account">
+                    <SignOut
+                      weight="bold"
+                      color={currentTheme['primary-500']}
+                      size={24}
+                    />
+                    <span>Sair</span>
+                  </NavLink>
                 </li>
               </ul>
             </ProfileMenu>
