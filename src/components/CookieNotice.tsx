@@ -4,7 +4,7 @@ import { COOKIE_CONSENT_STORAGE_KEY } from 'src/constants'
 export function CookieNotice() {
   return (
     <CookieConsent
-      debug={true}
+      // debug={t}
       location="bottom"
       cookieName={COOKIE_CONSENT_STORAGE_KEY}
       buttonText="Tudo bem 🍪"
