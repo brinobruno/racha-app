@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const LayoutContainer = styled.div`
   max-width: 68rem;
   margin: 0 auto;
+
   display: flex;
   flex-direction: column;
 
@@ -83,11 +84,11 @@ export const Logo = styled.div`
 `
 
 export const ProfileItem = styled.div`
-  display: flex;
-  justify-content: flex-end;
+  position: relative;
   width: 100%;
 
-  position: relative;
+  display: flex;
+  justify-content: flex-end;
 
   img {
     height: 100%;
