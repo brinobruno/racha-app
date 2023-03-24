@@ -1,5 +1,7 @@
 import { useRef, useEffect, useReducer } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useTheme } from 'styled-components'
+import { User, SignOut } from 'phosphor-react'
 
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
@@ -14,6 +16,8 @@ import {
 } from './styles'
 
 export function Header() {
+  const currentTheme = useTheme()
+
   const handleToggleProfileMenu = (state: boolean) => !state
 
   const [isProfileMenuActive, dispatch] = useReducer(
@@ -79,7 +83,24 @@ export function Header() {
               className={isProfileMenuActive ? 'active' : ''}
               ref={profileMenuRef}
             >
-              <p>a</p>
+              <ul>
+                <li>
+                  <User
+                    weight="bold"
+                    color={currentTheme['neutral-100']}
+                    size={24}
+                  />
+                  <NavLink to="/account">Minha conta</NavLink>
+                </li>
+                <li>
+                  <SignOut
+                    weight="bold"
+                    color={currentTheme['primary-500']}
+                    size={24}
+                  />
+                  Sair
+                </li>
+              </ul>
             </ProfileMenu>
           </ProfileItem>
         </HeaderItems>
