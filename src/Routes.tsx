@@ -5,9 +5,9 @@ import { DefaultLayout } from './layouts/default/DefaultLayout'
 import { AuthLayout } from './layouts/auth/AuthLayout'
 import { Signin } from './pages/Signin'
 import { SignUp } from './pages/Signup'
-import ProtectedRoute from './services/auth/ProtectedRoute'
 import { Dashboard } from './pages/Dashboard'
 import { UserAccount } from './pages/UserAccount'
+import ProtectedRoute from './services/auth/ProtectedRoute'
 
 export function Router() {
   return (
