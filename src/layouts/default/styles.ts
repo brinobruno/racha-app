@@ -58,7 +58,8 @@ export const NavBar = styled.nav`
       font-weight: 700;
 
       &.active {
-        color: ${(props) => props.theme['neutral-100']}
+        color: ${(props) => props.theme['neutral-100']};
+      }
     }
   }
 `
