@@ -1,5 +1,6 @@
-import { NavLink } from 'react-router-dom'
 import { useRef, useEffect, useReducer } from 'react'
+import { NavLink } from 'react-router-dom'
+
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
 import {
