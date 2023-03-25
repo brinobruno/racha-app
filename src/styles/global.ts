@@ -50,8 +50,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 
-    font-size: 2.25rem;
-    line-height: 2.875rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
   }
 
   strong {
