@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme['neutral-100']};
     -webkit-font-smoothing: antialiased;
 
-    overflow-y: scroll
+    overflow-y: scroll;
+    scroll-behavior: smooth;
   }
 
   a {
