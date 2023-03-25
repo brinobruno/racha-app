@@ -74,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 600;
     
     background: ${(props) => props.theme['primary-500']};
-    color: ${(props) => props.theme['neutral-100']};
+    color: #E9EDF5;
 
     padding: 1rem;
 
