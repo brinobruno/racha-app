@@ -63,7 +63,7 @@ export const NavBar = styled.nav`
       &.active {
         color: ${(props) => props.theme['neutral-100']};
         border-bottom: 2px solid ${(props) => props.theme['primary-500']};
-        padding-bottom: 1.9rem;
+        padding-bottom: 1.96rem;
       }
     }
   }
