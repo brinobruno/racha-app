@@ -7,6 +7,7 @@ import { Signin } from './pages/Signin'
 import { SignUp } from './pages/Signup'
 import { Dashboard } from './pages/Dashboard'
 import { UserAccount } from './pages/UserAccount'
+import { Teams } from './pages/Teams'
 import ProtectedRoute from './services/auth/ProtectedRoute'
 
 export function Router() {
@@ -26,6 +27,13 @@ export function Router() {
               authenticationPath="/signin"
               outlet={<Dashboard />}
             />
+          }
+        />
+
+        <Route
+          path="teams"
+          element={
+            <ProtectedRoute authenticationPath="/signin" outlet={<Teams />} />
           }
         />
 
