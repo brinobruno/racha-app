@@ -47,7 +47,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 
     font-size: 2.25rem;

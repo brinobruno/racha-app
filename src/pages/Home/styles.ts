@@ -17,6 +17,9 @@ export const Container = styled.div`
   }
 
   h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+
     font-size: 3.5rem;
     line-height: 4.375rem;
 

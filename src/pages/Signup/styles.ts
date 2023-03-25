@@ -10,6 +10,9 @@ export const Container = styled.div`
   padding-top: 2.375rem;
 
   h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
     line-height: 2.825rem;
 
     max-width: 17rem;
