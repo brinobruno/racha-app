@@ -1,7 +1,7 @@
 import { useRef, useEffect, useReducer } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from 'styled-components'
-import { User, SignOut } from 'phosphor-react'
+import { User, SignOut, Moon, Sun } from 'phosphor-react'
 
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
@@ -14,11 +14,13 @@ import {
   ProfileMenu,
   ToggleProfileMenuButton,
 } from './styles'
+import { useThemeContext } from 'src/contexts/ThemeContext'
 
 const handleToggleProfileMenu = (state: boolean) => !state
 
 export function Header() {
   const currentTheme = useTheme()
+  const { theme, toggleTheme } = useThemeContext()
 
   const profileMenuRef = useRef<HTMLDivElement>(null)
   const profileItemRef = useRef<HTMLDivElement>(null)
@@ -92,6 +94,29 @@ export function Header() {
                 <span>Minha conta</span>
               </NavLink>
             </div>
+
+            <div>
+              {theme === 'light' ? (
+                <button onClick={toggleTheme}>
+                  <Moon
+                    weight="bold"
+                    color={currentTheme['secondary-500']}
+                    size={24}
+                  />
+                  <span>Modo escuro</span>
+                </button>
+              ) : (
+                <button onClick={toggleTheme}>
+                  <Sun
+                    weight="bold"
+                    color={currentTheme['secondary-500']}
+                    size={24}
+                  />
+                  <span>Modo claro</span>
+                </button>
+              )}
+            </div>
+
             <div>
               <NavLink to="/account">
                 <SignOut

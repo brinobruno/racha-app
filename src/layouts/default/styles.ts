@@ -171,7 +171,8 @@ export const ProfileMenu = styled.div`
       background-color: ${(props) => props.theme['secondary-accent-hover']};
     }
 
-    a {
+    a,
+    button {
       display: flex;
       align-items: center;
 
@@ -180,6 +181,12 @@ export const ProfileMenu = styled.div`
       span {
         margin-left: 1.5rem;
       }
+    }
+
+    button {
+      background: none;
+      padding: unset;
+      font-size: unset;
     }
   }
 `
