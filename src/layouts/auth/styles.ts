@@ -19,7 +19,7 @@ export const LayoutContainer = styled.div`
   }
 
   header {
-    padding: 1.5rem 0;
+    padding: 1.15rem 0;
 
     display: flex;
     justify-content: flex-start;
