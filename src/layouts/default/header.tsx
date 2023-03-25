@@ -64,17 +64,11 @@ export function Header() {
         </Logo>
 
         <NavBar>
-          <ul>
-            <li>
-              <NavLink to="/dashboard">Início</NavLink>
-            </li>
-            <li>
-              <NavLink to="/dashboard">Meus times</NavLink>
-            </li>
-            <li>
-              <NavLink to="/account">Minha conta</NavLink>
-            </li>
-          </ul>
+          <NavLink to="/dashboard">Início</NavLink>
+
+          <NavLink to="/dashboard">Meus times</NavLink>
+
+          <NavLink to="/account">Minha conta</NavLink>
         </NavBar>
 
         <ProfileItem ref={profileItemRef}>

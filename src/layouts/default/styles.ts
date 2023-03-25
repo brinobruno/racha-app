@@ -44,22 +44,21 @@ export const HeaderItems = styled.div`
 `
 
 export const NavBar = styled.nav`
-  ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
-    li a {
-      color: ${(props) => props.theme['nav-50']};
-      font-weight: 700;
+  a {
+    color: ${(props) => props.theme['nav-50']};
+    font-weight: 700;
 
-      transition: color 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out, border-bottom 0.1s ease-in-out;
 
-      &.active {
-        color: ${(props) => props.theme['neutral-100']};
-        border-bottom: 2px solid ${(props) => props.theme['primary-500']};
-        padding-bottom: 1.96rem;
-      }
+    &.active {
+      color: ${(props) => props.theme['neutral-100']};
+      border-bottom: 2px solid ${(props) => props.theme['primary-500']};
+      margin-top: 1.96rem;
+      padding-bottom: 1.96rem;
     }
   }
 `
