@@ -41,11 +41,6 @@ export const HeaderItems = styled.div`
   @media (max-width: 350px) {
     padding: 0 1.5rem;
   }
-
-  > div {
-    width: 100%;
-    max-width: 12.5rem;
-  }
 `
 
 export const NavBar = styled.nav`
@@ -73,7 +68,6 @@ export const Logo = styled.div`
   display: flex;
   justify-content: flex-start;
 
-  width: 100%;
   height: 100%;
   max-height: 3rem;
 
@@ -85,7 +79,6 @@ export const Logo = styled.div`
 
 export const ProfileItem = styled.div`
   position: relative;
-  width: 100%;
 
   display: flex;
   justify-content: flex-end;
