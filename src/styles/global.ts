@@ -12,12 +12,26 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0;
   }
 
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme['secondary-700']};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme['secondary-600']};
+  }
+
   body {
     background: ${(props) => props.theme['secondary-700']};
     color: ${(props) => props.theme['neutral-100']};
     -webkit-font-smoothing: antialiased;
 
-    overflow-y: scroll;
     scroll-behavior: smooth;
   }
 
