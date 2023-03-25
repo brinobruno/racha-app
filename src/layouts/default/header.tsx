@@ -15,28 +15,18 @@ import {
   ToggleProfileMenuButton,
 } from './styles'
 
+const handleToggleProfileMenu = (state: boolean) => !state
+
 export function Header() {
   const currentTheme = useTheme()
 
-  const handleToggleProfileMenu = (state: boolean) => !state
+  const profileMenuRef = useRef<HTMLDivElement>(null)
+  const profileItemRef = useRef<HTMLDivElement>(null)
 
   const [isProfileMenuActive, dispatch] = useReducer(
     handleToggleProfileMenu,
     false,
   )
-
-  const profileMenuRef = useRef<HTMLDivElement>(null)
-  const profileItemRef = useRef<HTMLDivElement>(null)
-
-  function isClickOutsideProfileMenu(event: MouseEvent) {
-    const isClickInsideProfileMenu = profileMenuRef.current?.contains(
-      event.target as Node,
-    )
-    const isClickInsideProfileItem = profileItemRef.current?.contains(
-      event.target as Node,
-    )
-    return !isClickInsideProfileMenu && !isClickInsideProfileItem
-  }
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -49,6 +39,16 @@ export function Header() {
 
     return () => document.removeEventListener('click', handleOutsideClick)
   }, [isProfileMenuActive])
+
+  function isClickOutsideProfileMenu(event: MouseEvent) {
+    const isClickInsideProfileMenu = profileMenuRef.current?.contains(
+      event.target as Node,
+    )
+    const isClickInsideProfileItem = profileItemRef.current?.contains(
+      event.target as Node,
+    )
+    return !isClickInsideProfileMenu && !isClickInsideProfileItem
+  }
 
   return (
     <>
