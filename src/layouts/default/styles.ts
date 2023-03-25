@@ -184,7 +184,8 @@ export const ProfileMenu = styled.div`
     }
 
     button {
-      background: none;
+      background: unset;
+      color: unset;
       padding: unset;
       font-size: unset;
     }
