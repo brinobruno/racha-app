@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom'
 import { useTheme } from 'styled-components'
 import { User, SignOut } from 'phosphor-react'
 
+import { useThemeContext } from 'src/contexts/ThemeContext'
 import { ThemeSwitcher } from 'src/components/ThemeSwitcher'
+import LogoBlack from 'src/assets/logo-black.svg'
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
 import {
@@ -20,6 +22,7 @@ const handleToggleProfileMenu = (state: boolean) => !state
 
 export function Header() {
   const currentTheme = useTheme()
+  const { theme } = useThemeContext()
 
   const profileMenuRef = useRef<HTMLDivElement>(null)
   const profileItemRef = useRef<HTMLDivElement>(null)
@@ -56,7 +59,7 @@ export function Header() {
       <HeaderItems>
         <Logo>
           <NavLink to="/">
-            <img src={LogoWhite} alt="Início" />
+            <img src={theme === 'light' ? LogoBlack : LogoWhite} alt="Início" />
           </NavLink>
         </Logo>
 
