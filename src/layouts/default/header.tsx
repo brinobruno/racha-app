@@ -51,62 +51,60 @@ export function Header() {
   }
 
   return (
-    <>
-      <HeaderContainer>
-        <HeaderItems>
-          <Logo>
-            <NavLink to="/">
-              <img src={LogoWhite} alt="Início" />
-            </NavLink>
-          </Logo>
+    <HeaderContainer>
+      <HeaderItems>
+        <Logo>
+          <NavLink to="/">
+            <img src={LogoWhite} alt="Início" />
+          </NavLink>
+        </Logo>
 
-          <NavBar>
-            <ul>
-              <li>
-                <NavLink to="/dashboard">Início</NavLink>
-              </li>
-              <li>
-                <NavLink to="/dashboard">Meus times</NavLink>
-              </li>
-              <li>
-                <NavLink to="/account">Minha conta</NavLink>
-              </li>
-            </ul>
-          </NavBar>
+        <NavBar>
+          <ul>
+            <li>
+              <NavLink to="/dashboard">Início</NavLink>
+            </li>
+            <li>
+              <NavLink to="/dashboard">Meus times</NavLink>
+            </li>
+            <li>
+              <NavLink to="/account">Minha conta</NavLink>
+            </li>
+          </ul>
+        </NavBar>
 
-          <ProfileItem ref={profileItemRef}>
-            <ToggleProfileMenuButton onClick={dispatch}>
-              <img src={ProfilePic} alt="Perfil" />
-            </ToggleProfileMenuButton>
+        <ProfileItem ref={profileItemRef}>
+          <ToggleProfileMenuButton onClick={dispatch}>
+            <img src={ProfilePic} alt="Perfil" />
+          </ToggleProfileMenuButton>
 
-            <ProfileMenu
-              className={isProfileMenuActive ? 'active' : ''}
-              ref={profileMenuRef}
-            >
-              <div>
-                <NavLink to="/account">
-                  <User
-                    weight="bold"
-                    color={currentTheme['secondary-500']}
-                    size={24}
-                  />
-                  <span>Minha conta</span>
-                </NavLink>
-              </div>
-              <div>
-                <NavLink to="/account">
-                  <SignOut
-                    weight="bold"
-                    color={currentTheme['primary-500']}
-                    size={24}
-                  />
-                  <span>Sair</span>
-                </NavLink>
-              </div>
-            </ProfileMenu>
-          </ProfileItem>
-        </HeaderItems>
-      </HeaderContainer>
-    </>
+          <ProfileMenu
+            className={isProfileMenuActive ? 'active' : ''}
+            ref={profileMenuRef}
+          >
+            <div>
+              <NavLink to="/account">
+                <User
+                  weight="bold"
+                  color={currentTheme['secondary-500']}
+                  size={24}
+                />
+                <span>Minha conta</span>
+              </NavLink>
+            </div>
+            <div>
+              <NavLink to="/account">
+                <SignOut
+                  weight="bold"
+                  color={currentTheme['primary-500']}
+                  size={24}
+                />
+                <span>Sair</span>
+              </NavLink>
+            </div>
+          </ProfileMenu>
+        </ProfileItem>
+      </HeaderItems>
+    </HeaderContainer>
   )
 }
