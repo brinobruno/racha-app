@@ -66,7 +66,7 @@ export function Header() {
         <NavBar>
           <NavLink to="/dashboard">Início</NavLink>
 
-          <NavLink to="/dashboard">Meus times</NavLink>
+          <NavLink to="/teams">Meus times</NavLink>
 
           <NavLink to="/account">Minha conta</NavLink>
         </NavBar>
