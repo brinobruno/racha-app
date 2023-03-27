@@ -1,7 +1,7 @@
 import { useRef, useEffect, useReducer } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from 'styled-components'
-import { User, SignOut } from 'phosphor-react'
+import { Bookmarks, User, SignOut } from 'phosphor-react'
 
 import { useThemeContext } from 'src/contexts/ThemeContext'
 import { ThemeSwitcher } from 'src/components/ThemeSwitcher'
@@ -88,6 +88,17 @@ export function Header() {
                   size={24}
                 />
                 <span>Minha conta</span>
+              </NavLink>
+            </div>
+
+            <div>
+              <NavLink to="/teams">
+                <Bookmarks
+                  weight="bold"
+                  color={currentTheme['secondary-500']}
+                  size={24}
+                />
+                <span>Meus times</span>
               </NavLink>
             </div>
 
