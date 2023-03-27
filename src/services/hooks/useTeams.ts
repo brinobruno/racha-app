@@ -30,7 +30,7 @@ async function getTeamsData(): Promise<TeamDataResponse> {
     Cookies.get(USER_SESSION_STORAGE_KEY),
   ])
 
-  const response = await api.get(`/users/teams/${userId}`, {
+  const response = await api.get(`/users/teams/all/${userId}`, {
     headers: {
       ...headers,
       // eslint-disable-next-line prettier/prettier
