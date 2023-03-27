@@ -4,29 +4,29 @@ import { Container } from './styles'
 export function Teams() {
   const { data, isLoading, error } = useTeams()
 
-  console.log(data)
+  const teams = data?.teams
 
   return (
     <Container>
       <h1>Meus times</h1>
 
-      {/* <div>
+      <div>
         {isLoading && <span>Loading...</span>}
         {typeof error === 'string' && <span>{error}</span>}
 
-        {data && (
+        {teams && (
           <ul>
-            {data.map((user) => (
-              <li key={user.id}>
-                <div>ID: {user.id}</div>
-                <div>Username: {user.username}</div>
-                <div>Email: {user.email}</div>
-                <div>Created at: {user.created_at}</div>
+            {teams.map((team) => (
+              <li key={team.id}>
+                <div>ID: {team.id}</div>
+                <div>Title: {team.title}</div>
+                <div>Owner: {team.owner}</div>
+                <div>Created at: {team.created_at}</div>
               </li>
             ))}
           </ul>
         )}
-      </div> */}
+      </div>
 
       <button>Criar time</button>
     </Container>
