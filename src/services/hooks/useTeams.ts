@@ -21,7 +21,7 @@ interface ITeamData {
 }
 
 type TeamDataResponse = {
-  user: ITeamData | undefined
+  teams: ITeamData[] | undefined
 }
 
 async function getTeamsData(): Promise<TeamDataResponse> {
