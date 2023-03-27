@@ -11,8 +11,8 @@ export function Teams() {
       <h1>Meus times</h1>
 
       <div>
-        {isLoading && <span>Loading...</span>}
-        {typeof error === 'string' && <span>{error}</span>}
+        {isLoading && <span>Carregando...</span>}
+        {typeof error === 'string' && <span>Erro: {error}</span>}
 
         {teams && (
           <ul>
