@@ -17,6 +17,7 @@ import {
   ProfileMenu,
   ToggleProfileMenuButton,
 } from './styles'
+import { NavItem } from 'src/components/@Desktop/NavItem'
 
 const handleToggleProfileMenu = (state: boolean) => !state
 
@@ -80,16 +81,17 @@ export function Header() {
             className={isProfileMenuActive ? 'active' : ''}
             ref={profileMenuRef}
           >
-            <div>
-              <NavLink to="/account">
+            <NavItem
+              icon={
                 <User
-                  weight="bold"
                   color={currentTheme['secondary-500']}
+                  weight="bold"
                   size={24}
                 />
-                <span>Minha conta</span>
-              </NavLink>
-            </div>
+              }
+              title="Minha conta"
+              link="/account"
+            />
 
             <div>
               <NavLink to="/teams">
