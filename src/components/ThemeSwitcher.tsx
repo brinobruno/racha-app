@@ -8,14 +8,18 @@ export function ThemeSwitcher() {
   const { theme, toggleTheme } = useThemeContext()
 
   return theme === 'light' ? (
-    <button onClick={toggleTheme}>
-      <Moon weight="bold" color={currentTheme['secondary-500']} size={24} />
-      <span>Modo escuro</span>
-    </button>
+    <div>
+      <button onClick={toggleTheme}>
+        <Moon weight="bold" color={currentTheme['secondary-500']} size={24} />
+        <span>Modo escuro</span>
+      </button>
+    </div>
   ) : (
-    <button onClick={toggleTheme}>
-      <Sun weight="bold" color={currentTheme['secondary-500']} size={24} />
-      <span>Modo claro</span>
-    </button>
+    <div>
+      <button onClick={toggleTheme}>
+        <Sun weight="bold" color={currentTheme['secondary-500']} size={24} />
+        <span>Modo claro</span>
+      </button>
+    </div>
   )
 }

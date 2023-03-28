@@ -105,9 +105,7 @@ export function Header() {
               link="/teams"
             />
 
-            <div>
-              <ThemeSwitcher />
-            </div>
+            <ThemeSwitcher />
 
             <div>
               <NavLink to="/account">
