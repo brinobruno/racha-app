@@ -1,7 +1,7 @@
 import { useRef, useEffect, useReducer } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from 'styled-components'
-import { Bookmarks, User, SignOut } from 'phosphor-react'
+import { Bookmarks, User } from 'phosphor-react'
 
 import { useThemeContext } from 'src/contexts/ThemeContext'
 import { ThemeSwitcher } from 'src/components/ThemeSwitcher'
@@ -18,6 +18,7 @@ import {
   ProfileMenu,
   ToggleProfileMenuButton,
 } from './styles'
+import { Logout } from 'src/components/@Desktop/Logout'
 
 const handleToggleProfileMenu = (state: boolean) => !state
 
@@ -107,16 +108,7 @@ export function Header() {
 
             <ThemeSwitcher />
 
-            <div>
-              <NavLink to="/account">
-                <SignOut
-                  weight="bold"
-                  color={currentTheme['primary-500']}
-                  size={24}
-                />
-                <span>Sair</span>
-              </NavLink>
-            </div>
+            <Logout />
           </ProfileMenu>
         </ProfileItem>
       </HeaderItems>
