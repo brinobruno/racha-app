@@ -1,13 +1,13 @@
 import { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 
-interface INavItemProps {
+interface IProfileNavItemProps {
   icon: ReactNode
   title: string
   link: string
 }
 
-export function NavItem({ icon, title, link }: INavItemProps) {
+export function ProfileNavItem({ icon, title, link }: IProfileNavItemProps) {
   return (
     <div>
       <NavLink to={link}>

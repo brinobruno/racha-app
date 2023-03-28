@@ -8,6 +8,7 @@ import { ThemeSwitcher } from 'src/components/ThemeSwitcher'
 import LogoBlack from 'src/assets/logo-black.svg'
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
+import { ProfileNavItem } from 'src/components/@Desktop/NavItem'
 import {
   HeaderContainer,
   HeaderItems,
@@ -17,7 +18,6 @@ import {
   ProfileMenu,
   ToggleProfileMenuButton,
 } from './styles'
-import { NavItem } from 'src/components/@Desktop/NavItem'
 
 const handleToggleProfileMenu = (state: boolean) => !state
 
@@ -81,7 +81,7 @@ export function Header() {
             className={isProfileMenuActive ? 'active' : ''}
             ref={profileMenuRef}
           >
-            <NavItem
+            <ProfileNavItem
               icon={
                 <User
                   color={currentTheme['secondary-500']}
