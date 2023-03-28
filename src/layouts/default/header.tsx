@@ -8,7 +8,7 @@ import { ThemeSwitcher } from 'src/components/ThemeSwitcher'
 import LogoBlack from 'src/assets/logo-black.svg'
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
-import { ProfileNavItem } from 'src/components/@Desktop/NavItem'
+import { ProfileNavItem } from 'src/components/@Desktop/ProfileNavItem'
 import {
   HeaderContainer,
   HeaderItems,
@@ -93,16 +93,17 @@ export function Header() {
               link="/account"
             />
 
-            <div>
-              <NavLink to="/teams">
+            <ProfileNavItem
+              icon={
                 <Bookmarks
-                  weight="bold"
                   color={currentTheme['secondary-500']}
+                  weight="bold"
                   size={24}
                 />
-                <span>Meus times</span>
-              </NavLink>
-            </div>
+              }
+              title="Meus times"
+              link="/teams"
+            />
 
             <div>
               <ThemeSwitcher />
