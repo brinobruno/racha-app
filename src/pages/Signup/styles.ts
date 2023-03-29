@@ -20,6 +20,10 @@ export const Container = styled.div`
     padding-bottom: 2rem;
   }
 
+  > div {
+    margin-top: 4rem;
+  }
+
   div a {
     font-weight: 600;
   }
