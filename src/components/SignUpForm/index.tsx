@@ -18,9 +18,9 @@ interface ISignUpRequest {
 }
 
 const signUpFormValidationSchema = zod.object({
-  username: zod.string().min(2, 'Informe seu apelido'),
-  email: zod.string().email().min(2, 'Informe seu email'),
-  password: zod.string().min(7, 'Informe uma senha válida'),
+  username: zod.string().min(2, 'Insira um apelido (mínimo 2 caracteres)'),
+  email: zod.string().email('Insira um email válido'),
+  password: zod.string().min(7, 'Insira uma senha válida'),
 })
 
 export type SignUpFormData = zod.infer<typeof signUpFormValidationSchema>
