@@ -11,7 +11,7 @@ export const Form = styled.form`
   width: 100%;
 
   button {
-    margin: 1rem 0 4rem;
+    margin-top: 1rem;
     width: 100%;
   }
 `
@@ -22,4 +22,15 @@ export const FieldContainer = styled.div`
   gap: 0.5rem;
 
   width: 100%;
+`
+
+export const WarningsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    text-align: center;
+  }
 `
