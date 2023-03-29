@@ -9,7 +9,7 @@ import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
-import { FieldContainer, Form, WarningsContainer } from './styles'
+import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 
 interface ISignUpRequest {
   username: string
@@ -100,14 +100,14 @@ export function SignUpForm() {
         />
       </FieldContainer>
 
-      {errors?.username && <span>{errors.username.message}</span>}
+      {errors?.username && <Validate>{errors.username.message}</Validate>}
 
       <FieldContainer>
         <label htmlFor="email">Email</label>
         <input required id="email" {...register('email')} name="email" />
       </FieldContainer>
 
-      {errors?.email && <span>{errors.email.message}</span>}
+      {errors?.email && <Validate>{errors.email.message}</Validate>}
 
       <FieldContainer>
         <label htmlFor="password">Password</label>
@@ -120,7 +120,7 @@ export function SignUpForm() {
         />
       </FieldContainer>
 
-      {errors?.password && <span>{errors.password.message}</span>}
+      {errors?.password && <Validate>{errors.password.message}</Validate>}
 
       <button
         data-testid="signup-submit"

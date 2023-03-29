@@ -34,3 +34,8 @@ export const WarningsContainer = styled.div`
     text-align: center;
   }
 `
+
+export const Validate = styled.span`
+  margin-top: -1rem;
+  font-size: 0.875rem;
+`
