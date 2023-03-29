@@ -60,8 +60,6 @@ export function SignUpForm() {
       })
       const data = response.data
 
-      console.log(data)
-
       await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
 
       addUser({
