@@ -10,6 +10,7 @@ import {
   USER_SESSION_STORAGE_KEY,
   headers,
 } from 'src/constants'
+import { useNavigate } from 'react-router-dom'
 
 type LogoutData = {
   message: string
@@ -41,7 +42,13 @@ async function LogoutUser(): Promise<LogoutResponse> {
 }
 
 export function useLogoutUser(): UseMutationResult<LogoutResponse, Error> {
-  return useMutation(LogoutUser)
+  const navigate = useNavigate()
+
+  return useMutation(LogoutUser, {
+    onSuccess: async () => {
+      return navigate('/signin')
+    },
+  })
 }
 
 export function Logout() {
