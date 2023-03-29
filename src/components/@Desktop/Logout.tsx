@@ -1,58 +1,11 @@
-import { useMutation, UseMutationResult } from 'react-query'
-import { useNavigate } from 'react-router-dom'
-import { SignOut } from 'phosphor-react'
-import { Cookies } from 'typescript-cookie'
 import { useTheme } from 'styled-components'
+import { SignOut } from 'phosphor-react'
 
-import { api } from 'src/services/api'
-import {
-  USER_ID_STORAGE_KEY,
-  USER_SESSION_STORAGE_KEY,
-  headers,
-} from 'src/constants'
-
-type LogoutData = {
-  message: string
-}
-
-interface LogoutResponse {
-  data: LogoutData
-}
-
-async function LogoutUser(): Promise<LogoutResponse> {
-  const [userId, sessionIdValue] = await Promise.all([
-    Cookies.get(USER_ID_STORAGE_KEY),
-    Cookies.get(USER_SESSION_STORAGE_KEY),
-  ])
-
-  const response = await api.post(`/users/logout/${userId}`, {
-    headers: {
-      ...headers,
-      Cookies: `${sessionIdValue}`,
-    },
-  })
-
-  const data = response.data
-
-  Cookies.remove(USER_ID_STORAGE_KEY)
-  Cookies.remove(USER_SESSION_STORAGE_KEY)
-
-  return { data }
-}
-
-export function useLogoutUser(): UseMutationResult<LogoutResponse, Error> {
-  const navigate = useNavigate()
-
-  return useMutation(LogoutUser, {
-    onSuccess: async () => {
-      return navigate('/signin')
-    },
-  })
-}
+import { useLogout } from 'src/services/hooks/useLogout'
 
 export function Logout() {
   const currentTheme = useTheme()
-  const { isLoading, isError, isSuccess, mutateAsync } = useLogoutUser()
+  const { isLoading, isError, isSuccess, mutateAsync } = useLogout()
 
   const handleLogout = async () => {
     await mutateAsync(undefined) // call mutateAsync with no arguments
