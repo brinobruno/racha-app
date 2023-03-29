@@ -9,7 +9,7 @@ import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
-import { FieldContainer, Form } from './styles'
+import { FieldContainer, Form, WarningsContainer } from './styles'
 
 interface ISignInRequest {
   email: string
@@ -89,6 +89,8 @@ export function SignInForm() {
         <input required id="email" {...register('email')} name="email" />
       </FieldContainer>
 
+      {errors?.email && <span>{errors.email.message}</span>}
+
       <FieldContainer>
         <label htmlFor="password">Password</label>
         <input
@@ -100,7 +102,6 @@ export function SignInForm() {
         />
       </FieldContainer>
 
-      {errors?.email && <span>{errors.email.message}</span>}
       {errors?.password && <span>{errors.password.message}</span>}
 
       <button
@@ -111,8 +112,16 @@ export function SignInForm() {
         Entrar
       </button>
 
-      {loginUser.isLoading && <span>Loading...</span>}
-      {loginUserError && <span>{loginUserError}</span>}
+      <WarningsContainer>
+        {loginUser.isLoading && <span>Signing in...</span>}
+        {loginUser.isSuccess && <span>Signed in successfully.</span>}
+        {loginUser.isError && (
+          <span>
+            Error signing in. <br />
+            {loginUserError}
+          </span>
+        )}
+      </WarningsContainer>
     </Form>
   )
 }
