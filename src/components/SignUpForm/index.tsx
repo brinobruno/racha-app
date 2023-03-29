@@ -9,7 +9,7 @@ import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
-import { FieldContainer, Form } from './styles'
+import { FieldContainer, Form, WarningsContainer } from './styles'
 
 interface ISignUpRequest {
   username: string
@@ -100,10 +100,14 @@ export function SignUpForm() {
         />
       </FieldContainer>
 
+      {errors?.username && <span>{errors.username.message}</span>}
+
       <FieldContainer>
         <label htmlFor="email">Email</label>
         <input required id="email" {...register('email')} name="email" />
       </FieldContainer>
+
+      {errors?.email && <span>{errors.email.message}</span>}
 
       <FieldContainer>
         <label htmlFor="password">Password</label>
@@ -116,8 +120,6 @@ export function SignUpForm() {
         />
       </FieldContainer>
 
-      {errors?.username && <span>{errors.username.message}</span>}
-      {errors?.email && <span>{errors.email.message}</span>}
       {errors?.password && <span>{errors.password.message}</span>}
 
       <button
@@ -128,8 +130,16 @@ export function SignUpForm() {
         Entrar
       </button>
 
-      {createUser.isLoading && <span>Loading...</span>}
-      {createUserError && <span>{createUserError}</span>}
+      <WarningsContainer>
+        {createUser.isLoading && <span>Signing up...</span>}
+        {createUser.isSuccess && <span>Signed up successfully.</span>}
+        {createUser.isError && (
+          <span>
+            Error signing up. <br />
+            {createUserError}
+          </span>
+        )}
+      </WarningsContainer>
     </Form>
   )
 }
