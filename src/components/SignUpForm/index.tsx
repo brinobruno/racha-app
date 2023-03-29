@@ -131,11 +131,11 @@ export function SignUpForm() {
       </button>
 
       <WarningsContainer>
-        {createUser.isLoading && <span>Signing up...</span>}
-        {createUser.isSuccess && <span>Signed up successfully.</span>}
+        {createUser.isLoading && <span>Criando conta...</span>}
+        {createUser.isSuccess && <span>Conta criada com sucesso</span>}
         {createUser.isError && (
           <span>
-            Error signing up. <br />
+            Erro ao criar conta: <br />
             {createUserError}
           </span>
         )}
