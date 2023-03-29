@@ -17,8 +17,8 @@ interface ISignInRequest {
 }
 
 const signInFormValidationSchema = zod.object({
-  email: zod.string().email().min(2, 'Informe seu email'),
-  password: zod.string().min(7, 'Informe uma senha válida'),
+  email: zod.string().email('Insira um email válido'),
+  password: zod.string().min(7, 'Insira uma senha válida'),
 })
 
 export type SignInFormData = zod.infer<typeof signInFormValidationSchema>
