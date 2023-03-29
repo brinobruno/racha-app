@@ -111,11 +111,11 @@ export function SignInForm() {
       </button>
 
       <WarningsContainer>
-        {loginUser.isLoading && <span>Signing in...</span>}
-        {loginUser.isSuccess && <span>Signed in successfully.</span>}
+        {loginUser.isLoading && <span>Entrando...</span>}
+        {loginUser.isSuccess && <span>Entrada com sucesso.</span>}
         {loginUser.isError && (
           <span>
-            Error signing in. <br />
+            Erro ao entrar: <br />
             {loginUserError}
           </span>
         )}
