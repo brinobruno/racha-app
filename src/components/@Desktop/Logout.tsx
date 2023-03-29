@@ -1,8 +1,8 @@
-import { SignOut } from 'phosphor-react'
-import { useTheme } from 'styled-components'
-
 import { useMutation, UseMutationResult } from 'react-query'
+import { useNavigate } from 'react-router-dom'
+import { SignOut } from 'phosphor-react'
 import { Cookies } from 'typescript-cookie'
+import { useTheme } from 'styled-components'
 
 import { api } from 'src/services/api'
 import {
@@ -10,7 +10,6 @@ import {
   USER_SESSION_STORAGE_KEY,
   headers,
 } from 'src/constants'
-import { useNavigate } from 'react-router-dom'
 
 type LogoutData = {
   message: string
