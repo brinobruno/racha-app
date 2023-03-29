@@ -11,8 +11,12 @@ import {
   headers,
 } from 'src/constants'
 
+type LogoutData = {
+  message: string
+}
+
 interface LogoutResponse {
-  data: any
+  data: LogoutData
 }
 
 async function LogoutUser(): Promise<LogoutResponse> {
