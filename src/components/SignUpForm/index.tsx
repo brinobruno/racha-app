@@ -58,17 +58,15 @@ export function SignUpForm() {
         email,
         password,
       })
-      const data = response.data
+      const { user, sessionId } = response.data
 
-      await addCookie(USER_SESSION_STORAGE_KEY, data.sessionId)
+      await addCookie(USER_SESSION_STORAGE_KEY, sessionId)
 
       addUser({
-        id: data.user.id,
-        username: data.user.username,
-        email: data.user.email,
+        id: user.id,
+        username: user.username,
+        email: user.email,
       })
-
-      return data
     },
   )
 
