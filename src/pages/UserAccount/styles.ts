@@ -71,6 +71,7 @@ export const UserInfoActions = styled.div`
   gap: 1.25rem;
 
   width: 100%;
+  padding-top: 2.5rem;
 
   > button {
     display: flex;
