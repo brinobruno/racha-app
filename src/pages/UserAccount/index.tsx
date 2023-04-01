@@ -1,5 +1,6 @@
 import { useUser } from 'src/services/hooks/useUser'
-import { Container } from './styles'
+import { Container, UserImageContainer, UserInfoContainer } from './styles'
+import ProfilePic from 'src/assets/profile-pic.png'
 
 export function UserAccount() {
   const { data, isLoading, error } = useUser()
@@ -13,11 +14,14 @@ export function UserAccount() {
       {isLoading && <span>Carregando...</span>}
       {typeof error === 'string' && <span>Erro: {error}</span>}
 
-      <div>
+      <UserInfoContainer>
+        <UserImageContainer>
+          <img src={ProfilePic} alt="Perfil" />
+        </UserImageContainer>
         <span>{user?.email}</span>
         <br />
         <span>{user?.username}</span>
-      </div>
+      </UserInfoContainer>
     </Container>
   )
 }
