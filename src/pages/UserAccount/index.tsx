@@ -11,16 +11,17 @@ export function UserAccount() {
     <Container>
       <h1>Minha conta</h1>
 
-      {isLoading && <span>Carregando...</span>}
-      {typeof error === 'string' && <span>Erro: {error}</span>}
+      <UserImageContainer>
+        <img src={ProfilePic} alt="Perfil" />
+      </UserImageContainer>
 
       <UserInfoContainer>
-        <UserImageContainer>
-          <img src={ProfilePic} alt="Perfil" />
-        </UserImageContainer>
         <span>{user?.email}</span>
         <br />
         <span>{user?.username}</span>
+
+        {isLoading && <span>Carregando...</span>}
+        {typeof error === 'string' && <span>Erro: {error}</span>}
       </UserInfoContainer>
     </Container>
   )
