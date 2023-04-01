@@ -8,7 +8,7 @@ export const Container = styled.section`
   padding: 3.5rem;
 
   h1 {
-    padding-bottom: 3.5rem;
+    padding-bottom: 1.5rem;
   }
 `
 
