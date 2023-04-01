@@ -5,16 +5,21 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
   padding: 3.5rem;
 
   h1 {
     padding-bottom: 1.5rem;
   }
+
+  div {
+    width: 100%;
+    max-width: 18.75rem;
+  }
 `
 
 export const UserImageContainer = styled.div`
-  max-width: 12.5rem;
-
   img {
     width: 100%;
     height: 100%;
@@ -56,5 +61,25 @@ export const UserInfoItem = styled.div`
     font-size: 1.125rem;
     line-height: 1.5rem;
     font-weight: 400;
+  }
+`
+
+export const UserInfoActions = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  width: 100%;
+
+  > button {
+    display: flex;
+    align-items: center;
+    gap: 1.125rem;
+
+    font-size: unset;
+    font-weight: unset;
+    background: unset;
+    padding: unset;
   }
 `
