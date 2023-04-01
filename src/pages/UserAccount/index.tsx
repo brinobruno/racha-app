@@ -31,6 +31,11 @@ export function UserAccount() {
           <strong>{user?.email}</strong>
         </UserInfoItem>
 
+        <UserInfoItem>
+          <span>Senha</span>
+          <strong>*************</strong>
+        </UserInfoItem>
+
         {isLoading && <span>Carregando...</span>}
         {typeof error === 'string' && <span>Erro: {error}</span>}
       </UserInfoContainer>
