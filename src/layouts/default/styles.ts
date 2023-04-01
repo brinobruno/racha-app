@@ -60,6 +60,10 @@ export const NavBar = styled.nav`
       margin-top: 1.96rem;
       padding-bottom: 1.96rem;
     }
+
+    &:hover {
+      color: ${(props) => props.theme['neutral-100']};
+    }
   }
 `
 
