@@ -12,12 +12,6 @@ export const Container = styled.section`
   }
 `
 
-export const UserInfoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 export const UserImageContainer = styled.div`
   max-width: 12.5rem;
 
@@ -36,5 +30,29 @@ export const UserImageContainer = styled.div`
     border-radius: 100%;
     background-size: cover;
     background-clip: content-box;
+  }
+`
+
+export const UserInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+`
+
+export const UserInfoItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+
+  span {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  strong {
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 400;
   }
 `
