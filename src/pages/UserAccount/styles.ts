@@ -24,8 +24,8 @@ export const UserImageContainer = styled.div`
     clip-path: circle();
     object-fit: cover;
 
-    padding: 2px;
-    border: 2px solid ${(props) => props.theme['neutral-100']};
+    padding: 4px;
+    border: 4px solid ${(props) => props.theme['neutral-100']};
 
     border-radius: 100%;
     background-size: cover;
