@@ -1,4 +1,5 @@
 import { useUser } from 'src/services/hooks/useUser'
+import { Container } from './styles'
 
 export function UserAccount() {
   const { data, isLoading, error } = useUser()
@@ -6,15 +7,17 @@ export function UserAccount() {
   const user = data && data.user
 
   return (
-    <section>
+    <Container>
       <h1>Minha conta</h1>
 
       {isLoading && <span>Carregando...</span>}
       {typeof error === 'string' && <span>Erro: {error}</span>}
 
-      <span>{user?.email}</span>
-      <br />
-      <span>{user?.username}</span>
-    </section>
+      <div>
+        <span>{user?.email}</span>
+        <br />
+        <span>{user?.username}</span>
+      </div>
+    </Container>
   )
 }
