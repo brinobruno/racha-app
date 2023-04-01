@@ -38,6 +38,8 @@ export const UserInfoContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
+
+  margin-top: 1.5rem;
 `
 
 export const UserInfoItem = styled.div`
