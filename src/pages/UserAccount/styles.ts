@@ -83,3 +83,7 @@ export const UserInfoActions = styled.div`
     padding: unset;
   }
 `
+
+export const SignOutButton = styled.span`
+  color: ${(props) => props.theme['primary-500']};
+`
