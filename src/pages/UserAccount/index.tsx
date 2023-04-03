@@ -1,14 +1,13 @@
 import { useUser } from 'src/services/hooks/useUser'
 import {
   Container,
-  SignOutButton,
   UserImageContainer,
   UserInfoActions,
   UserInfoContainer,
   UserInfoItem,
 } from './styles'
 import ProfilePic from 'src/assets/profile-pic.png'
-import { PencilSimple, Trash, SignOut } from 'phosphor-react'
+import { PencilSimple, Trash } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { Logout } from 'src/components/@Desktop/Logout'
 
@@ -55,11 +54,6 @@ export function UserAccount() {
         <button>
           <Trash size={28} color={currentTheme['neutral-100']} />
           <span>Deletar minha conta</span>
-        </button>
-
-        <button>
-          <SignOut size={28} color={currentTheme['primary-500']} />
-          <SignOutButton>Sair</SignOutButton>
         </button>
 
         <Logout btnWeight="regular" btnSize={28} />
