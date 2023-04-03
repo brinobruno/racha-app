@@ -10,6 +10,7 @@ import {
 import ProfilePic from 'src/assets/profile-pic.png'
 import { PencilSimple, Trash, SignOut } from 'phosphor-react'
 import { useTheme } from 'styled-components'
+import { Logout } from 'src/components/@Desktop/Logout'
 
 export function UserAccount() {
   const currentTheme = useTheme()
@@ -60,6 +61,8 @@ export function UserAccount() {
           <SignOut size={28} color={currentTheme['primary-500']} />
           <SignOutButton>Sair</SignOutButton>
         </button>
+
+        <Logout btnWeight="regular" btnSize={28} />
       </UserInfoActions>
     </Container>
   )
