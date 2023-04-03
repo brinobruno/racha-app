@@ -1,9 +1,14 @@
 import { useTheme } from 'styled-components'
-import { SignOut } from 'phosphor-react'
+import { IconWeight, SignOut } from 'phosphor-react'
 
 import { useLogout } from 'src/services/hooks/useLogout'
 
-export function Logout() {
+interface ILogoutButtonProps {
+  btnWeight: IconWeight
+  btnSize: number
+}
+
+export function Logout({ btnWeight, btnSize }: ILogoutButtonProps) {
   const currentTheme = useTheme()
   const { isLoading, isError, isSuccess, mutateAsync } = useLogout()
 
@@ -12,15 +17,19 @@ export function Logout() {
   }
 
   return (
-    <div>
+    <>
       <button onClick={handleLogout} disabled={isLoading}>
-        <SignOut weight="bold" color={currentTheme['primary-500']} size={24} />
+        <SignOut
+          weight={btnWeight}
+          size={btnSize}
+          color={currentTheme['primary-500']}
+        />
         <span>Sair</span>
       </button>
 
       {isLoading && <div>Logging out...</div>}
       {isSuccess && <div>Logged out successfully.</div>}
       {isError && <div>Error logging out.</div>}
-    </div>
+    </>
   )
 }
