@@ -108,7 +108,9 @@ export function Header() {
 
             <ThemeSwitcher />
 
-            <Logout />
+            <div>
+              <Logout btnWeight="bold" btnSize={24} />
+            </div>
           </ProfileMenu>
         </ProfileItem>
       </HeaderItems>
