@@ -82,6 +82,10 @@ export const UserInfoActions = styled.div`
     font-weight: unset;
     background: unset;
     padding: unset;
+
+    &:hover {
+      background: unset;
+    }
   }
 `
 
