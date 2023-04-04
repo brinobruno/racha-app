@@ -81,7 +81,9 @@ export function SignUpForm() {
         return navigate('/dashboard')
       },
       onError: () => {
-        toast('Revise os dados de cadastro!')
+        toast('Revise os dados de cadastro!', {
+          className: 'warning-toast',
+        })
       },
     })
   }
