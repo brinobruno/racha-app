@@ -56,7 +56,9 @@ export function UserAccount() {
           <span>Deletar minha conta</span>
         </button>
 
-        <Logout btnWeight="regular" btnSize={28} />
+        <div>
+          <Logout btnWeight="regular" btnSize={28} />
+        </div>
       </UserInfoActions>
     </Container>
   )
