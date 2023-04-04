@@ -73,7 +73,7 @@ export const UserInfoActions = styled.div`
   width: 100%;
   padding-top: 2.5rem;
 
-  > button {
+  button {
     display: flex;
     align-items: center;
     gap: 1.125rem;
@@ -86,6 +86,10 @@ export const UserInfoActions = styled.div`
     &:hover {
       background: unset;
     }
+  }
+
+  div span {
+    color: ${(props) => props.theme['primary-500']};
   }
 `
 
