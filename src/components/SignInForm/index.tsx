@@ -70,7 +70,7 @@ export function SignInForm() {
       onSuccess: async () => {
         reset()
 
-        toast('Sign In Success')
+        toast('Bem-vindo(a) de volta!')
 
         return navigate('/dashboard')
       },
