@@ -7,7 +7,7 @@ import { GlobalStyle } from './styles/global'
 import { UserContextProvider } from './contexts/UserContext'
 import { ThemeContextProvider } from './contexts/ThemeContext'
 import { CookieNotice } from './components/CookieNotice'
-import { ToastContainer } from 'react-toastify'
+import { ToastNotification } from './components/ToastNotification'
 
 const queryClient = new QueryClient()
 
@@ -21,19 +21,7 @@ export function App() {
               <Router />
 
               <CookieNotice />
-
-              <ToastContainer
-                position="bottom-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
+              <ToastNotification />
 
               <GlobalStyle />
             </ThemeContextProvider>
