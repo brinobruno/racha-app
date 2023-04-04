@@ -74,6 +74,9 @@ export function SignInForm() {
 
         return navigate('/dashboard')
       },
+      onError: () => {
+        toast('Revise os dados de login!')
+      },
     })
   }
 
