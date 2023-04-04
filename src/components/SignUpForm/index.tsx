@@ -10,6 +10,7 @@ import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
+import { toast } from 'react-toastify'
 
 interface ISignUpRequest {
   username: string
@@ -75,7 +76,12 @@ export function SignUpForm() {
       onSuccess: async () => {
         reset()
 
+        toast('Bem-vindo(a) ao Racha!')
+
         return navigate('/dashboard')
+      },
+      onError: () => {
+        toast('Revise os dados de cadastro!')
       },
     })
   }
