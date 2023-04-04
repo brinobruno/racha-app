@@ -4,13 +4,13 @@ import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
-import { toast } from 'react-toastify'
 
 interface ISignUpRequest {
   username: string
