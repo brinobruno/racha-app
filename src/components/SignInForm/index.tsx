@@ -70,12 +70,16 @@ export function SignInForm() {
       onSuccess: async () => {
         reset()
 
-        toast('Bem-vindo(a) de volta!')
+        toast('Bem-vindo(a) de volta!', {
+          className: 'successful-toast',
+        })
 
         return navigate('/dashboard')
       },
       onError: () => {
-        toast('Revise os dados de login!')
+        toast('Revise os dados de login!', {
+          className: 'warning-toast',
+        })
       },
     })
   }
