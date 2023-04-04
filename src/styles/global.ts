@@ -93,4 +93,10 @@ export const GlobalStyle = createGlobalStyle`
   li {
     list-style: none;
   }
+
+  .successful-toast .Toastify__progress-bar {}
+
+  .warning-toast .Toastify__progress-bar {
+    background: ${(props) => props.theme['primary-500']}
+  }
 `
