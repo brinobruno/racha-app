@@ -10,6 +10,7 @@ import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
+import { toast } from 'react-toastify'
 
 interface ISignInRequest {
   email: string
@@ -68,6 +69,8 @@ export function SignInForm() {
     loginUser.mutate(inputs, {
       onSuccess: async () => {
         reset()
+
+        toast('Sign In Success')
 
         return navigate('/dashboard')
       },
