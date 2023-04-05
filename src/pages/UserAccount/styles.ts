@@ -86,6 +86,10 @@ export const UserInfoActions = styled.div`
     &:hover {
       background: unset;
     }
+
+    span {
+      color: ${(props) => props.theme['neutral-100']};
+    }
   }
 
   div span {
