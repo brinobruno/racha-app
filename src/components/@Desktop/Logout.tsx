@@ -15,7 +15,7 @@ export function Logout({ btnWeight, btnSize }: ILogoutButtonProps) {
 
   const handleLogout = async () => {
     await mutateAsync(undefined) // call mutateAsync with no arguments
-    toast('Logged out successfully')
+    toast('Você saiu da sua conta')
   }
 
   return (
