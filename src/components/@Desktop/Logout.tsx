@@ -11,14 +11,12 @@ interface ILogoutButtonProps {
 
 export function Logout({ btnWeight, btnSize }: ILogoutButtonProps) {
   const currentTheme = useTheme()
-  const { isLoading, isError, isSuccess, mutateAsync } = useLogout()
+  const { isLoading, isError, mutateAsync } = useLogout()
 
   const handleLogout = async () => {
     await mutateAsync(undefined) // call mutateAsync with no arguments
 
-    isLoading && toast('Saindo...')
-    isSuccess && toast('Você saiu da sua conta')
-    isError && toast('Erro ao sair da sua conta')
+    toast('Você saiu da sua conta')
   }
 
   return (
@@ -32,9 +30,7 @@ export function Logout({ btnWeight, btnSize }: ILogoutButtonProps) {
         <span>Sair</span>
       </button>
 
-      {isLoading && <div>Logging out...</div>}
-      {isSuccess && <div>Logged out successfully.</div>}
-      {isError && <div>Error logging out.</div>}
+      {isError && toast('Erro ao sair da sua conta')}
     </>
   )
 }
