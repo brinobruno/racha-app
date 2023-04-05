@@ -2,6 +2,7 @@ import { useTheme } from 'styled-components'
 import { IconWeight, SignOut } from 'phosphor-react'
 
 import { useLogout } from 'src/services/hooks/useLogout'
+import { toast } from 'react-toastify'
 
 interface ILogoutButtonProps {
   btnWeight: IconWeight
@@ -14,6 +15,7 @@ export function Logout({ btnWeight, btnSize }: ILogoutButtonProps) {
 
   const handleLogout = async () => {
     await mutateAsync(undefined) // call mutateAsync with no arguments
+    toast('Logged out successfully')
   }
 
   return (
