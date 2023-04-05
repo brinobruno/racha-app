@@ -23,6 +23,7 @@ export const HeaderContainer = styled.header`
 
   position: sticky;
   top: 0;
+  z-index: 100;
 `
 
 export const HeaderItems = styled.div`
