@@ -14,3 +14,5 @@
 - [ ] Add global loading component
 
 - [ ] Page - Account page
+
+- [ ] Make 2 queries to make teams page = get players as well
