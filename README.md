@@ -13,7 +13,7 @@
 - [ ] Add Unit testing
 - [ ] Add global loading component
 
-- [ ] Page - Account page
+- [X] Page - Account page
 
 - [ ] Make 2 queries to make teams page = get players as well
 - [ ] Update API or figure out how to get overall rating for teams
