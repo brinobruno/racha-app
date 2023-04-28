@@ -14,6 +14,7 @@
 - [ ] Add global loading component
 
 - [X] Page - Account page
+- [ ] Query - Figure out issue GET players/:teamId
 
 - [ ] Make 2 queries to make teams page = get players as well
 - [ ] Update API or figure out how to get overall rating for teams
