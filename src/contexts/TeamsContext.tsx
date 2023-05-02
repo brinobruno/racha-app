@@ -24,6 +24,7 @@ export interface IPlayer {
 
 export interface ITeam {
   id: string
+  user_id: string
   title: string
   owner: string
 
