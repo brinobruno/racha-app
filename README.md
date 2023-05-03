@@ -19,3 +19,10 @@
 
 - [ ] Make 2 queries to make teams page = get players as well
 - [ ] Update API or figure out how to get overall rating for teams
+
+## Teams+Players todo
+- [ ] Get teams
+- [ ] Get players
+- [ ] Create user's teams context
+- [ ] Connect teams with players data
+- [ ] Add teams/players connected data to teams context
