@@ -21,8 +21,8 @@
 - [ ] Update API or figure out how to get overall rating for teams
 
 ## Teams+Players todo
-- [ ] Get teams
-- [ ] Get players
-- [ ] Create user's teams context
+- [X] Get teams
+- [X] Get players
+- [X] Create user's teams context
 - [ ] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
