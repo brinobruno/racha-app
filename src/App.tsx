@@ -8,6 +8,7 @@ import { UserContextProvider } from './contexts/UserContext'
 import { ThemeContextProvider } from './contexts/ThemeContext'
 import { CookieNotice } from './components/CookieNotice'
 import { ToastNotification } from './components/ToastNotification'
+import { TeamsContextProvider } from './contexts/TeamsContext'
 
 const queryClient = new QueryClient()
 
@@ -17,14 +18,16 @@ export function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <UserContextProvider>
-            <ThemeContextProvider>
-              <Router />
+            <TeamsContextProvider>
+              <ThemeContextProvider>
+                <Router />
 
-              <CookieNotice />
-              <ToastNotification />
+                <CookieNotice />
+                <ToastNotification />
 
-              <GlobalStyle />
-            </ThemeContextProvider>
+                <GlobalStyle />
+              </ThemeContextProvider>
+            </TeamsContextProvider>
           </UserContextProvider>
         </BrowserRouter>
 
