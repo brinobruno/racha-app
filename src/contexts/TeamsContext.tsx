@@ -27,12 +27,11 @@ export interface ITeam {
   user_id: string
   title: string
   owner: string
-
   players: IPlayer[]
 }
 
 interface ITeams {
-  team: ITeam[]
+  teams: ITeam[]
 }
 
 interface ITeamsContext {
