@@ -1,9 +1,12 @@
-// import { useTeams } from 'src/services/hooks/useTeams'
 import { Container } from './styles'
 import { usePlayersFromTeam } from 'src/services/hooks/usePlayersFromTeam'
 
 export function Teams() {
-  const { data, isLoading, error } = usePlayersFromTeam()
+  const { data, isLoading, error } = usePlayersFromTeam(
+    'f40011b3-db40-4922-a26c-70a8b12da9a2',
+  )
+
+  console.log(data)
 
   const players = data?.players
 
