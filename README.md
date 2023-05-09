@@ -24,5 +24,5 @@
 - [X] Get teams
 - [X] Get players
 - [X] Create user's teams context
-- [ ] Connect teams with players data
+- [X] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
