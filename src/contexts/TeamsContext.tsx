@@ -30,7 +30,7 @@ export interface ITeam {
   players: IPlayer[]
 }
 
-interface ITeams {
+export interface ITeams {
   teams: ITeam[]
 }
 
