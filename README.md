@@ -14,7 +14,7 @@
 - [ ] Add global loading component
 
 - [X] Page - Account page
-- [ ] Query - Figure out issue GET players/:teamId
+- [X] Query - Figure out issue GET players/:teamId
 - [ ] Switch ports
 
 - [ ] Make 2 queries to make teams page = get players as well
