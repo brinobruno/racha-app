@@ -10,7 +10,7 @@ export function All() {
 
   return (
     <Container>
-      <h1>Meus times</h1>
+      <h1>All</h1>
 
       <div>
         {isLoading && <span>Carregando...</span>}
