@@ -23,7 +23,11 @@ export const TeamContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+`
 
-  padding: 0 0 1rem;
+export const PlayerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `
