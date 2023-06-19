@@ -4,6 +4,7 @@ import { Cookies } from 'typescript-cookie'
 import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
+import { IPlayerData } from './usePlayersFromTeam'
 
 export interface ITeamData {
   id: string
@@ -11,6 +12,7 @@ export interface ITeamData {
   title: string
   owner: string
   badge_url: string
+  players: IPlayerData[]
   active: boolean
   created_at: string
   updated_at: string
