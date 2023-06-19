@@ -9,6 +9,7 @@ import { Dashboard } from './pages/Dashboard'
 import { UserAccount } from './pages/UserAccount'
 import { Teams } from './pages/Teams'
 import ProtectedRoute from './services/auth/ProtectedRoute'
+import { All } from './pages/All'
 
 export function Router() {
   return (
@@ -27,6 +28,13 @@ export function Router() {
               authenticationPath="/signin"
               outlet={<Dashboard />}
             />
+          }
+        />
+
+        <Route
+          path="all"
+          element={
+            <ProtectedRoute authenticationPath="/signin" outlet={<All />} />
           }
         />
 
