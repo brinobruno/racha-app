@@ -23,6 +23,10 @@ export const TeamContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  background: ${(props) => props.theme['secondary-accent']};
+  padding: 1rem;
+  border-radius: 5px;
 `
 
 export const PlayerContainer = styled.div`
