@@ -30,8 +30,9 @@ export function All() {
 
                 {team.players.map((player) => (
                   <>
-                    <strong>Player: </strong>
                     <PlayerContainer key={player.id}>
+                      <strong>Player: </strong>
+
                       <span>
                         {player.name}
                         <br />
