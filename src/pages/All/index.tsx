@@ -17,13 +17,16 @@ export function All() {
         {typeof error === 'string' && <span>Erro: {error}</span>}
 
         {teams && (
-          <ul>
-            {teams.map((team: ITeamData) => (
-              <li key={team.id}>
-                <div>ID: {team.id}</div>
-              </li>
-            ))}
-          </ul>
+          <>
+            <strong>Teams of user:</strong>
+            <ul>
+              {teams.map((team: ITeamData) => (
+                <li key={team.id}>
+                  <div>ID: {team.id}</div>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
 
