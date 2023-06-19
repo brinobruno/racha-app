@@ -4,7 +4,7 @@ import { Cookies } from 'typescript-cookie'
 import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 
-interface IPlayerData {
+export interface IPlayerData {
   id: string
   team_id: string
   name: string
