@@ -10,11 +10,14 @@ import { UserAccount } from './pages/UserAccount'
 import { Teams } from './pages/Teams'
 import ProtectedRoute from './services/auth/ProtectedRoute'
 import { All } from './pages/All'
+import NotFound from './pages/NotFound.tsx'
 
 export function Router() {
   return (
     <Routes>
       <Route path="/" element={<AuthLayout />}>
+        <Route path="*" element={<NotFound />} />
+
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Signin />} />
