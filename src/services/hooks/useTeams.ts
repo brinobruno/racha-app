@@ -23,7 +23,7 @@ type TeamDataResponse = {
 
 async function getTeamsData(): Promise<TeamDataResponse> {
   const [userId, sessionIdValue] = await Promise.all([
-    'f40011b3-db40-4922-a26c-70a8b12da9a2',
+    'a6cff3d1-fe45-4cef-b5b6-df77643162a8',
     Cookies.get(USER_SESSION_STORAGE_KEY),
   ])
 
