@@ -4,9 +4,9 @@ import { Container } from './styles'
 export function All() {
   const { data, isLoading, error } = useTeams()
 
-  console.log(data)
-
   const teams = data ? data.teams : undefined
+
+  console.log(teams)
 
   return (
     <Container>
