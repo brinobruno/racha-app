@@ -5,7 +5,7 @@ import { api } from 'src/services/api'
 import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
 
-interface ITeamData {
+export interface ITeamData {
   id: string
   user_id: string
   title: string

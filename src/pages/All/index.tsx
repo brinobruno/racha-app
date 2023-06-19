@@ -1,4 +1,4 @@
-import { useTeams } from 'src/services/hooks/useTeams'
+import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { Container } from './styles'
 
 export function All() {
@@ -6,7 +6,7 @@ export function All() {
 
   console.log(data)
 
-  // const teams = data
+  const teams = data ? data.teams : undefined
 
   return (
     <Container>
@@ -16,15 +16,15 @@ export function All() {
         {isLoading && <span>Carregando...</span>}
         {typeof error === 'string' && <span>Erro: {error}</span>}
 
-        {/* {teams && (
+        {teams && (
           <ul>
-            {teams.map((teams: any) => (
-              <li key={teams.id}>
-                <div>ID: {teams.id}</div>
+            {teams.map((team: ITeamData) => (
+              <li key={team.id}>
+                <div>ID: {team.id}</div>
               </li>
             ))}
           </ul>
-        )} */}
+        )}
       </div>
 
       <button>Criar time</button>
