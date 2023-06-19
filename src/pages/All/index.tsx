@@ -1,14 +1,12 @@
+import { useTeams } from 'src/services/hooks/useTeams'
 import { Container } from './styles'
-import { usePlayersFromTeam } from 'src/services/hooks/usePlayersFromTeam'
 
 export function All() {
-  const { data, isLoading, error } = usePlayersFromTeam(
-    'f40011b3-db40-4922-a26c-70a8b12da9a2',
-  )
+  const { data, isLoading, error } = useTeams()
 
   console.log(data)
 
-  const players = data?.players
+  // const teams = data
 
   return (
     <Container>
@@ -18,15 +16,15 @@ export function All() {
         {isLoading && <span>Carregando...</span>}
         {typeof error === 'string' && <span>Erro: {error}</span>}
 
-        {players && (
+        {/* {teams && (
           <ul>
-            {players.map((player) => (
-              <li key={player.id}>
-                <div>ID: {player.id}</div>
+            {teams.map((teams: any) => (
+              <li key={teams.id}>
+                <div>ID: {teams.id}</div>
               </li>
             ))}
           </ul>
-        )}
+        )} */}
       </div>
 
       <button>Criar time</button>
