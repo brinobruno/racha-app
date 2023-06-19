@@ -1,5 +1,5 @@
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-import { Container } from './styles'
+import { Container, TeamContainer, TeamsContainer } from './styles'
 
 export function All() {
   const { data, isLoading, error } = useTeams()
@@ -17,25 +17,23 @@ export function All() {
         {typeof error === 'string' && <span>Erro: {error}</span>}
 
         {teams && (
-          <>
-            <strong>Teams of user:</strong>
-            <ul>
-              {teams.map((team: ITeamData) => (
-                <li key={team.id}>
-                  <div>ID: {team.id}</div>
+          <TeamsContainer>
+            <strong>Teams of user: </strong>
+            {teams.map((team: ITeamData) => (
+              <TeamContainer key={team.id}>
+                <div>ID: {team.id}</div>
 
-                  <div>
-                    {team.players.map((player) => (
-                      <span key={player.id}>
-                        {player.name}
-                        <br />
-                      </span>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </>
+                <div>
+                  {team.players.map((player) => (
+                    <span key={player.id}>
+                      {player.name}
+                      <br />
+                    </span>
+                  ))}
+                </div>
+              </TeamContainer>
+            ))}
+          </TeamsContainer>
         )}
       </div>
 
