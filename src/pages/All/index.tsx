@@ -23,6 +23,15 @@ export function All() {
               {teams.map((team: ITeamData) => (
                 <li key={team.id}>
                   <div>ID: {team.id}</div>
+
+                  <div>
+                    {team.players.map((player) => (
+                      <span key={player.id}>
+                        {player.name}
+                        <br />
+                      </span>
+                    ))}
+                  </div>
                 </li>
               ))}
             </ul>
