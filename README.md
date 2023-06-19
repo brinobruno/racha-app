@@ -14,7 +14,7 @@
 - [ ] Add global loading component
 
 - [X] Page - Account page
-- [ ] Query - Figure out issue GET players/:teamId
+- [X] Query - Figure out issue GET players/:teamId
 - [ ] Switch ports
 
 - [ ] Make 2 queries to make teams page = get players as well
@@ -26,3 +26,4 @@
 - [X] Create user's teams context
 - [X] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
+- [ ] Switch players info to completion/composition of teams info
