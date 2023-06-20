@@ -1,31 +1,46 @@
-import { Container } from './styles'
-import { usePlayersFromTeam } from 'src/services/hooks/usePlayersFromTeam'
+import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
+import {
+  Container,
+  PlayerContainer,
+  TeamContainer,
+  TeamsContainer,
+} from './styles'
 
 export function Teams() {
-  const { data, isLoading, error } = usePlayersFromTeam(
-    'f40011b3-db40-4922-a26c-70a8b12da9a2',
-  )
+  const { data, isLoading, error } = useTeams()
 
-  const players = data ? data.players : undefined
+  const teams = data ? data.teams : undefined
 
-  console.log(players)
+  console.log(teams)
 
   return (
     <Container>
-      <h1>Meus times</h1>
+      <h1>All</h1>
 
       <div>
         {isLoading && <span>Carregando...</span>}
         {typeof error === 'string' && <span>Erro: {error}</span>}
 
-        {players && (
-          <ul>
-            {players.map((player) => (
-              <li key={player.id}>
-                <div>ID: {player.id}</div>
-              </li>
+        {teams && (
+          <TeamsContainer>
+            <strong>Teams of user: </strong>
+            {teams.map((team: ITeamData) => (
+              <TeamContainer key={team.id}>
+                <div>ID: {team.id}</div>
+
+                {team.players.map((player) => (
+                  <PlayerContainer key={player.id}>
+                    <strong>Player: </strong>
+
+                    <span>
+                      {player.name}
+                      <br />
+                    </span>
+                  </PlayerContainer>
+                ))}
+              </TeamContainer>
             ))}
-          </ul>
+          </TeamsContainer>
         )}
       </div>
 

@@ -7,9 +7,9 @@ import { Signin } from './pages/Signin'
 import { SignUp } from './pages/Signup'
 import { Dashboard } from './pages/Dashboard'
 import { UserAccount } from './pages/UserAccount'
-import { Teams } from './pages/Teams'
+import { Players } from './pages/Players'
 import ProtectedRoute from './services/auth/ProtectedRoute'
-import { All } from './pages/All'
+import { Teams } from './pages/Teams'
 import NotFound from './pages/NotFound.tsx'
 
 export function Router() {
@@ -35,9 +35,9 @@ export function Router() {
         />
 
         <Route
-          path="all"
+          path="teams/players"
           element={
-            <ProtectedRoute authenticationPath="/signin" outlet={<All />} />
+            <ProtectedRoute authenticationPath="/signin" outlet={<Players />} />
           }
         />
 
