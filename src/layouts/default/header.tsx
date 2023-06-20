@@ -108,6 +108,18 @@ export function Header() {
               link="/teams"
             />
 
+            <ProfileNavItem
+              icon={
+                <Bookmarks
+                  color={currentTheme['secondary-500']}
+                  weight="bold"
+                  size={24}
+                />
+              }
+              title="FAQ"
+              link="/"
+            />
+
             <ThemeSwitcher />
 
             <div>
