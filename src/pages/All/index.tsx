@@ -29,16 +29,14 @@ export function All() {
                 <div>ID: {team.id}</div>
 
                 {team.players.map((player) => (
-                  <>
-                    <PlayerContainer key={player.id}>
-                      <strong>Player: </strong>
+                  <PlayerContainer key={player.id}>
+                    <strong>Player: </strong>
 
-                      <span>
-                        {player.name}
-                        <br />
-                      </span>
-                    </PlayerContainer>
-                  </>
+                    <span>
+                      {player.name}
+                      <br />
+                    </span>
+                  </PlayerContainer>
                 ))}
               </TeamContainer>
             ))}
