@@ -15,7 +15,7 @@ export function Teams() {
 
   return (
     <Container>
-      <h1>All</h1>
+      <h1>Teams from user</h1>
 
       <div>
         {isLoading && <span>Carregando...</span>}
@@ -23,7 +23,6 @@ export function Teams() {
 
         {teams && (
           <TeamsContainer>
-            <strong>Teams of user: </strong>
             {teams.map((team: ITeamData) => (
               <TeamContainer key={team.id}>
                 <div>ID: {team.id}</div>
