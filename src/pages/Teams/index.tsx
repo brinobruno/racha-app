@@ -6,9 +6,9 @@ export function Teams() {
     'f40011b3-db40-4922-a26c-70a8b12da9a2',
   )
 
-  console.log(data)
+  const players = data ? data.players : undefined
 
-  const players = data?.players
+  console.log(players)
 
   return (
     <Container>
