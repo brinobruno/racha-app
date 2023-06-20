@@ -1,7 +1,7 @@
 import { useRef, useEffect, useReducer } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useTheme } from 'styled-components'
-import { Bookmarks, User } from 'phosphor-react'
+import { Bookmarks, Question, User } from 'phosphor-react'
 
 import LogoBlack from 'src/assets/logo-black.svg'
 import LogoWhite from 'src/assets/logo-white.svg'
@@ -107,7 +107,7 @@ export function Header() {
 
             <ProfileNavItem
               icon={
-                <Bookmarks
+                <Question
                   color={currentTheme['secondary-500']}
                   weight="bold"
                   size={24}
