@@ -12,7 +12,7 @@ export function Players() {
 
   return (
     <Container>
-      <h1>Meus times</h1>
+      <h1>Jogadores do time</h1>
 
       <div>
         {isLoading && <span>Carregando...</span>}
@@ -29,7 +29,7 @@ export function Players() {
         )}
       </div>
 
-      <button>Criar time</button>
+      <button>Criar jogador</button>
     </Container>
   )
 }
