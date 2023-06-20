@@ -7,9 +7,10 @@ import { Signin } from './pages/Signin'
 import { SignUp } from './pages/Signup'
 import { Dashboard } from './pages/Dashboard'
 import { UserAccount } from './pages/UserAccount'
-import { Players } from './pages/Players'
-import ProtectedRoute from './services/auth/ProtectedRoute'
 import { Teams } from './pages/Teams'
+import { Players } from './pages/Players'
+
+import ProtectedRoute from './services/auth/ProtectedRoute'
 import NotFound from './pages/NotFound.tsx'
 
 export function Router() {
