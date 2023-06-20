@@ -2,7 +2,11 @@ import { useQuery } from 'react-query'
 import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
-import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
+import {
+  USER_ID_STORAGE_KEY,
+  USER_SESSION_STORAGE_KEY,
+  headers,
+} from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
 import { IPlayerData } from './usePlayersFromTeam'
 
@@ -25,7 +29,7 @@ type TeamDataResponse = {
 
 async function getTeamsData(): Promise<TeamDataResponse> {
   const [userId, sessionIdValue] = await Promise.all([
-    'a6cff3d1-fe45-4cef-b5b6-df77643162a8',
+    Cookies.get(USER_ID_STORAGE_KEY),
     Cookies.get(USER_SESSION_STORAGE_KEY),
   ])
 
