@@ -11,7 +11,7 @@ import { Teams } from './pages/Teams'
 import { Players } from './pages/Players'
 
 import ProtectedRoute from './services/auth/ProtectedRoute'
-import NotFound from './pages/NotFound.tsx'
+import NotFound from './pages/NotFound'
 
 export function Router() {
   return (
