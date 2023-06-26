@@ -27,3 +27,4 @@
 - [X] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
 - [X] Switch players info to completion/composition of teams info
+- [ ] Create methods on teams context
