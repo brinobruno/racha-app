@@ -26,4 +26,5 @@
 - [X] Create user's teams context
 - [X] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
-- [ ] Switch players info to completion/composition of teams info
+- [X] Switch players info to completion/composition of teams info
+- [ ] Create methods on teams context
