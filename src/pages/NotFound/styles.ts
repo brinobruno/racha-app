@@ -5,6 +5,8 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  height: calc(100vh - 5.6rem);
 `
 
 export const IllustrationContainer = styled.div`
