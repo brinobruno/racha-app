@@ -20,3 +20,8 @@ export const IllustrationContainer = styled.div`
 export const Illustration = styled.img`
   width: 100%;
 `
+
+export const HelpContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
