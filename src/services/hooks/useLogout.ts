@@ -18,7 +18,7 @@ interface LogoutResponse {
 }
 
 async function LogoutUser(): Promise<LogoutResponse> {
-  const [userId, sessionIdValue] = await Promise.all([
+  const [userId, jwtToken] = await Promise.all([
     Cookies.get(USER_ID_STORAGE_KEY),
     Cookies.get(USER_JWT_AUTH_TOKEN_KEY),
   ])
@@ -26,7 +26,7 @@ async function LogoutUser(): Promise<LogoutResponse> {
   const response = await api.post(`/users/logout/${userId}`, {
     headers: {
       ...headers,
-      Cookies: `${sessionIdValue}`,
+      Cookies: `${jwtToken}`,
     },
   })
 
