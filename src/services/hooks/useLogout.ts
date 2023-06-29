@@ -17,7 +17,7 @@ interface LogoutResponse {
 async function LogoutUser(): Promise<LogoutResponse> {
   const [userId] = await Promise.all([Cookies.get(USER_ID_STORAGE_KEY)])
 
-  const response = await api.post(`/users/logout/${userId}`, authHeader())
+  const response = await api.post(`/users/logout/${userId}`, null, authHeader())
 
   const data = response.data
 
