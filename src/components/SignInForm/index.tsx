@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import { api } from 'src/services/api'
-import { USER_JWT_AUTH_TOKEN_KEY, headers } from 'src/constants'
+import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
+import { authHeader } from 'src/services/auth/authHeader'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 
 interface ISignInRequest {
@@ -49,11 +50,14 @@ export function SignInForm() {
   }
 
   const loginUser = useMutation(async ({ email, password }: ISignInRequest) => {
-    const response = await api.post(`/users/login`, {
-      headers,
-      email,
-      password,
-    })
+    const response = await api.post(
+      `/users/login`,
+      {
+        email,
+        password,
+      },
+      authHeader(),
+    )
     const { user, token } = response.data
 
     await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)

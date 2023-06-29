@@ -1,4 +1,4 @@
-import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
+import { BASE_URL, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 const getTokenFromCookies = () => {
   const jwtTokenCookieName = USER_JWT_AUTH_TOKEN_KEY
@@ -26,6 +26,10 @@ export const authHeader = () => {
 
   return {
     headers: {
+      'Access-Control-Allow-Credentials': true,
+      withCredentials: true,
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': BASE_URL,
       Authorization: 'Bearer ' + token,
     },
   }
