@@ -1,24 +1,15 @@
 import { BASE_URL, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
+import { getCookie } from 'typescript-cookie'
 
 const getTokenFromCookies = () => {
-  const jwtTokenCookieName = USER_JWT_AUTH_TOKEN_KEY
-
-  // Retrieve all cookies
-  const cookies = document.cookie.split(';')
-
-  // Find correct cookie
-  const jwtTokenCookie = cookies.find((cookie) => {
-    const [name] = cookie.trim().split('=')
-    return name === jwtTokenCookieName
-  })
+  const jwtTokenCookie = getCookie(USER_JWT_AUTH_TOKEN_KEY)
 
   // If the token cookie is found, extract and return it
-  if (jwtTokenCookie) {
-    const [, token] = jwtTokenCookie.trim().split('=')
-    return token
-  }
+  if (jwtTokenCookie) return jwtTokenCookie
 
-  return console.log('Cookie not found')
+  // Add error treatment later
+  console.log('Cookie not found')
+  return ''
 }
 
 export const authHeader = () => {
