@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 
-import { headers } from 'src/constants'
+import { authHeader } from '../auth/authHeader'
 import { api } from 'src/services/api'
 
 interface UsersDataResponse {
@@ -11,9 +11,7 @@ interface UsersDataResponse {
 }
 
 async function getUsers(): Promise<UsersDataResponse[]> {
-  const response = await api.get(`/users/`, {
-    headers,
-  })
+  const response = await api.get(`/users/`, authHeader())
 
   const data = response.data
 

@@ -3,11 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
-import {
-  USER_ID_STORAGE_KEY,
-  USER_JWT_AUTH_TOKEN_KEY,
-  headers,
-} from 'src/constants'
+import { authHeader } from '../auth/authHeader'
+import { USER_ID_STORAGE_KEY, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 type LogoutData = {
   message: string
@@ -18,17 +15,9 @@ interface LogoutResponse {
 }
 
 async function LogoutUser(): Promise<LogoutResponse> {
-  const [userId, jwtToken] = await Promise.all([
-    Cookies.get(USER_ID_STORAGE_KEY),
-    Cookies.get(USER_JWT_AUTH_TOKEN_KEY),
-  ])
+  const [userId] = await Promise.all([Cookies.get(USER_ID_STORAGE_KEY)])
 
-  const response = await api.post(`/users/logout/${userId}`, {
-    headers: {
-      ...headers,
-      Cookies: `${jwtToken}`,
-    },
-  })
+  const response = await api.post(`/users/logout/${userId}`, authHeader())
 
   const data = response.data
 

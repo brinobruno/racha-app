@@ -2,11 +2,8 @@ import { useQuery } from 'react-query'
 import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
-import {
-  USER_ID_STORAGE_KEY,
-  USER_SESSION_STORAGE_KEY,
-  headers,
-} from 'src/constants'
+import { authHeader } from '../auth/authHeader'
+import { USER_ID_STORAGE_KEY, USER_SESSION_STORAGE_KEY } from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
 import { IPlayerData } from './usePlayersFromTeam'
 
@@ -28,28 +25,24 @@ type TeamDataResponse = {
 }
 
 async function getTeamsData(): Promise<TeamDataResponse> {
-  const [userId, sessionIdValue] = await Promise.all([
+  const [userId] = await Promise.all([
     Cookies.get(USER_ID_STORAGE_KEY),
     Cookies.get(USER_SESSION_STORAGE_KEY),
   ])
 
-  const teamsResponse = await api.get(`/users/teams/all/${userId}`, {
-    headers: {
-      ...headers,
-      Cookies: `${sessionIdValue}`,
-    },
-  })
+  const teamsResponse = await api.get(
+    `/users/teams/all/${userId}`,
+    authHeader(),
+  )
 
   const teams = teamsResponse.data.teams || []
 
   const teamsWithPlayers = await Promise.all(
     teams.map(async (team: ITeam) => {
-      const playersResponse = await api.get(`/users/teams/players/${team.id}`, {
-        headers: {
-          ...headers,
-          Cookies: `${sessionIdValue}`,
-        },
-      })
+      const playersResponse = await api.get(
+        `/users/teams/players/${team.id}`,
+        authHeader(),
+      )
       const players = playersResponse.data.players || []
       return {
         ...team,

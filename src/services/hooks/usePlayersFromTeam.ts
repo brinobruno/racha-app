@@ -1,8 +1,7 @@
 import { useQuery } from 'react-query'
-import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
-import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
+import { authHeader } from '../auth/authHeader'
 
 export interface IPlayerData {
   id: string
@@ -31,17 +30,9 @@ type PlayersDataResponse = {
 async function getPlayersFromTeamData(
   teamId: string,
 ): Promise<PlayersDataResponse> {
-  const sessionIdValue = Cookies.get(USER_SESSION_STORAGE_KEY)
-
   const response = await api.get(
     `/users/teams/players/f40011b3-db40-4922-a26c-70a8b12da9a2`,
-    {
-      headers: {
-        ...headers,
-        // eslint-disable-next-line prettier/prettier
-        'Cookies': `${sessionIdValue}`,
-      },
-    },
+    authHeader(),
   )
 
   const data = response.data
