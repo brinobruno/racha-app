@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import { api } from 'src/services/api'
-import { USER_SESSION_STORAGE_KEY, headers } from 'src/constants'
+import { USER_JWT_AUTH_TOKEN_KEY, headers } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
@@ -54,9 +54,9 @@ export function SignInForm() {
       email,
       password,
     })
-    const { user, sessionId } = response.data
+    const { user, token } = response.data
 
-    await addCookie(USER_SESSION_STORAGE_KEY, sessionId)
+    await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
 
     addUser({
       id: user.id,
