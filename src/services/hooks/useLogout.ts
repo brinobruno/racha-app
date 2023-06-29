@@ -5,7 +5,7 @@ import { Cookies } from 'typescript-cookie'
 import { api } from 'src/services/api'
 import {
   USER_ID_STORAGE_KEY,
-  USER_SESSION_STORAGE_KEY,
+  USER_JWT_AUTH_TOKEN_KEY,
   headers,
 } from 'src/constants'
 
@@ -20,7 +20,7 @@ interface LogoutResponse {
 async function LogoutUser(): Promise<LogoutResponse> {
   const [userId, sessionIdValue] = await Promise.all([
     Cookies.get(USER_ID_STORAGE_KEY),
-    Cookies.get(USER_SESSION_STORAGE_KEY),
+    Cookies.get(USER_JWT_AUTH_TOKEN_KEY),
   ])
 
   const response = await api.post(`/users/logout/${userId}`, {
@@ -33,7 +33,7 @@ async function LogoutUser(): Promise<LogoutResponse> {
   const data = response.data
 
   Cookies.remove(USER_ID_STORAGE_KEY)
-  Cookies.remove(USER_SESSION_STORAGE_KEY)
+  Cookies.remove(USER_JWT_AUTH_TOKEN_KEY)
 
   return { data }
 }
