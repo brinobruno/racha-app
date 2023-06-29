@@ -12,7 +12,6 @@ interface IUserData {
   email: string
   id: string
   password: string
-  session_id: string
   updated_at: string
   username: string
 }
