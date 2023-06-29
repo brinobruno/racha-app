@@ -4,7 +4,7 @@ import { getCookie } from 'typescript-cookie'
 
 import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
-export function useSession() {
+export function useRedirectIfAuthenticated() {
   const navigate = useNavigate()
 
   useEffect(() => {

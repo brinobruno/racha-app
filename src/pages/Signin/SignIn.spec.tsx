@@ -9,7 +9,7 @@ describe('Signin component', () => {
   let queryClient: QueryClient
 
   beforeEach(() => {
-    // const sessionHook = vi.mock('src/hooks/useSession') as any
+    // const sessionHook = vi.mock('src/hooks/useRedirectIfAuthenticated') as any
 
     // sessionHook.mockImplementation(() => ({
     //   isLoggedIn: false,
@@ -48,5 +48,5 @@ describe('Signin component', () => {
     expect(signUpLink.getAttribute('href')).toEqual('/signup')
   })
 
-  it.todo('should call useSession hook')
+  it.todo('should call useRedirectIfAuthenticated hook')
 })

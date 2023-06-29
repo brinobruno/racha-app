@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom'
 
 import { Container } from './styles'
 import { SignInForm } from 'src/components/SignInForm'
-import { useSession } from 'src/hooks/useSession'
+import { useRedirectIfAuthenticated } from 'src/hooks/useRedirectIfAuthenticated'
 
 export function Signin() {
-  useSession()
+  useRedirectIfAuthenticated()
 
   return (
     <Container>
