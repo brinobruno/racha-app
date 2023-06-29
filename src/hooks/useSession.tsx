@@ -2,15 +2,15 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getCookie } from 'typescript-cookie'
 
-import { USER_SESSION_STORAGE_KEY } from 'src/constants'
+import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 export function useSession() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const sessionId = getCookie(USER_SESSION_STORAGE_KEY)
+    const jwtToken = getCookie(USER_JWT_AUTH_TOKEN_KEY)
 
-    if (sessionId) {
+    if (jwtToken) {
       navigate('/dashboard')
     }
   })
