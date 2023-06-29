@@ -3,7 +3,7 @@ import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
 import { authHeader } from '../auth/authHeader'
-import { USER_ID_STORAGE_KEY, USER_SESSION_STORAGE_KEY } from 'src/constants'
+import { USER_ID_STORAGE_KEY } from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
 import { IPlayerData } from './usePlayersFromTeam'
 
@@ -25,10 +25,7 @@ type TeamDataResponse = {
 }
 
 async function getTeamsData(): Promise<TeamDataResponse> {
-  const [userId] = await Promise.all([
-    Cookies.get(USER_ID_STORAGE_KEY),
-    Cookies.get(USER_SESSION_STORAGE_KEY),
-  ])
+  const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
   const teamsResponse = await api.get(
     `/users/teams/all/${userId}`,
