@@ -2,14 +2,14 @@ import { BASE_URL, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 import { getCookie } from 'typescript-cookie'
 
 const getTokenFromCookies = () => {
-  const jwtTokenCookie = getCookie(USER_JWT_AUTH_TOKEN_KEY)
+  try {
+    const jwtTokenCookie = getCookie(USER_JWT_AUTH_TOKEN_KEY)
 
-  // If the token cookie is found, extract and return it
-  if (jwtTokenCookie) return jwtTokenCookie
-
-  // Add error treatment later
-  console.log('Cookie not found')
-  return ''
+    // If the token cookie is found, extract and return it
+    if (jwtTokenCookie) return jwtTokenCookie
+  } catch (error) {
+    throw new Error()
+  }
 }
 
 export const authHeader = () => {
