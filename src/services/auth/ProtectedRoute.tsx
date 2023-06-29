@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom'
 import { getCookie } from 'typescript-cookie'
 
-import { USER_SESSION_STORAGE_KEY } from 'src/constants'
+import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 export type ProtectedRouteProps = {
   authenticationPath: string
@@ -13,7 +13,7 @@ export default function ProtectedRoute({
   authenticationPath,
   outlet,
 }: ProtectedRouteProps) {
-  const isAuthenticated = !!getCookie(USER_SESSION_STORAGE_KEY)
+  const isAuthenticated = !!getCookie(USER_JWT_AUTH_TOKEN_KEY)
 
   if (isAuthenticated) {
     return outlet
