@@ -37,5 +37,7 @@ export const HelpContainer = styled.div`
   }
 
   button {
+    max-width: fit-content;
+    margin: 0 auto;
   }
 `
