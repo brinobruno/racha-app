@@ -53,7 +53,7 @@ export function SignUpForm() {
 
   const createUser = useMutation(
     async ({ username, email, password }: ISignUpRequest) => {
-      const { data } = await api.post(`/users/create`, {
+      const { data } = await api.post(`/users/signup`, {
         username,
         email,
         password,
