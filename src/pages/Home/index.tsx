@@ -3,8 +3,12 @@ import Cover from 'src/assets/desktop-cover.webp'
 import 'react-toastify/dist/ReactToastify.css'
 import { Container, ContentContainer } from './styles'
 import { NavLink } from 'react-router-dom'
+import { getCookie } from 'typescript-cookie'
+import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 export function Home() {
+  const isUserAuthenticated = getCookie(USER_JWT_AUTH_TOKEN_KEY)
+
   return (
     <Container>
       <div>
@@ -16,13 +20,17 @@ export function Home() {
 
         <ContentContainer>
           <NavLink to="/signin">
-            <button>Entrar</button>
+            <button>
+              {isUserAuthenticated ? 'Ir para o dashboard' : 'Entrar'}
+            </button>
           </NavLink>
 
-          <div>
-            <span>Novo por aqui? </span>
-            <NavLink to="/signup">Criar conta</NavLink>
-          </div>
+          {isUserAuthenticated ? null : (
+            <div>
+              <span>Novo por aqui? </span>
+              <NavLink to="/signup">Criar conta</NavLink>
+            </div>
+          )}
         </ContentContainer>
       </div>
     </Container>
