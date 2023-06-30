@@ -49,11 +49,11 @@ export function SignInForm() {
   }
 
   const loginUser = useMutation(async ({ email, password }: ISignInRequest) => {
-    const response = await api.post(`/users/login`, {
+    const { data } = await api.post(`/users/login`, {
       email,
       password,
     })
-    const { user, token } = response.data
+    const { user, token } = data
 
     await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
 
