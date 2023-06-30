@@ -15,7 +15,7 @@ export function UserAccount() {
   const currentTheme = useTheme()
   const { data, isLoading, error } = useUser()
 
-  const user = data && data.user
+  const user = data ? data.user : undefined
 
   return (
     <Container>
