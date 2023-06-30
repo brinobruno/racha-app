@@ -16,7 +16,9 @@ export default function NotFound() {
 
       <HelpContainer>
         <h1>Isolou! 404</h1>
-        <span>Não conseguimos encontrar a página que você está procurando</span>
+        <span>
+          Não conseguimos encontrar a página que você está procurando.
+        </span>
 
         <button>
           <Link to="/dashboard">Voltar ao início</Link>
