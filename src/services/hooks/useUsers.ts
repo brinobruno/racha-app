@@ -10,9 +10,7 @@ interface UsersDataResponse {
 }
 
 async function getUsers(): Promise<UsersDataResponse[]> {
-  const response = await api.get(`/users/`)
-
-  const data = response.data
+  const { data } = await api.get(`/users/`)
 
   const users = data.users.map((user: UsersDataResponse) => {
     return {
