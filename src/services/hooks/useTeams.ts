@@ -2,7 +2,6 @@ import { useQuery } from 'react-query'
 import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
-import { authHeader } from '../auth/authHeader'
 import { USER_ID_STORAGE_KEY } from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
 import { IPlayerData } from './usePlayersFromTeam'
@@ -27,19 +26,13 @@ type TeamDataResponse = {
 async function getTeamsData(): Promise<TeamDataResponse> {
   const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
-  const teamsResponse = await api.get(
-    `/users/teams/all/${userId}`,
-    authHeader(),
-  )
+  const teamsResponse = await api.get(`/users/teams/all/${userId}`)
 
   const teams = teamsResponse.data.teams || []
 
   const teamsWithPlayers = await Promise.all(
     teams.map(async (team: ITeam) => {
-      const playersResponse = await api.get(
-        `/users/teams/players/${team.id}`,
-        authHeader(),
-      )
+      const playersResponse = await api.get(`/users/teams/players/${team.id}`)
       const players = playersResponse.data.players || []
       return {
         ...team,

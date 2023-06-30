@@ -54,15 +54,11 @@ export function SignUpForm() {
 
   const createUser = useMutation(
     async ({ username, email, password }: ISignUpRequest) => {
-      const response = await api.post(
-        `/users/create`,
-        {
-          username,
-          email,
-          password,
-        },
-        authHeader(),
-      )
+      const response = await api.post(`/users/create`, {
+        username,
+        email,
+        password,
+      })
       const { user, token } = response.data
 
       await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)

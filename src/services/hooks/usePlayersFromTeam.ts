@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query'
 
 import { api } from 'src/services/api'
-import { authHeader } from '../auth/authHeader'
 
 export interface IPlayerData {
   id: string
@@ -32,7 +31,6 @@ async function getPlayersFromTeamData(
 ): Promise<PlayersDataResponse> {
   const response = await api.get(
     `/users/teams/players/f40011b3-db40-4922-a26c-70a8b12da9a2`,
-    authHeader(),
   )
 
   const data = response.data
