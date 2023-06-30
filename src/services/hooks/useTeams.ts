@@ -26,9 +26,9 @@ type TeamDataResponse = {
 async function getTeamsData(): Promise<TeamDataResponse> {
   const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
-  const teamsResponse = await api.get(`/users/teams/all/${userId}`)
+  const { data } = await api.get(`/users/teams/all/${userId}`)
 
-  const teams = teamsResponse.data.teams || []
+  const teams = data.teams || []
 
   const teamsWithPlayers = await Promise.all(
     teams.map(async (team: ITeam) => {
