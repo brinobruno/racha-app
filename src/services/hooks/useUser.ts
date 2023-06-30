@@ -22,9 +22,7 @@ type UserDataResponse = {
 async function getUserData(): Promise<UserDataResponse> {
   const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
-  const response = await api.get(`/users/${userId}`)
-
-  const data = response.data
+  const { data } = await api.get(`/users/${userId}`)
 
   return data
 }
