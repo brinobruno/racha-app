@@ -16,9 +16,7 @@ interface LogoutResponse {
 async function LogoutUser(): Promise<LogoutResponse> {
   const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
-  const response = await api.post(`/users/logout/${userId}`)
-
-  const data = response.data
+  const { data } = await api.post(`/users/logout/${userId}`)
 
   Cookies.remove(USER_ID_STORAGE_KEY)
   Cookies.remove(USER_JWT_AUTH_TOKEN_KEY)
