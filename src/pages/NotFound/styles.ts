@@ -14,7 +14,7 @@ export const IllustrationContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  max-width: 70%;
+  max-width: 60%;
 `
 
 export const Illustration = styled.img`
