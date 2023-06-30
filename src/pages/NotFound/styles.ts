@@ -19,9 +19,23 @@ export const IllustrationContainer = styled.div`
 
 export const Illustration = styled.img`
   width: 100%;
+  margin-bottom: 2rem;
 `
 
 export const HelpContainer = styled.div`
   display: flex;
   flex-direction: column;
+  text-align: center;
+
+  h1 {
+    font: 700 4rem/100% 'Montserrat';
+  }
+
+  span {
+    display: inline-block;
+    margin: 0.5rem 0 2rem;
+  }
+
+  button {
+  }
 `
