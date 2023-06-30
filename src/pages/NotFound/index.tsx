@@ -15,11 +15,11 @@ export default function NotFound() {
       </IllustrationContainer>
 
       <HelpContainer>
-        <h1>Oops! You seem to be lost.</h1>
-        <span>Some text...</span>
+        <h1>Isolou! 404</h1>
+        <span>Não conseguimos encontrar a página que você está procurando</span>
 
         <button>
-          <Link to="/dashboard">Go back...</Link>
+          <Link to="/dashboard">Voltar ao início</Link>
         </button>
       </HelpContainer>
     </Container>
