@@ -10,7 +10,6 @@ import { api } from 'src/services/api'
 import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { addCookie } from 'src/services/auth/addCookie'
-import { authHeader } from 'src/services/auth/authHeader'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 
 interface ISignInRequest {
