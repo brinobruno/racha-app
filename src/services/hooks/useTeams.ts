@@ -17,6 +17,7 @@ export interface ITeamData {
   created_at: string
   updated_at: string
   deleted_at: string
+  playerCount: number
 }
 
 type TeamDataResponse = {
@@ -34,9 +35,12 @@ async function getTeamsData(): Promise<TeamDataResponse> {
     teams.map(async (team: ITeam) => {
       const playersResponse = await api.get(`/users/teams/players/${team.id}`)
       const players = playersResponse.data.players || []
+      const playerCount = players.length
+
       return {
         ...team,
         players,
+        playerCount,
       }
     }),
   )

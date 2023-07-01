@@ -26,6 +26,7 @@ export function Teams() {
             {teams.map((team: ITeamData) => (
               <TeamContainer key={team.id}>
                 <div>ID: {team.id}</div>
+                <div>{`${team.playerCount} Players`}</div>
 
                 {team.players.map((player) => (
                   <PlayerContainer key={player.id}>
