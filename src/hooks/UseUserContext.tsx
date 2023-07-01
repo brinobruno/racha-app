@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+
 import { IUser, UserContext } from 'src/contexts/UserContext'
 import { addCookie } from 'src/services/auth/addCookie'
 import { USER_ID_STORAGE_KEY } from 'src/constants'
