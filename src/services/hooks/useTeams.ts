@@ -5,6 +5,7 @@ import { api } from 'src/services/api'
 import { USER_ID_STORAGE_KEY } from 'src/constants'
 import { ITeam } from 'src/contexts/TeamsContext'
 import { IPlayerData } from './usePlayersFromTeam'
+import { calculateTeamOverall } from 'src/helpers/calculateTeamOverall'
 
 export interface ITeamData {
   id: string
@@ -18,6 +19,7 @@ export interface ITeamData {
   updated_at: string
   deleted_at: string
   playerCount: number
+  teamOverall: number
 }
 
 type TeamDataResponse = {
@@ -36,11 +38,12 @@ async function getTeamsData(): Promise<TeamDataResponse> {
       const playersResponse = await api.get(`/users/teams/players/${team.id}`)
       const players = playersResponse.data.players || []
       const playerCount = players.length
-
+      const teamOverall = calculateTeamOverall(players)
       return {
         ...team,
         players,
         playerCount,
+        teamOverall,
       }
     }),
   )
