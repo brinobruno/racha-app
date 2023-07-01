@@ -1,5 +1,6 @@
-import { BASE_URL, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 import { getCookie } from 'typescript-cookie'
+
+import { BASE_URL, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 const getTokenFromCookies = () => {
   try {
