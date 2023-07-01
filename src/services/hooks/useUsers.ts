@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { useQuery } from 'react-query'
 
 import { api } from 'src/services/api'
@@ -12,18 +13,20 @@ interface UsersDataResponse {
 async function getUsers(): Promise<UsersDataResponse[]> {
   const { data } = await api.get(`/users/`)
 
-  const users = data.users.map((user: UsersDataResponse) => {
-    return {
-      id: user.id,
-      username: user.username,
-      email: user.email,
-      created_at: new Date(user.created_at).toLocaleDateString('pt-BR', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      }),
-    }
-  })
+  const users = data.users.map(
+    ({ id, username, email, created_at }: UsersDataResponse) => {
+      return {
+        id,
+        username,
+        email,
+        created_at: new Date(created_at).toLocaleDateString('pt-BR', {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        }),
+      }
+    },
+  )
 
   return users
 }
