@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
+
+import NotFoundImg from 'src/assets/not-found.svg'
 import {
   Container,
   IllustrationContainer,
   Illustration,
   HelpContainer,
 } from './styles'
-import NotFoundImg from 'src/assets/not-found.svg'
 
 export default function NotFound() {
   return (
