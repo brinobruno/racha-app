@@ -1,8 +1,8 @@
 import { useTheme } from 'styled-components'
+import { toast } from 'react-toastify'
 import { IconWeight, SignOut } from 'phosphor-react'
 
 import { useLogout } from 'src/services/hooks/useLogout'
-import { toast } from 'react-toastify'
 
 interface ILogoutButtonProps {
   btnWeight: IconWeight
