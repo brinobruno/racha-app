@@ -1,4 +1,5 @@
 import CookieConsent from 'react-cookie-consent'
+
 import { COOKIE_CONSENT_STORAGE_KEY } from 'src/constants'
 
 export function CookieNotice() {
