@@ -41,6 +41,8 @@ export const TeamOverall = styled.strong`
   font-size: 3rem;
   font-weight: 500;
   line-height: 100%;
+
+  font-family: 'DinProCondBold';
 `
 
 export const PlayerContainer = styled.div`
