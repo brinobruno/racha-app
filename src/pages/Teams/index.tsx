@@ -4,6 +4,7 @@ import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
   Container,
   TeamContainer,
+  TeamData,
   TeamDataDivider,
   TeamOverall,
   TeamsContainer,
@@ -31,10 +32,10 @@ export function Teams() {
                 <TeamDataDivider>
                   <TeamOverall>{team.teamOverall}</TeamOverall>
 
-                  <div>
-                    <div>{team.title}</div>
-                    <div>{`${team.playerCount} Players`}</div>
-                  </div>
+                  <TeamData>
+                    <strong>{team.title}</strong>
+                    <span>{`${team.playerCount} Players`}</span>
+                  </TeamData>
                 </TeamDataDivider>
 
                 <CaretRight size={28} weight="bold" />

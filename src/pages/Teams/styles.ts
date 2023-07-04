@@ -46,6 +46,20 @@ export const TeamOverall = styled.strong`
   font-weight: 500;
 `
 
+export const TeamData = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    font-size: 1.125rem;
+    font-family: 'DinPro';
+  }
+
+  strong {
+    font-weight: 600;
+  }
+`
+
 export const PlayerContainer = styled.div`
   display: flex;
   flex-direction: column;
