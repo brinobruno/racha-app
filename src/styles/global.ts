@@ -13,14 +13,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: 'DinPro';
-    src: local('DinPro'), local('DinPro'),
-    url(${DinPro}) format('truetype');
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
     font-family: 'DinProCondMed';
     src: local('DinProCondMed'), local('DinProCondMed'),
     url(${DinProCondMed}) format('truetype');
