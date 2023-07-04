@@ -37,7 +37,7 @@ export function Teams() {
                   </div>
                 </TeamDataDivider>
 
-                <CaretRight size={28} weight="regular" />
+                <CaretRight size={28} weight="bold" />
                 {/* {team.players.map((player) => (
                   <PlayerContainer key={player.id}>
                     <strong>Player: </strong>

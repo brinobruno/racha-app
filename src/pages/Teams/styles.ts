@@ -27,17 +27,20 @@ export const TeamContainer = styled.li`
   padding: 1rem;
   border-radius: 5px;
 
-  max-width: 22rem;
-  width: 100%;
+  width: 24rem;
 `
 
 export const TeamDataDivider = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
 `
 
 export const TeamOverall = styled.strong`
   font-size: 3rem;
   font-weight: 500;
+  line-height: 100%;
 `
 
 export const PlayerContainer = styled.div`
