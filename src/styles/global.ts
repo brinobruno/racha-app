@@ -1,12 +1,21 @@
 import { createGlobalStyle } from 'styled-components'
 
 import DinProCondBold from './../fonts/DINPro-CondBold.otf'
+import DinProCondMedium from './../fonts/DINPro-CondMedium.otf'
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'DinProCondBold';
     src: local('DinProCondBold'), local('DINPro'),
     url(${DinProCondBold}) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'DinProCondMedium';
+    src: local('DinProCondMedium'), local('DINPro'),
+    url(${DinProCondMedium}) format('truetype');
     font-weight: 500;
     font-style: normal;
   }
