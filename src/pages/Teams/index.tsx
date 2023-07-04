@@ -3,6 +3,7 @@ import { CaretRight } from 'phosphor-react'
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
   Container,
+  CreateTeamButton,
   TeamContainer,
   TeamData,
   TeamDataDivider,
@@ -57,7 +58,7 @@ export function Teams() {
         )}
       </div>
 
-      <button>Criar time</button>
+      <CreateTeamButton>Criar time</CreateTeamButton>
     </Container>
   )
 }

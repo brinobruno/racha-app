@@ -16,6 +16,8 @@ export const TeamsContainer = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
+  width: 24rem;
 `
 
 export const TeamContainer = styled.li`
@@ -27,7 +29,7 @@ export const TeamContainer = styled.li`
   padding: 1rem;
   border-radius: 5px;
 
-  width: 24rem;
+  width: 100%;
 `
 
 export const TeamDataDivider = styled.div`
@@ -67,4 +69,8 @@ export const PlayerContainer = styled.div`
   justify-content: center;
 
   width: 100%;
+`
+
+export const CreateTeamButton = styled.button`
+  width: 24rem;
 `
