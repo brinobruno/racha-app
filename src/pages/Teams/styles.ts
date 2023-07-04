@@ -18,9 +18,8 @@ export const TeamsContainer = styled.ul`
   gap: 1rem;
 `
 
-export const TeamContainer = styled.div`
+export const TeamContainer = styled.li`
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 

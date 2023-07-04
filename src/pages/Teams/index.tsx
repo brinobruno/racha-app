@@ -1,3 +1,5 @@
+import { CaretRight } from 'phosphor-react'
+
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { Container, TeamContainer, TeamsContainer } from './styles'
 
@@ -20,10 +22,13 @@ export function Teams() {
           <TeamsContainer>
             {teams.map((team: ITeamData) => (
               <TeamContainer key={team.id}>
-                <div>{team.teamOverall}</div>
-                <div>ID: {team.id}</div>
-                <div>{`${team.playerCount} Players`}</div>
+                <div>
+                  <div>{team.teamOverall}</div>
+                  <div>ID: {team.id}</div>
+                  <div>{`${team.playerCount} Players`}</div>
+                </div>
 
+                <CaretRight />
                 {/* {team.players.map((player) => (
                   <PlayerContainer key={player.id}>
                     <strong>Player: </strong>
