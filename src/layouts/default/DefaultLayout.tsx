@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import { Header } from './header'
+import { Footer } from './footer'
 import { LayoutContainer } from './styles'
 
 export function DefaultLayout() {
@@ -11,7 +12,7 @@ export function DefaultLayout() {
         {/* Space for content, specific to every page */}
         <Outlet />
 
-        {/* <footer>Footer</footer> */}
+        <Footer />
       </LayoutContainer>
     </>
   )
