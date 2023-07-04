@@ -1,10 +1,5 @@
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-import {
-  Container,
-  PlayerContainer,
-  TeamContainer,
-  TeamsContainer,
-} from './styles'
+import { Container, TeamContainer, TeamsContainer } from './styles'
 
 export function Teams() {
   const { data, isLoading, error } = useTeams()
@@ -29,7 +24,7 @@ export function Teams() {
                 <div>ID: {team.id}</div>
                 <div>{`${team.playerCount} Players`}</div>
 
-                {team.players.map((player) => (
+                {/* {team.players.map((player) => (
                   <PlayerContainer key={player.id}>
                     <strong>Player: </strong>
 
@@ -40,7 +35,7 @@ export function Teams() {
                       <br />
                     </span>
                   </PlayerContainer>
-                ))}
+                ))} */}
               </TeamContainer>
             ))}
           </TeamsContainer>
