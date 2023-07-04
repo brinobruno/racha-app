@@ -20,7 +20,7 @@ export function Teams() {
 
   return (
     <Container>
-      <h1>Teams from user</h1>
+      <h1>Meus Times</h1>
 
       <div>
         {isLoading && <span>Carregando...</span>}
