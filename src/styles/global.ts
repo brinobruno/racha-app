@@ -4,6 +4,7 @@ import DinPro from './../fonts/DINPro.ttf'
 import DinProCondMed from './../fonts/DINPro-CondMed.ttf'
 
 export const GlobalStyle = createGlobalStyle`
+  // Import/Set local fonts
   @font-face {
     font-family: 'DinPro';
     src: local('DinPro'), local('DinPro'),
@@ -20,10 +21,19 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
+  // CSS Reset
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  li {
+    list-style: none;
   }
 
   :focus {
@@ -31,21 +41,23 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: 0;
   }
 
-  /* width */
+  // Custom scroll bar styles
+  // width
   ::-webkit-scrollbar {
     width: 6px;
   }
 
-  /* Track */
+  // Track
   ::-webkit-scrollbar-track {
     background: ${(props) => props.theme['secondary-700']};
   }
 
-  /* Handle */
+  // Handle
   ::-webkit-scrollbar-thumb {
     background: ${(props) => props.theme['secondary-600']};
   }
 
+  // General app default styles
   body {
     background: ${(props) => props.theme['secondary-700']};
     color: ${(props) => props.theme['neutral-100']};
@@ -54,10 +66,7 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
-  a {
-    color: ${(props) => props.theme['neutral-100']};
-  }
-
+  // Text styles
   body, input, textarea, button {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -73,10 +82,15 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5rem;
   }
 
+  a {
+    color: ${(props) => props.theme['neutral-100']};
+  }
+
   strong {
     font-weight: 700;
   }
 
+  // Form styles
   input, textarea, button {
     border: none;
     border-radius: 5px;
@@ -104,15 +118,8 @@ export const GlobalStyle = createGlobalStyle`
       background: ${(props) => props.theme['primary-hover']};
     }
   }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  li {
-    list-style: none;
-  }
 
+  // Toast styles
   .successful-toast .Toastify__progress-bar {}
 
   .warning-toast .Toastify__progress-bar {
