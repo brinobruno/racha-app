@@ -1,17 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
 
-import { Home } from './pages/Home'
+import { Home } from './pages/Visitor/Home'
 import { DefaultLayout } from './layouts/default/DefaultLayout'
 import { AuthLayout } from './layouts/auth/AuthLayout'
-import { Signin } from './pages/Signin'
-import { SignUp } from './pages/Signup'
-import { Dashboard } from './pages/Dashboard'
-import { UserAccount } from './pages/UserAccount'
-import { Teams } from './pages/Teams'
-import { Players } from './pages/Players'
+import { Signin } from './pages/Visitor/Signin'
+import { SignUp } from './pages/Visitor/Signup'
+import { Dashboard } from './pages/User/Dashboard'
+import { UserAccount } from './pages/User/UserAccount'
+import { Teams } from './pages/User/Teams'
+import { Players } from './pages/User/Players'
 
 import ProtectedRoute from './services/auth/ProtectedRoute'
-import NotFound from './pages/NotFound'
+import NotFound from './pages/Visitor/NotFound'
 
 export function Router() {
   return (
