@@ -24,7 +24,7 @@ export const TeamContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  background: ${(props) => props.theme['secondary-accent']};
+  background: linear-gradient(90deg, #495bcc 0%, rgba(229, 28, 68, 0.6) 100%);
   padding: 1rem;
   border-radius: 5px;
 `
