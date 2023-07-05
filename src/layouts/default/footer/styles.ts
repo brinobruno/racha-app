@@ -21,3 +21,12 @@ export const WidthWrapper = styled.div`
     padding: 0 1.5rem;
   }
 `
+
+export const DownloadAppContainer = styled.aside`
+  display: flex;
+  flex-direction: column;
+`
+
+export const DownloadAppBadge = styled.img`
+  width: 11rem;
+`

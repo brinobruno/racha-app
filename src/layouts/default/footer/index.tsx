@@ -2,7 +2,12 @@ import { Link } from 'react-router-dom'
 
 import AppStoreBadge from 'src/assets/social/app-store-badge.svg'
 import GooglePlayBadge from 'src/assets/social/google-play-badge.png'
-import { Container, WidthWrapper } from './styles'
+import {
+  Container,
+  DownloadAppBadge,
+  DownloadAppContainer,
+  WidthWrapper,
+} from './styles'
 
 export function Footer() {
   return (
@@ -15,17 +20,17 @@ export function Footer() {
           </Link>
         </div>
 
-        <div>
+        <DownloadAppContainer>
           <span>Get the app.</span>
 
           <Link to="/">
-            <img src={AppStoreBadge} alt="" loading="lazy" />
+            <DownloadAppBadge src={AppStoreBadge} alt="" loading="lazy" />
           </Link>
 
           <Link to="/">
-            <img src={GooglePlayBadge} alt="" loading="lazy" />
+            <DownloadAppBadge src={GooglePlayBadge} alt="" loading="lazy" />
           </Link>
-        </div>
+        </DownloadAppContainer>
       </WidthWrapper>
     </Container>
   )
