@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const Container = styled.footer`
   background-color: ${(props) => props.theme['secondary-accent']};
   font-weight: 600;
+
+  padding: 3rem 0 3.5rem;
 `
 
 export const WidthWrapper = styled.div`
