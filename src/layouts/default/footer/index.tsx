@@ -29,7 +29,9 @@ export function Footer() {
             />
           </Link>
 
-          <span>Some description</span>
+          <span>
+            Revolucione o seu Racha, gerencie equipes com seus amigos agora.
+          </span>
 
           <nav title="Navegação rodapé" aria-label="Navegação rodapé">
             <Link to="">Overview</Link>

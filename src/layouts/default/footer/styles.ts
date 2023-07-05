@@ -34,6 +34,7 @@ export const FooterInfoContainer = styled.div`
 
   span {
     display: inline-block;
+    max-width: 18rem;
   }
 
   nav {
