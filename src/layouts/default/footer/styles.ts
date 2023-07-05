@@ -10,11 +10,17 @@ export const Container = styled.footer`
 export const WidthWrapper = styled.div`
   height: 100%;
   max-width: 68rem;
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  hr {
+    width: 100%;
+    border: 1px solid ${(props) => props.theme['neutral-500']};
+    opacity: 0.5;
+  }
 
   @media (max-width: 1180px) {
     padding: 0 3.125rem;

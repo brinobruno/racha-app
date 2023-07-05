@@ -54,6 +54,10 @@ export function Footer() {
           </Link>
         </DownloadAppContainer>
       </WidthWrapper>
+
+      <WidthWrapper>
+        <hr />
+      </WidthWrapper>
     </Container>
   )
 }
