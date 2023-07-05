@@ -65,7 +65,7 @@ export function Header() {
           </NavLink>
         </Logo>
 
-        <NavBar>
+        <NavBar title="Navegação cabeçalho" aria-label="Navegação cabeçalho">
           <NavLink to="/dashboard">Início</NavLink>
           <NavLink to="/teams" end>
             Meus times
