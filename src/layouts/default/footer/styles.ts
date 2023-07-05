@@ -22,6 +22,8 @@ export const WidthWrapper = styled.div`
   }
 `
 
+export const FooterInfoContainer = styled.div``
+
 export const DownloadAppContainer = styled.aside`
   display: flex;
   flex-direction: column;
