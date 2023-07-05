@@ -46,6 +46,7 @@ export const TeamOverall = styled.strong`
 
   font-family: 'DinProCondMed';
   font-weight: 500;
+  color: #e9edf5;
 `
 
 export const TeamData = styled.div`
@@ -55,6 +56,7 @@ export const TeamData = styled.div`
   > * {
     font-size: 1.125rem;
     font-family: 'DinPro';
+    color: #e9edf5;
   }
 
   strong {

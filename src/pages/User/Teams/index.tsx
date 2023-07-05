@@ -39,7 +39,7 @@ export function Teams() {
                   </TeamData>
                 </TeamDataDivider>
 
-                <CaretRight size={28} weight="bold" />
+                <CaretRight size={28} weight="bold" color="#E9EDF5" />
                 {/* {team.players.map((player) => (
                   <PlayerContainer key={player.id}>
                     <strong>Player: </strong>
