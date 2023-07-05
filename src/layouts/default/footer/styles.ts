@@ -25,6 +25,15 @@ export const WidthWrapper = styled.div`
 export const DownloadAppContainer = styled.aside`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.375rem;
+
+  span {
+    display: inline-block;
+    padding-bottom: 1rem;
+
+    font-weight: 600;
+  }
 `
 
 export const DownloadAppBadge = styled.img`
