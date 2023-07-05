@@ -29,6 +29,10 @@ export const TeamContainer = styled.li`
   padding: 1rem;
   border-radius: 5px;
 
+  -webkit-box-shadow: 3px 3px 12px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 3px 12px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: 3px 3px 12px -6px rgba(0, 0, 0, 0.75);
+
   width: 100%;
 `
 
