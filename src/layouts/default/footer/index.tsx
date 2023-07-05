@@ -28,7 +28,16 @@ export function Footer() {
               loading="lazy"
             />
           </Link>
-          Some description
+
+          <span>Some description</span>
+
+          <nav title="Navegação rodapé" aria-label="Navegação rodapé">
+            <Link to="">Overview</Link>
+            <Link to="">Features</Link>
+            <Link to="">FAQ</Link>
+            <Link to="">Help</Link>
+            <Link to="">Privacy</Link>
+          </nav>
         </FooterInfoContainer>
 
         <DownloadAppContainer>
