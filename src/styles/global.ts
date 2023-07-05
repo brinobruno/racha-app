@@ -66,6 +66,10 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
   }
 
+  section {
+    min-height: calc(100vh - 5.25rem);
+  }
+
   // Text styles
   body, input, textarea, button {
     font-family: 'Montserrat', sans-serif;
