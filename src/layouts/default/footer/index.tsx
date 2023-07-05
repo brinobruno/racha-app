@@ -1,9 +1,9 @@
-import { Container } from './styles'
+import { Container, WidthWrapper } from './styles'
 
 export function Footer() {
   return (
     <Container>
-      <div>Footer</div>
+      <WidthWrapper>Footer</WidthWrapper>
     </Container>
   )
 }
