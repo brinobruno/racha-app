@@ -11,9 +11,8 @@ export function DefaultLayout() {
       <LayoutContainer>
         {/* Space for content, specific to every page */}
         <Outlet />
-
-        <Footer />
       </LayoutContainer>
+      <Footer />
     </>
   )
 }
