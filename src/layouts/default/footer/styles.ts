@@ -42,6 +42,14 @@ export const FooterInfoContainer = styled.div`
   nav {
     display: flex;
     gap: 2rem;
+
+    a {
+      transition: 0.2s ease-in-out;
+    }
+
+    a:hover {
+      color: ${(props) => props.theme['primary-500']};
+    }
   }
 `
 
