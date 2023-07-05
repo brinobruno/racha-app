@@ -39,7 +39,7 @@ export const FooterInfoContainer = styled.div`
 
   nav {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }
 `
 
