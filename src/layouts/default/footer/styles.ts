@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.footer`
   background-color: ${(props) => props.theme['secondary-accent']};
+  font-weight: 600;
 `
 
 export const WidthWrapper = styled.div`
@@ -22,7 +23,24 @@ export const WidthWrapper = styled.div`
   }
 `
 
-export const FooterInfoContainer = styled.div``
+export const FooterInfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  img {
+    width: 6.25rem;
+  }
+
+  span {
+    display: inline-block;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+`
 
 export const DownloadAppContainer = styled.aside`
   display: flex;
@@ -33,8 +51,6 @@ export const DownloadAppContainer = styled.aside`
   span {
     display: inline-block;
     padding-bottom: 1rem;
-
-    font-weight: 600;
   }
 `
 
