@@ -1,3 +1,4 @@
+import { useTheme } from 'styled-components'
 import { Link } from 'react-router-dom'
 
 import LogoBlack from 'src/assets/logo-black.svg'
@@ -18,6 +19,7 @@ import { GithubLogo, LinkedinLogo } from 'phosphor-react'
 
 export function Footer() {
   const { theme } = useThemeContext()
+  const currentTheme = useTheme()
 
   return (
     <Container>
@@ -65,8 +67,8 @@ export function Footer() {
         <span>&copy; 2023 Racha App. Todos os direitos reservados.</span>
 
         <div>
-          <GithubLogo size={28} />
-          <LinkedinLogo size={28} />
+          <GithubLogo size={28} color={currentTheme['neutral-500']} />
+          <LinkedinLogo size={28} color={currentTheme['neutral-500']} />
         </div>
       </LowerFooter>
     </Container>
