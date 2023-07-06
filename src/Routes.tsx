@@ -8,6 +8,7 @@ import { SignUp } from './pages/Visitor/Signup'
 import { Dashboard } from './pages/User/Dashboard'
 import { UserAccount } from './pages/User/UserAccount'
 import { Teams } from './pages/User/Teams'
+import { Team } from './pages/User/Team'
 import { Players } from './pages/User/Players'
 
 import ProtectedRoute from './services/auth/ProtectedRoute'
@@ -46,6 +47,13 @@ export function Router() {
           path="teams"
           element={
             <ProtectedRoute authenticationPath="/signin" outlet={<Teams />} />
+          }
+        />
+
+        <Route
+          path="teams/:id"
+          element={
+            <ProtectedRoute authenticationPath="/signin" outlet={<Team />} />
           }
         />
 
