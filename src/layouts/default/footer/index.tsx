@@ -70,7 +70,7 @@ export function Footer() {
           <Link
             to="https://github.com/brinobruno"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             <GithubLogo size={28} color={currentTheme['neutral-400']} />
           </Link>
@@ -78,7 +78,7 @@ export function Footer() {
           <Link
             to="https://www.linkedin.com/in/brunociao/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
           >
             <LinkedinLogo size={28} color={currentTheme['neutral-400']} />
           </Link>
