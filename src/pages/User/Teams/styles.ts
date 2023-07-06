@@ -71,15 +71,6 @@ export const TeamData = styled.div`
   }
 `
 
-export const PlayerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  width: 100%;
-`
-
 export const CreateTeamButton = styled.button`
   width: 24rem;
 `
