@@ -22,7 +22,6 @@ export const TeamsContainer = styled.ul`
 
 export const TeamContainer = styled.li`
   background: linear-gradient(90deg, #495bcc 0%, rgba(229, 28, 68, 0.6) 100%);
-  padding: 1rem;
   border-radius: 5px;
 
   -webkit-box-shadow: 3px 3px 12px -6px rgba(0, 0, 0, 0.75);
@@ -35,6 +34,8 @@ export const TeamContainer = styled.li`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 1rem;
   }
 `
 
