@@ -1,9 +1,18 @@
-import { useTeams } from 'src/services/hooks/useTeams'
+import { useParams } from 'react-router-dom'
+
+import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
+
+const findTeamById = (teams: ITeamData[], id: string | undefined) => {
+  return teams.find((team) => team.id === id)
+}
 
 export function Team() {
+  const { id } = useParams() // Access the ID from the URL
   const { data, isLoading, error } = useTeams()
 
-  const team = data ? data.teams : undefined
+  const teams = data?.teams ?? []
+
+  const team = findTeamById(teams, id)
 
   console.log(team)
 
