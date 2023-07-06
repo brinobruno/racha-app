@@ -51,6 +51,7 @@ export const FooterInfoContainer = styled.div`
 
     a {
       transition: 0.2s ease-in-out;
+      font-weight: 700;
     }
 
     a:hover {
