@@ -80,6 +80,16 @@ export const LowerFooter = styled.div`
   max-width: 68rem;
   margin: 0 auto;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
   span {
     color: ${(props) => props.theme['neutral-500']};
   }

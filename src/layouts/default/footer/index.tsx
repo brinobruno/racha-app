@@ -14,6 +14,7 @@ import {
   LowerFooter,
   WidthWrapper,
 } from './styles'
+import { GithubLogo, LinkedinLogo } from 'phosphor-react'
 
 export function Footer() {
   const { theme } = useThemeContext()
@@ -62,6 +63,11 @@ export function Footer() {
 
       <LowerFooter>
         <span>&copy; 2023 Racha App. Todos os direitos reservados.</span>
+
+        <div>
+          <GithubLogo size={28} />
+          <LinkedinLogo size={28} />
+        </div>
       </LowerFooter>
     </Container>
   )
