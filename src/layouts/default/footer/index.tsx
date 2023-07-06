@@ -11,6 +11,7 @@ import {
   DownloadAppBadge,
   DownloadAppContainer,
   FooterInfoContainer,
+  LowerFooter,
   WidthWrapper,
 } from './styles'
 
@@ -58,6 +59,10 @@ export function Footer() {
       <WidthWrapper>
         <hr />
       </WidthWrapper>
+
+      <LowerFooter>
+        <span>&copy; 2023 Racha App. Todos os direitos reservados.</span>
+      </LowerFooter>
     </Container>
   )
 }

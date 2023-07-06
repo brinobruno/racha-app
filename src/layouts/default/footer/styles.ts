@@ -74,3 +74,20 @@ export const DownloadAppContainer = styled.aside`
 export const DownloadAppBadge = styled.img`
   width: 11rem;
 `
+
+export const LowerFooter = styled.div`
+  max-width: 68rem;
+  margin: 0 auto;
+
+  span {
+    color: ${(props) => props.theme['neutral-500']};
+  }
+
+  @media (max-width: 1180px) {
+    padding: 0 3.125rem;
+  }
+
+  @media (max-width: 350px) {
+    padding: 0 1.5rem;
+  }
+`
