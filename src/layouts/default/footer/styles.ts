@@ -18,7 +18,7 @@ export const WidthWrapper = styled.div`
 
   hr {
     width: 100%;
-    border: 1px solid ${(props) => props.theme['neutral-500']};
+    border: 1px solid ${(props) => props.theme['neutral-400']};
     opacity: 0.5;
   }
 
@@ -91,7 +91,7 @@ export const LowerFooter = styled.div`
   }
 
   span {
-    color: ${(props) => props.theme['neutral-500']};
+    color: ${(props) => props.theme['neutral-400']};
   }
 
   @media (max-width: 1180px) {
