@@ -30,8 +30,8 @@ export function Teams() {
         {teams && (
           <TeamsContainer>
             {teams.map((team: ITeamData) => (
-              <Link to={`/teams/${team.id}`} key={team.id}>
-                <TeamContainer>
+              <TeamContainer key={team.id}>
+                <Link to={`/teams/${team.id}`}>
                   <TeamDataDivider>
                     <TeamOverall>{team.teamOverall}</TeamOverall>
 
@@ -54,8 +54,8 @@ export function Teams() {
                     </span>
                   </PlayerContainer>
                 ))} */}
-                </TeamContainer>
-              </Link>
+                </Link>
+              </TeamContainer>
             ))}
           </TeamsContainer>
         )}
