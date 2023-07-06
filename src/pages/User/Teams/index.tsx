@@ -10,6 +10,7 @@ import {
   TeamOverall,
   TeamsContainer,
 } from './styles'
+import { Link } from 'react-router-dom'
 
 export function Teams() {
   const { data, isLoading, error } = useTeams()
@@ -29,18 +30,19 @@ export function Teams() {
         {teams && (
           <TeamsContainer>
             {teams.map((team: ITeamData) => (
-              <TeamContainer key={team.id}>
-                <TeamDataDivider>
-                  <TeamOverall>{team.teamOverall}</TeamOverall>
+              <Link to={`/teams/${team.id}`} key={team.id}>
+                <TeamContainer>
+                  <TeamDataDivider>
+                    <TeamOverall>{team.teamOverall}</TeamOverall>
 
-                  <TeamData>
-                    <strong>{team.title}</strong>
-                    <span>{`${team.playerCount} Players`}</span>
-                  </TeamData>
-                </TeamDataDivider>
+                    <TeamData>
+                      <strong>{team.title}</strong>
+                      <span>{`${team.playerCount} Players`}</span>
+                    </TeamData>
+                  </TeamDataDivider>
 
-                <CaretRight size={28} weight="bold" color="#E9EDF5" />
-                {/* {team.players.map((player) => (
+                  <CaretRight size={28} weight="bold" color="#E9EDF5" />
+                  {/* {team.players.map((player) => (
                   <PlayerContainer key={player.id}>
                     <strong>Player: </strong>
 
@@ -52,7 +54,8 @@ export function Teams() {
                     </span>
                   </PlayerContainer>
                 ))} */}
-              </TeamContainer>
+                </TeamContainer>
+              </Link>
             ))}
           </TeamsContainer>
         )}
