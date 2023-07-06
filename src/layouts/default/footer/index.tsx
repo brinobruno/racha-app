@@ -67,8 +67,21 @@ export function Footer() {
         <span>&copy; 2023 Racha App. Todos os direitos reservados.</span>
 
         <div>
-          <GithubLogo size={28} color={currentTheme['neutral-400']} />
-          <LinkedinLogo size={28} color={currentTheme['neutral-400']} />
+          <Link
+            to="https://github.com/brinobruno"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubLogo size={28} color={currentTheme['neutral-400']} />
+          </Link>
+
+          <Link
+            to="https://www.linkedin.com/in/brunociao/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedinLogo size={28} color={currentTheme['neutral-400']} />
+          </Link>
         </div>
       </LowerFooter>
     </Container>
