@@ -5,8 +5,12 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
+  &,
+  & a {
+    width: 100%;
+  }
+
   a {
     text-align: left;
-    width: 100%;
   }
 `
