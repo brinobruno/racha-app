@@ -15,10 +15,10 @@
 
 - [X] Page - Account page
 - [X] Query - Figure out issue GET players/:teamId
-- [ ] Switch ports
+- [X] Switch ports
 
-- [ ] Make 2 queries to make teams page = get players as well
-- [ ] Update API or figure out how to get overall rating for teams
+- [X] Make 2 queries to make teams page = get players as well
+- [X] Update API or figure out how to get overall rating for teams
 
 ## Teams+Players todo
 - [X] Get teams
