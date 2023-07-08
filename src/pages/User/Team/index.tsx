@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { PlayerContainer } from './styles'
@@ -18,39 +18,43 @@ export function Team() {
   console.log(team)
 
   return (
-    <div>
-      {team ? (
-        <div>
-          <h1>{team.title}</h1>
-          <span>By manager: {team.owner}</span>
-
-          <small>Created at: {team.created_at}</small>
-
-          <strong>{team.teamOverall}</strong>
-
-          {team.players.map((player) => (
-            <PlayerContainer key={player.id}>
-              <strong>Player: </strong>
-
-              <span>
-                {player.name}
-                <br />
-                {player.overall}
-                <br />
-              </span>
-            </PlayerContainer>
-          ))}
-        </div>
-      ) : (
-        <span>Something wrong</span>
-      )}
+    <section>
+      <Link to="/teams/">Voltar</Link>
 
       <div>
-        {isLoading && <span>Carregando...</span>}
-        {typeof error === 'string' && <span>Erro: {error}</span>}
-      </div>
+        {team ? (
+          <div>
+            <h1>{team.title}</h1>
+            <span>By manager: {team.owner}</span>
 
-      <button>Criar jogador</button>
-    </div>
+            <small>Created at: {team.created_at}</small>
+
+            <strong>{team.teamOverall}</strong>
+
+            {team.players.map((player) => (
+              <PlayerContainer key={player.id}>
+                <strong>Player: </strong>
+
+                <span>
+                  {player.name}
+                  <br />
+                  {player.overall}
+                  <br />
+                </span>
+              </PlayerContainer>
+            ))}
+          </div>
+        ) : (
+          <span>Something wrong</span>
+        )}
+
+        <div>
+          {isLoading && <span>Carregando...</span>}
+          {typeof error === 'string' && <span>Erro: {error}</span>}
+        </div>
+
+        <button>Criar jogador</button>
+      </div>
+    </section>
   )
 }
