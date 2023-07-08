@@ -31,7 +31,7 @@ export function Teams() {
           <TeamsContainer>
             {teams.map((team: ITeamData) => (
               <TeamContainer key={team.id}>
-                <Link to={`/teams/${team.id}`}>
+                <Link to={`/teams/team/${team.id}`}>
                   <TeamDataDivider>
                     <TeamOverall>{team.teamOverall}</TeamOverall>
 
