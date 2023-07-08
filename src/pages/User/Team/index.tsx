@@ -1,7 +1,8 @@
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { Container, PlayerContainer } from './styles'
+import { BackButton } from 'src/components/BackButton'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
@@ -19,7 +20,7 @@ export function Team() {
 
   return (
     <Container>
-      <Link to="/teams/">Voltar</Link>
+      <BackButton link="/teams" />
 
       <div>
         {team ? (
