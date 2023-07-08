@@ -51,7 +51,7 @@ export function Router() {
         />
 
         <Route
-          path="teams/:id"
+          path="teams/team/:id"
           element={
             <ProtectedRoute authenticationPath="/signin" outlet={<Team />} />
           }
