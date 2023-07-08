@@ -8,6 +8,11 @@ export const Container = styled.section`
   gap: 2rem;
 
   padding: 3.5rem 0;
+
+  > a {
+    text-align: left;
+    width: 100%;
+  }
 `
 
 export const PlayerContainer = styled.div`
