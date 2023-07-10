@@ -45,9 +45,7 @@ export function Team() {
               </PlayerContainer>
             ))}
           </div>
-        ) : (
-          <span>Something wrong</span>
-        )}
+        ) : null}
 
         <div>
           {isLoading && <span>Carregando...</span>}
