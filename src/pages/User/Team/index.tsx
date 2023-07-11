@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-import { Container, PlayerContainer } from './styles'
+import { Container, TeamDataContainer, PlayerContainer } from './styles'
 import { BackButton } from 'src/components/BackButton'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
@@ -22,7 +22,7 @@ export function Team() {
     <Container>
       <BackButton link="/teams" />
 
-      <div>
+      <TeamDataContainer>
         {team ? (
           <div>
             <h1>{team.title}</h1>
@@ -53,7 +53,7 @@ export function Team() {
         </div>
 
         <button>Criar jogador</button>
-      </div>
+      </TeamDataContainer>
     </Container>
   )
 }
