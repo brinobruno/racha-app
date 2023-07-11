@@ -36,6 +36,7 @@ export function Team() {
               <strong>{team.teamOverall}</strong>
             </TeamHeader>
 
+            {/* semantic divider here */}
             <span>By manager: {team.owner}</span>
 
             <small>Created at: {team.created_at}</small>
