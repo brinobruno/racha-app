@@ -24,6 +24,15 @@ export const PlayerContainer = styled.div`
   width: 100%;
 `
 
+export const TeamContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
+`
+
 export const TeamDataContainer = styled.div`
   display: flex;
   flex-direction: column;

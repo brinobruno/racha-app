@@ -6,6 +6,7 @@ import {
   TeamDataContainer,
   PlayerContainer,
   TeamHeader,
+  TeamContainer,
 } from './styles'
 import { BackButton } from 'src/components/BackButton'
 
@@ -27,9 +28,9 @@ export function Team() {
     <Container>
       <BackButton link="/teams" />
 
-      <TeamDataContainer>
+      <TeamContainer>
         {team ? (
-          <div>
+          <TeamDataContainer>
             <TeamHeader>
               <h1>{team.title}</h1>
               <strong>{team.teamOverall}</strong>
@@ -51,7 +52,7 @@ export function Team() {
                 </span>
               </PlayerContainer>
             ))}
-          </div>
+          </TeamDataContainer>
         ) : null}
 
         <div>
@@ -60,7 +61,7 @@ export function Team() {
         </div>
 
         <button>Criar jogador</button>
-      </TeamDataContainer>
+      </TeamContainer>
     </Container>
   )
 }
