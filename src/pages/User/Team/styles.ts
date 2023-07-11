@@ -15,20 +15,9 @@ export const Container = styled.section`
   }
 `
 
-export const PlayerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  width: 100%;
-`
-
 export const TeamContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
 
   width: 100%;
 `
@@ -36,13 +25,18 @@ export const TeamContainer = styled.div`
 export const TeamDataContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-
-  width: 100%;
 `
 
 export const TeamHeader = styled.header`
   display: flex;
   justify-content: space-between;
+
+  width: 100%;
+`
+
+export const PlayerContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
 `
