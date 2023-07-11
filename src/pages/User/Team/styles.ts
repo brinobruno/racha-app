@@ -30,8 +30,17 @@ export const TeamDataContainer = styled.div`
 export const TeamHeader = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 
   width: 100%;
+
+  h1,
+  strong {
+    font-family: 'DinPro', sans-serif;
+    font-size: 4rem;
+    line-height: 100%;
+  }
 `
 
 export const PlayerContainer = styled.div`
