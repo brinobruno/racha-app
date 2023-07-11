@@ -9,7 +9,7 @@ const findTeamById = (teams: ITeamData[], id: string | undefined) => {
 }
 
 export function Team() {
-  const { id } = useParams() // Access the ID from the URL
+  const { id } = useParams()
   const { data, isLoading, error } = useTeams()
 
   const teams = data?.teams ?? []
