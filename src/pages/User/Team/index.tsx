@@ -55,10 +55,8 @@ export function Team() {
           </TeamDataContainer>
         ) : null}
 
-        <div>
-          {isLoading && <span>Carregando...</span>}
-          {typeof error === 'string' && <span>Erro: {error}</span>}
-        </div>
+        {isLoading && <span>Carregando...</span>}
+        {typeof error === 'string' && <span>Erro: {error}</span>}
 
         <button>Criar jogador</button>
       </TeamContainer>
