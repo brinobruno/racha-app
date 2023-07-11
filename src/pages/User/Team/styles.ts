@@ -32,3 +32,8 @@ export const TeamDataContainer = styled.div`
 
   width: 100%;
 `
+
+export const TeamHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+`
