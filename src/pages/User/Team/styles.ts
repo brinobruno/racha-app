@@ -70,3 +70,5 @@ export const PlayerContainer = styled.div`
 
   width: 100%;
 `
+
+export const TeamControls = styled.div``

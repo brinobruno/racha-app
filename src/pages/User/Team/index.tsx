@@ -9,6 +9,7 @@ import {
   TeamHeader,
   TeamContainer,
   TeamDetails,
+  TeamControls,
 } from './styles'
 import { BackButton } from 'src/components/BackButton'
 
@@ -50,6 +51,8 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
+            <TeamControls></TeamControls>
+
             {team.players.map((player) => (
               <PlayerContainer key={player.id}>
                 <strong>Player: </strong>
@@ -64,8 +67,6 @@ export function Team() {
             ))}
           </TeamDataContainer>
         ) : null}
-
-        <button>Criar jogador</button>
       </TeamContainer>
     </Container>
   )
