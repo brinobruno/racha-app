@@ -43,7 +43,7 @@ export function Team() {
             </TeamHeader>
 
             <TeamDetails>
-              <span>By manager: {team.owner}</span>
+              <span>Técnico: {team.owner}</span>
               <small>{formattedDate}</small>
             </TeamDetails>
 
