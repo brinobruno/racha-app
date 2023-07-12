@@ -43,6 +43,13 @@ export const TeamHeader = styled.header`
   }
 `
 
+export const TeamDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+`
+
 export const PlayerContainer = styled.div`
   display: flex;
   flex-direction: column;
