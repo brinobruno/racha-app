@@ -51,6 +51,7 @@ export const TeamDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 0.25rem;
 
   width: 100%;
