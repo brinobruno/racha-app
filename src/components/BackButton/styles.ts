@@ -11,5 +11,17 @@ export const Container = styled.div`
     align-items: center;
 
     text-align: left;
+
+    svg,
+    span {
+      transition: 0.25s ease-in-out;
+    }
+
+    &:hover {
+      svg,
+      span {
+        color: ${(props) => props.theme['primary-500']};
+      }
+    }
   }
 `
