@@ -41,13 +41,29 @@ export const TeamHeader = styled.header`
     font-size: 4rem;
     line-height: 100%;
   }
+
+  h1 {
+    padding-bottom: 2rem;
+  }
 `
 
 export const TeamDetails = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 0.25rem;
 
   width: 100%;
+
+  span,
+  small {
+    display: inline-block;
+    text-align: center;
+  }
+
+  small {
+    padding-bottom: 2rem;
+  }
 `
 
 export const PlayerContainer = styled.div`
