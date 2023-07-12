@@ -14,13 +14,13 @@ export const Container = styled.div`
 
     svg,
     span {
-      transition: 0.25s ease-in-out;
+      transition: 0.15s ease-in-out;
     }
 
     &:hover {
       svg,
       span {
-        color: ${(props) => props.theme['primary-500']};
+        color: ${(props) => props.theme['secondary-300']};
       }
     }
   }
