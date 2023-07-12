@@ -54,15 +54,12 @@ export const TeamDetails = styled.div`
   gap: 0.25rem;
 
   width: 100%;
+  padding-bottom: 2rem;
 
   span,
   small {
     display: inline-block;
     text-align: center;
-  }
-
-  small {
-    padding-bottom: 2rem;
   }
 `
 
