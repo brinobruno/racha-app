@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { format } from 'date-fns'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
@@ -25,6 +26,10 @@ export function Team() {
 
   console.log(team)
 
+  const createdAt = new Date(team?.created_at ?? new Date())
+
+  const formattedDate = format(createdAt, "'Desde:' d 'de' MMMM 'de' yyyy")
+
   return (
     <Container>
       <BackButton link="/teams" />
@@ -39,7 +44,7 @@ export function Team() {
 
             <TeamDetails>
               <span>By manager: {team.owner}</span>
-              <small>Created at: {team.created_at}</small>
+              <small>{formattedDate}</small>
             </TeamDetails>
 
             {team.players.map((player) => (
