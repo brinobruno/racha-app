@@ -6,8 +6,10 @@ import { Container } from './styles'
 export function BackButton(props: { link: string }) {
   return (
     <Container>
-      <CaretLeft size={28} />
-      <Link to={props.link}>Voltar</Link>
+      <Link to={props.link}>
+        <CaretLeft size={28} />
+        <span>Voltar</span>
+      </Link>
     </Container>
   )
 }
