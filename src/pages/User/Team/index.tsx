@@ -35,6 +35,9 @@ export function Team() {
       <BackButton link="/teams" />
 
       <TeamContainer>
+        {isLoading && <span>Carregando...</span>}
+        {typeof error === 'string' && <span>Erro: {error}</span>}
+
         {team ? (
           <TeamDataContainer>
             <TeamHeader>
@@ -61,9 +64,6 @@ export function Team() {
             ))}
           </TeamDataContainer>
         ) : null}
-
-        {isLoading && <span>Carregando...</span>}
-        {typeof error === 'string' && <span>Erro: {error}</span>}
 
         <button>Criar jogador</button>
       </TeamContainer>
