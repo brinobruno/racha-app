@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
+import { useTheme } from 'styled-components'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
@@ -13,13 +14,14 @@ import {
 } from './styles'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
-import { CaretLeft, CaretRight } from 'phosphor-react'
+import { PencilSimple, Plus, Trash } from 'phosphor-react'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
 }
 
 export function Team() {
+  const currentTheme = useTheme()
   const { id } = useParams()
   const { data, isLoading, error } = useTeams()
 
@@ -56,13 +58,19 @@ export function Team() {
             <TeamControls>
               <TeamControlButton
                 key={0}
-                icon={<CaretRight />}
+                icon={<Plus size={28} />}
                 text="Something"
               />
 
               <TeamControlButton
                 key={1}
-                icon={<CaretLeft />}
+                icon={<PencilSimple size={28} />}
+                text="Something else"
+              />
+
+              <TeamControlButton
+                key={2}
+                icon={<Trash size={28} color={currentTheme['primary-500']} />}
                 text="Something else"
               />
             </TeamControls>
