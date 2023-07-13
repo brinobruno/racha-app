@@ -12,6 +12,8 @@ import {
   TeamControls,
 } from './styles'
 import { BackButton } from 'src/components/BackButton'
+import { TeamControlButton } from 'src/components/TeamControlButton'
+import { CaretLeft, CaretRight } from 'phosphor-react'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
@@ -51,7 +53,19 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
-            <TeamControls></TeamControls>
+            <TeamControls>
+              <TeamControlButton
+                key={0}
+                icon={<CaretRight />}
+                text="Something"
+              />
+
+              <TeamControlButton
+                key={1}
+                icon={<CaretLeft />}
+                text="Something else"
+              />
+            </TeamControls>
 
             {team.players.map((player) => (
               <PlayerContainer key={player.id}>

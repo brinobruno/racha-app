@@ -1,10 +1,16 @@
+import { ReactNode } from 'react'
 import { Container } from './styles'
 
-export function TeamControlButton() {
+interface TeamControlButtonProps {
+  icon: ReactNode
+  text: string
+}
+
+export function TeamControlButton({ icon, text }: TeamControlButtonProps) {
   return (
     <Container>
-      <img src="" alt="" />
-      <span></span>
+      {icon}
+      <span>{text}</span>
     </Container>
   )
 }
