@@ -34,16 +34,13 @@ export const TeamHeader = styled.header`
   gap: 1rem;
 
   width: 100%;
+  padding-bottom: 2rem;
 
   h1,
   strong {
     font-family: 'DinPro', sans-serif;
     font-size: 4rem;
     line-height: 100%;
-  }
-
-  h1 {
-    padding-bottom: 2rem;
   }
 `
 
