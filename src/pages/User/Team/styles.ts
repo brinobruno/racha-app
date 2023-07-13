@@ -71,4 +71,10 @@ export const PlayerContainer = styled.div`
   width: 100%;
 `
 
-export const TeamControls = styled.div``
+export const TeamControls = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  padding-bottom: 2rem;
+`
