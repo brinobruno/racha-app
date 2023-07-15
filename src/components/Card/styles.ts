@@ -1,14 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
 
-  width: 480px;
-  height: 680px;
+  width: 450px;
+  height: 650px;
 
-  background-size: 103.3%;
+  background-size: 465px 650px;
   background-position: center;
   background-repeat: no-repeat;
 
@@ -16,5 +14,7 @@ export const Container = styled.div`
   z-index: 0;
 
   font-family: 'DinProCondMed';
-  color: #bc9600;
+  color: #46390c;
+  text-transform: uppercase;
+  line-height: normal;
 `
