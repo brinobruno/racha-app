@@ -32,4 +32,5 @@ export const PlayerName = styled.div`
 
   overflow: hidden;
   width: 344px;
+  /* 11.5% */
 `
