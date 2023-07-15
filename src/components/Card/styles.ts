@@ -18,3 +18,16 @@ export const Container = styled.div`
   text-transform: uppercase;
   line-height: normal;
 `
+
+export const PlayerName = styled.div`
+  font-weight: 600;
+  font-size: 48px;
+  position: absolute;
+  top: 335px;
+  left: 54px;
+  width: 344px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+  z-index: 11;
+`
