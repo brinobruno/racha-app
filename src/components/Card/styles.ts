@@ -22,12 +22,14 @@ export const Container = styled.div`
 export const PlayerName = styled.div`
   font-weight: 600;
   font-size: 48px;
+  text-align: center;
+  white-space: nowrap;
+
   position: absolute;
   top: 335px;
   left: 54px;
+
   width: 344px;
-  white-space: nowrap;
   overflow: hidden;
-  text-align: center;
   z-index: 11;
 `
