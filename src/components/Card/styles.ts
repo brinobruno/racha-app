@@ -26,10 +26,10 @@ export const PlayerName = styled.div`
   white-space: nowrap;
 
   position: absolute;
+  z-index: 1;
   top: 335px;
   left: 54px;
 
-  width: 344px;
   overflow: hidden;
-  z-index: 11;
+  width: 344px;
 `
