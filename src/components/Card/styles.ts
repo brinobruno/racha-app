@@ -5,8 +5,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  width: 240px;
-  height: 340px;
+  width: 480px;
+  height: 680px;
 
   background-size: 103.3%;
   background-position: center;
