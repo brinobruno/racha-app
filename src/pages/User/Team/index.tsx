@@ -15,6 +15,7 @@ import {
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
 import { PencilSimple, Plus, Trash } from 'phosphor-react'
+import { Card } from 'src/components/Card'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
@@ -74,6 +75,8 @@ export function Team() {
                 text="Deletar time"
               />
             </TeamControls>
+
+            <Card />
 
             {team.players.map((player) => (
               <PlayerContainer key={player.id}>
