@@ -36,7 +36,7 @@ export const PlayerName = styled.div`
 `
 
 export const PlayerOverall = styled.div`
-  font-family: 'DinProCondMed';
+  font-family: 'DinProCondReg';
   font-size: 76px;
   font-weight: 500;
   position: absolute;
