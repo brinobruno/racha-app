@@ -29,3 +29,4 @@
 - [X] Switch players info to completion/composition of teams info
 - [ ] Create methods on teams context
 - [X] Team page 
+- [ ] Card component
