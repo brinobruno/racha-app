@@ -46,3 +46,14 @@ export const PlayerOverall = styled.div`
   text-align: center;
   z-index: 11;
 `
+
+export const PlayerPosition = styled.div`
+  font-family: 'DinProCondReg';
+  font-size: 34px;
+  position: absolute;
+  top: 151px;
+  left: 86px;
+  width: 85px;
+  text-align: center;
+  z-index: 11;
+`
