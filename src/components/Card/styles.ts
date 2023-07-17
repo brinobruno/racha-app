@@ -35,4 +35,14 @@ export const PlayerName = styled.div`
   /* 11.5% */
 `
 
-export const PlayerOverall = styled.div``
+export const PlayerOverall = styled.div`
+  font-family: 'DinProCondMed';
+  font-size: 76px;
+  font-weight: 500;
+  position: absolute;
+  top: 75px;
+  left: 86px;
+  width: 85px;
+  text-align: center;
+  z-index: 11;
+`
