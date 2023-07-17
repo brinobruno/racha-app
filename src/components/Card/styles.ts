@@ -34,3 +34,5 @@ export const PlayerName = styled.div`
   width: 344px;
   /* 11.5% */
 `
+
+export const PlayerOverall = styled.div``
