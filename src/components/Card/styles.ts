@@ -56,4 +56,9 @@ export const PlayerPosition = styled(PlayerText)`
   width: 85px;
 `
 
-export const PlayerNationality = styled.div``
+export const PlayerNationality = styled.div`
+  position: absolute;
+  top: 206px;
+  left: 92px;
+  z-index: 11;
+`
