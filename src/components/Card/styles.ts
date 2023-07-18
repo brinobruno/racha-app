@@ -56,5 +56,5 @@ export const PlayerPosition = styled(PlayerMainData)`
 
 export const PlayerNationality = styled(PlayerMainData)`
   top: 206px;
-  left: 92px;
+  left: 96px;
 `
