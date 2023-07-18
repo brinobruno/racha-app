@@ -19,19 +19,19 @@ export const Container = styled.div`
   line-height: normal;
 `
 
-const PlayerText = styled.div`
+const PlayerMainData = styled.div`
+  position: absolute;
   font-family: 'DinProCondReg';
   text-align: center;
   z-index: 1;
 `
 
-export const PlayerName = styled(PlayerText)`
+export const PlayerName = styled(PlayerMainData)`
   font-weight: 600;
   font-size: 48px;
   text-align: center;
   white-space: nowrap;
 
-  position: absolute;
   top: 335px;
   left: 54px;
 
@@ -40,25 +40,21 @@ export const PlayerName = styled(PlayerText)`
   /* 11.5% */
 `
 
-export const PlayerOverall = styled(PlayerText)`
+export const PlayerOverall = styled(PlayerMainData)`
   font-size: 76px;
-  position: absolute;
   top: 75px;
   left: 86px;
   width: 85px;
 `
 
-export const PlayerPosition = styled(PlayerText)`
+export const PlayerPosition = styled(PlayerMainData)`
   font-size: 34px;
-  position: absolute;
   top: 151px;
   left: 86px;
   width: 85px;
 `
 
-export const PlayerNationality = styled.div`
-  position: absolute;
+export const PlayerNationality = styled(PlayerMainData)`
   top: 206px;
   left: 92px;
-  z-index: 11;
 `
