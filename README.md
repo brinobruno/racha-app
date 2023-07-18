@@ -1,5 +1,8 @@
 # Racha App
 
+## Docs
+ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
+
 ## Todo
 - [ ] Write Readme
 - [ ] Finish Figma design
