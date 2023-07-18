@@ -12,7 +12,7 @@ export function Card() {
     <Container style={{ backgroundImage: `url(${BaseGold})` }}>
       <PlayerOverall>93</PlayerOverall>
       <PlayerPosition>RW</PlayerPosition>
-      <PlayerNationality />
+      <PlayerNationality src={`https://flagsapi.com/br/flat/64.png`} alt="" />
       <PlayerName>Player name</PlayerName>
     </Container>
   )
