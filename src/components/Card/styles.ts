@@ -42,7 +42,6 @@ export const PlayerName = styled(PlayerText)`
 
 export const PlayerOverall = styled(PlayerText)`
   font-size: 76px;
-  font-weight: 500;
   position: absolute;
   top: 75px;
   left: 86px;
