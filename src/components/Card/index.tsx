@@ -1,3 +1,5 @@
+import { getCode } from 'country-list'
+
 import BaseGold from 'src/assets/card-overlays/base-gold.png'
 import {
   Container,
@@ -8,11 +10,16 @@ import {
 } from './styles'
 
 export function Card() {
+  const playerCountryCode = getCode('brazil')
+
   return (
     <Container style={{ backgroundImage: `url(${BaseGold})` }}>
       <PlayerOverall>93</PlayerOverall>
       <PlayerPosition>RW</PlayerPosition>
-      <PlayerNationality src={`https://flagsapi.com/br/flat/64.png`} alt="" />
+      <PlayerNationality
+        src={`https://flagsapi.com/${playerCountryCode}/flat/64.png`}
+        alt=""
+      />
       <PlayerName>Player name</PlayerName>
     </Container>
   )
