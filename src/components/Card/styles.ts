@@ -56,4 +56,4 @@ export const PlayerPosition = styled(PlayerText)`
   width: 85px;
 `
 
-export const PlayerNationality = styled.img``
+export const PlayerNationality = styled.div``
