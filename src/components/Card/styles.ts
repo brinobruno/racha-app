@@ -64,10 +64,20 @@ export const PlayerAttributesContainer = styled.div`
   top: 390px;
   left: 93px;
   z-index: 11;
+
+  > div {
+    position: absolute;
+  }
 `
 
-export const PlayerAttributesTop = styled.div``
+export const PlayerAttributesTop = styled.div`
+  top: 2px;
+`
 
-export const PlayerAttributesMiddle = styled.div``
+export const PlayerAttributesMiddle = styled.div`
+  top: 43px;
+`
 
-export const PlayerAttributesBottom = styled.div``
+export const PlayerAttributesBottom = styled.div`
+  top: 85px;
+`
