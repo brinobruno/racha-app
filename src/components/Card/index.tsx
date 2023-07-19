@@ -3,7 +3,10 @@ import { getCode } from 'country-list'
 import BaseGold from 'src/assets/card-overlays/base-gold.png'
 import {
   Container,
+  PlayerAttributesBottom,
   PlayerAttributesContainer,
+  PlayerAttributesMiddle,
+  PlayerAttributesTop,
   PlayerName,
   PlayerNationality,
   PlayerOverall,
@@ -24,7 +27,11 @@ export function Card() {
         />
       </PlayerNationality>
 
-      <PlayerAttributesContainer></PlayerAttributesContainer>
+      <PlayerAttributesContainer>
+        <PlayerAttributesTop></PlayerAttributesTop>
+        <PlayerAttributesMiddle></PlayerAttributesMiddle>
+        <PlayerAttributesBottom></PlayerAttributesBottom>
+      </PlayerAttributesContainer>
       <PlayerName>Player name</PlayerName>
     </Container>
   )
