@@ -65,7 +65,7 @@ export const PlayerAttributesContainer = styled.div`
   left: 93px;
   z-index: 11;
 
-  > div {
+  div {
     position: absolute;
   }
 `
