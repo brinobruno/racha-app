@@ -25,12 +25,16 @@ import {
   PlayerPhysicalLabel,
 } from './styles'
 
-export function Card() {
+interface IPlayerCardProps {
+  overall: number
+}
+
+export function Card({ overall }: IPlayerCardProps) {
   const playerCountryCode = getCode('brazil')
 
   return (
     <Container style={{ backgroundImage: `url(${BaseGold})` }}>
-      <PlayerOverall>93</PlayerOverall>
+      <PlayerOverall>{overall}</PlayerOverall>
       <PlayerPosition>RW</PlayerPosition>
       <PlayerNationality>
         <img

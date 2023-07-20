@@ -76,7 +76,7 @@ export function Team() {
               />
             </TeamControls>
 
-            <Card />
+            <Card overall={93} />
 
             {team.players.map((player) => (
               <PlayerContainer key={player.id}>
