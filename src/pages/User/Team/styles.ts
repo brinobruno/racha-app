@@ -61,13 +61,6 @@ export const TeamDetails = styled.div`
   }
 `
 
-export const PlayerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  width: 100%;
-`
-
 export const TeamControls = styled.div`
   display: flex;
   flex-direction: column;
