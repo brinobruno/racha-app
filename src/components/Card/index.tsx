@@ -30,6 +30,12 @@ interface IPlayerCardProps {
   position: string
   nationality: string
   name: string
+  pace: number
+  dribbling: number
+  shooting: number
+  defending: number
+  passing: number
+  physical: number
 }
 
 export function Card({
@@ -37,6 +43,12 @@ export function Card({
   position,
   nationality,
   name,
+  pace,
+  dribbling,
+  shooting,
+  defending,
+  passing,
+  physical,
 }: IPlayerCardProps) {
   const playerCountryCode = getCode(nationality)
 
@@ -53,23 +65,23 @@ export function Card({
 
       <PlayerAttributesContainer>
         <PlayerAttributesTop>
-          <PlayerPaceValue>85</PlayerPaceValue>
+          <PlayerPaceValue>{pace}</PlayerPaceValue>
           <PlayerPaceLabel>pac</PlayerPaceLabel>
-          <PlayerDribblingValue>95</PlayerDribblingValue>
+          <PlayerDribblingValue>{dribbling}</PlayerDribblingValue>
           <PlayerDribblingLabel>dri</PlayerDribblingLabel>
         </PlayerAttributesTop>
 
         <PlayerAttributesMiddle>
-          <PlayerShootingValue>92</PlayerShootingValue>
+          <PlayerShootingValue>{shooting}</PlayerShootingValue>
           <PlayerShootingLabel>sho</PlayerShootingLabel>
-          <PlayerDefendingValue>34</PlayerDefendingValue>
+          <PlayerDefendingValue>{defending}</PlayerDefendingValue>
           <PlayerDefendingLabel>def</PlayerDefendingLabel>
         </PlayerAttributesMiddle>
 
         <PlayerAttributesBottom>
-          <PlayerPassingValue>91</PlayerPassingValue>
+          <PlayerPassingValue>{passing}</PlayerPassingValue>
           <PlayerPassingLabel>pas</PlayerPassingLabel>
-          <PlayerPhysicalValue>65</PlayerPhysicalValue>
+          <PlayerPhysicalValue>{physical}</PlayerPhysicalValue>
           <PlayerPhysicalLabel>phy</PlayerPhysicalLabel>
         </PlayerAttributesBottom>
       </PlayerAttributesContainer>

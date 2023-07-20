@@ -82,6 +82,12 @@ export function Team() {
               position="rw"
               nationality="br"
               name="Messi"
+              pace={85}
+              dribbling={95}
+              shooting={92}
+              defending={34}
+              passing={91}
+              physical={65}
             />
 
             {team.players.map((player) => (
