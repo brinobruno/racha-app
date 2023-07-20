@@ -10,6 +10,7 @@ import {
   TeamContainer,
   TeamDetails,
   TeamControls,
+  TeamPlayersGrid,
 } from './styles'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
@@ -75,35 +76,38 @@ export function Team() {
               />
             </TeamControls>
 
-            {team.players.map(
-              ({
-                id,
-                overall,
-                position,
-                nationality,
-                name,
-                pace,
-                dribbling,
-                shooting,
-                defending,
-                passing,
-                physical,
-              }) => (
-                <Card
-                  key={id}
-                  overall={overall}
-                  position={position}
-                  nationality={nationality}
-                  name={name}
-                  pace={pace}
-                  dribbling={dribbling}
-                  shooting={shooting}
-                  defending={defending}
-                  passing={passing}
-                  physical={physical}
-                />
-              ),
-            )}
+            <TeamPlayersGrid>
+              {team.players.map(
+                ({
+                  id,
+                  overall,
+                  position,
+                  nationality,
+                  name,
+                  pace,
+                  dribbling,
+                  shooting,
+                  defending,
+                  passing,
+                  physical,
+                }) => (
+                  <div key={id}>
+                    <Card
+                      overall={overall}
+                      position={position}
+                      nationality={nationality}
+                      name={name}
+                      pace={pace}
+                      dribbling={dribbling}
+                      shooting={shooting}
+                      defending={defending}
+                      passing={passing}
+                      physical={physical}
+                    />
+                  </div>
+                ),
+              )}
+            </TeamPlayersGrid>
           </TeamDataContainer>
         ) : null}
       </TeamContainer>

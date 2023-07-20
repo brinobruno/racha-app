@@ -68,3 +68,8 @@ export const TeamControls = styled.div`
 
   padding-bottom: 2rem;
 `
+
+export const TeamPlayersGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
