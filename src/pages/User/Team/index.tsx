@@ -47,7 +47,7 @@ export function Team() {
           <TeamDataContainer>
             <TeamHeader>
               <h1>{team.title}</h1>
-              <strong>{team.teamOverall}</strong>
+              <strong>{team.teamOverall.toFixed(0)}</strong>
             </TeamHeader>
 
             <TeamDetails>
