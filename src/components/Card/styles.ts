@@ -26,6 +26,19 @@ const PlayerMainData = styled.div`
   z-index: 1;
 `
 
+const PlayerAttributeData = styled.div`
+  font-size: 44px;
+`
+
+const PlayerAttributeValue = styled(PlayerAttributeData)`
+  font-family: 'DinProCondBold';
+`
+
+const PlayerAttributeLabel = styled(PlayerAttributeData)`
+  font-family: 'DinProCondMed';
+  color: #645215;
+`
+
 export const PlayerName = styled(PlayerMainData)`
   font-weight: 600;
   font-size: 48px;
@@ -82,44 +95,44 @@ export const PlayerAttributesBottom = styled.div`
   top: 85px;
 `
 
-export const PlayerPaceValue = styled.div``
+export const PlayerPaceValue = styled(PlayerAttributeValue)``
 
-export const PlayerPaceLabel = styled.div`
+export const PlayerPaceLabel = styled(PlayerAttributeLabel)`
   left: 42px;
 `
 
-export const PlayerShootingValue = styled.div``
+export const PlayerShootingValue = styled(PlayerAttributeValue)``
 
-export const PlayerShootingLabel = styled.div`
+export const PlayerShootingLabel = styled(PlayerAttributeLabel)`
   left: 42px;
 `
 
-export const PlayerPassingValue = styled.div``
+export const PlayerPassingValue = styled(PlayerAttributeValue)``
 
-export const PlayerPassingLabel = styled.div`
+export const PlayerPassingLabel = styled(PlayerAttributeLabel)`
   left: 42px;
 `
 
-export const PlayerDribblingValue = styled.div`
+export const PlayerDribblingValue = styled(PlayerAttributeValue)`
   left: 176px;
 `
 
-export const PlayerDribblingLabel = styled.div`
+export const PlayerDribblingLabel = styled(PlayerAttributeLabel)`
   left: 220px;
 `
 
-export const PlayerDefendingValue = styled.div`
+export const PlayerDefendingValue = styled(PlayerAttributeValue)`
   left: 176px;
 `
 
-export const PlayerDefendingLabel = styled.div`
+export const PlayerDefendingLabel = styled(PlayerAttributeLabel)`
   left: 220px;
 `
 
-export const PlayerPhysicalValue = styled.div`
+export const PlayerPhysicalValue = styled(PlayerAttributeValue)`
   left: 176px;
 `
 
-export const PlayerPhysicalLabel = styled.div`
+export const PlayerPhysicalLabel = styled(PlayerAttributeLabel)`
   left: 220px;
 `
