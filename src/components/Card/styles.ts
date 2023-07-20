@@ -81,3 +81,45 @@ export const PlayerAttributesMiddle = styled.div`
 export const PlayerAttributesBottom = styled.div`
   top: 85px;
 `
+
+export const PlayerPaceValue = styled.div``
+
+export const PlayerPaceLabel = styled.div`
+  left: 42px;
+`
+
+export const PlayerShootingValue = styled.div``
+
+export const PlayerShootingLabel = styled.div`
+  left: 42px;
+`
+
+export const PlayerPassingValue = styled.div``
+
+export const PlayerPassingLabel = styled.div`
+  left: 42px;
+`
+
+export const PlayerDribblingValue = styled.div`
+  left: 176px;
+`
+
+export const PlayerDribblingLabel = styled.div`
+  left: 220px;
+`
+
+export const PlayerDefendingValue = styled.div`
+  left: 176px;
+`
+
+export const PlayerDefendingLabel = styled.div`
+  left: 220px;
+`
+
+export const PlayerPhysicalValue = styled.div`
+  left: 176px;
+`
+
+export const PlayerPhysicalLabel = styled.div`
+  left: 220px;
+`
