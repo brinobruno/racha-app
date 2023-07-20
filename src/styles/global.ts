@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 import DinPro from './../fonts/DINPro.ttf'
+import DinProCondBold from './../fonts/DINPro-CondBold.ttf'
 import DinProCondMed from './../fonts/DINPro-CondMed.ttf'
 import DinProCondReg from './../fonts/DINPro-CondReg.ttf'
 
@@ -10,6 +11,14 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'DinPro';
     src: local('DinPro'), local('DinPro'),
     url(${DinPro}) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'DinProCondBold';
+    src: local('DinProCondBold'), local('DinProCondBold'),
+    url(${DinProCondBold}) format('truetype');
     font-weight: 500;
     font-style: normal;
   }
