@@ -76,7 +76,13 @@ export function Team() {
               />
             </TeamControls>
 
-            <Card overall={93} />
+            <Card
+              key={1}
+              overall={93}
+              position="rw"
+              nationality="br"
+              name="Messi"
+            />
 
             {team.players.map((player) => (
               <PlayerContainer key={player.id}>

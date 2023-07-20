@@ -27,15 +27,23 @@ import {
 
 interface IPlayerCardProps {
   overall: number
+  position: string
+  nationality: string
+  name: string
 }
 
-export function Card({ overall }: IPlayerCardProps) {
-  const playerCountryCode = getCode('brazil')
+export function Card({
+  overall,
+  position,
+  nationality,
+  name,
+}: IPlayerCardProps) {
+  const playerCountryCode = getCode(nationality)
 
   return (
     <Container style={{ backgroundImage: `url(${BaseGold})` }}>
       <PlayerOverall>{overall}</PlayerOverall>
-      <PlayerPosition>RW</PlayerPosition>
+      <PlayerPosition>{position}</PlayerPosition>
       <PlayerNationality>
         <img
           src={`https://flagsapi.com/${playerCountryCode}/flat/64.png`}
@@ -65,7 +73,7 @@ export function Card({ overall }: IPlayerCardProps) {
           <PlayerPhysicalLabel>phy</PlayerPhysicalLabel>
         </PlayerAttributesBottom>
       </PlayerAttributesContainer>
-      <PlayerName>Player name</PlayerName>
+      <PlayerName>{name}</PlayerName>
     </Container>
   )
 }
