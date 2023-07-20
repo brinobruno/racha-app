@@ -6,7 +6,6 @@ import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
   Container,
   TeamDataContainer,
-  PlayerContainer,
   TeamHeader,
   TeamContainer,
   TeamDetails,
@@ -76,32 +75,35 @@ export function Team() {
               />
             </TeamControls>
 
-            <Card
-              key={1}
-              overall={93}
-              position="rw"
-              nationality="brazil"
-              name="Messi"
-              pace={85}
-              dribbling={95}
-              shooting={92}
-              defending={34}
-              passing={91}
-              physical={65}
-            />
-
-            {team.players.map((player) => (
-              <PlayerContainer key={player.id}>
-                <strong>Player: </strong>
-
-                <span>
-                  {player.name}
-                  <br />
-                  {player.overall}
-                  <br />
-                </span>
-              </PlayerContainer>
-            ))}
+            {team.players.map(
+              ({
+                id,
+                overall,
+                position,
+                nationality,
+                name,
+                pace,
+                dribbling,
+                shooting,
+                defending,
+                passing,
+                physical,
+              }) => (
+                <Card
+                  key={id}
+                  overall={overall}
+                  position={position}
+                  nationality={nationality}
+                  name={name}
+                  pace={pace}
+                  dribbling={dribbling}
+                  shooting={shooting}
+                  defending={defending}
+                  passing={passing}
+                  physical={physical}
+                />
+              ),
+            )}
           </TeamDataContainer>
         ) : null}
       </TeamContainer>
