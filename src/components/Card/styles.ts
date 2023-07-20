@@ -75,7 +75,7 @@ export const PlayerNationality = styled(PlayerMainData)`
 export const PlayerAttributesContainer = styled.div`
   position: absolute;
   top: 390px;
-  left: 93px;
+  left: 90px;
   z-index: 11;
 
   div {
