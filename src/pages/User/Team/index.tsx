@@ -80,7 +80,7 @@ export function Team() {
               key={1}
               overall={93}
               position="rw"
-              nationality="br"
+              nationality="brazil"
               name="Messi"
               pace={85}
               dribbling={95}
