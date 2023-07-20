@@ -83,7 +83,7 @@ export function Team() {
                   overall,
                   position,
                   nationality,
-                  name,
+                  known_as: knownAs,
                   pace,
                   dribbling,
                   shooting,
@@ -96,7 +96,7 @@ export function Team() {
                       overall={overall}
                       position={position}
                       nationality={nationality}
-                      name={name}
+                      name={knownAs}
                       pace={pace}
                       dribbling={dribbling}
                       shooting={shooting}
