@@ -6,5 +6,6 @@ export function calculateTeamOverall(players: IPlayerData[]): number {
   }
 
   const totalOverall = players.reduce((sum, player) => sum + player.overall, 0)
-  return totalOverall / players.length
+  const teamOverall = (totalOverall / players.length).toFixed()
+  return Number(teamOverall)
 }
