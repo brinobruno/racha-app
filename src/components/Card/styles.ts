@@ -72,6 +72,26 @@ export const PlayerNationality = styled(PlayerMainData)`
   left: 96px;
 `
 
+export const PlayerPicture = styled(PlayerMainData)`
+  right: 51px;
+  top: 72px;
+  overflow: hidden;
+
+  width: 265px;
+  height: 265px;
+
+  div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    img {
+      height: 265px;
+      width: 100%;
+    }
+  }
+`
+
 export const PlayerAttributesContainer = styled.div`
   position: absolute;
   top: 390px;

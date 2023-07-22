@@ -23,6 +23,7 @@ import {
   PlayerDefendingLabel,
   PlayerPhysicalValue,
   PlayerPhysicalLabel,
+  PlayerPicture,
 } from './styles'
 
 interface IPlayerCardProps {
@@ -62,6 +63,15 @@ export function Card({
           alt=""
         />
       </PlayerNationality>
+
+      <PlayerPicture>
+        <div>
+          <img
+            src="https://www.fifarosters.com/assets/players/fifa23/faces/158023.png"
+            alt=""
+          />
+        </div>
+      </PlayerPicture>
 
       <PlayerAttributesContainer>
         <PlayerAttributesTop>
