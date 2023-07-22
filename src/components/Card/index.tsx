@@ -68,7 +68,7 @@ export function Card({
         <div>
           <img
             src="https://www.fifarosters.com/assets/players/fifa23/faces/158023.png"
-            alt=""
+            alt={name}
           />
         </div>
       </PlayerPicture>
