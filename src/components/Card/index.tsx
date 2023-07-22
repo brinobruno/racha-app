@@ -57,6 +57,7 @@ export function Card({
     <Container style={{ backgroundImage: `url(${BaseGold})` }}>
       <PlayerOverall>{overall}</PlayerOverall>
       <PlayerPosition>{position}</PlayerPosition>
+
       <PlayerNationality>
         <img
           src={`https://flagsapi.com/${playerCountryCode}/flat/64.png`}
@@ -72,6 +73,8 @@ export function Card({
           />
         </div>
       </PlayerPicture>
+
+      <PlayerName>{name}</PlayerName>
 
       <PlayerAttributesContainer>
         <PlayerAttributesTop>
@@ -95,7 +98,6 @@ export function Card({
           <PlayerPhysicalLabel>phy</PlayerPhysicalLabel>
         </PlayerAttributesBottom>
       </PlayerAttributesContainer>
-      <PlayerName>{name}</PlayerName>
     </Container>
   )
 }
