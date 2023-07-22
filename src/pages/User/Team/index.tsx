@@ -4,10 +4,18 @@ import { useTheme } from 'styled-components'
 import { PencilSimple, Plus, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
 import { Card } from 'src/components/Card'
+import {
+  Container,
+  TeamDataContainer,
+  TeamHeader,
+  TeamContainer,
+  TeamDetails,
+  TeamControls,
+  TeamPlayersGrid,
+} from './styles'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
