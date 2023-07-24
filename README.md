@@ -32,4 +32,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Switch players info to completion/composition of teams info
 - [ ] Create methods on teams context
 - [X] Team page 
-- [ ] Card component
+- [X] Card component
