@@ -1,7 +1,11 @@
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import { useTheme } from 'styled-components'
 
-export function LoadingSkeleton() {
+interface ISkeletonProps {
+  linesCount: number | undefined
+}
+
+export function LoadingSkeleton({ linesCount }: ISkeletonProps) {
   const currentTheme = useTheme()
 
   return (
@@ -10,7 +14,7 @@ export function LoadingSkeleton() {
       highlightColor={currentTheme['neutral-400']}
     >
       <p>
-        <Skeleton count={1} />
+        <Skeleton count={linesCount || undefined} />
       </p>
     </SkeletonTheme>
   )
