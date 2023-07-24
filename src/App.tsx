@@ -10,6 +10,8 @@ import { CookieNotice } from './components/CookieNotice'
 import { ToastNotification } from './components/ToastNotification'
 import { TeamsContextProvider } from './contexts/TeamsContext'
 
+import 'react-loading-skeleton/dist/skeleton.css'
+
 const queryClient = new QueryClient()
 
 export function App() {
