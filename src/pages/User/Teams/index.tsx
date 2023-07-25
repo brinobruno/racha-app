@@ -25,9 +25,13 @@ export function Teams() {
       <h1>Meus Times</h1>
 
       <div>
-        <LoadingSkeleton linesCount={1} lineHeight={80} />
-        <LoadingSkeleton linesCount={1} lineHeight={80} />
-        <LoadingSkeleton linesCount={1} lineHeight={80} />
+        {isLoading && (
+          <>
+            <LoadingSkeleton linesCount={1} lineHeight={80} />
+            <LoadingSkeleton linesCount={1} lineHeight={80} />
+            <LoadingSkeleton linesCount={1} lineHeight={80} />
+          </>
+        )}
 
         <div>{typeof error === 'string' && <span>Erro: {error}</span>}</div>
 
