@@ -4,11 +4,11 @@ import { useTheme } from 'styled-components'
 import { Container } from './style'
 
 interface ISkeletonProps {
-  linesCount: number | undefined
-  // className: string | undefined
+  linesCount?: number
+  lineHeight?: number
 }
 
-export function LoadingSkeleton({ linesCount }: ISkeletonProps) {
+export function LoadingSkeleton({ linesCount, lineHeight }: ISkeletonProps) {
   const currentTheme = useTheme()
 
   return (
@@ -18,7 +18,8 @@ export function LoadingSkeleton({ linesCount }: ISkeletonProps) {
         highlightColor={currentTheme['neutral-900']}
       >
         <Skeleton
-          count={linesCount || undefined}
+          count={linesCount}
+          height={lineHeight}
           style={{ width: '100%', display: 'flex' }}
         />
       </SkeletonTheme>
