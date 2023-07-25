@@ -35,7 +35,7 @@ export function Teams() {
 
         <div>{typeof error === 'string' && <span>Erro: {error}</span>}</div>
 
-        {teams && (
+        {teams ? (
           <TeamsContainer>
             {teams.map((team: ITeamData) => (
               <TeamContainer key={team.id}>
@@ -54,7 +54,7 @@ export function Teams() {
               </TeamContainer>
             ))}
           </TeamsContainer>
-        )}
+        ) : null}
       </div>
 
       <CreateTeamButton>Criar time</CreateTeamButton>
