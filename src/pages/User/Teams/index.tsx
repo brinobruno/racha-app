@@ -11,6 +11,7 @@ import {
   TeamsContainer,
 } from './styles'
 import { Link } from 'react-router-dom'
+import { LoadingSkeleton } from 'src/components/LoadingSkeleton'
 
 export function Teams() {
   const { data, isLoading, error } = useTeams()
@@ -24,8 +25,11 @@ export function Teams() {
       <h1>Meus Times</h1>
 
       <div>
-        {isLoading && <span>Carregando...</span>}
-        {typeof error === 'string' && <span>Erro: {error}</span>}
+        <LoadingSkeleton linesCount={1} lineHeight={80} />
+        <LoadingSkeleton linesCount={1} lineHeight={80} />
+        <LoadingSkeleton linesCount={1} lineHeight={80} />
+
+        <div>{typeof error === 'string' && <span>Erro: {error}</span>}</div>
 
         {teams && (
           <TeamsContainer>
