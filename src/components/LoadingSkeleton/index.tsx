@@ -5,22 +5,23 @@ import { Container } from './style'
 
 interface ISkeletonProps {
   linesCount: number | undefined
+  // className: string | undefined
 }
 
 export function LoadingSkeleton({ linesCount }: ISkeletonProps) {
   const currentTheme = useTheme()
 
   return (
-    <SkeletonTheme
-      baseColor={currentTheme['neutral-200']}
-      highlightColor={currentTheme['neutral-400']}
-    >
-      <Container>
+    <Container>
+      <SkeletonTheme
+        baseColor={currentTheme['neutral-800']}
+        highlightColor={currentTheme['neutral-900']}
+      >
         <Skeleton
           count={linesCount || undefined}
           style={{ width: '100%', display: 'flex' }}
         />
-      </Container>
-    </SkeletonTheme>
+      </SkeletonTheme>
+    </Container>
   )
 }
