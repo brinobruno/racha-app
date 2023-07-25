@@ -14,8 +14,8 @@ export function LoadingSkeleton({ linesCount, lineHeight }: ISkeletonProps) {
   return (
     <Container>
       <SkeletonTheme
-        baseColor={currentTheme['neutral-800']}
-        highlightColor={currentTheme['neutral-900']}
+        baseColor={currentTheme['secondary-accent']}
+        highlightColor={currentTheme['secondary-600']}
       >
         <Skeleton
           count={linesCount}
