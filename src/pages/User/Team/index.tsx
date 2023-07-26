@@ -15,6 +15,7 @@ import {
   TeamDetails,
   TeamControls,
   TeamPlayersGrid,
+  NoPlayersNotice,
 } from './styles'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
@@ -57,12 +58,12 @@ export function Team() {
             </TeamDetails>
 
             {team.players.length === 0 ? (
-              <div>
+              <NoPlayersNotice>
                 <span>
                   O Racha desanimou? Essa equipe ainda não tem jogadores
                   registrados.
                 </span>
-              </div>
+              </NoPlayersNotice>
             ) : null}
 
             <TeamControls>
