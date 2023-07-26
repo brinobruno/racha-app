@@ -86,36 +86,38 @@ export function Team() {
             </TeamControls>
 
             <TeamPlayersGrid>
-              {team.players.map(
-                ({
-                  id,
-                  overall,
-                  position,
-                  nationality,
-                  known_as: knownAs,
-                  pace,
-                  dribbling,
-                  shooting,
-                  defending,
-                  passing,
-                  physical,
-                }) => (
-                  <div key={id}>
-                    <Card
-                      overall={overall}
-                      position={position}
-                      nationality={nationality}
-                      name={knownAs}
-                      pace={pace}
-                      dribbling={dribbling}
-                      shooting={shooting}
-                      defending={defending}
-                      passing={passing}
-                      physical={physical}
-                    />
-                  </div>
-                ),
-              )}
+              {team.players.length > 0
+                ? team.players.map(
+                    ({
+                      id,
+                      overall,
+                      position,
+                      nationality,
+                      known_as: knownAs,
+                      pace,
+                      dribbling,
+                      shooting,
+                      defending,
+                      passing,
+                      physical,
+                    }) => (
+                      <div key={id}>
+                        <Card
+                          overall={overall}
+                          position={position}
+                          nationality={nationality}
+                          name={knownAs}
+                          pace={pace}
+                          dribbling={dribbling}
+                          shooting={shooting}
+                          defending={defending}
+                          passing={passing}
+                          physical={physical}
+                        />
+                      </div>
+                    ),
+                  )
+                : null}
             </TeamPlayersGrid>
           </TeamDataContainer>
         ) : null}
