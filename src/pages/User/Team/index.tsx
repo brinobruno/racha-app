@@ -56,6 +56,15 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
+            {team.players.length === 0 ? (
+              <div>
+                <span>
+                  O Racha desanimou? Essa equipe ainda não tem jogadores
+                  registrados.
+                </span>
+              </div>
+            ) : null}
+
             <TeamControls>
               <TeamControlButton
                 key={0}
