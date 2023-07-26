@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
 import { useTheme } from 'styled-components'
-import { PencilSimple, Plus, Trash } from 'phosphor-react'
+import { PencilSimple, Plus, SmileySad, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { BackButton } from 'src/components/BackButton'
@@ -63,6 +63,7 @@ export function Team() {
                   O Racha desanimou? Essa equipe ainda não tem jogadores
                   registrados.
                 </span>
+                <SmileySad size={28} />
               </NoPlayersNotice>
             ) : null}
 
