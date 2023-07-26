@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom'
 import { CaretRight } from 'phosphor-react'
 
+import { LoadingSkeleton } from 'src/components/LoadingSkeleton'
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
   Container,
@@ -10,8 +12,6 @@ import {
   TeamOverall,
   TeamsContainer,
 } from './styles'
-import { Link } from 'react-router-dom'
-import { LoadingSkeleton } from 'src/components/LoadingSkeleton'
 
 export function Teams() {
   const { data, isLoading, error } = useTeams()
