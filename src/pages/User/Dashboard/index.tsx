@@ -14,7 +14,7 @@ export function Dashboard() {
       <img src={theme === 'light' ? PlayerDark : PlayerLight} alt="" />
 
       {userHasTeams ? (
-        <h1>User has teams</h1>
+        <h1>Você possui times!</h1>
       ) : (
         <h1>Você ainda não possui times ou cartas registradas.</h1>
       )}
