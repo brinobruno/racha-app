@@ -45,10 +45,9 @@ export function Dashboard() {
         <h1>Você ainda não possui times ou cartas registradas.</h1>
       )}
 
-      <button>Criar time</button>
+      <button onClick={openModal}>Criar time</button>
 
       <div>
-        <button onClick={openModal}>Abrir modal</button>
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
