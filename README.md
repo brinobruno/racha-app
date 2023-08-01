@@ -12,7 +12,7 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Add user to global context
 - [X] Add zod
 - [X] Add global cookie notice/consent
-- [ ] Add Toasts messages - success signin/signup/etc.
+- [X] Add Toasts messages - success signin/signup/etc.
 - [ ] Add Unit testing
 - [Xg] Add global loading component
 
