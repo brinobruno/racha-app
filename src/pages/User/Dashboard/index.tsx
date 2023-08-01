@@ -54,9 +54,9 @@ export function Dashboard() {
           contentLabel="Role modal *wink*"
           style={modalCustomStyles}
         >
-          <h2>Hey</h2>
+          <h2>Criar time</h2>
           <button onClick={closeModal}>Close</button>
-          <div>Im a modal</div>
+          <div>Create team form</div>
         </Modal>
       </div>
     </Container>
