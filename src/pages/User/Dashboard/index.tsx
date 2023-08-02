@@ -20,6 +20,13 @@ const modalCustomStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+
+    color: '#000',
+    border: '1px solid #FFF',
+    background: '#FFF',
+
+    borderRadius: '5px',
+    padding: '20px',
   },
 }
 
