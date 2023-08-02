@@ -11,6 +11,7 @@ import PlayerDark from 'src/assets/player-dark.svg'
 const modalCustomStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0 ,0, 0.6)',
+    zIndex: 100,
   },
   content: {
     top: '50%',
