@@ -66,8 +66,8 @@ export function Dashboard() {
           style={modalCustomStyles}
         >
           <h2>Criar time</h2>
-          <button onClick={closeModal}>Close</button>
           <div>Create team form</div>
+          <button onClick={closeModal}>Close</button>
         </Modal>
       </div>
     </Container>
