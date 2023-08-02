@@ -9,6 +9,9 @@ import PlayerLight from 'src/assets/player-light.svg'
 import PlayerDark from 'src/assets/player-dark.svg'
 
 const modalCustomStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0 ,0, 0.6)',
+  },
   content: {
     top: '50%',
     left: '50%',
