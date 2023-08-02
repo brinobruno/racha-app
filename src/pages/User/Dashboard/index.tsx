@@ -62,7 +62,7 @@ export function Dashboard() {
         <Modal
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          contentLabel="Role modal *wink*"
+          contentLabel="Criar time"
           style={modalCustomStyles}
         >
           <h2>Criar time</h2>
