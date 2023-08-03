@@ -3,32 +3,11 @@ import Modal from 'react-modal'
 
 import { useThemeContext } from 'src/contexts/ThemeContext'
 import { useUserHasTeams } from 'src/services/hooks/useUserHasTeams'
+import { modalCustomStyles } from 'src/styles/modalCustomStyles'
 import { Container } from './styles'
 
 import PlayerLight from 'src/assets/player-light.svg'
 import PlayerDark from 'src/assets/player-dark.svg'
-
-const modalCustomStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0 ,0, 0.6)',
-    zIndex: 100,
-  },
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-
-    color: '#000',
-    border: '1px solid #FFF',
-    background: '#FFF',
-
-    borderRadius: '5px',
-    padding: '20px',
-  },
-}
 
 Modal.setAppElement('#root')
 
