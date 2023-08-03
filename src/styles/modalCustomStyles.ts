@@ -1,7 +1,15 @@
-export const modalCustomStyles = {
+import { Styles } from 'react-modal'
+
+export const modalCustomStyles: Styles = {
   overlay: {
     backgroundColor: 'rgba(0, 0 ,0, 0.6)',
     zIndex: 100,
+
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
   },
   content: {
     top: '50%',
