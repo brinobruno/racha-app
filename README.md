@@ -33,3 +33,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [ ] Create methods on teams context
 - [X] Team page 
 - [X] Card component
+- [ ] On existing teams/players, show a ranking of best players
