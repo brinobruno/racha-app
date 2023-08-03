@@ -12,17 +12,17 @@ import PlayerDark from 'src/assets/player-dark.svg'
 Modal.setAppElement('#root')
 
 export function Dashboard() {
-  const [modalIsOpen, setIsOpen] = useState(false)
+  const [isCreateTeamModalOpen, setIsCreateTeamModalOpen] = useState(false)
 
   const { theme } = useThemeContext()
   const userHasTeams = useUserHasTeams()
 
-  function openModal() {
-    setIsOpen(true)
+  function handleOpenCreateTeamModal() {
+    setIsCreateTeamModalOpen(true)
   }
 
-  function closeModal() {
-    setIsOpen(false)
+  function handleCloseCreateTeamModal() {
+    setIsCreateTeamModalOpen(false)
   }
 
   return (
@@ -35,18 +35,18 @@ export function Dashboard() {
         <h1>Você ainda não possui times ou cartas registradas.</h1>
       )}
 
-      <button onClick={openModal}>Criar time</button>
+      <button onClick={handleOpenCreateTeamModal}>Criar time</button>
 
       <div>
         <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
+          isOpen={isCreateTeamModalOpen}
+          onRequestClose={handleCloseCreateTeamModal}
           contentLabel="Criar time"
           style={modalCustomStyles}
         >
           <h2>Criar time</h2>
           <div>Create team form</div>
-          <button onClick={closeModal}>Close</button>
+          <button onClick={handleCloseCreateTeamModal}>Close</button>
         </Modal>
       </div>
     </Container>
