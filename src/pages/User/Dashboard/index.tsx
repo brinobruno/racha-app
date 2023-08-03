@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { X } from 'phosphor-react'
 import Modal from 'react-modal'
 
 import { useThemeContext } from 'src/contexts/ThemeContext'
@@ -44,6 +45,10 @@ export function Dashboard() {
           contentLabel="Criar time"
           style={modalCustomStyles}
         >
+          <header>
+            <X onClick={handleCloseCreateTeamModal} />
+          </header>
+
           <h2>Criar time</h2>
           <div>Create team form</div>
           <button onClick={handleCloseCreateTeamModal}>Close</button>
