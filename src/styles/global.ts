@@ -154,11 +154,11 @@ export const GlobalStyle = createGlobalStyle`
     transition: opacity 200ms ease-in-out;
   }
 
-  .ReactModal__Overlay--after-open{
+  .ReactModal__Overlay--after-open {
     opacity: 1;
   }
 
-  .ReactModal__Overlay--before-close{
+  .ReactModal__Overlay--before-close {
     opacity: 0;
   }
 `
