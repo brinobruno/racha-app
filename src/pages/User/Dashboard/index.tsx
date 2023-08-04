@@ -44,6 +44,7 @@ export function Dashboard() {
           onRequestClose={handleCloseCreateTeamModal}
           contentLabel="Criar time"
           style={modalCustomStyles}
+          closeTimeoutMS={200}
         >
           <header>
             <X onClick={handleCloseCreateTeamModal} />
