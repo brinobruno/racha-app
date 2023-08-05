@@ -19,6 +19,9 @@ export const modalCustomStyles: Styles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
 
+    width: '30rem',
+    maxWidth: '90%',
+
     color: '#202024',
     border: '1px solid #E9EDF5',
     background: '#E9EDF5',
