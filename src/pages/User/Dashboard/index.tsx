@@ -39,7 +39,12 @@ export function Dashboard() {
           title="Criar time"
           onRequestClose={handleCloseCreateTeamModal}
         >
-          <div>Create team form</div>
+          <form>
+            <div>
+              <label htmlFor="name">Name</label>
+              <input required id="name" name="name" />
+            </div>
+          </form>
           <button onClick={handleCloseCreateTeamModal}>Close</button>
         </GlobalModal>
       </div>
