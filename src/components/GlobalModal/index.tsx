@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { X } from 'phosphor-react'
 import Modal from 'react-modal'
 import { modalCustomStyles } from 'src/styles/modalCustomStyles'
-import { HeaderContainer } from './styles'
+import { Container, HeaderContainer } from './styles'
 
 interface IGlobalModalProps {
   isOpen: boolean
@@ -29,18 +29,20 @@ export function GlobalModal({
       style={modalCustomStyles}
       closeTimeoutMS={200}
     >
-      <HeaderContainer>
-        <X
-          onClick={onRequestClose}
-          alt="fechar"
-          aria-label="fechar"
-          size={24}
-        />
-      </HeaderContainer>
+      <Container>
+        <HeaderContainer>
+          <X
+            onClick={onRequestClose}
+            alt="fechar"
+            aria-label="fechar"
+            size={24}
+          />
+        </HeaderContainer>
 
-      <h6>{title}</h6>
+        <h6>{title}</h6>
 
-      {children}
+        {children}
+      </Container>
     </Modal>
   )
 }
