@@ -35,9 +35,9 @@ export function Dashboard() {
       <div>
         <GlobalModal
           isOpen={isCreateTeamModalOpen}
-          onRequestClose={handleCloseCreateTeamModal}
           contentLabel="Criar time"
           title="Criar time"
+          onRequestClose={handleCloseCreateTeamModal}
         >
           <div>Create team form</div>
           <button onClick={handleCloseCreateTeamModal}>Close</button>

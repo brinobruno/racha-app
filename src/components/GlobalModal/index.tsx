@@ -7,20 +7,20 @@ import { Container, HeaderContainer } from './styles'
 
 interface IGlobalModalProps {
   isOpen: boolean
-  onRequestClose: () => void
   contentLabel: string
   title: string
   children: ReactNode
+  onRequestClose: () => void
 }
 
 Modal.setAppElement('#root')
 
 export function GlobalModal({
   isOpen,
-  onRequestClose,
   contentLabel,
   title,
   children,
+  onRequestClose,
 }: IGlobalModalProps) {
   return (
     <Modal
