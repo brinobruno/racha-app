@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { X } from 'phosphor-react'
 import Modal from 'react-modal'
+
 import { modalCustomStyles } from 'src/styles/modalCustomStyles'
 import { Container, HeaderContainer } from './styles'
 
