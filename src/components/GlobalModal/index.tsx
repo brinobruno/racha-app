@@ -7,6 +7,7 @@ interface IGlobalModalProps {
   isOpen: boolean
   onRequestClose: () => void
   contentLabel: string
+  title: string
   children: ReactNode
 }
 
@@ -16,6 +17,7 @@ export function GlobalModal({
   isOpen,
   onRequestClose,
   contentLabel,
+  title,
   children,
 }: IGlobalModalProps) {
   return (
@@ -29,6 +31,8 @@ export function GlobalModal({
       <header>
         <X onClick={onRequestClose} />
       </header>
+
+      <h6>{title}</h6>
 
       {children}
     </Modal>
