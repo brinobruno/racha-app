@@ -27,6 +27,6 @@ export const modalCustomStyles: Styles = {
     background: '#E9EDF5',
 
     borderRadius: '5px',
-    padding: '1.5rem',
+    padding: '2rem',
   },
 }
