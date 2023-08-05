@@ -30,7 +30,7 @@ export function GlobalModal({
       closeTimeoutMS={200}
     >
       <HeaderContainer>
-        <X onClick={onRequestClose} alt="fechar" />
+        <X onClick={onRequestClose} alt="fechar" aria-label="fechar" />
       </HeaderContainer>
 
       <h6>{title}</h6>
