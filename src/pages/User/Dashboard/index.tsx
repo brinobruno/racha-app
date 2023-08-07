@@ -41,7 +41,6 @@ export function Dashboard() {
           onRequestClose={handleCloseCreateTeamModal}
         >
           <CreateTeamForm />
-          <button onClick={handleCloseCreateTeamModal}>Close</button>
         </GlobalModal>
       </div>
     </Container>
