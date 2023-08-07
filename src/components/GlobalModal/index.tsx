@@ -36,6 +36,8 @@ export function GlobalModal({
         content: {
           ...modalCustomStyles.content,
           background: theme['neutral-800'],
+          border: `1px solid ${theme['neutral-800']}`,
+          color: theme['neutral-100'],
         },
       }}
       closeTimeoutMS={200}

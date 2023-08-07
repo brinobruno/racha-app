@@ -22,9 +22,6 @@ export const modalCustomStyles: Styles = {
     width: '30rem',
     maxWidth: '90%',
 
-    color: '#E9EDF5',
-    border: '1px solid #202024',
-
     borderRadius: '5px',
     padding: '2rem',
   },
