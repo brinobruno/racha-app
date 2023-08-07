@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { useTheme } from 'styled-components'
 import { X } from 'phosphor-react'
 import Modal from 'react-modal'
 
@@ -22,12 +23,21 @@ export function GlobalModal({
   children,
   onRequestClose,
 }: IGlobalModalProps) {
+  const theme = useTheme()
+  console.log(`'${theme['neutral-900']}'`)
+
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel={contentLabel}
-      style={modalCustomStyles}
+      style={{
+        overlay: modalCustomStyles.overlay,
+        content: {
+          ...modalCustomStyles.content,
+          background: theme['neutral-800'],
+        },
+      }}
       closeTimeoutMS={200}
     >
       <Container>
