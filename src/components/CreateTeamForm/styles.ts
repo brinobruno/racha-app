@@ -5,9 +5,8 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1rem;
 
-  max-width: 21.625rem;
   width: 100%;
 
   button {
@@ -36,6 +35,5 @@ export const WarningsContainer = styled.div`
 `
 
 export const Validate = styled.span`
-  margin-top: -1rem;
   font-size: 0.875rem;
 `
