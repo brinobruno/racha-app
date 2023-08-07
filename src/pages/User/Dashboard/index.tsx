@@ -6,6 +6,7 @@ import { Container } from './styles'
 import PlayerLight from 'src/assets/player-light.svg'
 import PlayerDark from 'src/assets/player-dark.svg'
 import { GlobalModal } from 'src/components/GlobalModal'
+import { CreateTeamForm } from 'src/components/CreateTeamForm'
 
 export function Dashboard() {
   const [isCreateTeamModalOpen, setIsCreateTeamModalOpen] = useState(false)
@@ -39,12 +40,7 @@ export function Dashboard() {
           title="Criar time"
           onRequestClose={handleCloseCreateTeamModal}
         >
-          <form>
-            <div>
-              <label htmlFor="name">Name</label>
-              <input required id="name" name="name" />
-            </div>
-          </form>
+          <CreateTeamForm />
           <button onClick={handleCloseCreateTeamModal}>Close</button>
         </GlobalModal>
       </div>
