@@ -21,6 +21,22 @@ export const FieldContainer = styled.div`
   gap: 0.5rem;
 
   width: 100%;
+
+  label {
+    font-weight: 600;
+  }
+
+  input {
+    background: ${(props) => props.theme['neutral-700']};
+    outline: ${(props) => props.theme['neutral-700']};
+    color: ${(props) => props.theme['neutral-100']};
+    transition: 0.15s outline ease-in-out, 0.15s color ease-in-out;
+
+    &:focus {
+      outline: 1px solid ${(props) => props.theme['secondary-500']};
+      color: ${(props) => props.theme['secondary-300']};
+    }
+  }
 `
 
 export const WarningsContainer = styled.div`
