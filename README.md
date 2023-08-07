@@ -34,3 +34,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Team page 
 - [X] Card component
 - [ ] On existing teams/players, show a ranking of best players
+- [ ] Make add team component 
