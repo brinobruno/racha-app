@@ -7,6 +7,10 @@ export const Container = styled.div`
 
   min-height: calc(100vh - 6.25rem);
 
+  img {
+    max-width: 27.5rem;
+  }
+
   @media (max-width: 768px) {
     justify-content: unset;
     flex-direction: column;
