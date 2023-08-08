@@ -1,16 +1,10 @@
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { AxiosError } from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useSignUpMutation } from 'src/services/hooks/useSignUpMutation'
+import { FieldContainer, Form, Validate, WarningsContainer } from './styles' // Removed unused imports
 import { toast } from 'react-toastify'
-
-import { api } from 'src/services/api'
-import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
-import { UseUserContext } from 'src/hooks/UseUserContext'
-import { addCookie } from 'src/services/auth/addCookie'
-import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
+import { useNavigate } from 'react-router-dom'
 
 interface ISignUpRequest {
   username: string
@@ -28,8 +22,6 @@ export type SignUpFormData = zod.infer<typeof signUpFormValidationSchema>
 
 export function SignUpForm() {
   const navigate = useNavigate()
-  const { addUser } = UseUserContext()
-
   const newSignUpForm = useForm<SignUpFormData>({
     resolver: zodResolver(signUpFormValidationSchema),
     defaultValues: {
@@ -40,56 +32,21 @@ export function SignUpForm() {
   })
 
   const {
-    register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors }, // Use the errors object
   } = newSignUpForm
-  const handleSignUpUserSubmit: SubmitHandler<ISignUpRequest> = (
+
+  const signUpMutation = useSignUpMutation()
+
+  const handleSignUpUserSubmit: SubmitHandler<ISignUpRequest> = async (
     signUpInputs,
   ) => {
-    signUpUser(signUpInputs)
+    await signUpMutation.mutateAsync(signUpInputs)
+    reset()
+    toast('Bem-vindo(a) ao Racha!')
+    navigate('/dashboard')
   }
-
-  const createUser = useMutation(
-    async ({ username, email, password }: ISignUpRequest) => {
-      const { data } = await api.post(`/users/signup`, {
-        username,
-        email,
-        password,
-      })
-      const { user, token } = data
-
-      await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
-
-      addUser({
-        id: user.id,
-        username: user.username,
-        email: user.email,
-      })
-    },
-  )
-
-  const signUpUser = (inputs: ISignUpRequest) => {
-    createUser.mutate(inputs, {
-      onSuccess: async () => {
-        reset()
-
-        toast('Bem-vindo(a) ao Racha!')
-
-        return navigate('/dashboard')
-      },
-      onError: () => {
-        toast('Revise os dados de cadastro!', {
-          className: 'warning-toast',
-        })
-      },
-    })
-  }
-
-  let createUserError
-  if (createUser.error instanceof AxiosError)
-    createUserError = createUser.error.response?.data.error
 
   return (
     <Form onSubmit={handleSubmit(handleSignUpUserSubmit)}>
@@ -98,7 +55,7 @@ export function SignUpForm() {
         <input
           required
           id="username"
-          {...register('username')}
+          {...newSignUpForm.register('username')}
           name="username"
         />
       </FieldContainer>
@@ -107,7 +64,12 @@ export function SignUpForm() {
 
       <FieldContainer>
         <label htmlFor="email">Email</label>
-        <input required id="email" {...register('email')} name="email" />
+        <input
+          required
+          id="email"
+          {...newSignUpForm.register('email')}
+          name="email"
+        />
       </FieldContainer>
 
       {errors?.email && <Validate>{errors.email.message}</Validate>}
@@ -117,7 +79,7 @@ export function SignUpForm() {
         <input
           required
           id="password"
-          {...register('password')}
+          {...newSignUpForm.register('password')}
           name="password"
           type="password"
         />
@@ -127,19 +89,18 @@ export function SignUpForm() {
 
       <button
         data-testid="signup-submit"
-        disabled={createUser.isLoading}
+        disabled={signUpMutation.isLoading}
         type="submit"
       >
         Entrar
       </button>
 
       <WarningsContainer>
-        {createUser.isLoading && <span>Criando conta...</span>}
-        {createUser.isSuccess && <span>Conta criada com sucesso</span>}
-        {createUser.isError && (
+        {signUpMutation.isLoading && <span>Criando conta...</span>}
+        {signUpMutation.isError && (
           <span>
             Erro ao criar conta: <br />
-            {createUserError}
+            {String(signUpMutation.error)}
           </span>
         )}
       </WarningsContainer>
