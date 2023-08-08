@@ -1,4 +1,4 @@
-import { useClipboard } from 'src/services/hooks/useClipboard'
+import { useClipboard } from 'src/hooks/useClipboard'
 
 export function CopyButton() {
   const { copy, state } = useClipboard()
