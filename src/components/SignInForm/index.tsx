@@ -1,16 +1,11 @@
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { AxiosError } from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-import { api } from 'src/services/api'
-import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
-import { UseUserContext } from 'src/hooks/UseUserContext'
-import { addCookie } from 'src/services/auth/addCookie'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
+import { useSignInMutation } from 'src/services/hooks/useSignInMutation'
 
 interface ISignInRequest {
   email: string
@@ -26,7 +21,6 @@ export type SignInFormData = zod.infer<typeof signInFormValidationSchema>
 
 export function SignInForm() {
   const navigate = useNavigate()
-  const { addUser } = UseUserContext()
 
   const newSignInForm = useForm<SignInFormData>({
     resolver: zodResolver(signInFormValidationSchema),
@@ -37,61 +31,32 @@ export function SignInForm() {
   })
 
   const {
-    register,
     handleSubmit,
     reset,
     formState: { errors },
   } = newSignInForm
-  const handleSignInUserSubmit: SubmitHandler<ISignInRequest> = (
+
+  const signInMutation = useSignInMutation()
+
+  const handleSignInUserSubmit: SubmitHandler<ISignInRequest> = async (
     signInInputs,
   ) => {
-    signInUser(signInInputs)
+    await signInMutation.mutateAsync(signInInputs)
+    reset()
+    toast('Bem-vindo(a) de volta!')
+    navigate('/dashboard')
   }
-
-  const loginUser = useMutation(async ({ email, password }: ISignInRequest) => {
-    const { data } = await api.post(`/users/login`, {
-      email,
-      password,
-    })
-    const { user, token } = data
-
-    await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
-
-    addUser({
-      id: user.id,
-      username: user.username,
-      email: user.email,
-    })
-  })
-
-  const signInUser = (inputs: ISignInRequest) => {
-    loginUser.mutate(inputs, {
-      onSuccess: async () => {
-        reset()
-
-        toast('Bem-vindo(a) de volta!', {
-          className: 'successful-toast',
-        })
-
-        return navigate('/dashboard')
-      },
-      onError: () => {
-        toast('Revise os dados de login!', {
-          className: 'warning-toast',
-        })
-      },
-    })
-  }
-
-  let loginUserError
-  if (loginUser.error instanceof AxiosError)
-    loginUserError = loginUser.error.response?.data.error
 
   return (
     <Form onSubmit={handleSubmit(handleSignInUserSubmit)}>
       <FieldContainer>
         <label htmlFor="email">Email</label>
-        <input required id="email" {...register('email')} name="email" />
+        <input
+          required
+          id="email"
+          {...newSignInForm.register('email')}
+          name="email"
+        />
       </FieldContainer>
 
       {errors?.email && <Validate>{errors.email.message}</Validate>}
@@ -101,7 +66,7 @@ export function SignInForm() {
         <input
           required
           id="password"
-          {...register('password')}
+          {...newSignInForm.register('password')}
           name="password"
           type="password"
         />
@@ -111,19 +76,19 @@ export function SignInForm() {
 
       <button
         data-testid="signin-submit"
-        disabled={loginUser.isLoading}
+        disabled={signInMutation.isLoading}
         type="submit"
       >
         Entrar
       </button>
 
       <WarningsContainer>
-        {loginUser.isLoading && <span>Entrando...</span>}
-        {loginUser.isSuccess && <span>Entrada com sucesso.</span>}
-        {loginUser.isError && (
+        {signInMutation.isLoading && <span>Entrando...</span>}
+        {signInMutation.isSuccess && <span>Entrada com sucesso.</span>}
+        {signInMutation.isError && (
           <span>
             Erro ao entrar: <br />
-            {loginUserError}
+            {String(signInMutation.error)}
           </span>
         )}
       </WarningsContainer>
