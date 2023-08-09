@@ -3,7 +3,7 @@ import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 
 import { api } from 'src/services/api'
-import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
+import { USER_ID_STORAGE_KEY, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 import { addCookie } from 'src/services/auth/addCookie'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 
@@ -26,6 +26,7 @@ export function useSignUpMutation() {
       const { user, token } = data
 
       await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
+      await addCookie(USER_ID_STORAGE_KEY, user.id)
 
       addUser({
         id: user.id,
