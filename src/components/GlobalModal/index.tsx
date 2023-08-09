@@ -24,7 +24,6 @@ export function GlobalModal({
   onRequestClose,
 }: IGlobalModalProps) {
   const theme = useTheme()
-  console.log(`'${theme['neutral-900']}'`)
 
   return (
     <Modal
