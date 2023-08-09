@@ -2,10 +2,10 @@ import { useMutation } from 'react-query'
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
 
-import { api } from 'src/services/api'
-import { USER_ID_STORAGE_KEY, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
-import { addCookie } from 'src/services/auth/addCookie'
 import { UseUserContext } from 'src/hooks/UseUserContext'
+import { api } from 'src/services/api'
+import { addCookie } from 'src/services/auth/addCookie'
+import { USER_ID_STORAGE_KEY, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 interface ISignInRequest {
   email: string
