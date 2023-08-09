@@ -17,7 +17,7 @@ export function useSignInMutation() {
 
   return useMutation(
     async ({ email, password }: ISignInRequest) => {
-      const { data } = await api.post(`/users/signin`, {
+      const { data } = await api.post(`/users/login`, {
         email,
         password,
       })
