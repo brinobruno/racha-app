@@ -5,7 +5,7 @@ import {
   ISignUpRequest,
   useSignUpMutation,
 } from 'src/services/hooks/useSignUpMutation'
-import { FieldContainer, Form, Validate, WarningsContainer } from './styles' // Removed unused imports
+import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
@@ -31,7 +31,7 @@ export function SignUpForm() {
   const {
     handleSubmit,
     reset,
-    formState: { errors }, // Use the errors object
+    formState: { errors },
   } = newSignUpForm
 
   const signUpMutation = useSignUpMutation()
