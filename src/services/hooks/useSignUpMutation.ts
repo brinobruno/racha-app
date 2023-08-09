@@ -25,13 +25,15 @@ export function useSignUpMutation() {
       })
       const { user, token } = data
 
+      console.log(user)
+
       await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
-      await addCookie(USER_ID_STORAGE_KEY, user.id)
+      await addCookie(USER_ID_STORAGE_KEY, user[0].id)
 
       addUser({
-        id: user.id,
-        username: user.username,
-        email: user.email,
+        id: user[0].id,
+        username: user[0].username,
+        email: user[0].email,
       })
     },
     {
