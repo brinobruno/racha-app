@@ -4,11 +4,11 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
-import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 import {
   ISignInRequest,
   useSignInMutation,
 } from 'src/services/hooks/useSignInMutation'
+import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 
 const signInFormValidationSchema = zod.object({
   email: zod.string().email('Insira um email válido'),
