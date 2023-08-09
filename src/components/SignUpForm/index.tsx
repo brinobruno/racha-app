@@ -1,16 +1,13 @@
 import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { useSignUpMutation } from 'src/services/hooks/useSignUpMutation'
+import {
+  ISignUpRequest,
+  useSignUpMutation,
+} from 'src/services/hooks/useSignUpMutation'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles' // Removed unused imports
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
-
-interface ISignUpRequest {
-  username: string
-  email: string
-  password: string
-}
 
 const signUpFormValidationSchema = zod.object({
   username: zod.string().min(2, 'Insira um apelido (mínimo 2 caracteres)'),

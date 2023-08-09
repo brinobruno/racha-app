@@ -7,7 +7,7 @@ import { api } from 'src/services/api'
 import { addCookie } from 'src/services/auth/addCookie'
 import { USER_ID_STORAGE_KEY, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
-interface ISignUpRequest {
+export interface ISignUpRequest {
   username: string
   email: string
   password: string
