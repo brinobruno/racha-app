@@ -5,12 +5,10 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
-import { useSignInMutation } from 'src/services/hooks/useSignInMutation'
-
-interface ISignInRequest {
-  email: string
-  password: string
-}
+import {
+  ISignInRequest,
+  useSignInMutation,
+} from 'src/services/hooks/useSignInMutation'
 
 const signInFormValidationSchema = zod.object({
   email: zod.string().email('Insira um email válido'),
