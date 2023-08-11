@@ -45,36 +45,35 @@ export const PlayerName = styled(PlayerMainData)`
   text-align: center;
   white-space: nowrap;
 
-  top: 335px;
-  left: 54px;
+  top: 51.5%;
+  left: 12.1%;
 
   overflow: hidden;
-  width: 344px;
-  /* 11.5% */
+  width: 76.3%;
 `
 
 export const PlayerOverall = styled(PlayerMainData)`
   font-size: 4.6875rem;
-  top: 75px;
-  left: 86px;
-  width: 85px;
+  top: 11.5%;
+  left: 19.1%;
+  width: 19%;
 `
 
 export const PlayerPosition = styled(PlayerMainData)`
   font-size: 2.125rem;
-  top: 151px;
-  left: 86px;
-  width: 85px;
+  top: 23.2%;
+  left: 19.1%;
+  width: 19%;
 `
 
 export const PlayerNationality = styled(PlayerMainData)`
-  top: 195px;
-  left: 96px;
+  top: 30%;
+  left: 21.4%;
 `
 
 export const PlayerPicture = styled(PlayerMainData)`
-  right: 51px;
-  top: 72px;
+  right: 11.25%;
+  top: 11%;
   overflow: hidden;
 
   width: 265px;
@@ -86,8 +85,8 @@ export const PlayerPicture = styled(PlayerMainData)`
     left: 0px;
 
     img {
-      height: 265px;
-      width: 100%;
+      width: 150%;
+      height: auto;
     }
   }
 `
