@@ -27,7 +27,7 @@ const PlayerMainData = styled.div`
 `
 
 const PlayerAttributeData = styled.div`
-  font-size: 44px;
+  font-size: 2.75rem;
 `
 
 const PlayerAttributeValue = styled(PlayerAttributeData)`
@@ -41,7 +41,7 @@ const PlayerAttributeLabel = styled(PlayerAttributeData)`
 
 export const PlayerName = styled(PlayerMainData)`
   font-weight: 600;
-  font-size: 48px;
+  font-size: 3rem;
   text-align: center;
   white-space: nowrap;
 
@@ -54,14 +54,14 @@ export const PlayerName = styled(PlayerMainData)`
 `
 
 export const PlayerOverall = styled(PlayerMainData)`
-  font-size: 76px;
+  font-size: 4.6875rem;
   top: 75px;
   left: 86px;
   width: 85px;
 `
 
 export const PlayerPosition = styled(PlayerMainData)`
-  font-size: 34px;
+  font-size: 2.125rem;
   top: 151px;
   left: 86px;
   width: 85px;
