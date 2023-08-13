@@ -15,7 +15,7 @@ import {
   LowerFooter,
   WidthWrapper,
 } from './styles'
-import { GithubLogo, LinkedinLogo } from 'phosphor-react'
+import { Code, LinkedinLogo } from 'phosphor-react'
 
 export function Footer() {
   const { theme } = useThemeContext()
@@ -72,7 +72,7 @@ export function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            <GithubLogo size={28} color={currentTheme['neutral-400']} />
+            <Code size={28} color={currentTheme['neutral-400']} />
           </Link>
 
           <Link
