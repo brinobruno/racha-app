@@ -30,7 +30,7 @@ export function useCreateUserMutation() {
       addUser({
         id: user.id,
         email: user.email,
-        username: user.username,
+        username: username || user.username,
       })
     },
     {
