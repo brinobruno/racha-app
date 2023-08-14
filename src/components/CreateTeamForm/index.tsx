@@ -81,7 +81,13 @@ export function CreateTeamForm() {
     <Form onSubmit={handleSubmit(handlehandleCreateTeamSubmit)}>
       <FieldContainer>
         <label htmlFor="title">Title</label>
-        <input required id="title" {...register('title')} name="title" />
+        <input
+          required
+          id="title"
+          {...register('title')}
+          name="title"
+          autoFocus
+        />
       </FieldContainer>
 
       {errors?.title && <Validate>{errors.title.message}</Validate>}
