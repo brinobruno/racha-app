@@ -9,9 +9,9 @@ import { ThemeContextProvider } from './contexts/ThemeContext'
 import { CookieNotice } from './components/CookieNotice'
 import { ToastNotification } from './components/ToastNotification'
 import { TeamsContextProvider } from './contexts/TeamsContext'
+import { ScrollWrapper } from './components/ScrollWrapper'
 
 import 'react-loading-skeleton/dist/skeleton.css'
-import { ScrollWrapper } from './components/ScrollWrapper'
 
 const queryClient = new QueryClient()
 
@@ -28,6 +28,7 @@ export function App() {
                 </ScrollWrapper>
 
                 <CookieNotice />
+
                 <ToastNotification />
 
                 <GlobalStyle />
