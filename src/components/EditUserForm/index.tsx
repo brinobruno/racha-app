@@ -4,10 +4,10 @@ import { useMutation } from 'react-query'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { AxiosError } from 'axios'
 import { toast } from 'react-toastify'
+import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
-import { Cookies } from 'typescript-cookie'
 import { USER_ID_STORAGE_KEY } from 'src/constants'
 
 interface IEditUserRequest {
