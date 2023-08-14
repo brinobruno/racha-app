@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useUser } from 'src/services/hooks/useUser'
 import {
   Container,
@@ -10,12 +11,17 @@ import ProfilePic from 'src/assets/profile-pic.png'
 import { PencilSimple, Trash } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { Logout } from 'src/components/@Desktop/Logout'
+import { GlobalModal } from 'src/components/GlobalModal'
 
 export function UserAccount() {
+  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
   const currentTheme = useTheme()
   const { data, isLoading, error } = useUser()
 
   const user = data ? data.user : undefined
+
+  const handleOpenEditUserModal = () => setIsEditUserModalOpen(true)
+  const handleCloseEditUserModal = () => setIsEditUserModalOpen(false)
 
   return (
     <Container>
@@ -48,7 +54,7 @@ export function UserAccount() {
       <UserInfoActions>
         <button>
           <PencilSimple size={28} color={currentTheme['neutral-100']} />
-          <span>Editar meus dados</span>
+          <span onClick={handleOpenEditUserModal}>Editar meus dados</span>
         </button>
 
         <button>
@@ -58,6 +64,17 @@ export function UserAccount() {
 
         <div>
           <Logout btnWeight="regular" btnSize={28} />
+        </div>
+
+        <div>
+          <GlobalModal
+            isOpen={isEditUserModalOpen}
+            contentLabel="Editar meus dados"
+            title="Editar meus dados"
+            onRequestClose={handleCloseEditUserModal}
+          >
+            <span>Placeholder</span>
+          </GlobalModal>
         </div>
       </UserInfoActions>
     </Container>
