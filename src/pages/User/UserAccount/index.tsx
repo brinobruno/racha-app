@@ -1,5 +1,12 @@
 import { useState } from 'react'
+import { useTheme } from 'styled-components'
+import { PencilSimple, Trash } from 'phosphor-react'
+
+import ProfilePic from 'src/assets/profile-pic.png'
 import { useUser } from 'src/services/hooks/useUser'
+import { Logout } from 'src/components/@Desktop/Logout'
+import { GlobalModal } from 'src/components/GlobalModal'
+import { EditUserForm } from 'src/components/EditUserForm'
 import {
   Container,
   UserImageContainer,
@@ -7,12 +14,6 @@ import {
   UserInfoContainer,
   UserInfoItem,
 } from './styles'
-import ProfilePic from 'src/assets/profile-pic.png'
-import { PencilSimple, Trash } from 'phosphor-react'
-import { useTheme } from 'styled-components'
-import { Logout } from 'src/components/@Desktop/Logout'
-import { GlobalModal } from 'src/components/GlobalModal'
-import { EditUserForm } from 'src/components/EditUserForm'
 
 export function UserAccount() {
   const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
