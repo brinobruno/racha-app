@@ -41,7 +41,7 @@ export function CreateTeamForm() {
     reset,
     formState: { errors },
   } = newCreateTeamForm
-  const handlehandleCreateTeamSubmit: SubmitHandler<ICreateTeamRequest> = (
+  const handleCreateTeamSubmit: SubmitHandler<ICreateTeamRequest> = (
     createTeamInputs,
   ) => {
     handleCreateTeam(createTeamInputs)
@@ -78,7 +78,7 @@ export function CreateTeamForm() {
     createTeamError = createTeam.error.response?.data.error
 
   return (
-    <Form onSubmit={handleSubmit(handlehandleCreateTeamSubmit)}>
+    <Form onSubmit={handleSubmit(handleCreateTeamSubmit)}>
       <FieldContainer>
         <label htmlFor="title">Title</label>
         <input
