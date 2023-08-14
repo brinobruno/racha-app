@@ -11,6 +11,7 @@ import { ToastNotification } from './components/ToastNotification'
 import { TeamsContextProvider } from './contexts/TeamsContext'
 
 import 'react-loading-skeleton/dist/skeleton.css'
+import { ScrollWrapper } from './components/ScrollWrapper'
 
 const queryClient = new QueryClient()
 
@@ -22,7 +23,9 @@ export function App() {
           <UserContextProvider>
             <TeamsContextProvider>
               <ThemeContextProvider>
-                <Router />
+                <ScrollWrapper>
+                  <Router />
+                </ScrollWrapper>
 
                 <CookieNotice />
                 <ToastNotification />
