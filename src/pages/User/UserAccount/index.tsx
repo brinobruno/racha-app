@@ -12,6 +12,7 @@ import { PencilSimple, Trash } from 'phosphor-react'
 import { useTheme } from 'styled-components'
 import { Logout } from 'src/components/@Desktop/Logout'
 import { GlobalModal } from 'src/components/GlobalModal'
+import { EditUserForm } from 'src/components/EditUserForm'
 
 export function UserAccount() {
   const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
@@ -73,7 +74,7 @@ export function UserAccount() {
             title="Editar meus dados"
             onRequestClose={handleCloseEditUserModal}
           >
-            <span>Placeholder</span>
+            <EditUserForm />
           </GlobalModal>
         </div>
       </UserInfoActions>
