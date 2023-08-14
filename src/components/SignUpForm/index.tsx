@@ -54,6 +54,7 @@ export function SignUpForm() {
           id="username"
           {...newSignUpForm.register('username')}
           name="username"
+          autoFocus
         />
       </FieldContainer>
 

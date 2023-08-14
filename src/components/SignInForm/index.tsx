@@ -54,6 +54,7 @@ export function SignInForm() {
           id="email"
           {...newSignInForm.register('email')}
           name="email"
+          autoFocus
         />
       </FieldContainer>
 
