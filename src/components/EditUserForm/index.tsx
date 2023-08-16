@@ -74,6 +74,11 @@ export function EditUserForm() {
   return (
     <Form onSubmit={handleSubmit(handleEditUserSubmit)}>
       <FieldContainer>
+        <label htmlFor="email">Email</label>
+        <input required id="email" name="email" autoFocus disabled />
+      </FieldContainer>
+
+      <FieldContainer>
         <label htmlFor="username">Username</label>
         <input
           required

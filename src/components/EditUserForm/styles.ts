@@ -36,6 +36,12 @@ export const FieldContainer = styled.div`
       outline: 1px solid ${(props) => props.theme['secondary-500']};
       color: ${(props) => props.theme['secondary-300']};
     }
+
+    &[id='email'] {
+      cursor: not-allowed;
+      background-color: ${(props) => props.theme['neutral-900']};
+      opacity: 0.7;
+    }
   }
 `
 
