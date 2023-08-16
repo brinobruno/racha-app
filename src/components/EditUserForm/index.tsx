@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { Cookies } from 'typescript-cookie'
 
 import { api } from 'src/services/api'
+import { UseUserContext } from 'src/hooks/UseUserContext'
 import { FieldContainer, Form, Validate, WarningsContainer } from './styles'
 import { USER_ID_STORAGE_KEY } from 'src/constants'
 
@@ -23,6 +24,11 @@ const editUserFormValidationSchema = zod.object({
 export type EditUserFormData = zod.infer<typeof editUserFormValidationSchema>
 
 export function EditUserForm() {
+  const { getUser } = UseUserContext()
+  const user = getUser()
+  console.log(user)
+  // Task: Add user to localstorage
+
   const userId = Cookies.get(USER_ID_STORAGE_KEY)
 
   const newEditUserForm = useForm<EditUserFormData>({
@@ -75,7 +81,14 @@ export function EditUserForm() {
     <Form onSubmit={handleSubmit(handleEditUserSubmit)}>
       <FieldContainer>
         <label htmlFor="email">Email</label>
-        <input required id="email" name="email" autoFocus disabled />
+        <input
+          required
+          id="email"
+          name="email"
+          value={user?.email}
+          autoFocus
+          disabled
+        />
       </FieldContainer>
 
       <FieldContainer>
