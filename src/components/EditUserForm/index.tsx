@@ -46,9 +46,7 @@ export function EditUserForm() {
   } = newEditUserForm
   const handleEditUserSubmit: SubmitHandler<IEditUserRequest> = (
     editUserInputs,
-  ) => {
-    handleEditUser(editUserInputs)
-  }
+  ) => handleEditUser(editUserInputs)
 
   const editUser = useMutation(async ({ username }: IEditUserRequest) => {
     const { data } = await api.put(`/users/${userId}`, {

@@ -43,9 +43,7 @@ export function CreateTeamForm() {
   } = newCreateTeamForm
   const handleCreateTeamSubmit: SubmitHandler<ICreateTeamRequest> = (
     createTeamInputs,
-  ) => {
-    handleCreateTeam(createTeamInputs)
-  }
+  ) => handleCreateTeam(createTeamInputs)
 
   const createTeam = useMutation(
     async ({ title, owner }: ICreateTeamRequest) => {
