@@ -3,6 +3,7 @@ import { useContext } from 'react'
 import { IUser, UserContext } from 'src/contexts/UserContext'
 import { addCookie } from 'src/services/auth/addCookie'
 import { USER_DATA_STORAGE_KEY, USER_ID_STORAGE_KEY } from 'src/constants'
+import { Cookies } from 'typescript-cookie'
 
 export const UseUserContext = () => {
   const { user, setUser } = useContext(UserContext)
@@ -17,7 +18,16 @@ export const UseUserContext = () => {
   }
 
   function getUser() {
-    return user
+    const cookieUserData = Cookies.get(USER_DATA_STORAGE_KEY)
+
+    if (cookieUserData) {
+      if (typeof cookieUserData === 'string') {
+        const parsedCookieUserData = JSON.parse(cookieUserData)
+        return parsedCookieUserData
+      } else {
+        return cookieUserData
+      }
+    }
   }
 
   return {
