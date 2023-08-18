@@ -5,7 +5,7 @@ import { toast } from 'react-toastify'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { api } from 'src/services/api'
 import { addCookie } from 'src/services/auth/addCookie'
-import { USER_ID_STORAGE_KEY, USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
+import { USER_JWT_AUTH_TOKEN_KEY } from 'src/constants'
 
 export interface ISignInRequest {
   email: string
@@ -24,9 +24,8 @@ export function useSignInMutation() {
       const { user, token } = data
 
       await addCookie(USER_JWT_AUTH_TOKEN_KEY, token)
-      await addCookie(USER_ID_STORAGE_KEY, user.id)
 
-      addUser({
+      await addUser({
         id: user.id,
         username: user.username,
         email: user.email,
