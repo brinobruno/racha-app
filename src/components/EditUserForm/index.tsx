@@ -96,6 +96,7 @@ export function EditUserForm() {
           id="username"
           {...register('username')}
           name="username"
+          value={user?.username}
           autoFocus
         />
       </FieldContainer>
