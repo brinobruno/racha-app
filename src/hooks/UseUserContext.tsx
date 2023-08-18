@@ -2,7 +2,11 @@ import { useContext } from 'react'
 
 import { IUser, UserContext } from 'src/contexts/UserContext'
 import { addCookie } from 'src/services/auth/addCookie'
-import { USER_DATA_STORAGE_KEY, USER_ID_STORAGE_KEY } from 'src/constants'
+import {
+  USER_DATA_STORAGE_KEY,
+  USER_ID_STORAGE_KEY,
+  USER_JWT_AUTH_TOKEN_KEY,
+} from 'src/constants'
 import { Cookies } from 'typescript-cookie'
 
 export const UseUserContext = () => {
@@ -15,6 +19,13 @@ export const UseUserContext = () => {
     await addCookie(USER_DATA_STORAGE_KEY, JSON.stringify(user))
 
     return user
+  }
+
+  async function removeUser() {
+    setUser(null)
+
+    Cookies.remove(USER_ID_STORAGE_KEY)
+    Cookies.remove(USER_JWT_AUTH_TOKEN_KEY)
   }
 
   function getUser() {
@@ -32,6 +43,7 @@ export const UseUserContext = () => {
 
   return {
     addUser,
+    removeUser,
     getUser,
   }
 }
