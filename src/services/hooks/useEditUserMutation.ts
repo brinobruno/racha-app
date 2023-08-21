@@ -7,7 +7,6 @@ import { api } from 'src/services/api'
 
 export interface IEditUserRequest {
   username: string
-  password: string
 }
 
 export function useCreateUserMutation() {
@@ -17,10 +16,9 @@ export function useCreateUserMutation() {
   const userId = user?.id
 
   return useMutation(
-    async ({ username, password }: IEditUserRequest) => {
+    async ({ username }: IEditUserRequest) => {
       const { data } = await api.put(`/users/${userId}`, {
         username,
-        password,
       })
 
       const { user } = data
