@@ -16,8 +16,8 @@ import {
 } from './styles'
 
 export function UserAccount() {
-  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
   const currentTheme = useTheme()
+  const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
   const { getUser } = UseUserContext()
 
   const user = getUser()
