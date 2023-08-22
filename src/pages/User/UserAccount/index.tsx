@@ -3,7 +3,7 @@ import { useTheme } from 'styled-components'
 import { PencilSimple, Trash } from 'phosphor-react'
 
 import ProfilePic from 'src/assets/profile-pic.png'
-import { useUser } from 'src/services/hooks/useUser'
+import { UseUserContext } from 'src/hooks/UseUserContext'
 import { Logout } from 'src/components/@Desktop/Logout'
 import { GlobalModal } from 'src/components/GlobalModal'
 import { EditUserForm } from 'src/components/EditUserForm'
@@ -18,9 +18,9 @@ import {
 export function UserAccount() {
   const [isEditUserModalOpen, setIsEditUserModalOpen] = useState(false)
   const currentTheme = useTheme()
-  const { data, isLoading, error } = useUser()
+  const { getUser } = UseUserContext()
 
-  const user = data ? data.user : undefined
+  const user = getUser()
 
   const handleOpenEditUserModal = () => setIsEditUserModalOpen(true)
   const handleCloseEditUserModal = () => setIsEditUserModalOpen(false)
@@ -48,9 +48,6 @@ export function UserAccount() {
           <span>Senha</span>
           <strong>*************</strong>
         </UserInfoItem>
-
-        {isLoading && <span>Carregando...</span>}
-        {typeof error === 'string' && <span>Erro: {error}</span>}
       </UserInfoContainer>
 
       <UserInfoActions>
