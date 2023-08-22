@@ -75,7 +75,7 @@ export function UserAccount() {
             title="Editar meus dados"
             onRequestClose={handleCloseEditUserModal}
           >
-            <EditUserForm />
+            <EditUserForm onCloseModal={handleCloseEditUserModal} />
           </GlobalModal>
         </div>
       </UserInfoActions>

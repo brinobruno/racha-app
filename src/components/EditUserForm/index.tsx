@@ -23,7 +23,11 @@ const editUserFormValidationSchema = zod.object({
 
 export type EditUserFormData = zod.infer<typeof editUserFormValidationSchema>
 
-export function EditUserForm() {
+interface IEditUserFormProps {
+  onCloseModal: () => void
+}
+
+export function EditUserForm({ onCloseModal }: IEditUserFormProps) {
   const { getUser } = UseUserContext()
   const user = getUser()
   console.log(user)
@@ -56,19 +60,18 @@ export function EditUserForm() {
     console.log(data)
   })
 
-  const handleEditUser = (inputs: IEditUserRequest) => {
-    editUser.mutate(inputs, {
-      onSuccess: async () => {
-        reset()
+  const handleEditUser = async (inputs: IEditUserRequest) => {
+    try {
+      await editUser.mutateAsync(inputs)
+      reset()
 
-        toast('Usuário atualizado com sucesso')
-      },
-      onError: () => {
-        toast('Revise os detalhes', {
-          className: 'warning-toast',
-        })
-      },
-    })
+      toast('Usuário atualizado com sucesso')
+      onCloseModal()
+    } catch (error) {
+      toast('Revise os detalhes', {
+        className: 'warning-toast',
+      })
+    }
   }
 
   let editUserError
