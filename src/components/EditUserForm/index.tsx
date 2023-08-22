@@ -78,11 +78,10 @@ export function EditUserForm() {
   return (
     <Form onSubmit={handleSubmit(handleEditUserSubmit)}>
       <FieldContainer>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="placeholder-email">Email</label>
         <input
-          required
-          id="email"
-          name="email"
+          id="placeholder-email"
+          name="placeholder-email"
           value={user?.email}
           autoFocus
           disabled
@@ -90,7 +89,18 @@ export function EditUserForm() {
       </FieldContainer>
 
       <FieldContainer>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="placeholder-username">Username atual</label>
+        <input
+          id="placeholder-username"
+          name="placeholder-username"
+          value={user?.username}
+          autoFocus
+          disabled
+        />
+      </FieldContainer>
+
+      <FieldContainer>
+        <label htmlFor="username">Username novo</label>
         <input
           required
           id="username"

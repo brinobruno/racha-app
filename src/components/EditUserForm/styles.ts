@@ -37,7 +37,7 @@ export const FieldContainer = styled.div`
       color: ${(props) => props.theme['secondary-300']};
     }
 
-    &[id='email'] {
+    &:disabled {
       cursor: not-allowed;
       background-color: ${(props) => props.theme['neutral-900']};
       opacity: 0.7;
