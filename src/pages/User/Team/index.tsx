@@ -5,7 +5,7 @@ import { useTheme } from 'styled-components'
 import { PencilSimple, Plus, SmileySad, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-import { ListView } from 'src/components/TeamViews/ListView.tsx'
+import { ListView } from 'src/components/TeamViews/ListView'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
 import {
