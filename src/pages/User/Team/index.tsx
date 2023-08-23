@@ -39,6 +39,9 @@ export function Team() {
 
   const formattedDate = format(createdAt, "'Desde:' d 'de' MMMM 'de' yyyy")
 
+  // Checks if team.players.length possible undefined first
+  const teamHasPlayers = (team?.players?.length ?? 0) > 0
+
   return (
     <Container>
       <BackButton link="/teams" />
@@ -59,7 +62,7 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
-            {team.players.length === 0 ? (
+            {!teamHasPlayers ? (
               <NoPlayersNotice>
                 <span>
                   O Racha desanimou? Essa equipe ainda não tem jogadores
@@ -99,8 +102,7 @@ export function Team() {
               </button>
             </div>
 
-            {/* refactor this */}
-            {team.players.length > 0 ? (
+            {teamHasPlayers ? (
               <div>
                 {selectedView === 'swiper' && (
                   <div>
