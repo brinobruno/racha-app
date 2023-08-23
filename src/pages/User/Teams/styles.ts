@@ -30,6 +30,12 @@ export const TeamContainer = styled.li`
 
   width: 100%;
 
+  transition: 0.1s filter ease-in-out;
+
+  &:hover {
+    filter: contrast(1.3);
+  }
+
   a {
     display: flex;
     align-items: center;
