@@ -102,7 +102,7 @@ export function Team() {
             </div>
 
             {teamHasPlayers ? (
-              <div>
+              <>
                 {selectedView === 'swiper' && (
                   <div>
                     swiper view
@@ -122,7 +122,7 @@ export function Team() {
                     <ListView players={team.players} />
                   </div>
                 )}
-              </div>
+              </>
             ) : null}
           </TeamDataContainer>
         ) : null}
