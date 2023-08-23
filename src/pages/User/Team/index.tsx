@@ -6,6 +6,8 @@ import { PencilSimple, Plus, SmileySad, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { ListView } from 'src/components/TeamViews/ListView'
+import { SwiperView } from 'src/components/TeamViews/SwiperView'
+import { PitchView } from 'src/components/TeamViews/PitchView'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
 import {
@@ -91,30 +93,26 @@ export function Team() {
               />
             </TeamControls>
 
-            <div>
-              <button onClick={() => setSelectedView('list')}>List View</button>
-              <button onClick={() => setSelectedView('swiper')}>
-                Swiper View
-              </button>
-              <button onClick={() => setSelectedView('pitch')}>
-                Pitch View
-              </button>
-            </div>
-
             {teamHasPlayers ? (
               <>
+                <div>
+                  <button onClick={() => setSelectedView('list')}>
+                    List View
+                  </button>
+                  <button onClick={() => setSelectedView('swiper')}>
+                    Swiper View
+                  </button>
+                  <button onClick={() => setSelectedView('pitch')}>
+                    Pitch View
+                  </button>
+                </div>
+
                 {selectedView === 'swiper' && (
-                  <div>
-                    swiper view
-                    {/* <SwiperView players={team.players} /> */}
-                  </div>
+                  <SwiperView players={team.players} />
                 )}
 
                 {selectedView === 'pitch' && (
-                  <div>
-                    pitch view
-                    {/* <PitchView players={team.players} /> */}
-                  </div>
+                  <PitchView players={team.players} />
                 )}
 
                 {selectedView === 'list' && <ListView players={team.players} />}
