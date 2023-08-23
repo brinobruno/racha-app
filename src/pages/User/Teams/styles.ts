@@ -30,10 +30,11 @@ export const TeamContainer = styled.li`
 
   width: 100%;
 
-  transition: 0.1s filter ease-in-out;
+  transition: 0.1s filter ease-in-out, 0.1s scale ease-in-out;
 
   &:hover {
     filter: contrast(1.3);
+    scale: 1.015;
   }
 
   a {
