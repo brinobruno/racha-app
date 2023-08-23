@@ -1,12 +1,13 @@
+import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
 import { useTheme } from 'styled-components'
 import { PencilSimple, Plus, SmileySad, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
+import { ListView } from 'src/components/TeamViews/ListView.tsx'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
-import { Card } from 'src/components/Card'
 import {
   Container,
   TeamDataContainer,
@@ -14,7 +15,6 @@ import {
   TeamContainer,
   TeamDetails,
   TeamControls,
-  TeamPlayersGrid,
   NoPlayersNotice,
 } from './styles'
 
@@ -22,16 +22,18 @@ const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
 }
 
+type AvailableViewType = 'list' | 'swiper' | 'pitch'
+
 export function Team() {
   const currentTheme = useTheme()
+
+  const [selectedView, setSelectedView] = useState<AvailableViewType>('list')
+
   const { id } = useParams()
   const { data, isLoading, error } = useTeams()
 
   const teams = data?.teams ?? []
-
   const team = findTeamById(teams, id)
-
-  console.log(team)
 
   const createdAt = new Date(team?.created_at ?? new Date())
 
@@ -87,40 +89,40 @@ export function Team() {
               />
             </TeamControls>
 
-            <TeamPlayersGrid>
-              {team.players.length > 0
-                ? team.players.map(
-                    ({
-                      id,
-                      overall,
-                      position,
-                      nationality,
-                      known_as: knownAs,
-                      pace,
-                      dribbling,
-                      shooting,
-                      defending,
-                      passing,
-                      physical,
-                    }) => (
-                      <div key={id}>
-                        <Card
-                          overall={overall}
-                          position={position}
-                          nationality={nationality}
-                          name={knownAs}
-                          pace={pace}
-                          dribbling={dribbling}
-                          shooting={shooting}
-                          defending={defending}
-                          passing={passing}
-                          physical={physical}
-                        />
-                      </div>
-                    ),
-                  )
-                : null}
-            </TeamPlayersGrid>
+            <div>
+              <button onClick={() => setSelectedView('list')}>List View</button>
+              <button onClick={() => setSelectedView('swiper')}>
+                Swiper View
+              </button>
+              <button onClick={() => setSelectedView('pitch')}>
+                Pitch View
+              </button>
+            </div>
+
+            {/* refactor this */}
+            {team.players.length > 0 ? (
+              <div>
+                {selectedView === 'swiper' && (
+                  <div>
+                    swiper view
+                    {/* <SwiperView players={team.players} /> */}
+                  </div>
+                )}
+
+                {selectedView === 'pitch' && (
+                  <div>
+                    pitch view
+                    {/* <PitchView players={team.players} /> */}
+                  </div>
+                )}
+
+                {selectedView === 'list' && (
+                  <div>
+                    <ListView players={team.players} />
+                  </div>
+                )}
+              </div>
+            ) : null}
           </TeamDataContainer>
         ) : null}
       </TeamContainer>
