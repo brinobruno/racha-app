@@ -117,11 +117,7 @@ export function Team() {
                   </div>
                 )}
 
-                {selectedView === 'list' && (
-                  <div>
-                    <ListView players={team.players} />
-                  </div>
-                )}
+                {selectedView === 'list' && <ListView players={team.players} />}
               </>
             ) : null}
           </TeamDataContainer>
