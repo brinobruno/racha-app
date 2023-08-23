@@ -35,12 +35,11 @@ export function Team() {
   const teams = data?.teams ?? []
   const team = findTeamById(teams, id)
 
-  const createdAt = new Date(team?.created_at ?? new Date())
-
-  const formattedDate = format(createdAt, "'Desde:' d 'de' MMMM 'de' yyyy")
-
   // Checks if team.players.length possible undefined first
   const teamHasPlayers = (team?.players?.length ?? 0) > 0
+
+  const createdAt = new Date(team?.created_at ?? new Date())
+  const formattedDate = format(createdAt, "'Desde:' d 'de' MMMM 'de' yyyy")
 
   return (
     <Container>
