@@ -35,9 +35,7 @@ export const UseUserContext = () => {
       if (typeof cookieUserData === 'string') {
         const parsedCookieUserData = JSON.parse(cookieUserData)
         return parsedCookieUserData
-      } else {
-        return cookieUserData
-      }
+      } else return cookieUserData
     }
   }
 
