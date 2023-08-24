@@ -1,6 +1,5 @@
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
-import { Card } from 'src/components/Card'
-import { Container } from './styles'
+import { Container, ListItem } from './styles'
 
 interface IListViewProps {
   players: IPlayerData[]
@@ -11,18 +10,16 @@ export function ListView({ players }: IListViewProps) {
     <Container>
       {players.map((player) => (
         <div key={player.id}>
-          <Card
-            overall={player.overall}
-            position={player.position}
-            nationality={player.nationality}
-            name={player.known_as}
-            pace={player.pace}
-            dribbling={player.dribbling}
-            shooting={player.shooting}
-            defending={player.defending}
-            passing={player.passing}
-            physical={player.physical}
-          />
+          <ListItem>
+            <div>
+              <span>{player.position}</span>
+              <strong>{player.name}</strong>
+            </div>
+
+            <div>
+              <span>{player.overall}</span>
+            </div>
+          </ListItem>
         </div>
       ))}
     </Container>
