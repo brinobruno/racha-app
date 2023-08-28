@@ -97,35 +97,23 @@ export function Team() {
 
               {teamHasPlayers ? (
                 <TeamViews>
-                  <span onClick={() => setSelectedView('pitch')}>
-                    <Strategy
-                      size={32}
-                      color={
-                        selectedView === 'pitch'
-                          ? currentTheme['primary-300']
-                          : currentTheme['neutral-100']
-                      }
-                    />
+                  <span
+                    onClick={() => setSelectedView('pitch')}
+                    className={selectedView === 'pitch' ? 'active' : ''}
+                  >
+                    <Strategy size={32} />
                   </span>
-                  <span onClick={() => setSelectedView('swiper')}>
-                    <Cards
-                      size={32}
-                      color={
-                        selectedView === 'swiper'
-                          ? currentTheme['primary-300']
-                          : currentTheme['neutral-100']
-                      }
-                    />
+                  <span
+                    onClick={() => setSelectedView('swiper')}
+                    className={selectedView === 'swiper' ? 'active' : ''}
+                  >
+                    <Cards size={32} />
                   </span>
-                  <span onClick={() => setSelectedView('list')}>
-                    <List
-                      size={32}
-                      color={
-                        selectedView === 'list'
-                          ? currentTheme['primary-300']
-                          : currentTheme['neutral-100']
-                      }
-                    />
+                  <span
+                    onClick={() => setSelectedView('list')}
+                    className={selectedView === 'list' ? 'active' : ''}
+                  >
+                    <List size={32} />
                   </span>
                 </TeamViews>
               ) : null}

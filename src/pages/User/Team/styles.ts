@@ -81,5 +81,12 @@ export const TeamViews = styled.div`
 
   span {
     cursor: pointer;
+
+    &.active {
+      svg {
+        color: ${(props) => props.theme['primary-300']};
+        transition: 0.2s ease-in-out;
+      }
+    }
   }
 `
