@@ -38,7 +38,7 @@ type AvailableViewType = 'list' | 'swiper' | 'pitch'
 export function Team() {
   const currentTheme = useTheme()
 
-  const [selectedView, setSelectedView] = useState<AvailableViewType>('list')
+  const [selectedView, setSelectedView] = useState<AvailableViewType>('pitch')
 
   const { id } = useParams()
   const { data, isLoading, error } = useTeams()
@@ -112,14 +112,12 @@ export function Team() {
 
             {teamHasPlayers ? (
               <>
-                {selectedView === 'swiper' && (
-                  <SwiperView players={team.players} />
-                )}
-
                 {selectedView === 'pitch' && (
                   <PitchView players={team.players} />
                 )}
-
+                {selectedView === 'swiper' && (
+                  <SwiperView players={team.players} />
+                )}
                 {selectedView === 'list' && <ListView players={team.players} />}
               </>
             ) : null}
