@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
 import { useTheme } from 'styled-components'
-import { PencilSimple, Plus, SmileySad, Trash } from 'phosphor-react'
+import { PencilSimple, Plus, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { ListView } from 'src/components/TeamViews/ListView'
@@ -10,6 +10,7 @@ import { SwiperView } from 'src/components/TeamViews/SwiperView'
 import { PitchView } from 'src/components/TeamViews/PitchView'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
+import { NoPlayersNotice } from 'src/components/NoPlayersNotice'
 import {
   Container,
   TeamDataContainer,
@@ -17,7 +18,6 @@ import {
   TeamContainer,
   TeamDetails,
   TeamControls,
-  NoPlayersNotice,
   TeamActions,
   TeamViews,
 } from './styles'
@@ -65,15 +65,7 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
-            {!teamHasPlayers ? (
-              <NoPlayersNotice>
-                <span>
-                  O Racha desanimou? Essa equipe ainda não tem jogadores
-                  registrados.
-                </span>
-                <SmileySad size={28} />
-              </NoPlayersNotice>
-            ) : null}
+            {!teamHasPlayers ? <NoPlayersNotice /> : null}
 
             <TeamControls>
               <TeamActions>

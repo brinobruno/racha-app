@@ -61,16 +61,6 @@ export const TeamDetails = styled.div`
   }
 `
 
-export const NoPlayersNotice = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
-
-  width: 100%;
-  padding: 2rem 0 4rem;
-`
-
 export const TeamControls = styled.div`
   display: flex;
   justify-content: space-between;
