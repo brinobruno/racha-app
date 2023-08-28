@@ -10,6 +10,7 @@ export function ListView({ players }: IListViewProps) {
     <Container>
       {players.map((player) => (
         <div key={player.id}>
+          {/* Implement filters by clicking on a table, e.g: POS, OVR */}
           <ListItem>
             <div>
               <span>{player.position}</span>
