@@ -73,10 +73,20 @@ export const NoPlayersNotice = styled.div`
 
 export const TeamControls = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  justify-content: space-between;
 
   padding-bottom: 2rem;
+`
+
+export const TeamActions = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+`
+
+export const TeamViews = styled.div`
+  display: flex;
+  align-items: flex-start;
 `
 
 export const TeamPlayersGrid = styled.div`

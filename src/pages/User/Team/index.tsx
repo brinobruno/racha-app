@@ -18,6 +18,8 @@ import {
   TeamDetails,
   TeamControls,
   NoPlayersNotice,
+  TeamActions,
+  TeamViews,
 } from './styles'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
@@ -74,28 +76,28 @@ export function Team() {
             ) : null}
 
             <TeamControls>
-              <TeamControlButton
-                key={0}
-                icon={<Plus size={28} />}
-                text="Adicionar jogador"
-              />
+              <TeamActions>
+                <TeamControlButton
+                  key={0}
+                  icon={<Plus size={28} />}
+                  text="Adicionar jogador"
+                />
 
-              <TeamControlButton
-                key={1}
-                icon={<PencilSimple size={28} />}
-                text="Editar time"
-              />
+                <TeamControlButton
+                  key={1}
+                  icon={<PencilSimple size={28} />}
+                  text="Editar time"
+                />
 
-              <TeamControlButton
-                key={2}
-                icon={<Trash size={28} color={currentTheme['primary-500']} />}
-                text="Deletar time"
-              />
-            </TeamControls>
+                <TeamControlButton
+                  key={2}
+                  icon={<Trash size={28} color={currentTheme['primary-500']} />}
+                  text="Deletar time"
+                />
+              </TeamActions>
 
-            {teamHasPlayers ? (
-              <>
-                <div>
+              {teamHasPlayers ? (
+                <TeamViews>
                   <button onClick={() => setSelectedView('list')}>
                     List View
                   </button>
@@ -105,8 +107,12 @@ export function Team() {
                   <button onClick={() => setSelectedView('pitch')}>
                     Pitch View
                   </button>
-                </div>
+                </TeamViews>
+              ) : null}
+            </TeamControls>
 
+            {teamHasPlayers ? (
+              <>
                 {selectedView === 'swiper' && (
                   <SwiperView players={team.players} />
                 )}
