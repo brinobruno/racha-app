@@ -1,12 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { A11y, Navigation, Pagination } from 'swiper/modules'
+import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { Card } from 'src/components/Card'
 import { Container } from './styles'
 
-import 'swiper/css'
-import 'swiper/css/pagination'
+import 'swiper/swiper-bundle.css'
 
 interface IListViewProps {
   players: IPlayerData[]
@@ -16,10 +15,16 @@ export function SwiperView({ players }: IListViewProps) {
   return (
     <Container>
       <Swiper
-        modules={[A11y, Navigation, Pagination]}
+        className="team-swiper-view"
+        modules={[A11y, Navigation, Pagination, Scrollbar]}
         pagination={{ clickable: true }}
-        slidesPerView={'auto'}
+        slidesPerView={3}
+        spaceBetween={'15%'}
+        centeredSlides
+        // centeredSlidesBounds
         rewind
+        scrollbar
+        grabCursor
       >
         {players.map((player) => (
           <SwiperSlide key={player.id}>
