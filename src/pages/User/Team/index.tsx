@@ -98,13 +98,34 @@ export function Team() {
               {teamHasPlayers ? (
                 <TeamViews>
                   <span onClick={() => setSelectedView('pitch')}>
-                    <Strategy size={32} />
+                    <Strategy
+                      size={32}
+                      color={
+                        selectedView === 'pitch'
+                          ? currentTheme['primary-300']
+                          : currentTheme['neutral-100']
+                      }
+                    />
                   </span>
                   <span onClick={() => setSelectedView('swiper')}>
-                    <Cards size={32} />
+                    <Cards
+                      size={32}
+                      color={
+                        selectedView === 'swiper'
+                          ? currentTheme['primary-300']
+                          : currentTheme['neutral-100']
+                      }
+                    />
                   </span>
                   <span onClick={() => setSelectedView('list')}>
-                    <List size={32} />
+                    <List
+                      size={32}
+                      color={
+                        selectedView === 'list'
+                          ? currentTheme['primary-300']
+                          : currentTheme['neutral-100']
+                      }
+                    />
                   </span>
                 </TeamViews>
               ) : null}
