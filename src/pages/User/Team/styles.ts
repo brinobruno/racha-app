@@ -76,5 +76,6 @@ export const TeamActions = styled.div`
 
 export const TeamViews = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
+  gap: 0.25rem;
 `

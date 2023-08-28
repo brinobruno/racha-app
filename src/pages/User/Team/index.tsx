@@ -2,7 +2,14 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
 import { useTheme } from 'styled-components'
-import { PencilSimple, Plus, Trash } from 'phosphor-react'
+import {
+  Cards,
+  List,
+  PencilSimple,
+  Plus,
+  Strategy,
+  Trash,
+} from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { ListView } from 'src/components/TeamViews/ListView'
@@ -90,15 +97,15 @@ export function Team() {
 
               {teamHasPlayers ? (
                 <TeamViews>
-                  <button onClick={() => setSelectedView('list')}>
-                    List View
-                  </button>
-                  <button onClick={() => setSelectedView('swiper')}>
-                    Swiper View
-                  </button>
-                  <button onClick={() => setSelectedView('pitch')}>
-                    Pitch View
-                  </button>
+                  <span onClick={() => setSelectedView('pitch')}>
+                    <Strategy size={32} />
+                  </span>
+                  <span onClick={() => setSelectedView('swiper')}>
+                    <Cards size={32} />
+                  </span>
+                  <span onClick={() => setSelectedView('list')}>
+                    <List size={32} />
+                  </span>
                 </TeamViews>
               ) : null}
             </TeamControls>
