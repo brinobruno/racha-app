@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { CaretRight } from 'phosphor-react'
 
-import { LoadingSkeleton } from 'src/components/LoadingSkeleton'
+import { LoadingSkeleton } from 'src/components/visualHelpers/LoadingSkeleton'
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import {
   Container,

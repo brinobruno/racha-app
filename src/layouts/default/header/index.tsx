@@ -7,7 +7,7 @@ import LogoBlack from 'src/assets/logo-black.svg'
 import LogoWhite from 'src/assets/logo-white.svg'
 import ProfilePic from 'src/assets/profile-pic.png'
 import { useThemeContext } from 'src/contexts/ThemeContext'
-import { ThemeSwitcher } from 'src/components/ThemeSwitcher'
+import { ThemeSwitcher } from 'src/components/visualHelpers/ThemeSwitcher'
 import { ProfileNavItem } from 'src/components/@Desktop/ProfileNavItem'
 import { Logout } from 'src/components/@Desktop/Logout'
 import {

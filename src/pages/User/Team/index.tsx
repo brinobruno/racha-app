@@ -17,7 +17,7 @@ import { SwiperView } from 'src/components/TeamViews/SwiperView'
 import { PitchView } from 'src/components/TeamViews/PitchView'
 import { BackButton } from 'src/components/BackButton'
 import { TeamControlButton } from 'src/components/TeamControlButton'
-import { NoPlayersNotice } from 'src/components/NoPlayersNotice'
+import { NoPlayersNotice } from 'src/components/visualHelpers/NoPlayersNotice'
 import {
   Container,
   TeamDataContainer,

@@ -6,10 +6,10 @@ import { Router } from './Routes'
 import { GlobalStyle } from './styles/global'
 import { UserContextProvider } from './contexts/UserContext'
 import { ThemeContextProvider } from './contexts/ThemeContext'
-import { CookieNotice } from './components/CookieNotice'
-import { ToastNotification } from './components/ToastNotification'
+import { CookieNotice } from './components/visualHelpers/CookieNotice'
+import { ToastNotification } from './components/visualHelpers/ToastNotification'
 import { TeamsContextProvider } from './contexts/TeamsContext'
-import { ScrollWrapper } from './components/ScrollWrapper'
+import { ScrollWrapper } from './components/visualHelpers/ScrollWrapper'
 
 import 'react-loading-skeleton/dist/skeleton.css'
 
