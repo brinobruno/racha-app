@@ -2,19 +2,9 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
 import { useTheme } from 'styled-components'
-import {
-  Cards,
-  List,
-  PencilSimple,
-  Plus,
-  Strategy,
-  Trash,
-} from 'phosphor-react'
+import { PencilSimple, Plus, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-import { ListView } from 'src/components/team/TeamViews/ListView'
-import { SwiperView } from 'src/components/team/TeamViews/SwiperView'
-import { PitchView } from 'src/components/team/TeamViews/PitchView'
 import { BackButton } from 'src/components/visualHelpers/BackButton'
 import { TeamControlButton } from 'src/components/team/TeamControlButton'
 import { NoPlayersNotice } from 'src/components/visualHelpers/NoPlayersNotice'
@@ -26,14 +16,15 @@ import {
   TeamDetails,
   TeamControls,
   TeamActions,
-  TeamViews,
 } from './styles'
+import { ViewDisplays } from 'src/components/team/TeamViews/ViewDisplays'
+import { TeamPlayerViews } from 'src/components/team/TeamViews/TeamPlayerViews'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
 }
 
-type AvailableViewType = 'list' | 'swiper' | 'pitch'
+export type AvailableViewType = 'list' | 'swiper' | 'pitch'
 
 export function Team() {
   const currentTheme = useTheme()
@@ -95,41 +86,19 @@ export function Team() {
                 />
               </TeamActions>
 
-              {teamHasPlayers ?? (
-                <TeamViews>
-                  <span
-                    onClick={() => setSelectedView('pitch')}
-                    className={selectedView === 'pitch' ? 'active' : ''}
-                  >
-                    <Strategy size={32} />
-                  </span>
-                  <span
-                    onClick={() => setSelectedView('swiper')}
-                    className={selectedView === 'swiper' ? 'active' : ''}
-                  >
-                    <Cards size={32} />
-                  </span>
-                  <span
-                    onClick={() => setSelectedView('list')}
-                    className={selectedView === 'list' ? 'active' : ''}
-                  >
-                    <List size={32} />
-                  </span>
-                </TeamViews>
+              {teamHasPlayers && (
+                <ViewDisplays
+                  selectedView={selectedView}
+                  setSelectedView={setSelectedView}
+                />
               )}
             </TeamControls>
 
-            {teamHasPlayers ?? (
-              <>
-                {selectedView === 'pitch' && (
-                  <PitchView players={team.players} />
-                )}
-                {selectedView === 'swiper' && (
-                  <SwiperView players={team.players} />
-                )}
-                {selectedView === 'list' && <ListView players={team.players} />}
-              </>
-            )}
+            <TeamPlayerViews
+              selectedView={selectedView}
+              teamHasPlayers={teamHasPlayers}
+              teamPlayers={team.players}
+            />
           </TeamDataContainer>
         ) : null}
       </TeamContainer>
