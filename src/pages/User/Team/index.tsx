@@ -15,7 +15,7 @@ import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { ListView } from 'src/components/team/TeamViews/ListView'
 import { SwiperView } from 'src/components/team/TeamViews/SwiperView'
 import { PitchView } from 'src/components/team/TeamViews/PitchView'
-import { BackButton } from 'src/components/BackButton'
+import { BackButton } from 'src/components/visualHelpers/BackButton'
 import { TeamControlButton } from 'src/components/team/TeamControlButton'
 import { NoPlayersNotice } from 'src/components/visualHelpers/NoPlayersNotice'
 import {
