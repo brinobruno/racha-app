@@ -4,7 +4,7 @@ import { PitchView } from './PitchView'
 import { SwiperView } from './SwiperView'
 import { ListView } from './ListView'
 
-interface TeamPlayerViewsProps {
+interface ITeamPlayerViewsProps {
   selectedView: AvailableViewType
   teamHasPlayers: boolean
   teamPlayers: IPlayerData[]
@@ -14,7 +14,7 @@ export function TeamPlayerViews({
   selectedView,
   teamHasPlayers,
   teamPlayers,
-}: TeamPlayerViewsProps) {
+}: ITeamPlayerViewsProps) {
   return (
     <div className="TeamPlayerViews">
       {teamHasPlayers && (

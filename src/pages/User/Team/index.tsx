@@ -63,7 +63,7 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
-            {!teamHasPlayers && <NoPlayersNotice />}
+            <NoPlayersNotice teamHasPlayers={teamHasPlayers} />
 
             <TeamControls>
               <TeamActions>
@@ -86,12 +86,11 @@ export function Team() {
                 />
               </TeamActions>
 
-              {teamHasPlayers && (
-                <ViewDisplays
-                  selectedView={selectedView}
-                  setSelectedView={setSelectedView}
-                />
-              )}
+              <ViewDisplays
+                selectedView={selectedView}
+                teamHasPlayers={teamHasPlayers}
+                setSelectedView={setSelectedView}
+              />
             </TeamControls>
 
             <TeamPlayerViews
