@@ -2,7 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { A11y, Navigation, Pagination, Scrollbar } from 'swiper/modules'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
-import { Card } from 'src/components/Card'
+import { Card } from 'src/components/team/Card'
 import { Container } from './styles'
 
 import 'swiper/swiper-bundle.css'

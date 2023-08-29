@@ -6,7 +6,7 @@ import { Container } from './styles'
 import PlayerLight from 'src/assets/player-light.svg'
 import PlayerDark from 'src/assets/player-dark.svg'
 import { GlobalModal } from 'src/components/visualHelpers/GlobalModal'
-import { CreateTeamForm } from 'src/components/CreateTeamForm'
+import { CreateTeamForm } from 'src/components/team/CreateTeamForm'
 
 export function Dashboard() {
   const [isCreateTeamModalOpen, setIsCreateTeamModalOpen] = useState(false)

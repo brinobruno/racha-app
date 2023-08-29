@@ -12,11 +12,11 @@ import {
 } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
-import { ListView } from 'src/components/TeamViews/ListView'
-import { SwiperView } from 'src/components/TeamViews/SwiperView'
-import { PitchView } from 'src/components/TeamViews/PitchView'
+import { ListView } from 'src/components/team/TeamViews/ListView'
+import { SwiperView } from 'src/components/team/TeamViews/SwiperView'
+import { PitchView } from 'src/components/team/TeamViews/PitchView'
 import { BackButton } from 'src/components/BackButton'
-import { TeamControlButton } from 'src/components/TeamControlButton'
+import { TeamControlButton } from 'src/components/team/TeamControlButton'
 import { NoPlayersNotice } from 'src/components/visualHelpers/NoPlayersNotice'
 import {
   Container,
