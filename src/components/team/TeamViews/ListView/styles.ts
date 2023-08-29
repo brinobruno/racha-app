@@ -1,13 +1,22 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
+export const Container = styled.table`
+  width: 100%;
 `
 
-export const ListItem = styled.tr`
+export const ListHeaders = styled.tr`
+  background: ${(props) => props.theme['secondary-600']};
+
+  th {
+    text-align: left;
+    padding: 0.5rem;
+  }
+`
+
+export const ListData = styled.tr`
   background: ${(props) => props.theme['secondary-accent']};
 
-  padding: 1rem;
+  td {
+    padding: 0.5rem;
+  }
 `
