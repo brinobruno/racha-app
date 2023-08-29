@@ -5,7 +5,7 @@ import { PencilSimple, Trash } from 'phosphor-react'
 import ProfilePic from 'src/assets/profile-pic.png'
 import { UseUserContext } from 'src/hooks/UseUserContext'
 import { Logout } from 'src/components/@Desktop/Logout'
-import { GlobalModal } from 'src/components/GlobalModal'
+import { GlobalModal } from 'src/components/visualHelpers/GlobalModal'
 import { EditUserForm } from 'src/components/user/EditUserForm'
 import {
   Container,
