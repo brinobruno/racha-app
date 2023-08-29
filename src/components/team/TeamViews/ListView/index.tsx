@@ -8,21 +8,22 @@ interface IListViewProps {
 export function ListView({ players }: IListViewProps) {
   return (
     <Container>
-      {players.map((player) => (
-        <div key={player.id}>
-          {/* Implement filters by clicking on a table, e.g: POS, OVR */}
-          <ListItem>
-            <div>
-              <span>{player.position}</span>
-              <strong>{player.name}</strong>
-            </div>
+      {/* Implement filters by clicking on a table, e.g: POS, OVR */}
+      <table>
+        <tr>
+          <th>Pos</th>
+          <th>Name</th>
+          <th>OVR</th>
+        </tr>
 
-            <div>
-              <span>{player.overall}</span>
-            </div>
+        {players.map((player) => (
+          <ListItem key={player.id}>
+            <td>{player.position}</td>
+            <td>{player.name}</td>
+            <td>{player.overall}</td>
           </ListItem>
-        </div>
-      ))}
+        ))}
+      </table>
     </Container>
   )
 }
