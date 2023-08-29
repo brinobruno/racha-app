@@ -13,13 +13,9 @@ export function Dashboard() {
   const { theme } = useThemeContext()
   const userHasTeams = useUserHasTeams()
 
-  function handleOpenCreateTeamModal() {
-    setIsCreateTeamModalOpen(true)
-  }
+  const handleOpenCreateTeamModal = () => setIsCreateTeamModalOpen(true)
 
-  function handleCloseCreateTeamModal() {
-    setIsCreateTeamModalOpen(false)
-  }
+  const handleCloseCreateTeamModal = () => setIsCreateTeamModalOpen(false)
 
   return (
     <Container>
