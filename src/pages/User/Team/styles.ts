@@ -67,9 +67,3 @@ export const TeamControls = styled.div`
 
   padding-bottom: 2rem;
 `
-
-export const TeamActions = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-`

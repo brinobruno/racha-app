@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { format } from 'date-fns'
-import { useTheme } from 'styled-components'
-import { PencilSimple, Plus, Trash } from 'phosphor-react'
 
 import { ITeamData, useTeams } from 'src/services/hooks/useTeams'
 import { BackButton } from 'src/components/visualHelpers/BackButton'
-import { TeamControlButton } from 'src/components/team/TeamControlButton'
 import { NoPlayersNotice } from 'src/components/visualHelpers/NoPlayersNotice'
+import { ViewDisplays } from 'src/components/team/TeamViews/ViewDisplays'
+import { TeamPlayerViews } from 'src/components/team/TeamViews/TeamPlayerViews'
+import { TeamActions } from 'src/components/team/TeamActions'
 import {
   Container,
   TeamDataContainer,
@@ -15,10 +15,7 @@ import {
   TeamContainer,
   TeamDetails,
   TeamControls,
-  TeamActions,
 } from './styles'
-import { ViewDisplays } from 'src/components/team/TeamViews/ViewDisplays'
-import { TeamPlayerViews } from 'src/components/team/TeamViews/TeamPlayerViews'
 
 const findTeamById = (teams: ITeamData[], id: string | undefined) => {
   return teams.find((team) => team.id === id)
@@ -27,8 +24,6 @@ const findTeamById = (teams: ITeamData[], id: string | undefined) => {
 export type AvailableViewType = 'list' | 'swiper' | 'pitch'
 
 export function Team() {
-  const currentTheme = useTheme()
-
   const [selectedView, setSelectedView] = useState<AvailableViewType>('pitch')
 
   const { id } = useParams()
@@ -66,25 +61,7 @@ export function Team() {
             <NoPlayersNotice teamHasPlayers={teamHasPlayers} />
 
             <TeamControls>
-              <TeamActions>
-                <TeamControlButton
-                  key={0}
-                  icon={<Plus size={28} />}
-                  text="Adicionar jogador"
-                />
-
-                <TeamControlButton
-                  key={1}
-                  icon={<PencilSimple size={28} />}
-                  text="Editar time"
-                />
-
-                <TeamControlButton
-                  key={2}
-                  icon={<Trash size={28} color={currentTheme['primary-500']} />}
-                  text="Deletar time"
-                />
-              </TeamActions>
+              <TeamActions />
 
               <ViewDisplays
                 selectedView={selectedView}
