@@ -72,7 +72,7 @@ export function Team() {
               <small>{formattedDate}</small>
             </TeamDetails>
 
-            {!teamHasPlayers ? <NoPlayersNotice /> : null}
+            {!teamHasPlayers && <NoPlayersNotice />}
 
             <TeamControls>
               <TeamActions>
@@ -95,7 +95,7 @@ export function Team() {
                 />
               </TeamActions>
 
-              {teamHasPlayers ? (
+              {teamHasPlayers ?? (
                 <TeamViews>
                   <span
                     onClick={() => setSelectedView('pitch')}
@@ -116,10 +116,10 @@ export function Team() {
                     <List size={32} />
                   </span>
                 </TeamViews>
-              ) : null}
+              )}
             </TeamControls>
 
-            {teamHasPlayers ? (
+            {teamHasPlayers ?? (
               <>
                 {selectedView === 'pitch' && (
                   <PitchView players={team.players} />
@@ -129,7 +129,7 @@ export function Team() {
                 )}
                 {selectedView === 'list' && <ListView players={team.players} />}
               </>
-            ) : null}
+            )}
           </TeamDataContainer>
         ) : null}
       </TeamContainer>
