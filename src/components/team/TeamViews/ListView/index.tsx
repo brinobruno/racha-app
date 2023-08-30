@@ -9,7 +9,6 @@ export function ListView({ players }: IListViewProps) {
   return (
     <Container>
       {/* Implement filters by clicking on a table, e.g: POS, OVR */}
-
       {/* Add fixed height, and scroll inside of table */}
       <ListHeaders>
         <th>Pos</th>
