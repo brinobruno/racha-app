@@ -10,10 +10,9 @@ export const Container = styled.div`
 
 export const TableScrollWrapper = styled.div`
   width: 65%;
-  max-height: 450px;
+  max-height: 28rem;
+  height: 100%;
   overflow-y: scroll;
-  z-index: 1;
-  position: relative;
 
   ::-webkit-scrollbar-track {
     background: ${(props) => props.theme['secondary-accent-hover']};
@@ -34,7 +33,6 @@ export const ListHeaders = styled.tr`
 
   position: sticky;
   top: 0;
-  z-index: 1000;
 
   th {
     font-size: 1.125rem;
