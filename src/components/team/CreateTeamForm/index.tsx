@@ -47,7 +47,7 @@ export function CreateTeamForm() {
 
   const createTeam = useMutation(
     async ({ title, owner }: ICreateTeamRequest) => {
-      const { data } = await api.post(`/users/teams/create/${userId}`, {
+      const { data } = await api.post(`/users/teams/${userId}`, {
         title,
         owner,
       })
