@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const TableScrollWrapper = styled.div`
   width: 65%;
-  max-height: 28rem;
+  max-height: 27.75rem;
   height: 100%;
   overflow-y: scroll;
 
