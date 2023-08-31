@@ -20,6 +20,7 @@ export const defaultTheme = {
 
   'secondary-300': '#ABB1CC',
   'secondary-500': '#495BCC',
+  'secondary-550': '#2c3887',
   'secondary-600': '#252a4b',
   'secondary-700': '#070a21',
   // 'secondary-700': '#0A1033',

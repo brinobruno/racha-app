@@ -20,8 +20,10 @@ export const lightTheme = {
 
   'secondary-300': '#0A1033',
   'secondary-500': '#495BCC',
+  'secondary-550': '#f2f4ff',
   'secondary-700': '#ABB1CC',
   'secondary-accent': '#d1d3e6',
+  'secondary-accent-hover': '#c5c7dd',
 
   'semantic-positive': '#04D361',
   'semantic-negative': '#FF5343',
