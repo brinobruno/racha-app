@@ -87,9 +87,19 @@ export const PlayerPicture = styled.img`
   height: auto;
 `
 
+interface IPlayerSummaryData {
+  paceWidth: number
+}
+
 export const PlayerSummary = styled.div`
   width: 35%;
   height: auto;
 
   background: ${(props) => props.theme['secondary-600']};
+`
+
+export const PaceValue = styled.div<IPlayerSummaryData>`
+  width: ${(props) => props.paceWidth}%;
+  height: 20px;
+  background-color: #fff;
 `

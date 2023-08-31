@@ -12,6 +12,7 @@ import {
   HeadingBigger,
   DataSmaller,
   TableScrollWrapper,
+  PaceValue,
 } from './styles'
 import { getCode } from 'country-list'
 
@@ -65,6 +66,9 @@ export function ListView({ players }: IListViewProps) {
         <strong>Player summary</strong>
         <h2>Lionel Messi</h2>
         <span>92 OVR</span>
+
+        <span>Pace:</span>
+        <PaceValue paceWidth={75} />
       </PlayerSummary>
     </Container>
   )
