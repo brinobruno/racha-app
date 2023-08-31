@@ -11,6 +11,7 @@ import {
   HeadingSmaller,
   HeadingBigger,
   DataSmaller,
+  TableScrollWrapper,
 } from './styles'
 import { getCode } from 'country-list'
 
@@ -21,42 +22,44 @@ interface IListViewProps {
 export function ListView({ players }: IListViewProps) {
   return (
     <Container>
-      <PlayerTable>
-        {/* Implement filters by clicking on a table, e.g: POS, OVR */}
-        {/* Add fixed height, and scroll inside of table */}
-        <thead>
-          <ListHeaders>
-            <HeadingSmaller>Pos</HeadingSmaller>
-            <HeadingSmaller>País</HeadingSmaller>
-            <HeadingBigger>Nome</HeadingBigger>
-            <HeadingSmaller>OVR</HeadingSmaller>
-          </ListHeaders>
-        </thead>
+      <TableScrollWrapper>
+        <PlayerTable>
+          {/* Implement filters by clicking on a table, e.g: POS, OVR */}
+          {/* Add fixed height, and scroll inside of table */}
+          <thead>
+            <ListHeaders>
+              <HeadingSmaller>Pos</HeadingSmaller>
+              <HeadingSmaller>País</HeadingSmaller>
+              <HeadingBigger>Nome</HeadingBigger>
+              <HeadingSmaller>OVR</HeadingSmaller>
+            </ListHeaders>
+          </thead>
 
-        <tbody>
-          {players.map((player) => (
-            <ListData key={player.id}>
-              <DataSmaller>{player.position}</DataSmaller>
-              <DataSmaller>
-                <PlayerNationality
-                  src={`https://flagsapi.com/${getCode(
-                    player.nationality,
-                  )}/flat/64.png`}
-                  alt=""
-                />
-              </DataSmaller>
-              <DataBigger>
-                <PlayerPicture
-                  src="https://www.fifarosters.com/assets/players/fifa23/faces/158023.png"
-                  alt={player.name}
-                />
-                {player.name}
-              </DataBigger>
-              <DataSmaller>{player.overall}</DataSmaller>
-            </ListData>
-          ))}
-        </tbody>
-      </PlayerTable>
+          <tbody>
+            {players.map((player) => (
+              <ListData key={player.id}>
+                <DataSmaller>{player.position}</DataSmaller>
+                <DataSmaller>
+                  <PlayerNationality
+                    src={`https://flagsapi.com/${getCode(
+                      player.nationality,
+                    )}/flat/64.png`}
+                    alt=""
+                  />
+                </DataSmaller>
+                <DataBigger>
+                  <PlayerPicture
+                    src="https://www.fifarosters.com/assets/players/fifa23/faces/158023.png"
+                    alt={player.name}
+                  />
+                  {player.name}
+                </DataBigger>
+                <DataSmaller>{player.overall}</DataSmaller>
+              </ListData>
+            ))}
+          </tbody>
+        </PlayerTable>
+      </TableScrollWrapper>
 
       <PlayerSummary>
         <strong>Player summary</strong>

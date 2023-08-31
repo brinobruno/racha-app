@@ -8,13 +8,33 @@ export const Container = styled.div`
   height: 100%;
 `
 
-export const PlayerTable = styled.table`
+export const TableScrollWrapper = styled.div`
   width: 65%;
+  max-height: 450px;
+  overflow-y: scroll;
+  z-index: 1;
+  position: relative;
+
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme['secondary-accent-hover']};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme['secondary-600']};
+  }
+`
+
+export const PlayerTable = styled.table`
+  width: 100%;
   border-spacing: unset;
 `
 
 export const ListHeaders = styled.tr`
   background: ${(props) => props.theme['secondary-600']};
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   th {
     font-size: 1.125rem;
