@@ -123,7 +123,7 @@ export const PlayerHeader = styled.header`
     span {
       font-size: 1rem;
     }
-  }g
+  }
 `
 
 export const OverallWrapper = styled.div`
