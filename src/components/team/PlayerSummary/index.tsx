@@ -10,6 +10,12 @@ import {
 
 const tempName = 'Lionel Messi'
 
+const breakpoints = {
+  0: 'orange',
+  65: 'yellow',
+  80: 'green',
+}
+
 export function PlayerSummary() {
   return (
     <Container>
