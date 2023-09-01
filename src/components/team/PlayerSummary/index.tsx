@@ -1,6 +1,7 @@
 import { NameWithLineBreaks } from 'src/helpers/nameWithLineBreaks'
 import {
   AttributeValue,
+  Attributes,
   Container,
   OverallWrapper,
   PlayerDetails,
@@ -26,8 +27,10 @@ export function PlayerSummary() {
           </OverallWrapper>
         </PlayerHeader>
 
-        <span>Pace:</span>
-        <AttributeValue attributeWidthValue={75} />
+        <Attributes>
+          <span>Pace:</span>
+          <AttributeValue attributeWidthValue={75} />
+        </Attributes>
       </PlayerDetails>
     </Container>
   )

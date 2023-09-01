@@ -64,6 +64,8 @@ export const OverallWrapper = styled.div`
   }
 `
 
+export const Attributes = styled.div``
+
 export const AttributeValue = styled.div<IPlayerSummaryData>`
   width: ${(props) => props.attributeWidthValue}%;
   height: 20px;
