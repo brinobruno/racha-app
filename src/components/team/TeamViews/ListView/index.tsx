@@ -1,4 +1,7 @@
+import { getCode } from 'country-list'
+
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
+import { PlayerSummary } from '../../PlayerSummary'
 import {
   PlayerTable,
   ListHeaders,
@@ -7,24 +10,15 @@ import {
   PlayerPicture,
   DataBigger,
   Container,
-  PlayerSummary,
   HeadingSmaller,
   HeadingBigger,
   DataSmaller,
   TableScrollWrapper,
-  AttributeValue,
-  PlayerDetails,
-  OverallWrapper,
-  PlayerHeader,
 } from './styles'
-import { getCode } from 'country-list'
-import { NameWithLineBreaks } from 'src/helpers/nameWithLineBreaks'
 
 interface IListViewProps {
   players: IPlayerData[]
 }
-
-const tempName = 'Lionel Messi'
 
 export function ListView({ players }: IListViewProps) {
   return (
@@ -68,25 +62,7 @@ export function ListView({ players }: IListViewProps) {
         </PlayerTable>
       </TableScrollWrapper>
 
-      <PlayerSummary>
-        <strong>Resumo & atributos</strong>
-
-        <PlayerDetails>
-          <PlayerHeader>
-            <h2>
-              <NameWithLineBreaks name={tempName} />
-            </h2>
-
-            <OverallWrapper>
-              <span>OVR</span>
-              <strong>86</strong>
-            </OverallWrapper>
-          </PlayerHeader>
-
-          <span>Pace:</span>
-          <AttributeValue attributeWidthValue={75} />
-        </PlayerDetails>
-      </PlayerSummary>
+      <PlayerSummary />
     </Container>
   )
 }
