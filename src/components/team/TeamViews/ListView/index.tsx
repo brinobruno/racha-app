@@ -13,12 +13,18 @@ import {
   DataSmaller,
   TableScrollWrapper,
   AttributeValue,
+  PlayerDetails,
+  OverallWrapper,
+  PlayerHeader,
 } from './styles'
 import { getCode } from 'country-list'
+import { NameWithLineBreaks } from 'src/helpers/nameWithLineBreaks'
 
 interface IListViewProps {
   players: IPlayerData[]
 }
+
+const tempName = 'Lionel Messi'
 
 export function ListView({ players }: IListViewProps) {
   return (
@@ -63,13 +69,23 @@ export function ListView({ players }: IListViewProps) {
       </TableScrollWrapper>
 
       <PlayerSummary>
-        <strong>Player summary</strong>
-        <h2>Lionel Messi</h2>
-        <span>92 OVR</span>
+        <strong>Resumo & atributos</strong>
 
-        <span>Pace:</span>
-        <AttributeValue attributeWidthValue={75} />
-        <AttributeValue attributeWidthValue={85} />
+        <PlayerDetails>
+          <PlayerHeader>
+            <h2>
+              <NameWithLineBreaks name={tempName} />
+            </h2>
+
+            <OverallWrapper>
+              <span>OVR</span>
+              <strong>86</strong>
+            </OverallWrapper>
+          </PlayerHeader>
+
+          <span>Pace:</span>
+          <AttributeValue attributeWidthValue={75} />
+        </PlayerDetails>
       </PlayerSummary>
     </Container>
   )

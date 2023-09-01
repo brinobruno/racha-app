@@ -7,7 +7,7 @@ export function NameWithLineBreaks({ name }: INameProps) {
 
   return (
     <>
-      {parts[0]}
+      <span>{parts[0]}</span>
       <br />
       {parts.slice(1).join(' ')}
     </>
