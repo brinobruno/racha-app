@@ -64,7 +64,28 @@ export const OverallWrapper = styled.div`
   }
 `
 
-export const Attributes = styled.div``
+export const Attributes = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`
+
+export const Attribute = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.25rem;
+
+  div {
+    width: 90%;
+  }
+
+  > span {
+    background: green;
+    padding: 0 0.5rem;
+    height: 20px;
+  }
+`
 
 export const AttributeValue = styled.div<IPlayerSummaryData>`
   width: ${(props) => props.attributeWidthValue}%;
