@@ -88,7 +88,7 @@ export const PlayerPicture = styled.img`
 `
 
 interface IPlayerSummaryData {
-  paceWidth: number
+  attributeWidthValue: number
 }
 
 export const PlayerSummary = styled.div`
@@ -98,8 +98,8 @@ export const PlayerSummary = styled.div`
   background: ${(props) => props.theme['secondary-600']};
 `
 
-export const PaceValue = styled.div<IPlayerSummaryData>`
-  width: ${(props) => props.paceWidth}%;
+export const AttributeValue = styled.div<IPlayerSummaryData>`
+  width: ${(props) => props.attributeWidthValue}%;
   height: 20px;
   background-color: #fff;
 `

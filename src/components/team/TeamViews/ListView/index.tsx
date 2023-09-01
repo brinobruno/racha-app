@@ -12,7 +12,7 @@ import {
   HeadingBigger,
   DataSmaller,
   TableScrollWrapper,
-  PaceValue,
+  AttributeValue,
 } from './styles'
 import { getCode } from 'country-list'
 
@@ -68,7 +68,8 @@ export function ListView({ players }: IListViewProps) {
         <span>92 OVR</span>
 
         <span>Pace:</span>
-        <PaceValue paceWidth={75} />
+        <AttributeValue attributeWidthValue={75} />
+        <AttributeValue attributeWidthValue={85} />
       </PlayerSummary>
     </Container>
   )
