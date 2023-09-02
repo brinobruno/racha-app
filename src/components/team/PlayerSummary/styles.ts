@@ -82,7 +82,7 @@ export const Attribute = styled.div`
 
   > span {
     background: green;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
     height: 20px;
   }
 `
