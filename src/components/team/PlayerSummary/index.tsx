@@ -39,6 +39,8 @@ export function PlayerSummary() {
           <ExtraInfo>
             <div>RW</div>
 
+            <span>|</span>
+
             <div>
               <img src={`https://flagsapi.com/AR/flat/64.png`} alt="" />
               Argentina

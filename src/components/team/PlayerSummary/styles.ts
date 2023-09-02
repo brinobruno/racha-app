@@ -83,6 +83,12 @@ export const ExtraInfo = styled.footer`
     font-size: 0.875rem;
   }
 
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
   img {
     width: 24px;
   }
