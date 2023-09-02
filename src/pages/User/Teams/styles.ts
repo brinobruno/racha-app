@@ -58,7 +58,7 @@ export const TeamOverall = styled.strong`
   font-weight: 500;
   line-height: 100%;
 
-  font-family: 'DinProCondMed';
+  font-family: 'DinProCondMed', 'Montserrat', sans-serif;
   font-weight: 500;
   color: #e9edf5;
 `
@@ -69,7 +69,7 @@ export const TeamData = styled.div`
 
   > * {
     font-size: 1.125rem;
-    font-family: 'DinPro';
+    font-family: 'DinPro', 'Montserrat', sans-serif;
     color: #e9edf5;
   }
 

@@ -30,11 +30,17 @@ export const PlayerHeader = styled.header`
   justify-content: space-between;
   align-items: center;
 
+  padding-bottom: 1rem;
+
   h2 {
-    font-size: 2rem;
+    font-family: 'DinProCondReg', 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
 
     span {
-      font-size: 1rem;
+      font-size: 1.5rem;
+      font-weight: 400;
     }
   }
 `
@@ -50,17 +56,18 @@ export const OverallWrapper = styled.div`
 
   span,
   strong {
-    font-family: 'DinProCondReg';
+    font-family: 'DinProCondReg', 'Montserrat', sans-serif;
     font-weight: 400;
     line-height: 80%;
   }
 
   span {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    color: ${(props) => props.theme['neutral-500']};
   }
 
   strong {
-    font-size: 4rem;
+    font-size: 2.75rem;
   }
 `
 
@@ -76,7 +83,7 @@ export const Attribute = styled.div`
   align-items: flex-end;
   gap: 0.25rem;
 
-  div {
+  > div {
     width: 90%;
   }
 
@@ -90,5 +97,11 @@ export const Attribute = styled.div`
 export const AttributeValue = styled.div<IPlayerSummaryData>`
   width: ${(props) => props.attributeWidthValue}%;
   height: 20px;
-  background-color: #fff;
+  background-color: green;
+  color: ${(props) => props.theme['neutral-400']};
+  font-size: 0.875rem;
+
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
 `

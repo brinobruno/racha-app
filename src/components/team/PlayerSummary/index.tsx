@@ -34,14 +34,61 @@ export function PlayerSummary() {
           </OverallWrapper>
         </PlayerHeader>
 
+        <div>a</div>
+
         <Attributes>
           <Attribute>
             <div>
-              <span>Pace:</span>
-              <AttributeValue attributeWidthValue={75} />
+              <AttributeValue attributeWidthValue={85}>
+                <span>Pace:</span>
+              </AttributeValue>
             </div>
+            <span>85</span>
+          </Attribute>
 
-            <span>81</span>
+          <Attribute>
+            <div>
+              <AttributeValue attributeWidthValue={91}>
+                <span>Shooting:</span>
+              </AttributeValue>
+            </div>
+            <span>91</span>
+          </Attribute>
+
+          <Attribute>
+            <div>
+              <AttributeValue attributeWidthValue={89}>
+                <span>Passing:</span>
+              </AttributeValue>
+            </div>
+            <span>89</span>
+          </Attribute>
+
+          <Attribute>
+            <div>
+              <AttributeValue attributeWidthValue={90}>
+                <span>Dribbling:</span>
+              </AttributeValue>
+            </div>
+            <span>90</span>
+          </Attribute>
+
+          <Attribute>
+            <div>
+              <AttributeValue attributeWidthValue={34}>
+                <span>Defending:</span>
+              </AttributeValue>
+            </div>
+            <span>34</span>
+          </Attribute>
+
+          <Attribute>
+            <div>
+              <AttributeValue attributeWidthValue={62}>
+                <span>Physical:</span>
+              </AttributeValue>
+            </div>
+            <span>62</span>
           </Attribute>
         </Attributes>
       </PlayerDetails>
