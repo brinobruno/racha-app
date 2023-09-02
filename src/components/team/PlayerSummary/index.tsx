@@ -4,6 +4,7 @@ import {
   AttributeValue,
   Attributes,
   Container,
+  ExtraInfo,
   OverallWrapper,
   PlayerDetails,
   PlayerHeader,
@@ -24,17 +25,26 @@ export function PlayerSummary() {
 
       <PlayerDetails>
         <PlayerHeader>
-          <h2>
-            <NameWithLineBreaks name={tempName} />
-          </h2>
+          <div>
+            <h2>
+              <NameWithLineBreaks name={tempName} />
+            </h2>
 
-          <OverallWrapper>
-            <span>OVR</span>
-            <strong>86</strong>
-          </OverallWrapper>
+            <OverallWrapper>
+              <span>OVR</span>
+              <strong>86</strong>
+            </OverallWrapper>
+          </div>
+
+          <ExtraInfo>
+            <div>RW</div>
+
+            <div>
+              <img src={`https://flagsapi.com/AR/flat/64.png`} alt="" />
+              Argentina
+            </div>
+          </ExtraInfo>
         </PlayerHeader>
-
-        <div>a</div>
 
         <Attributes>
           <Attribute>

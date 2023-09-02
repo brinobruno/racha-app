@@ -26,11 +26,13 @@ export const PlayerDetails = styled.div`
 `
 
 export const PlayerHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
   padding-bottom: 1rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   h2 {
     font-family: 'DinProCondReg', 'Montserrat', sans-serif;
@@ -71,10 +73,25 @@ export const OverallWrapper = styled.div`
   }
 `
 
+export const ExtraInfo = styled.footer`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+
+  * {
+    font-size: 0.875rem;
+  }
+
+  img {
+    width: 24px;
+  }
+`
+
 export const Attributes = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 `
 
 export const Attribute = styled.div`
