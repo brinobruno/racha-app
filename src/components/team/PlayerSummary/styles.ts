@@ -71,7 +71,7 @@ export const OverallWrapper = styled.div`
   }
 
   strong {
-    font-size: 2.75rem;
+    font-size: 2.875rem;
   }
 `
 
