@@ -101,6 +101,9 @@ export const ListData = styled.tr<IListDataProps>`
   }
 
   td {
+    color: ${(props) =>
+      props.isSelectedTab ? '#E9EDF5' : props.theme['neutral-100']};
+
     padding: 0.25rem 0.75rem;
     max-height: 3.125rem;
 
