@@ -66,7 +66,7 @@ export const OverallWrapper = styled.div`
   }
 
   span {
-    font-size: 1.75rem;
+    font-size: 1.35rem;
     color: ${(props) => props.theme['neutral-500']};
   }
 
