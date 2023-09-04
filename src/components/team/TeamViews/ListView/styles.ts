@@ -48,18 +48,31 @@ export const ListHeaders = styled.tr`
   }
 `
 
-export const ListData = styled.tr`
-  background: ${(props) => props.theme['secondary-accent']};
-  transition: 0.1s ease-in-out;
+interface IListDataProps {
+  isSelectedTab: boolean
+}
 
+export const ListData = styled.tr<IListDataProps>`
+  background: ${(props) =>
+    props.isSelectedTab
+      ? props.theme['secondary-500']
+      : props.theme['secondary-accent']};
+
+  transition: 0.1s ease-in-out;
   cursor: pointer;
 
   &:nth-child(even) {
-    background: ${(props) => props.theme['secondary-accent-hover']};
+    background: ${(props) =>
+      props.isSelectedTab
+        ? props.theme['secondary-500']
+        : props.theme['secondary-accent-hover']};
 
     td {
       &.player-pos {
-        background: ${(props) => props.theme['secondary-accent']};
+        background: ${(props) =>
+          props.isSelectedTab
+            ? props.theme['secondary-500']
+            : props.theme['secondary-accent']};
         filter: contrast(0.85);
       }
     }
@@ -68,19 +81,24 @@ export const ListData = styled.tr`
   &:nth-child(odd) {
     td {
       &.player-pos {
-        background: ${(props) => props.theme['secondary-700']};
+        background: ${(props) =>
+          props.isSelectedTab
+            ? props.theme['secondary-500']
+            : props.theme['secondary-700']};
         filter: contrast(0.8);
       }
     }
   }
 
   &:hover {
-    background: ${(props) => props.theme['secondary-550']};
+    filter: brightness(1.1);
   }
 
   td {
     padding: 0.25rem 0.75rem;
     max-height: 3.125rem;
+
+    transition: 0.1s ease-in-out;
   }
 `
 

@@ -43,6 +43,7 @@ export function ListView({ players }: IListViewProps) {
               <ListData
                 key={player.id}
                 onClick={() => setSelectedPlayer(player)}
+                isSelectedTab={player === selectedPlayer}
               >
                 <DataSmaller className="player-pos">
                   {player.position}
