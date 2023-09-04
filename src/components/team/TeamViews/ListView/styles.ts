@@ -26,6 +26,11 @@ export const TableScrollWrapper = styled.div`
 export const PlayerTable = styled.table`
   width: 100%;
   border-spacing: unset;
+
+  thead {
+    position: relative;
+    z-index: 2;
+  }
 `
 
 export const ListHeaders = styled.tr`
@@ -51,6 +56,22 @@ export const ListData = styled.tr`
 
   &:nth-child(even) {
     background: ${(props) => props.theme['secondary-accent-hover']};
+
+    td {
+      &.player-pos {
+        background: ${(props) => props.theme['secondary-accent']};
+        filter: contrast(0.85);
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    td {
+      &.player-pos {
+        background: ${(props) => props.theme['secondary-700']};
+        filter: contrast(0.8);
+      }
+    }
   }
 
   &:hover {

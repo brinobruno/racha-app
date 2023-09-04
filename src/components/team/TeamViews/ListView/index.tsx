@@ -44,7 +44,9 @@ export function ListView({ players }: IListViewProps) {
                 key={player.id}
                 onClick={() => setSelectedPlayer(player)}
               >
-                <DataSmaller>{player.position}</DataSmaller>
+                <DataSmaller className="player-pos">
+                  {player.position}
+                </DataSmaller>
                 <DataSmaller>
                   <PlayerNationality
                     src={`https://flagsapi.com/${getCode(
