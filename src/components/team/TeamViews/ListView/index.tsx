@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { getCode } from 'country-list'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
@@ -21,6 +22,8 @@ interface IListViewProps {
 }
 
 export function ListView({ players }: IListViewProps) {
+  const [selectedPlayer, setSelectedPlayer] = useState(players[0])
+
   return (
     <Container>
       <TableScrollWrapper>
@@ -37,7 +40,10 @@ export function ListView({ players }: IListViewProps) {
 
           <tbody>
             {players.map((player) => (
-              <ListData key={player.id}>
+              <ListData
+                key={player.id}
+                onClick={() => setSelectedPlayer(player)}
+              >
                 <DataSmaller>{player.position}</DataSmaller>
                 <DataSmaller>
                   <PlayerNationality
@@ -61,7 +67,7 @@ export function ListView({ players }: IListViewProps) {
         </PlayerTable>
       </TableScrollWrapper>
 
-      <PlayerSummary />
+      <PlayerSummary player={selectedPlayer} />
     </Container>
   )
 }

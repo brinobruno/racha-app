@@ -1,9 +1,5 @@
 import styled from 'styled-components'
 
-interface IPlayerSummaryData {
-  attributeWidthValue: number
-}
-
 export const Container = styled.div`
   width: 35%;
   height: auto;
@@ -114,7 +110,14 @@ export const Attributes = styled.div`
   gap: 1rem;
 `
 
-export const Attribute = styled.div`
+interface IPlayerSummaryData {
+  attributeWidthValue?: number
+  attributeColorValue?: string
+}
+
+export const AttributePropsData = styled.div<IPlayerSummaryData>``
+
+export const Attribute = styled(AttributePropsData)`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -125,16 +128,16 @@ export const Attribute = styled.div`
   }
 
   > span {
-    background: green;
+    background: ${(props) => props.attributeColorValue};
     padding: 0 0.75rem;
     height: 20px;
   }
 `
 
-export const AttributeValue = styled.div<IPlayerSummaryData>`
+export const AttributeValue = styled(AttributePropsData)`
   width: ${(props) => props.attributeWidthValue}%;
+  background: ${(props) => props.attributeColorValue};
   height: 20px;
-  background-color: green;
   color: ${(props) => props.theme['neutral-400']};
   font-size: 0.875rem;
 

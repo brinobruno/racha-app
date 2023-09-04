@@ -47,6 +47,8 @@ export const ListData = styled.tr`
   background: ${(props) => props.theme['secondary-accent']};
   transition: 0.1s ease-in-out;
 
+  cursor: pointer;
+
   &:nth-child(even) {
     background: ${(props) => props.theme['secondary-accent-hover']};
   }
