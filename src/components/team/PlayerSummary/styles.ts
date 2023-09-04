@@ -32,6 +32,8 @@ export const PlayerHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding-bottom: 0.5rem;
   }
 
   h2 {
@@ -80,7 +82,7 @@ export const ExtraInfo = styled.footer`
   gap: 0.5rem;
 
   * {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 
   div {
