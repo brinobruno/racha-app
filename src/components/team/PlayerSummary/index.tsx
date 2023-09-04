@@ -14,23 +14,23 @@ import {
   PositionWrapper,
 } from './styles'
 
-// Bronze: 64 or below
-// Silver: 65 until 74
-// Gold: 75 or above
-const breakpoints = {
-  0: 'orange',
-  64: 'yellow',
-  75: 'green',
-}
-
 interface IPlayerSummary {
   player: IPlayerData
 }
 
+// Bronze: 64 or below
+// Silver: 65 until 74
+// Gold: 75 or above
+const breakpoints = {
+  orange: 0,
+  yellow: 64,
+  green: 74,
+}
+
 function getColorBreakpoint(value: number): string {
-  if (value <= 64) {
+  if (value <= breakpoints.yellow) {
     return 'orange'
-  } else if (value <= 74) {
+  } else if (value <= breakpoints.green) {
     return 'yellow'
   } else {
     return 'green'
