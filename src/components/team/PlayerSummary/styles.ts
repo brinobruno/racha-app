@@ -94,6 +94,18 @@ export const ExtraInfo = styled.footer`
   }
 `
 
+export const PositionWrapper = styled.div`
+  &::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: blue;
+    border: 2px solid ${(props) => props.theme['neutral-100']};
+  }
+`
+
 export const Attributes = styled.div`
   display: flex;
   flex-direction: column;

@@ -8,6 +8,7 @@ import {
   OverallWrapper,
   PlayerDetails,
   PlayerHeader,
+  PositionWrapper,
 } from './styles'
 
 const tempName = 'Lionel Messi'
@@ -37,7 +38,7 @@ export function PlayerSummary() {
           </div>
 
           <ExtraInfo>
-            <div>RW</div>
+            <PositionWrapper>RW</PositionWrapper>
 
             <span>|</span>
 
