@@ -14,12 +14,17 @@ export const TableScrollWrapper = styled.div`
   height: 100%;
   overflow-y: scroll;
 
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
   ::-webkit-scrollbar-track {
-    background: ${(props) => props.theme['secondary-accent-hover']};
+    background: ${(props) => props.theme['secondary-600']};
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${(props) => props.theme['secondary-600']};
+    background: ${(props) => props.theme['secondary-300']};
   }
 `
 
