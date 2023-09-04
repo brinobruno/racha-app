@@ -25,6 +25,7 @@ export const TableScrollWrapper = styled.div`
 
   ::-webkit-scrollbar-thumb {
     background: ${(props) => props.theme['secondary-300']};
+    -webkit-border-radius: 10px;
   }
 `
 
