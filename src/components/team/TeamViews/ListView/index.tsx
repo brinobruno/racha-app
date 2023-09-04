@@ -29,6 +29,7 @@ export function ListView({ players }: IListViewProps) {
       <TableScrollWrapper>
         <PlayerTable>
           {/* Implement filters by clicking on a table, e.g: POS, OVR */}
+          {/* Implement color on overall value on table */}
           <thead>
             <ListHeaders>
               <HeadingSmaller>Pos</HeadingSmaller>
