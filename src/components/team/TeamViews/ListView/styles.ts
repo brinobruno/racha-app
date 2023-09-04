@@ -57,6 +57,7 @@ export const ListData = styled.tr<IListDataProps>`
     props.isSelectedTab
       ? props.theme['secondary-500']
       : props.theme['secondary-accent']};
+  filter: ${(props) => props.isSelectedTab && 'brightness(1.1)'};
 
   transition: 0.1s ease-in-out;
   cursor: pointer;
