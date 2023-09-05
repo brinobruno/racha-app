@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { getCode } from 'country-list'
 
+import { useSortableData } from 'src/hooks/useSortableData'
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { PlayerSummary } from '../../PlayerSummary'
 import {
@@ -19,53 +20,6 @@ import {
 
 interface IListViewProps {
   players: IPlayerData[]
-}
-
-export const useSortableData = (items: IPlayerData[], config = null) => {
-  const [sortConfig, setSortConfig] = useState<{
-    key: string
-    direction: string
-  } | null>(config)
-
-  const sortedPlayers = useMemo(() => {
-    const sortableItems = [...items]
-
-    if (sortConfig !== null) {
-      sortableItems.sort((a, b) => {
-        if (
-          a[sortConfig.key as keyof IPlayerData] <
-          b[sortConfig.key as keyof IPlayerData]
-        ) {
-          return sortConfig.direction === 'ascending' ? -1 : 1
-        }
-        if (
-          a[sortConfig.key as keyof IPlayerData] >
-          b[sortConfig.key as keyof IPlayerData]
-        ) {
-          return sortConfig.direction === 'ascending' ? 1 : -1
-        }
-
-        return 0
-      })
-    }
-    return sortableItems
-  }, [items, sortConfig])
-
-  const requestSort = (key: any) => {
-    let direction = 'ascending'
-
-    if (
-      sortConfig &&
-      sortConfig.key === key &&
-      sortConfig.direction === 'ascending'
-    ) {
-      direction = 'descending'
-    }
-
-    setSortConfig({ key, direction } as { key: string; direction: string })
-  }
-
-  return { items: sortedPlayers, requestSort, sortConfig }
 }
 
 export function ListView({ players }: IListViewProps) {
@@ -99,8 +53,8 @@ export function ListView({ players }: IListViewProps) {
                 Pos
               </HeadingSmaller>
               <HeadingSmaller
-                onClick={() => requestSort('country')}
-                className={getClassNamesFor('country')}
+                onClick={() => requestSort('nationality')}
+                className={getClassNamesFor('nationality')}
               >
                 País
               </HeadingSmaller>
