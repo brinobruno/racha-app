@@ -81,6 +81,7 @@ export function ListView({ players }: IListViewProps) {
     if (!sortConfig) {
       return
     }
+
     return sortConfig.key === name ? sortConfig.direction : undefined
   }
 
