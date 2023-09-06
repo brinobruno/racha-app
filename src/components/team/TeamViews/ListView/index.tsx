@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getCode } from 'country-list'
 
 import { useSortableData } from 'src/hooks/useSortableData'
@@ -30,6 +30,10 @@ export function ListView({ players }: IListViewProps) {
     requestSort,
     sortConfig,
   } = useSortableData(players)
+
+  useEffect(() => {
+    setSelectedPlayer(sortedPlayers[0])
+  }, [sortedPlayers])
 
   const getClassNamesFor = (name: string | undefined) => {
     if (!sortConfig) {
