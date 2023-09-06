@@ -31,9 +31,7 @@ export function ListView({ players }: IListViewProps) {
     sortConfig,
   } = useSortableData(players)
 
-  useEffect(() => {
-    setSelectedPlayer(sortedPlayers[0])
-  }, [sortedPlayers])
+  useEffect(() => setSelectedPlayer(sortedPlayers[0]), [sortedPlayers])
 
   const getClassNamesFor = (name: string | undefined) => {
     if (!sortConfig) {
