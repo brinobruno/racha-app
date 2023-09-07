@@ -1,20 +1,11 @@
 import { useEffect, useState } from 'react'
-import { getCode } from 'country-list'
 
 import { useSortableData } from 'src/hooks/useSortableData'
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { PlayerSummary } from '../../PlayerSummary'
-import {
-  PlayerTable,
-  ListData,
-  PlayerNationality,
-  PlayerPicture,
-  DataBigger,
-  Container,
-  DataSmaller,
-  TableScrollWrapper,
-} from './styles'
 import { TableHead } from '../../TableHead'
+import { TableDataPlayer } from '../../TableDataPlayer'
+import { Container, PlayerTable, TableScrollWrapper } from './styles'
 
 interface IListViewProps {
   players: IPlayerData[]
@@ -52,31 +43,12 @@ export function ListView({ players }: IListViewProps) {
           <tbody>
             {players &&
               sortedPlayers.map((player: IPlayerData) => (
-                <ListData
+                <TableDataPlayer
                   key={player.id}
-                  onClick={() => setSelectedPlayer(player)}
-                  isSelectedTab={player === selectedPlayer}
-                >
-                  <DataSmaller className="player-pos">
-                    {player.position}
-                  </DataSmaller>
-                  <DataSmaller>
-                    <PlayerNationality
-                      src={`https://flagsapi.com/${getCode(
-                        player.nationality,
-                      )}/flat/64.png`}
-                      alt=""
-                    />
-                  </DataSmaller>
-                  <DataBigger>
-                    <PlayerPicture
-                      src="https://www.fifarosters.com/assets/players/fifa23/faces/158023.png"
-                      alt={player.name}
-                    />
-                    {player.name}
-                  </DataBigger>
-                  <DataSmaller>{player.overall}</DataSmaller>
-                </ListData>
+                  player={player}
+                  isSelected={player === selectedPlayer}
+                  onClick={setSelectedPlayer}
+                />
               ))}
           </tbody>
         </PlayerTable>
