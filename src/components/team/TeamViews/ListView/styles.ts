@@ -39,21 +39,6 @@ export const PlayerTable = styled.table`
   }
 `
 
-export const ListHeaders = styled.tr`
-  background: ${(props) => props.theme['secondary-600']};
-
-  position: sticky;
-  top: 0;
-
-  th {
-    font-size: 1.125rem;
-    font-weight: 500;
-    text-align: left;
-
-    padding: 0.75rem;
-  }
-`
-
 interface IListDataProps {
   isSelectedTab: boolean
 }
@@ -110,14 +95,6 @@ export const ListData = styled.tr<IListDataProps>`
 
     transition: 0.1s ease-in-out;
   }
-`
-
-export const HeadingBigger = styled.th`
-  width: 64%;
-`
-
-export const HeadingSmaller = styled.th`
-  width: 12%;
 `
 
 export const DataBigger = styled.td`

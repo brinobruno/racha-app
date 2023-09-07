@@ -6,17 +6,15 @@ import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { PlayerSummary } from '../../PlayerSummary'
 import {
   PlayerTable,
-  ListHeaders,
   ListData,
   PlayerNationality,
   PlayerPicture,
   DataBigger,
   Container,
-  HeadingSmaller,
-  HeadingBigger,
   DataSmaller,
   TableScrollWrapper,
 } from './styles'
+import { TableHead } from '../../TableHead'
 
 interface IListViewProps {
   players: IPlayerData[]
@@ -46,34 +44,10 @@ export function ListView({ players }: IListViewProps) {
       <TableScrollWrapper>
         <PlayerTable>
           {/* Implement color on overall value on table */}
-          <thead>
-            <ListHeaders>
-              <HeadingSmaller
-                onClick={() => requestSort('position')}
-                className={getClassNamesFor('position')}
-              >
-                Pos
-              </HeadingSmaller>
-              <HeadingSmaller
-                onClick={() => requestSort('nationality')}
-                className={getClassNamesFor('nationality')}
-              >
-                País
-              </HeadingSmaller>
-              <HeadingBigger
-                onClick={() => requestSort('name')}
-                className={getClassNamesFor('name')}
-              >
-                Nome
-              </HeadingBigger>
-              <HeadingSmaller
-                onClick={() => requestSort('overall')}
-                className={getClassNamesFor('overall')}
-              >
-                OVR
-              </HeadingSmaller>
-            </ListHeaders>
-          </thead>
+          <TableHead
+            requestSort={requestSort}
+            getClassNamesFor={getClassNamesFor}
+          />
 
           <tbody>
             {players &&
