@@ -19,4 +19,23 @@ export const ColumnHeading = styled.th<IColumnHeadingProps>`
   text-align: left;
 
   padding: 0.75rem;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+
+    ::after {
+      display: inline-block;
+      margin-left: 0.25rem;
+      font-size: 0.875rem;
+    }
+
+    &.ascending::after {
+      content: '▼';
+    }
+
+    &.descending::after {
+      content: '▲';
+    }
+  }
 `
