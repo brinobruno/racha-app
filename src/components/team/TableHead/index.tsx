@@ -29,6 +29,7 @@ export function TableHead({ requestSort, getClassNamesFor }: ITableHeadProps) {
           <ColumnHeading
             key={column.id}
             onClick={() => requestSort(column.id)}
+            className={getClassNamesFor(column.id)}
             isLongColumn={column.longHeading}
           >
             {column.title}
