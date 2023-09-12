@@ -132,6 +132,7 @@ export const Attribute = styled(AttributePropsData)`
     color: #fafafa;
 
     background: ${(props) => props.attributeColorValue};
+    filter: contrast(${(props) => props.attributeColorToneValue});
     padding: 0 0.75rem;
     height: 20px;
   }

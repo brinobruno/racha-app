@@ -55,7 +55,10 @@ export function PlayerSummary({ player }: IPlayerSummary) {
         </PlayerHeader>
 
         <Attributes>
-          <Attribute attributeColorValue={getColorBreakpoint(player.pace)}>
+          <Attribute
+            attributeColorValue={getColorBreakpoint(player.pace)}
+            attributeColorToneValue={`0.${player.pace}`}
+          >
             <div>
               <AttributeValue
                 attributeWidthValue={player.pace}
@@ -68,7 +71,10 @@ export function PlayerSummary({ player }: IPlayerSummary) {
             <span>{player.pace}</span>
           </Attribute>
 
-          <Attribute attributeColorValue={getColorBreakpoint(player.shooting)}>
+          <Attribute
+            attributeColorValue={getColorBreakpoint(player.shooting)}
+            attributeColorToneValue={`0.${player.shooting}`}
+          >
             <div>
               <AttributeValue
                 attributeWidthValue={player.shooting}
@@ -81,7 +87,10 @@ export function PlayerSummary({ player }: IPlayerSummary) {
             <span>{player.shooting}</span>
           </Attribute>
 
-          <Attribute attributeColorValue={getColorBreakpoint(player.passing)}>
+          <Attribute
+            attributeColorValue={getColorBreakpoint(player.passing)}
+            attributeColorToneValue={`0.${player.passing}`}
+          >
             <div>
               <AttributeValue
                 attributeWidthValue={player.passing}
@@ -94,7 +103,10 @@ export function PlayerSummary({ player }: IPlayerSummary) {
             <span>{player.passing}</span>
           </Attribute>
 
-          <Attribute attributeColorValue={getColorBreakpoint(player.dribbling)}>
+          <Attribute
+            attributeColorValue={getColorBreakpoint(player.dribbling)}
+            attributeColorToneValue={`0.${player.dribbling}`}
+          >
             <div>
               <AttributeValue
                 attributeWidthValue={player.dribbling}
@@ -107,7 +119,10 @@ export function PlayerSummary({ player }: IPlayerSummary) {
             <span>{player.dribbling}</span>
           </Attribute>
 
-          <Attribute attributeColorValue={getColorBreakpoint(player.defending)}>
+          <Attribute
+            attributeColorValue={getColorBreakpoint(player.defending)}
+            attributeColorToneValue={`0.${player.defending}`}
+          >
             <div>
               <AttributeValue
                 attributeWidthValue={player.defending}
@@ -120,7 +135,10 @@ export function PlayerSummary({ player }: IPlayerSummary) {
             <span>{player.defending}</span>
           </Attribute>
 
-          <Attribute attributeColorValue={getColorBreakpoint(player.physical)}>
+          <Attribute
+            attributeColorValue={getColorBreakpoint(player.physical)}
+            attributeColorToneValue={`0.${player.physical}`}
+          >
             <div>
               <AttributeValue
                 attributeWidthValue={player.physical}
