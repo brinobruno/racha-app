@@ -17,12 +17,14 @@ export const ColumnHeading = styled.th<IColumnHeadingProps>`
   font-size: 1.125rem;
   font-weight: 500;
   text-align: left;
+  cursor: pointer;
 
   padding: 0.75rem;
 
   span {
     display: inline-flex;
     align-items: center;
+    user-select: none;
 
     ::after {
       display: inline-block;
