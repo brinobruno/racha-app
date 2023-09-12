@@ -28,6 +28,7 @@ export const ColumnHeading = styled.th<IColumnHeadingProps>`
       display: inline-block;
       margin-left: 0.25rem;
       font-size: 0.875rem;
+      color: ${(props) => props.theme['secondary-200']};
     }
 
     &.ascending::after {
