@@ -8,6 +8,7 @@ import {
   PlayerNationality,
   PlayerPicture,
 } from './styles'
+import { getColorBreakpoint } from 'src/helpers/getColorBreakpoint'
 
 interface IPlayerListItemProps {
   player: IPlayerData
@@ -42,7 +43,12 @@ export function TableDataPlayer({
         />
         {player.name}
       </DataBigger>
-      <DataSmaller>{player.overall}</DataSmaller>
+      <DataSmaller
+        className="player-ovr"
+        overallColorValue={getColorBreakpoint(player.pace)}
+      >
+        {player.overall}
+      </DataSmaller>
     </ListData>
   )
 }

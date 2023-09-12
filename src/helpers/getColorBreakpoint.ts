@@ -13,6 +13,6 @@ export function getColorBreakpoint(value: number): string {
   } else if (value <= breakpoints.green) {
     return '#e1bf00'
   } else {
-    return '#128705'
+    return '#17a607'
   }
 }

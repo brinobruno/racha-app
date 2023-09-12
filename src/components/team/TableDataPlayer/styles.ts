@@ -4,6 +4,10 @@ interface IListDataProps {
   isSelectedTab: boolean
 }
 
+interface IOverallDataProps {
+  overallColorValue?: string
+}
+
 export const ListData = styled.tr<IListDataProps>`
   background: ${(props) =>
     props.isSelectedTab
@@ -64,8 +68,12 @@ export const DataBigger = styled.td`
   align-items: center;
 `
 
-export const DataSmaller = styled.td`
+export const DataSmaller = styled.td<IOverallDataProps>`
   text-align: center;
+
+  &.player-ovr {
+    color: ${(props) => props.overallColorValue};
+  }
 `
 
 export const PlayerNationality = styled.img`
