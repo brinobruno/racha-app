@@ -29,11 +29,11 @@ const breakpoints = {
 
 function getColorBreakpoint(value: number): string {
   if (value <= breakpoints.yellow) {
-    return 'orange'
+    return '#d66b1a'
   } else if (value <= breakpoints.green) {
-    return 'yellow'
+    return '#c2a500'
   } else {
-    return 'green'
+    return '#128705'
   }
 }
 
