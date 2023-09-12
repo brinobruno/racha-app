@@ -55,6 +55,7 @@ export const ListData = styled.tr<IListDataProps>`
     max-height: 3.125rem;
 
     transition: 0.1s ease-in-out;
+    user-select: none;
   }
 `
 
