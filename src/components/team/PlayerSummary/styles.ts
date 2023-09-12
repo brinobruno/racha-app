@@ -129,6 +129,8 @@ export const Attribute = styled(AttributePropsData)`
   }
 
   > span {
+    color: #fafafa;
+
     background: ${(props) => props.attributeColorValue};
     padding: 0 0.75rem;
     height: 20px;
