@@ -113,6 +113,7 @@ export const Attributes = styled.div`
 interface IPlayerSummaryData {
   attributeWidthValue?: number
   attributeColorValue?: string
+  attributeColorToneValue?: string
 }
 
 export const AttributePropsData = styled.div<IPlayerSummaryData>``
@@ -144,4 +145,10 @@ export const AttributeValue = styled(AttributePropsData)`
   display: flex;
   align-items: center;
   padding: 0 0.5rem;
+
+  filter: contrast(${(props) => props.attributeColorToneValue});
+
+  span {
+    color: #fafafa;
+  }
 `

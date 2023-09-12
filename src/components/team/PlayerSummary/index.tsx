@@ -78,6 +78,7 @@ export function PlayerSummary({ player }: IPlayerSummary) {
               <AttributeValue
                 attributeWidthValue={player.pace}
                 attributeColorValue={getColorBreakpoint(player.pace)}
+                attributeColorToneValue={`0.${player.pace}`}
               >
                 <span>Pace:</span>
               </AttributeValue>
@@ -90,6 +91,7 @@ export function PlayerSummary({ player }: IPlayerSummary) {
               <AttributeValue
                 attributeWidthValue={player.shooting}
                 attributeColorValue={getColorBreakpoint(player.shooting)}
+                attributeColorToneValue={`0.${player.shooting}`}
               >
                 <span>Shooting:</span>
               </AttributeValue>
@@ -102,6 +104,7 @@ export function PlayerSummary({ player }: IPlayerSummary) {
               <AttributeValue
                 attributeWidthValue={player.passing}
                 attributeColorValue={getColorBreakpoint(player.passing)}
+                attributeColorToneValue={`0.${player.passing}`}
               >
                 <span>Passing:</span>
               </AttributeValue>
@@ -114,6 +117,7 @@ export function PlayerSummary({ player }: IPlayerSummary) {
               <AttributeValue
                 attributeWidthValue={player.dribbling}
                 attributeColorValue={getColorBreakpoint(player.dribbling)}
+                attributeColorToneValue={`0.${player.dribbling}`}
               >
                 <span>Dribbling:</span>
               </AttributeValue>
@@ -126,6 +130,7 @@ export function PlayerSummary({ player }: IPlayerSummary) {
               <AttributeValue
                 attributeWidthValue={player.defending}
                 attributeColorValue={getColorBreakpoint(player.defending)}
+                attributeColorToneValue={`0.${player.defending}`}
               >
                 <span>Defending:</span>
               </AttributeValue>
@@ -138,6 +143,7 @@ export function PlayerSummary({ player }: IPlayerSummary) {
               <AttributeValue
                 attributeWidthValue={player.physical}
                 attributeColorValue={getColorBreakpoint(player.physical)}
+                attributeColorToneValue={`0.${player.physical}`}
               >
                 <span>Physical:</span>
               </AttributeValue>
