@@ -2,6 +2,7 @@ import { getCode } from 'country-list'
 
 import { NameWithLineBreaks } from 'src/helpers/nameWithLineBreaks'
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
+import { getColorBreakpoint } from 'src/helpers/getColorBreakpoint'
 import {
   Attribute,
   AttributeValue,
@@ -16,25 +17,6 @@ import {
 
 interface IPlayerSummary {
   player: IPlayerData
-}
-
-// Bronze: 64 or below
-// Silver: 65 until 74
-// Gold: 75 or above
-const breakpoints = {
-  orange: 0,
-  yellow: 64,
-  green: 74,
-}
-
-function getColorBreakpoint(value: number): string {
-  if (value <= breakpoints.yellow) {
-    return '#dd680f'
-  } else if (value <= breakpoints.green) {
-    return '#e1bf00'
-  } else {
-    return '#128705'
-  }
 }
 
 export function PlayerSummary({ player }: IPlayerSummary) {
