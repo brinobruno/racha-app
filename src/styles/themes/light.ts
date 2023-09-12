@@ -18,6 +18,7 @@ export const lightTheme = {
   'secondary-600': '#E9EDF5',
   'primary-700': '#FFB2C2',
 
+  'secondary-200': '#0e27c9',
   'secondary-300': '#0A1033',
   'secondary-500': '#495BCC',
   'secondary-550': '#f2f4ff',
