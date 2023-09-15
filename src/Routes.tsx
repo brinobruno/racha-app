@@ -5,6 +5,8 @@ import { DefaultLayout } from './layouts/default/DefaultLayout'
 import { AuthLayout } from './layouts/auth/AuthLayout'
 import { Signin } from './pages/Visitor/Signin'
 import { SignUp } from './pages/Visitor/Signup'
+import { ResetPassword } from './pages/Visitor/ResetPassword'
+
 import { Dashboard } from './pages/User/Dashboard'
 import { UserAccount } from './pages/User/UserAccount'
 import { Teams } from './pages/User/Teams'
@@ -23,6 +25,7 @@ export function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Route>
 
       <Route path="/" element={<DefaultLayout />}>
