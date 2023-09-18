@@ -36,4 +36,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [ ] On existing teams/players, show a ranking of best players
 - [X] Make add team component 
 - [ ] Adjust /create route - unnecessary when only 1 /post
-- [ ] Make clickup workspace 
+- [X] Make clickup workspace 
