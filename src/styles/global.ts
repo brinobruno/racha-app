@@ -161,8 +161,4 @@ export const GlobalStyle = createGlobalStyle`
   .ReactModal__Overlay--before-close {
     opacity: 0;
   }
-
-  .react-flow__attribution {
-    display: none;
-  }
 `
