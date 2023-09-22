@@ -1,9 +1,9 @@
+import { useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { Card } from 'src/components/team/Card'
 import { Container } from './styles'
-import { useState } from 'react'
 
 interface IListViewProps {
   players: IPlayerData[]
@@ -60,6 +60,7 @@ export function PitchView({ players: PlayersData }: IListViewProps) {
                   )}
                 </Draggable>
               ))}
+              {provided.placeholder}
             </div>
           )}
         </Droppable>
