@@ -32,36 +32,34 @@ export function PitchView({ players: PlayersData }: IListViewProps) {
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
-              {players.map((player, index) => {
-                return (
-                  <Draggable
-                    key={player.id}
-                    draggableId={player.id}
-                    index={index}
-                  >
-                    {(provided) => (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                      >
-                        <Card
-                          overall={player.overall}
-                          position={player.position}
-                          nationality={player.nationality}
-                          name={player.known_as}
-                          pace={player.pace}
-                          dribbling={player.dribbling}
-                          shooting={player.shooting}
-                          defending={player.defending}
-                          passing={player.passing}
-                          physical={player.physical}
-                        />
-                      </div>
-                    )}
-                  </Draggable>
-                )
-              })}
+              {players.map((player, index) => (
+                <Draggable
+                  key={player.id}
+                  draggableId={player.id}
+                  index={index}
+                >
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
+                      <Card
+                        overall={player.overall}
+                        position={player.position}
+                        nationality={player.nationality}
+                        name={player.known_as}
+                        pace={player.pace}
+                        dribbling={player.dribbling}
+                        shooting={player.shooting}
+                        defending={player.defending}
+                        passing={player.passing}
+                        physical={player.physical}
+                      />
+                    </div>
+                  )}
+                </Draggable>
+              ))}
             </div>
           )}
         </Droppable>
