@@ -38,3 +38,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Adjust /create route - unnecessary when only 1 /post
 - [X] Make clickup workspace
 - [ ] Create route for resetting password
+- [ ] Research solution for pitch view
