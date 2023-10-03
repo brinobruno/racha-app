@@ -39,3 +39,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Make clickup workspace
 - [ ] Create route for resetting password
 - [ ] Research solution for pitch view
+- [ ] Adjust layouts
