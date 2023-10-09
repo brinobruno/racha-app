@@ -14,7 +14,7 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Add global cookie notice/consent
 - [X] Add Toasts messages - success signin/signup/etc.
 - [ ] Add Unit testing
-- [Xg] Add global loading component
+- [X] Add global loading component
 
 - [X] Page - Account page
 - [X] Query - Figure out issue GET players/:teamId
