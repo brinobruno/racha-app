@@ -6,7 +6,7 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 ## Todo
 - [ ] Write Readme
 - [ ] Finish Figma design
-- [ ] Finish designing card system
+- [X] Finish designing card system
 - [X] Decide query service - probably React Query
 - [X] Add React Hook Form
 - [X] Add user to global context
