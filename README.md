@@ -30,7 +30,7 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
 - [X] Switch players info to completion/composition of teams info
-- [ ] Create methods on teams context
+- [X] Create methods on teams context
 - [X] Team page 
 - [X] Card component
 - [ ] On existing teams/players, show a ranking of best players
