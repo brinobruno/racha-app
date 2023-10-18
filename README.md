@@ -40,3 +40,4 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [ ] Create route for resetting password
 - [ ] Research solution for pitch view
 - [ ] Adjust layouts
+- [ ] Adjust dev plan
