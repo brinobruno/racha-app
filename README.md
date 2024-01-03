@@ -6,7 +6,7 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 ## Todo
 - [ ] Write Readme
 - [ ] Finish Figma design
-- [ ] Finish designing card system
+- [X] Finish designing card system
 - [X] Decide query service - probably React Query
 - [X] Add React Hook Form
 - [X] Add user to global context
@@ -14,7 +14,7 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Add global cookie notice/consent
 - [X] Add Toasts messages - success signin/signup/etc.
 - [ ] Add Unit testing
-- [Xg] Add global loading component
+- [X] Add global loading component
 
 - [X] Page - Account page
 - [X] Query - Figure out issue GET players/:teamId
@@ -30,10 +30,14 @@ ImageKit SDK: https://docs.imagekit.io/getting-started/quickstart-guides/react
 - [X] Connect teams with players data
 - [ ] Add teams/players connected data to teams context
 - [X] Switch players info to completion/composition of teams info
-- [ ] Create methods on teams context
+- [X] Create methods on teams context
 - [X] Team page 
 - [X] Card component
 - [ ] On existing teams/players, show a ranking of best players
 - [X] Make add team component 
 - [X] Adjust /create route - unnecessary when only 1 /post
-- [X] Make clickup workspace 
+- [X] Make clickup workspace
+- [ ] Create route for resetting password
+- [ ] Research solution for pitch view
+- [ ] Adjust layouts
+- [ ] Adjust dev plan
