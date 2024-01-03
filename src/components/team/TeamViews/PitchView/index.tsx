@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import { useEffect, useState } from 'react'
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { Card } from 'src/components/team/Card'
@@ -11,6 +11,20 @@ interface IListViewProps {
 
 export function PitchView({ players: PlayersData }: IListViewProps) {
   const [players, updatePlayers] = useState(PlayersData)
+  const [enabled, setEnabled] = useState(false)
+
+  useEffect(() => {
+    const animation = requestAnimationFrame(() => setEnabled(true))
+
+    return () => {
+      cancelAnimationFrame(animation)
+      setEnabled(false)
+    }
+  }, [])
+
+  if (!enabled) {
+    return null
+  }
 
   function handleOnDragEnd(result: any) {
     if (!result.destination) return
