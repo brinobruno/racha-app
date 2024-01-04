@@ -9,8 +9,8 @@ interface IListViewProps {
   players: IPlayerData[]
 }
 
-export function PitchView({ players: PlayersData }: IListViewProps) {
-  const [players, updatePlayers] = useState(PlayersData)
+export function PitchView({ players: PlayersData }: Readonly<IListViewProps>) {
+  const [players, setPlayers] = useState(PlayersData)
   const [enabled, setEnabled] = useState(false)
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export function PitchView({ players: PlayersData }: IListViewProps) {
     const [reorderedItem] = items.splice(result.source.index, 1)
     items.splice(result.destination.index, 0, reorderedItem)
 
-    updatePlayers(items)
+    setPlayers(items)
   }
 
   return (
