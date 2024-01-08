@@ -9,7 +9,11 @@ interface IListViewProps {
 }
 
 export function PitchView({ players }: Readonly<IListViewProps>) {
-  const [DrawChoice, setDrawChoice] = useState(null)
+  const [drawChoice, setDrawChoice] = useState<number | null>(null)
+
+  function handleDrawChoice(choice: number) {
+    setDrawChoice(choice)
+  }
 
   return (
     <Container>
@@ -22,11 +26,9 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
 
       <form>
         <div>
-          <button>2 teams</button>
-
-          <button>3 teams</button>
-
-          <button>4 teams</button>
+          <button onClick={() => handleDrawChoice(2)}>2 teams</button>
+          <button onClick={() => handleDrawChoice(3)}>3 teams</button>
+          <button onClick={() => handleDrawChoice(4)}>4 teams</button>
 
           <button>Custom: ___</button>
         </div>
