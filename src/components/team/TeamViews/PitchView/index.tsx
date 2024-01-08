@@ -1,84 +1,55 @@
-import { useEffect, useState } from 'react'
-import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd'
+import { useState } from 'react'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
-import { Card } from 'src/components/team/Card'
+// import { Card } from 'src/components/team/Card'
 import { Container } from './styles'
 
 interface IListViewProps {
   players: IPlayerData[]
 }
 
-export function PitchView({ players: PlayersData }: Readonly<IListViewProps>) {
-  const [players, setPlayers] = useState(PlayersData)
-  const [enabled, setEnabled] = useState(false)
-
-  useEffect(() => {
-    const animation = requestAnimationFrame(() => setEnabled(true))
-
-    return () => {
-      cancelAnimationFrame(animation)
-      setEnabled(false)
-    }
-  }, [])
-
-  if (!enabled) {
-    return null
-  }
-
-  function handleOnDragEnd(result: any) {
-    if (!result.destination) return
-
-    const items = Array.from(players)
-    const [reorderedItem] = items.splice(result.source.index, 1)
-    items.splice(result.destination.index, 0, reorderedItem)
-
-    setPlayers(items)
-  }
+export function PitchView({ players }: Readonly<IListViewProps>) {
+  const [DrawChoice, setDrawChoice] = useState(null)
 
   return (
     <Container>
-      <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Droppable droppableId="players">
-          {(provided) => (
-            <div
-              className="players"
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-            >
-              {players.map((player, index) => (
-                <Draggable
-                  key={player.id}
-                  draggableId={player.id}
-                  index={index}
-                >
-                  {(provided) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                    >
-                      <Card
-                        overall={player.overall}
-                        position={player.position}
-                        nationality={player.nationality}
-                        name={player.known_as}
-                        pace={player.pace}
-                        dribbling={player.dribbling}
-                        shooting={player.shooting}
-                        defending={player.defending}
-                        passing={player.passing}
-                        physical={player.physical}
-                      />
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <h6>Draw team</h6>
+
+      <p>
+        You have <strong>{players.length}</strong> players in this squad. <br />
+        How many teams would you like to split into?
+      </p>
+
+      <form>
+        <div>
+          <button>2 teams</button>
+
+          <button>3 teams</button>
+
+          <button>4 teams</button>
+
+          <button>Custom: ___</button>
+        </div>
+
+        <button>Draw</button>
+      </form>
+
+      {/* {PlayersData.map((player) => (
+        <div key={player.id}>
+          <Card
+            overall={player.overall}
+            position={player.position}
+            nationality={player.nationality}
+            name={player.known_as}
+            pace={player.pace}
+            dribbling={player.dribbling}
+            shooting={player.shooting}
+            defending={player.defending}
+            passing={player.passing}
+            physical={player.physical}
+          />
+        </div>
+      ))} */}
     </Container>
   )
 }

@@ -1,7 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background: #7eaf34;
-  width: 100%;
-  height: 100%;
+  background: ${(props) => props.theme['secondary-accent']};
+  padding: 2rem;
+
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
