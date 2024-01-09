@@ -27,8 +27,11 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
       <form>
         <div>
           <button onClick={() => handleDrawChoice(2)}>2 teams</button>
+          <span>2 teams of {players.length / 2}</span>
           <button onClick={() => handleDrawChoice(3)}>3 teams</button>
+          <span>2 teams of {players.length / 3}</span>
           <button onClick={() => handleDrawChoice(4)}>4 teams</button>
+          <span>2 teams of {players.length / 4}</span>
 
           <button>Custom: ___</button>
         </div>
