@@ -11,8 +11,30 @@ interface IListViewProps {
 export function PitchView({ players }: Readonly<IListViewProps>) {
   const [drawChoice, setDrawChoice] = useState<number | null>(null)
 
-  function handleDrawChoice(choice: number) {
+  // Function to handle the user's draw choice
+  const handleDrawChoice = (choice: number) => {
     setDrawChoice(choice)
+  }
+
+  const calculateTeamSizes = (choice: number) => {
+    // const teamSize = Math.floor(players.length + 11 / choice)
+    // const remainingPlayers = (players.length + 11) % choice
+
+    const teamSize = Math.floor(players.length + 11 / choice)
+    const remainingPlayers = (players.length + 11) % choice
+
+    return { teamSize, remainingPlayers }
+  }
+
+  const handleDrawButtonClick = () => {
+    if (drawChoice !== null) {
+      const { teamSize, remainingPlayers } = calculateTeamSizes(drawChoice)
+
+      // Perform actions based on the draw choice, team size, and remaining players
+      console.log(
+        `Draw ${drawChoice} teams with ${teamSize} players each. Remaining players: ${remainingPlayers}`,
+      )
+    }
   }
 
   return (
@@ -20,23 +42,31 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
       <h6>Draw team</h6>
 
       <p>
-        You have <strong>{players.length}</strong> players in this squad. <br />
+        You have <strong>{players.length + 11}</strong> players in this squad.{' '}
+        <br />
         How many teams would you like to split into?
       </p>
 
       <form>
         <div>
-          <button onClick={() => handleDrawChoice(2)}>2 teams</button>
-          <span>2 teams of {players.length / 2}</span>
-          <button onClick={() => handleDrawChoice(3)}>3 teams</button>
-          <span>2 teams of {players.length / 3}</span>
-          <button onClick={() => handleDrawChoice(4)}>4 teams</button>
-          <span>2 teams of {players.length / 4}</span>
+          {[2, 3, 4].map((choice) => {
+            const { teamSize, remainingPlayers } = calculateTeamSizes(choice)
+            return (
+              <div key={choice}>
+                <button
+                  onClick={() => handleDrawChoice(choice)}
+                >{`${choice} teams`}</button>
+                <span>{`${choice} teams of ${teamSize} players. Remaining players: ${remainingPlayers}`}</span>
+              </div>
+            )
+          })}
 
           <button>Custom: ___</button>
         </div>
 
-        <button>Draw</button>
+        <button type="button" onClick={handleDrawButtonClick}>
+          Draw
+        </button>
       </form>
 
       {/* {PlayersData.map((player) => (
