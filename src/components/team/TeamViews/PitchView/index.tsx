@@ -1,39 +1,94 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
-// import { Card } from 'src/components/team/Card'
 import { Container } from './styles'
+import { ITeam } from 'src/contexts/TeamsContext'
+// import { Card } from 'src/components/team/Card'
 
 interface IListViewProps {
   players: IPlayerData[]
 }
 
+// Modify this interface later since sorted teams don't need attributes such as
+// Owner, user_id, title, etc.
+interface IDrawTeam extends ITeam {
+  players: IPlayerData[]
+}
+
 export function PitchView({ players }: Readonly<IListViewProps>) {
   const [drawChoice, setDrawChoice] = useState<number | null>(null)
+  const [teams, setTeams] = useState<IDrawTeam[] | null>(null)
 
-  // Function to handle the user's draw choice
   const handleDrawChoice = (choice: number) => {
     setDrawChoice(choice)
+
+    const calculatedTeams = drawTeams(players, choice)
+    setTeams(calculatedTeams)
   }
 
   const calculateTeamSizes = (choice: number) => {
-    // const teamSize = Math.floor(players.length + 11 / choice)
-    // const remainingPlayers = (players.length + 11) % choice
-
-    const teamSize = Math.floor(players.length + 11 / choice)
-    const remainingPlayers = (players.length + 11) % choice
+    const teamSize = Math.floor(players.length / choice)
+    const remainingPlayers = players.length % choice
 
     return { teamSize, remainingPlayers }
   }
 
+  const drawTeams = (allPlayers: IPlayerData[], numTeams: number) => {
+    const sortedPlayers = [...allPlayers].sort((a, b) => b.overall - a.overall)
+
+    const { teamSize, remainingPlayers } = calculateTeamSizes(numTeams)
+
+    const teams: IDrawTeam[] = Array.from({ length: numTeams }, (_, index) => {
+      const startIndex = index * teamSize
+      const endIndex =
+        index === numTeams - 1
+          ? startIndex + teamSize + remainingPlayers
+          : startIndex + teamSize
+
+      return {
+        id: `${index + 1}`,
+        user_id: '',
+        title: `Team ${index + 1}`,
+        owner: '',
+        players: sortedPlayers.slice(startIndex, endIndex),
+      }
+    })
+
+    return teams
+  }
+
   const handleDrawButtonClick = () => {
     if (drawChoice !== null) {
-      const { teamSize, remainingPlayers } = calculateTeamSizes(drawChoice)
+      console.log(`Draw ${drawChoice} teams with the following distribution:`)
 
-      // Perform actions based on the draw choice, team size, and remaining players
-      console.log(
-        `Draw ${drawChoice} teams with ${teamSize} players each. Remaining players: ${remainingPlayers}`,
-      )
+      teams?.forEach((team, index) => {
+        console.log(
+          `Team ${index + 1}: ${team.players
+            .map((player) => `${player.name} (${player.overall})`)
+            .join(', ')}`,
+        )
+      })
+    }
+  }
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    // Prevent the default form submission behavior
+    event.preventDefault()
+
+    if (drawChoice !== null) {
+      const calculatedTeams = drawTeams(players, drawChoice)
+
+      console.log(`Draw ${drawChoice} teams with the following distribution:`)
+
+      calculatedTeams.forEach((team, index) => {
+        console.log(
+          `Team ${index + 1}: ${team.players
+            .map((player) => `${player.name} (${player.overall})`)
+            .join(', ')}`,
+        )
+      })
+
+      setTeams(calculatedTeams)
     }
   }
 
@@ -42,12 +97,11 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
       <h6>Draw team</h6>
 
       <p>
-        You have <strong>{players.length + 11}</strong> players in this squad.{' '}
-        <br />
+        You have <strong>{players.length}</strong> players in this squad. <br />
         How many teams would you like to split into?
       </p>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           {[2, 3, 4].map((choice) => {
             const { teamSize, remainingPlayers } = calculateTeamSizes(choice)
@@ -69,7 +123,25 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
         </button>
       </form>
 
-      {/* {PlayersData.map((player) => (
+      {/* Display sorted teams */}
+      {teams && (
+        <div>
+          <h6>Teams</h6>
+          {teams.map((team, index) => (
+            <div key={index}>
+              <strong>Team {index + 1}</strong>
+              {team.players.map((player) => (
+                <p key={player.id}>{`${player.name} (${player.overall})`}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      )}
+    </Container>
+  )
+}
+
+/* {PlayersData.map((player) => (
         <div key={player.id}>
           <Card
             overall={player.overall}
@@ -84,7 +156,4 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
             physical={player.physical}
           />
         </div>
-      ))} */}
-    </Container>
-  )
-}
+      ))} */
