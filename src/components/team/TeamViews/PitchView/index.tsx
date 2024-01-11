@@ -19,13 +19,6 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
   const [drawChoice, setDrawChoice] = useState<number | null>(null)
   const [teams, setTeams] = useState<IDrawTeam[] | null>(null)
 
-  const handleDrawChoice = (choice: number) => {
-    setDrawChoice(choice)
-
-    const calculatedTeams = drawTeams(players, choice)
-    setTeams(calculatedTeams)
-  }
-
   const calculateTeamSizes = (choice: number) => {
     const teamSize = Math.floor(players.length / choice)
     const remainingPlayers = players.length % choice
@@ -55,6 +48,13 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
     })
 
     return teams
+  }
+
+  const handleDrawChoice = (choice: number) => {
+    setDrawChoice(choice)
+
+    const calculatedTeams = drawTeams(players, choice)
+    setTeams(calculatedTeams)
   }
 
   const handleDrawButtonClick = () => {
