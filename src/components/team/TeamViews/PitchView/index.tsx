@@ -2,7 +2,6 @@ import { FormEvent, useState } from 'react'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { Container } from './styles'
-// import { Card } from 'src/components/team/Card'
 
 interface IListViewProps {
   players: IPlayerData[]
@@ -138,20 +137,3 @@ export function PitchView({ players }: Readonly<IListViewProps>) {
     </Container>
   )
 }
-
-/* {PlayersData.map((player) => (
-        <div key={player.id}>
-          <Card
-            overall={player.overall}
-            position={player.position}
-            nationality={player.nationality}
-            name={player.known_as}
-            pace={player.pace}
-            dribbling={player.dribbling}
-            shooting={player.shooting}
-            defending={player.defending}
-            passing={player.passing}
-            physical={player.physical}
-          />
-        </div>
-      ))} */
