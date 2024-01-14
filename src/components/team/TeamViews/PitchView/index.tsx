@@ -2,16 +2,14 @@ import { FormEvent, useState } from 'react'
 
 import { IPlayerData } from 'src/services/hooks/usePlayersFromTeam'
 import { Container } from './styles'
-import { ITeam } from 'src/contexts/TeamsContext'
 // import { Card } from 'src/components/team/Card'
 
 interface IListViewProps {
   players: IPlayerData[]
 }
 
-// Modify this interface later since sorted teams don't need attributes such as
-// Owner, user_id, title, etc.
-interface IDrawTeam extends ITeam {
+export interface IDrawTeam {
+  id: string
   players: IPlayerData[]
 }
 
